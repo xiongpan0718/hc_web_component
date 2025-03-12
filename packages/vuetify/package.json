@@ -172,7 +172,6 @@
     "postcss": "^8.4.38",
     "roboto-fontface": "^0.10.0",
     "rollup": "^4.34.8",
-    "rollup-plugin-vue": "^6.0.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-sass": "^1.12.21",
     "rollup-plugin-sourcemaps": "^0.6.3",
