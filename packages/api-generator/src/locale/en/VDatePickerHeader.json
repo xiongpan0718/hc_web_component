@@ -1,6 +1,0 @@
-{
-  "props": {
-    "header": "Sets the header content.",
-    "transition": "Sets the transition when the header changes."
-  }
-}
