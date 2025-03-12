@@ -4,6 +4,7 @@ import { writeFile } from 'fs/promises'
 import { fileURLToPath } from 'url'
 
 import packageJson from '../package.json' with { type: 'json' }
+import vue from 'rollup-plugin-vue'
 
 import alias from '@rollup/plugin-alias'
 import sass from 'rollup-plugin-sass'
@@ -60,6 +61,7 @@ export default [
     ],
     external: ['vue'],
     plugins: [
+      vue(),
       nodeResolve({ extensions }),
       babel({
         extensions,
@@ -196,6 +198,7 @@ export default [
     ],
     external: ['vue'],
     plugins: [
+      vue(),
       nodeResolve({ extensions }),
       babel({
         extensions,
