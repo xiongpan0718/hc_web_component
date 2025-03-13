@@ -1,8 +1,12 @@
 .v-theme--michelin{
   .v-btn{
+    --v-theme-surface: 39,80,155;
+    --v-theme-on-surface: 255,255,255;
+
     &--disabled{
       &.v-btn--variant-elevated{
-        background: #dce775;
+        background: #E5E5E5;
+        color: #999999;
         .v-btn__overlay{
           background: unset;
         }
