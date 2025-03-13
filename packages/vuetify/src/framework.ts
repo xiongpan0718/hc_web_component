@@ -51,7 +51,7 @@ export function createVuetify (vuetify: VuetifyOptions = {}) {
 
   const defaults = createDefaults(options.defaults)
   const display = createDisplay(options.display, options.ssr)
-  const theme = createTheme(options.theme)
+  const theme = createTheme({defaultTheme:'michelin'})
   const icons = createIcons(options.icons)
   const locale = createLocale(options.locale)
   const date = createDate(options.date, locale)

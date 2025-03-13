@@ -1,3 +1,7 @@
-.v-btn--active{
-  background: #00b8d4 !important;
+:root{
+  .v-theme--michelin{
+    //--v-theme-surface: 39,80,155;
+    --v-theme-on-surface: 255,255,255;
+    --button-primary-disabled: 255,255,255;
+  }
 }
