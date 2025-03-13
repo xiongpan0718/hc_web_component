@@ -1,7 +1,6 @@
-:root{
-  .v-theme--michelin{
-    //--v-theme-surface: 39,80,155;
-    --v-theme-on-surface: 255,255,255;
-    --button-primary-disabled: 255,255,255;
+.v-theme--michelin{
+  .v-btn{
+    --v-theme-surface: 212,20,20;
+    --v-theme-on-surface:255,255,255;
   }
 }

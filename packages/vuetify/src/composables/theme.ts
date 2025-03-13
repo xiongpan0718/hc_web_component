@@ -108,13 +108,12 @@ export const makeThemeProps = propsFactory({
 function genDefaults () {
   return {
     defaultTheme: 'michelin',
-    variations: { colors: ['disabled-test'], lighten: 0, darken: 0 },
+    variations: { colors: [], lighten: 0, darken: 0 },
     themes: {
       michelin: {
         dark: false,
         colors: {
           background: '#FFFFFF',
-          surface: '#27509B',
           'surface-bright': '#FFFFFF',
           'surface-light': '#EEEEEE',
           'surface-variant': '#424242',
