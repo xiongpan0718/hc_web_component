@@ -5,6 +5,11 @@ Count: {{ count }}
 
 <script setup>
 import { ref } from 'vue'
+
+const props = defineProps({
+  msg: String
+})
+
 const count = ref(0)
 const add = () => {
   count.value++
