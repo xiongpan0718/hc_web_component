@@ -2,6 +2,7 @@
   <v-app>
     <v-container>
       <!-- -->
+      <v-test></v-test>
     </v-container>
   </v-app>
 </template>
