@@ -1,6 +1,6 @@
 // Styles
 import './VBtn.sass'
-
+import '../../styles/css/btn/index.scss'
 // Components
 import { VBtnToggleSymbol } from '@/components/VBtnToggle/VBtnToggle'
 import { VDefaultsProvider } from '@/components/VDefaultsProvider'
