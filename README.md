@@ -31,7 +31,7 @@
 <h2>运行命令</h2>
 <p>pnpm i</p>
 <p>pnpm build vuetify</p>
-<p>pnpm build api</p>
+
 <p>Vuetify 库位于 packages/vuetify 中。</p>
 <p>cd packages/vuetify 进入项目</p>
 <p>在 packages/vuetify/dev 中你将找到一个 Playground.vue 文件；这是开发测试页面</p>
@@ -41,7 +41,7 @@
 <p>src 目录</p>
 <p>组件写在components 有个实例VTest，需要在components目录下的index.js中引入</p>
 <p>样式文件写在styles/css中，新增目录以组件名命名并在index中引入</p>
-
+<p>目前采用样式覆盖的形式处理，后面可以尝试修改sass变量或者覆盖sass变量的形式处理</p>
 <h3>以下但不限于这些暂没有研究，有需要慢慢研究</h3>
 <p>locale：国际化</p>
 <p>directives：指令</p>
