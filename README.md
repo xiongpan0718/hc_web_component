@@ -41,6 +41,21 @@
 <p>src 目录</p>
 <p>组件写在components 有个实例VTest，需要在components目录下的index.js中引入</p>
 <p>样式文件写在styles/css中，新增目录以组件名命名并在index中引入</p>
+<p>所有样式都需要.v-theme--michelin class包裹</p>
+如：
+<code>
+.v-theme--michelin{
+    &--disabled{
+      &.v-btn--variant-elevated{
+        background: #E5E5E5;
+        color: #999999;
+        .v-btn__overlay{
+          background: unset;
+        }
+      }
+    }
+}
+</code>
 <p>目前采用样式覆盖的形式处理，后面可以尝试修改sass变量或者覆盖sass变量的形式处理</p>
 <h3>以下但不限于这些暂没有研究，有需要慢慢研究</h3>
 <p>locale：国际化</p>
