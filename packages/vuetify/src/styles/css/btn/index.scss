@@ -2,14 +2,97 @@
   .v-btn{
     --v-theme-surface: 39,80,155;
     --v-theme-on-surface: 255,255,255;
+    --v-btn-height:44px;
+    --v-border-color: #27509B;
+    --v-theme-primary-color: #27509B;
+
+    font-weight: 600;
+
+    &--icon{
+      height: var(--v-btn-height) !important;
+      width: var(--v-btn-height) !important;
+    }
+
+    &--size-small{
+      --v-btn-height:32px;
+      padding: 0 8px;
+    }
 
     &--disabled{
+      opacity: unset;
+      background: #E5E5E5 !important;
+      color: #999999 !important;
       &.v-btn--variant-elevated{
-        background: #E5E5E5;
-        color: #999999;
         .v-btn__overlay{
           background: unset;
         }
+      }
+      &.v-btn--variant-outlined{
+        border-color: #999;
+      }
+    }
+    &--elevated{
+      &:hover{
+        background: #19386F;
+      }
+      &:active{
+        background: #072660;
+      }
+    }
+
+    &--size-default{
+      padding: 0 12px;
+    }
+    &--variant-outlined{
+      border-color: var(--v-border-color);
+      color: var(--v-theme-primary-color);
+      &:active{
+        background: #AEC5E5 !important;
+      }
+      &:hover{
+        background: #D4E7FA;
+      }
+    }
+    &--variant-text{
+      color: var(--v-theme-primary-color);
+      &:hover{
+        background: #D4E7FA;
+      }
+      &:active{
+        background: #AEC5E5;
+      }
+      &.v-btn--disabled{
+        background: unset !important;
+      }
+    }
+    &--variant-empty{
+      border: 1px solid #CCC;
+      color: #1A1A1A;
+      &:hover{
+        background: #F2F2F2;
+      }
+      &:active{
+        background: #F2F2F2;
+        color: #999;
+      }
+      &.v-btn--disabled{
+        background: #F2F2F2 !important;
+        color: #999999;
+        border: unset;
+      }
+    }
+    &--variant-error{
+      background: #B71C1C;
+      color: #fff;
+      &:hover{
+        background: #890404;
+      }
+      &:active{
+        background: #690202;
+      }
+      &.v-btn--disabled{
+        background: #E5E5E5 !important;
+        color: #999999;
       }
     }
   }
