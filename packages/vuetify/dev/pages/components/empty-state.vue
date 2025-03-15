@@ -1,0 +1,82 @@
+<template>
+  <v-row
+    align="start"
+    style="margin-top: 50px"
+  >
+    <v-col cols="8">
+      <v-empty-state
+        :image="type"
+        :layout="layout"
+        :size="size"
+        style="min-height: 0"
+        text="There is nothing in there."
+        title="Sorry,"
+      >
+        <template #actions>
+          <v-btn append-icon="$expand" prepend-icon="mdi-plus">Button</v-btn>
+        </template>
+      </v-empty-state>
+    </v-col>
+    <v-col cols="4">
+      <h3>Layout</h3>
+      <div style="display: flex;justify-content: space-between;margin: 10px 0;">
+        <v-btn @click="layout = 'vertical'">Vertical</v-btn>
+        <v-btn @click="layout = 'horizontal'">Horizontal</v-btn>
+      </div>
+      <h3>Types of illustration</h3>
+      <div style="display: flex;justify-content: space-between;margin: 10px 0;">
+        <v-select
+          v-model="type"
+          :items="typeList"
+          @update:model-value="changeType"
+        />
+      </div>
+      <h3>Size</h3>
+      <div style="display: flex;justify-content: space-between;margin: 10px 0;">
+        <v-select
+          v-model="size"
+          :items="sizeList"
+          @update:model-value="sizeType"
+        />
+      </div>
+    </v-col>
+  </v-row>
+</template>
+
+<script setup>
+// 增加layout属性，用于控制布局 其中包含horizontal、vertical
+
+  import { ref } from 'vue'
+
+  const layout = ref('vertical')
+  const type = ref('404')
+  const size = ref(160)
+  const typeList = ref([
+    { title: '404', value: '404' },
+    { title: 'No data', value: 'no-data' },
+    { title: 'No data search', value: 'no-data-search' },
+    { title: 'Download', value: 'download' },
+    { title: 'No network', value: 'no-network' },
+    { title: 'No permission', value: 'no-permission' },
+    { title: 'System', value: 'system' },
+    { title: 'System setting', value: 'system-setting' },
+  ])
+  const sizeList = ref([
+    { title: 'S', value: 106 },
+    { title: 'M', value: 160 },
+    { title: 'L', value: 240 },
+  ])
+
+  const changeType = value => {
+    type.value = value
+  }
+
+  const sizeType = value => {
+    size.value = value
+  }
+
+</script>
+
+<style scoped lang="less">
+
+</style>

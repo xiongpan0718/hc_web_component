@@ -4,6 +4,14 @@ import './VEmptyState.sass'
 // Components
 import { VBtn } from '@/components/VBtn'
 import { VDefaultsProvider } from '@/components/VDefaultsProvider'
+import status404 from '@/components/VEmptyState/icons/404.svg'
+import download from '@/components/VEmptyState/icons/download.svg'
+import noDataSearch from '@/components/VEmptyState/icons/no-data-search.svg'
+import noData from '@/components/VEmptyState/icons/no-data.svg'
+import noNetwork from '@/components/VEmptyState/icons/no-network.svg'
+import noPermission from '@/components/VEmptyState/icons/no-permission.svg'
+import systemSetting from '@/components/VEmptyState/icons/system-setting.svg'
+import system from '@/components/VEmptyState/icons/system.svg'
 import { VIcon } from '@/components/VIcon'
 import { VImg } from '@/components/VImg'
 
@@ -57,6 +65,10 @@ export const makeVEmptyStateProps = propsFactory({
   },
   href: String,
   to: String,
+  layout: {
+    type: String as PropType<'horizontal' | 'vertical'>,
+    default: 'horizontal',
+  },
 
   ...makeComponentProps(),
   ...makeDimensionProps(),
@@ -78,9 +90,22 @@ export const VEmptyState = genericComponent<VEmptyStateSlots>()({
     const { backgroundColorClasses, backgroundColorStyles } = useBackgroundColor(toRef(props, 'bgColor'))
     const { dimensionStyles } = useDimension(props)
     const { displayClasses } = useDisplay()
-
+    const imageList = ['no-data', '404', 'download', 'no-data-search', 'no-network', 'no-permission', 'system', 'system-setting']
     function onClickAction (e: Event) {
       emit('click:action', e)
+    }
+    const getBuiltInImage = (name: string) => {
+      switch (name) {
+        case 'no-data': return noData
+        case '404': return status404
+        case 'download': return download
+        case 'no-network': return noNetwork
+        case 'no-permission': return noPermission
+        case 'system': return system
+        case 'system-setting': return systemSetting
+        case 'no-data-search': return noDataSearch
+        default: return ''
+      }
     }
 
     useRender(() => {
@@ -90,13 +115,13 @@ export const VEmptyState = genericComponent<VEmptyStateSlots>()({
       const hasText = !!(slots.text || props.text)
       const hasMedia = !!(slots.media || props.image || props.icon)
       const size = props.size || (props.image ? 200 : 96)
-
       return (
         <div
           class={[
             'v-empty-state',
             {
               [`v-empty-state--${props.justify}`]: true,
+              [`v-empty-state--layout--${props.layout}`]: true,
             },
             themeClasses.value,
             backgroundColorClasses.value,
@@ -114,11 +139,13 @@ export const VEmptyState = genericComponent<VEmptyStateSlots>()({
               { !slots.media ? (
                 <>
                   { props.image ? (
-                    <VImg
-                      key="image"
-                      src={ props.image }
-                      height={ size }
-                    />
+                    (
+                      <VImg
+                        key="image"
+                        src={ imageList.includes(props.image) ? getBuiltInImage(props.image) : props.image }
+                        height={ size }
+                      />
+                    )
                   ) : props.icon ? (
                     <VIcon
                       key="icon"

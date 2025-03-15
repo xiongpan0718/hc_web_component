@@ -114,6 +114,7 @@ function genDefaults () {
         dark: false,
         colors: {
           background: '#FFFFFF',
+          surface: '#FFFFFF',
           'surface-bright': '#FFFFFF',
           'surface-light': '#EEEEEE',
           'surface-variant': '#424242',

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 
 import packageJson from '../package.json' with { type: 'json' }
 import vue from 'rollup-plugin-vue'
-
+import url from '@rollup/plugin-url';
 import alias from '@rollup/plugin-alias'
 import sass from 'rollup-plugin-sass'
 import { babel } from '@rollup/plugin-babel'
@@ -62,6 +62,10 @@ export default [
     external: ['vue'],
     plugins: [
       vue(),
+      url({
+        include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.webp'],
+        limit: 0,
+      }),
       nodeResolve({ extensions }),
       babel({
         extensions,
@@ -199,6 +203,10 @@ export default [
     external: ['vue'],
     plugins: [
       vue(),
+      url({
+        include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.webp'],
+        limit: 0,
+      }),
       nodeResolve({ extensions }),
       babel({
         extensions,
