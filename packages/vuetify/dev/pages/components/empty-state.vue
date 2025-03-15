@@ -39,12 +39,15 @@
           @update:model-value="sizeType"
         />
       </div>
+      <v-icon color="red">$about</v-icon>
+<!--      icon-company-->
     </v-col>
   </v-row>
 </template>
 
 <script setup>
 // 增加layout属性，用于控制布局 其中包含horizontal、vertical
+// image属性增加 404、no-data、no-data-search、download、no-network、no-permission、system、system-setting属性作为内置状态
 
   import { ref } from 'vue'
 
