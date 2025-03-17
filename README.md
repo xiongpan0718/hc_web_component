@@ -45,14 +45,15 @@
 如：
 <code>
 .v-theme--michelin{
-    &--disabled{
-      &.v-btn--variant-elevated{
-        background: #E5E5E5;
-        color: #999999;
-        .v-btn__overlay{
-          background: unset;
+    .btn{
+      &--disabled{
+        &.v-btn--variant-elevated{
+          background: #E5E5E5;
+          color: #999999;
+          .v-btn__overlay{
+            background: unset;
+          }
         }
-      }
     }
 }
 </code>

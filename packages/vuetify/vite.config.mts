@@ -33,12 +33,12 @@ export default defineConfig(({ mode }) => {
   return {
     root: resolve('dev'),
     server: {
-      host: process.env.HOST,
+      host: '0.0.0.0',
       port: process.env.TEST ? undefined : +(process.env.PORT ?? 8090),
       strictPort: !!process.env.PORT && !process.env.TEST,
     },
     preview: {
-      host: process.env.HOST,
+      host: '0.0.0.0',
       port: +(process.env.PORT ?? 8090),
       strictPort: !!process.env.PORT,
     },
