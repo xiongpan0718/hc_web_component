@@ -39,8 +39,6 @@
           @update:model-value="sizeType"
         />
       </div>
-      <v-icon color="red">$about</v-icon>
-<!--      icon-company-->
     </v-col>
   </v-row>
 </template>
