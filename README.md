@@ -45,7 +45,7 @@
 如：
 <code>
 .v-theme--michelin{
-    .btn{
+    .v-btn{
       &--disabled{
         &.v-btn--variant-elevated{
           background: #E5E5E5;
