@@ -33,17 +33,20 @@
   import { computed, ref } from 'vue'
   import EmptyState from './components/empty-state.vue'
   import Alert from './components/alert.vue'
+  import Snackbar from './components/snackbar.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState' },
     { name: 'Alert (警告框)', id: 'Alert' },
+    { name: 'Snackbar (消息条)', id: 'Snackbar' },
   ])
 
   const list = {
     EmptyState,
     Alert,
+    Snackbar
   }
-  const key = ref('Alert')
+  const key = ref('Snackbar')
 
   const select = ({ id }) => {
     key.value = id

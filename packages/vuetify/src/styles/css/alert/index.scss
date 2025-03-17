@@ -1,17 +1,16 @@
 .v-theme--michelin{
   .v-alert{
-
-    &-title{
+    .v-alert-title{
       font-size: 16px;
       font-weight: 600;
       color: #1A1A1A;
     }
-    &__content{
+    .v-alert__content{
       font-size: 14px;
       font-weight: 400;
       color: #1A1A1A;
     }
-    &__close .v-btn{
+    .v-alert__close .v-btn{
       color: #000;
     }
     &--variant-tonal{
