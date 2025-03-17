@@ -31,19 +31,19 @@
 
 <script setup>
   import { computed, ref } from 'vue'
-  import Btn from './components/Btn.vue'
   import EmptyState from './components/empty-state.vue'
+  import Alert from './components/alert.vue'
 
   const items = ref([
-    { name: 'Btn (按钮)', id: 'Btn' },
     { name: 'EmptyState (空状态)', id: 'EmptyState' },
+    { name: 'Alert (警告框)', id: 'Alert' },
   ])
 
   const list = {
-    Btn,
     EmptyState,
+    Alert,
   }
-  const key = ref('EmptyState')
+  const key = ref('Alert')
 
   const select = ({ id }) => {
     key.value = id
