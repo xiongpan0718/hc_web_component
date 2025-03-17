@@ -1,14 +1,5 @@
 .v-theme--michelin{
   .v-radio-group{
-    .v-selection-control-group{
-      row-gap: 8px;
-      &.v-selection-control-group--inline{
-        column-gap: 20px;
-      }
-      .v-selection-control--density-default{
-        --v-selection-control-size:24
-      }
-    }
 
     .v-selection-control{
       &.v-selection-control--disabled{
