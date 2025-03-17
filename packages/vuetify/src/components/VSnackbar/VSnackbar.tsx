@@ -3,6 +3,7 @@ import './VSnackbar.sass'
 
 // Components
 import { VDefaultsProvider } from '@/components/VDefaultsProvider'
+import { VIcon } from '@/components/VIcon'
 import { VOverlay } from '@/components/VOverlay'
 import { makeVOverlayProps } from '@/components/VOverlay/VOverlay'
 import { VProgressLinear } from '@/components/VProgressLinear'
@@ -32,6 +33,7 @@ type VSnackbarSlots = {
   default: never
   actions: { isActive: Ref<boolean> }
   text: never
+  icon: never
 }
 
 function useCountdown (milliseconds: () => number) {
@@ -79,7 +81,7 @@ export const makeVSnackbarProps = propsFactory({
     default: 5000,
   },
   vertical: Boolean,
-
+  icon: String,
   ...makeLocationProps({ location: 'bottom' } as const),
   ...makePositionProps(),
   ...makeRoundedProps(),
@@ -254,6 +256,9 @@ export const VSnackbar = genericComponent<VSnackbarSlots>()({
               role="status"
               aria-live="polite"
             >
+              { slots.icon?.() ?? (
+                <VIcon icon={ props.icon }></VIcon>
+              )}
               { slots.text?.() ?? props.text }
 
               { slots.default?.() }

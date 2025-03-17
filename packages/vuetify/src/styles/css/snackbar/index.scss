@@ -11,6 +11,9 @@
     }
     .v-snackbar__content{
       padding: 12px;
+      .v-icon{
+        margin-right: 8px;
+      }
     }
     .v-snackbar__wrapper{
       background: rgba(0, 0, 0, 0.60);

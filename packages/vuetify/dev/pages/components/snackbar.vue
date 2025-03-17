@@ -6,9 +6,9 @@
       Open Snackbar
     </v-btn>
     <v-snackbar
+      icon="$hollowInfo"
       v-model="snackbar"
     >
-      <v-icon icon="$hollowInfo" />
       {{ text }}
       <template #actions>
         <v-btn
@@ -27,7 +27,7 @@
     </v-snackbar>
   </div>
 </template>
-
+<!-- 增加icon属性用来增加content前的icon显示 -->
 <script setup>
   import { ref } from 'vue'
   const snackbar = ref(true)
