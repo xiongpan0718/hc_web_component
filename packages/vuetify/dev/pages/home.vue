@@ -34,19 +34,22 @@
   import EmptyState from './components/empty-state.vue'
   import Alert from './components/alert.vue'
   import Snackbar from './components/snackbar.vue'
+  import Radio from './components/radio.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState' },
     { name: 'Alert (警告框)', id: 'Alert' },
     { name: 'Snackbar (消息条)', id: 'Snackbar' },
+    { name: 'Radio (单选按钮)', id: 'Radio' },
   ])
 
   const list = {
     EmptyState,
     Alert,
-    Snackbar
+    Snackbar,
+    Radio,
   }
-  const key = ref('Snackbar')
+  const key = ref('Radio')
 
   const select = ({ id }) => {
     key.value = id
