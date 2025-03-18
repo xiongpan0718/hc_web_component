@@ -35,12 +35,14 @@
   import Alert from './components/alert.vue'
   import Snackbar from './components/snackbar.vue'
   import Radio from './components/radio.vue'
+  import AutoComplete from './components/autocomplete.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState' },
     { name: 'Alert (警告框)', id: 'Alert' },
     { name: 'Snackbar (消息条)', id: 'Snackbar' },
     { name: 'Radio (单选按钮)', id: 'Radio' },
+    { name: 'AutoComplete (自动补全)', id: 'AutoComplete' },
   ])
 
   const list = {
@@ -48,8 +50,9 @@
     Alert,
     Snackbar,
     Radio,
+    AutoComplete,
   }
-  const key = ref('Radio')
+  const key = ref('AutoComplete')
 
   const select = ({ id }) => {
     key.value = id

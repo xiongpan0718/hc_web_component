@@ -1,0 +1,25 @@
+.v-theme--michelin{
+  &.v-autocomplete{
+    --v-input-control-height:40;
+    .v-field__input{
+      padding: 8px 6px 8px 8px;
+    }
+    .v-field--focused{
+      .v-field__outline{
+        color: #27509B !important;
+      }
+    }
+    &.v-input{
+      .v-input__control{
+        min-height: 40px;
+      }
+      &.v-input--disabled{
+        .v-input__control{
+          background: #F2F2F2;
+        }
+      }
+    }
+
+  }
+}
+
