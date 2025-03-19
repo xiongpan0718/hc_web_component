@@ -68,7 +68,6 @@
       <h4>No Data</h4>
       <v-autocomplete
         :items="[]"
-        label="autocomplete"
         no-data-text="No result"
         placeholder="please enter"
         variant="outlined"
