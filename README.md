@@ -34,7 +34,10 @@
 
 <p>Vuetify 库位于 packages/vuetify 中。</p>
 <p>cd packages/vuetify 进入项目</p>
-<p>在 packages/vuetify/dev 中你将找到一个 Playground.vue 文件；这是开发测试页面</p>
+<p>在 packages/vuetify/dev 有pages文件夹</p>
+<p>components:各组件demo，以组件名命名</p>
+<p>home：引入在components组件，补充items、list变量</p>
+<p>注：items中的id必须和list的key保持一致，以及引入组件的变量一致</p>
 <p>pnpm dev 将在 localhost:8090 上启动一个开发服务器，并加载此文件。</p>
 
 <h2>目录结构</h2>

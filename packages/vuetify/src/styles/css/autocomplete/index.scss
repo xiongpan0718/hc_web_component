@@ -3,6 +3,7 @@
     --v-input-control-height:40;
     .v-field__input{
       padding: 8px 6px 8px 8px;
+      min-height: 40px;
     }
     .v-field--focused{
       .v-field__outline{
