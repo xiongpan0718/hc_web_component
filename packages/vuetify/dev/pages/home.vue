@@ -35,12 +35,14 @@
   import Alert from './components/alert.vue'
   import Snackbar from './components/snackbar.vue'
   import Radio from './components/radio.vue'
+  import Chip from './components/chip.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState' },
     { name: 'Alert (警告框)', id: 'Alert' },
     { name: 'Snackbar (消息条)', id: 'Snackbar' },
     { name: 'Radio (单选按钮)', id: 'Radio' },
+    { name: 'Chip (纸片)', id: 'Chip' },
   ])
 
   const list = {
@@ -48,6 +50,7 @@
     Alert,
     Snackbar,
     Radio,
+    Chip,
   }
   const key = ref('Radio')
 
