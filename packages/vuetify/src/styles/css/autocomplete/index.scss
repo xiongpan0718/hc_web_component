@@ -1,26 +1,77 @@
 .v-theme--michelin{
   &.v-autocomplete{
-    --v-input-control-height:40;
+    --v-input-control-height:44;
     .v-field__input{
-      padding: 8px 6px 8px 8px;
-      min-height: 40px;
+      padding: 10px 6px 10px 10px;
+      min-height: 44px;
+      input{
+        color: #1A1A1A;
+      }
     }
     .v-field--focused{
       .v-field__outline{
         color: #27509B !important;
       }
     }
+
     &.v-input{
       .v-input__control{
-        min-height: 40px;
+        min-height: 44px;
+        color: #ccc;
+
       }
+
       &.v-input--disabled{
         .v-input__control{
           background: #F2F2F2;
         }
       }
+      &.v-text-field{
+        .v-input__details{
+          padding-left: 0;
+        }
+      }
+    }
+    .v-autocomplete__selection,.v-autocomplete__selection-text,.v-field__clearable,.v-field__append-inner,.v-field__prepend-inner,.v-input__prepend,.v-input__append{
+      color: #1A1A1A !important;
     }
 
+    .v-field--error:not(.v-field--disabled) {
+      .v-field__clearable,.v-field__prepend-inner,.v-field__append-inner{
+        & > .v-icon{
+          color: #1A1A1A;
+        }
+      }
+    }
+
+    .v-chip{
+      &.v-chip--variant-tonal{
+        .v-chip__underlay{
+          color: #F2F2F2;
+          opacity: 1;
+        }
+      }
+      .v-chip__content{
+        color: #1A1A1A;
+        font-size: 14px;
+        z-index: 1;
+      }
+      .v-chip__close{
+        .v-icon{
+          color: #1A1A1A;
+        }
+      }
+    }
+  }
+  .v-autocomplete__content{
+    .v-list{
+      .v-list-item--density-default{
+        .v-selection-control__input > .v-icon{
+          color: #1A1A1A;
+          opacity: 1 !important;
+        }
+      }
+    }
   }
 }
 
