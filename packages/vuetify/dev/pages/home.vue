@@ -17,7 +17,11 @@
           item-title="name"
           item-value="id"
           @click:select="select"
-        />
+        >
+          <template #prepend="{item}">
+            <v-icon :color="item.color" :icon="item.icon" />
+          </template>
+        </v-list>
       </v-card>
     </v-navigation-drawer>
     <v-app-bar :title="name" />
@@ -38,11 +42,11 @@
   import AutoComplete from './components/autocomplete.vue'
 
   const items = ref([
-    { name: 'EmptyState (空状态)', id: 'EmptyState' },
-    { name: 'Alert (警告框)', id: 'Alert' },
-    { name: 'Snackbar (消息条)', id: 'Snackbar' },
-    { name: 'Radio (单选按钮)', id: 'Radio' },
-    { name: 'AutoComplete (自动补全)', id: 'AutoComplete' },
+    { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: '#615ced' },
+    { name: 'Alert (警告框)', id: 'Alert', icon: '$delimiter', color: '#615ced' },
+    { name: 'Snackbar (消息条)', id: 'Snackbar', icon: '$delimiter', color: '#615ced' },
+    { name: 'Radio (单选按钮)', id: 'Radio', icon: '$delimiter', color: '#615ced' },
+    { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {

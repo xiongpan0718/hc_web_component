@@ -65,7 +65,12 @@
   }
   .v-autocomplete__content{
     .v-list{
-      .v-list-item--density-default{
+      .v-list-item--active{
+        .v-selection-control__input > .v-icon{
+          color: #27509B !important;
+        }
+      }
+      .v-list-item--density-default:not(.v-selection-control--dirty){
         .v-selection-control__input > .v-icon{
           color: #1A1A1A;
           opacity: 1 !important;

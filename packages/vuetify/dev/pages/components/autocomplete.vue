@@ -76,7 +76,6 @@
       />
     </div>
   </div>
-  <v-checkbox label="Checkbox"></v-checkbox>
   <div style="margin-top: 50px;">
     <h3>无法修改的样式</h3>
     <p>1、无法修改label的位置</p>

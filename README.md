@@ -66,7 +66,7 @@
 <p>directives：指令</p>
 <p>iconsets：icon</p>
 
-<h2>需要修改源码部分</h2>
+<h2>需要修改源码部分,同时也需要在每个组件demo中备注</h2>
 <h3>Icons</h3>
 <p>1.目前不支持不支持组件库自身内置icon图标，无法做到内置icon</p>
 <h3>EmptyState</h3>
