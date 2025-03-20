@@ -36,6 +36,7 @@
   import Snackbar from './components/snackbar.vue'
   import Radio from './components/radio.vue'
   import Chip from './components/chip.vue'
+  import ExpansionPanels from './components/expansion-panels.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState' },
@@ -43,6 +44,7 @@
     { name: 'Snackbar (消息条)', id: 'Snackbar' },
     { name: 'Radio (单选按钮)', id: 'Radio' },
     { name: 'Chip (纸片)', id: 'Chip' },
+    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels' },
   ])
 
   const list = {
@@ -51,6 +53,7 @@
     Snackbar,
     Radio,
     Chip,
+    ExpansionPanels,
   }
   const key = ref('Radio')
 
