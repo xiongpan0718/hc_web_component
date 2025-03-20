@@ -1,3 +1,11 @@
+<!--
+ * @Author       : yuqigong@outlook.com
+ * @Date         : 2025-03-19 10:56:30
+ * @LastEditors  : yuqigong@outlook.com
+ * @LastEditTime : 2025-03-20 18:32:51
+ * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
+ * @Description  :
+-->
 <template>
   <v-app>
     <v-navigation-drawer>
@@ -42,6 +50,7 @@
   import AutoComplete from './components/autocomplete.vue'
   import Chip from './components/chip.vue'
   import ExpansionPanels from './components/expansion-panels.vue'
+  import Button from './components/button.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: '#615ced' },
@@ -51,6 +60,7 @@
     { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#615ced' },
     { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: '#615ced' },
     { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: '#615ced' },
+    { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {
@@ -61,6 +71,7 @@
     Chip,
     ExpansionPanels,
     AutoComplete,
+    Button,
   }
   const key = ref('AutoComplete')
 

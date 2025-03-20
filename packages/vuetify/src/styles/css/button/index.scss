@@ -1,0 +1,118 @@
+.v-theme--michelin {
+  .v-btn {
+    // --v-theme-surface: 39, 80, 155;
+    // --v-theme-on-surface: 255, 255, 255;
+    --v-btn-height: 44px;
+    // --v-border-color: #27509b;
+    // --v-theme-primary-color: #27509b;
+
+    font-weight: 600;
+
+    &--icon {
+      height: var(--v-btn-height) !important;
+      width: var(--v-btn-height) !important;
+    }
+
+    &--size-small {
+      --v-btn-height: 32px;
+      // padding: 0 8px;
+    }
+
+    // &--disabled {
+    //   opacity: unset;
+    //   background: #e5e5e5 !important;
+    //   color: #999999 !important;
+
+    //   &.v-btn--variant-elevated {
+    //     .v-btn__overlay {
+    //       background: unset;
+    //     }
+    //   }
+
+    //   &.v-btn--variant-outlined {
+    //     border-color: #999;
+    //   }
+    // }
+
+    // &--elevated {
+    //   &:hover {
+    //     background: #19386f;
+    //   }
+
+    //   &:active {
+    //     background: #072660;
+    //   }
+    // }
+
+    // &--size-default {
+    //   padding: 0 12px;
+    // }
+
+    // &--variant-outlined {
+    //   border-color: var(--v-border-color);
+    //   color: var(--v-theme-primary-color);
+
+    //   &:active {
+    //     background: #aec5e5 !important;
+    //   }
+
+    //   &:hover {
+    //     background: #d4e7fa;
+    //   }
+    // }
+
+    // &--variant-text {
+    //   color: var(--v-theme-primary-color);
+
+    //   &:hover {
+    //     background: #d4e7fa;
+    //   }
+
+    //   &:active {
+    //     background: #aec5e5;
+    //   }
+
+    //   &.v-btn--disabled {
+    //     background: unset !important;
+    //   }
+    // }
+
+    // &--variant-empty {
+    //   border: 1px solid #ccc;
+    //   color: #1a1a1a;
+
+    //   &:hover {
+    //     background: #f2f2f2;
+    //   }
+
+    //   &:active {
+    //     background: #f2f2f2;
+    //     color: #999;
+    //   }
+
+    //   &.v-btn--disabled {
+    //     background: #f2f2f2 !important;
+    //     color: #999999;
+    //     border: unset;
+    //   }
+    // }
+
+    // &--variant-error {
+    //   background: #b71c1c;
+    //   color: #fff;
+
+    //   &:hover {
+    //     background: #890404;
+    //   }
+
+    //   &:active {
+    //     background: #690202;
+    //   }
+
+    //   &.v-btn--disabled {
+    //     background: #e5e5e5 !important;
+    //     color: #999999;
+    //   }
+    // }
+  }
+}
