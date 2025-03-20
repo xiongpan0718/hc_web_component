@@ -17,7 +17,11 @@
           item-title="name"
           item-value="id"
           @click:select="select"
-        />
+        >
+          <template #prepend="{item}">
+            <v-icon :color="item.color" :icon="item.icon" />
+          </template>
+        </v-list>
       </v-card>
     </v-navigation-drawer>
     <v-app-bar :title="name" />
@@ -35,16 +39,18 @@
   import Alert from './components/alert.vue'
   import Snackbar from './components/snackbar.vue'
   import Radio from './components/radio.vue'
+  import AutoComplete from './components/autocomplete.vue'
   import Chip from './components/chip.vue'
   import ExpansionPanels from './components/expansion-panels.vue'
 
   const items = ref([
-    { name: 'EmptyState (空状态)', id: 'EmptyState' },
-    { name: 'Alert (警告框)', id: 'Alert' },
-    { name: 'Snackbar (消息条)', id: 'Snackbar' },
-    { name: 'Radio (单选按钮)', id: 'Radio' },
-    { name: 'Chip (纸片)', id: 'Chip' },
-    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels' },
+    { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: '#615ced' },
+    { name: 'Alert (警告框)', id: 'Alert', icon: '$delimiter', color: '#615ced' },
+    { name: 'Snackbar (消息条)', id: 'Snackbar', icon: '$delimiter', color: '#615ced' },
+    { name: 'Radio (单选按钮)', id: 'Radio', icon: '$delimiter', color: '#615ced' },
+    { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#615ced' },
+    { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: '#615ced' },
+    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {
@@ -54,8 +60,9 @@
     Radio,
     Chip,
     ExpansionPanels,
+    AutoComplete,
   }
-  const key = ref('Radio')
+  const key = ref('AutoComplete')
 
   const select = ({ id }) => {
     key.value = id

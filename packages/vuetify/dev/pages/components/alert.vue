@@ -3,7 +3,6 @@
     <v-col cols="6">
       <v-alert
         text="Lorem ipsum dolor sit amet, consectetur adi"
-        title="I’m an alert"
         type="success"
         variant="tonal"
         closable
@@ -11,7 +10,6 @@
     </v-col>
     <v-col cols="6">
       <v-alert
-        text="Lorem ipsum dolor sit amet, consectetur adi"
         title="I’m an alert"
         type="warning"
         variant="tonal"
@@ -26,7 +24,6 @@
         title="I’m an alert"
         type="info"
         variant="tonal"
-        closable
       />
     </v-col>
     <v-col cols="6">
@@ -39,6 +36,10 @@
       />
     </v-col>
   </v-row>
+  <div style="margin-top: 50px;">
+    <h3>无法修改的样式</h3>
+    <p>1.icon图标根据类型自动显示对应状态图标，组件使用的icon和原型不匹配，无法更改</p>
+  </div>
 
 </template>
 
