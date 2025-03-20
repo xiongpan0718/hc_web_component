@@ -1,11 +1,13 @@
 .v-theme--michelin{
   .v-radio-group{
-
     .v-selection-control{
       &.v-selection-control--disabled{
         opacity: 1;
         color: #999;
         .v-icon{
+          color: #999;
+        }
+        .v-label{
           color: #999;
         }
       }
@@ -22,6 +24,9 @@
       }
       .v-selection-control__input:hover::before{
         opacity: 0.08;
+      }
+      .v-label{
+        color: #1A1A1A;
       }
     }
 

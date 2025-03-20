@@ -64,6 +64,29 @@
         }
       }
     }
+
+    &.v-input{
+      .v-field__outline{
+        --v-field-border-opacity:1;
+      }
+      .v-input__control{
+        min-height: 44px;
+        color: #ccc;
+        &:hover{
+          color: #666;
+        }
+      }
+      &.v-input--disabled{
+        .v-input__control{
+          background: #F2F2F2;
+        }
+      }
+      &.v-text-field{
+        .v-input__details{
+          padding-left: 0;
+        }
+      }
+    }
   }
   .v-autocomplete__content{
     .v-list{
