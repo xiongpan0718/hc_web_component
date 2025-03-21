@@ -2,13 +2,16 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-20 18:26:10
+ * @LastEditTime : 2025-03-21 09:57:41
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/button.vue
  * @Description  :
 -->
 <template>
   <v-expansion-panels v-model="isShow">
-    <v-expansion-panel title="Types" value="type">
+    <v-expansion-panel value="type">
+      <template #title>
+        <h2>Types</h2>
+      </template>
       <template #text>
         <v-row>
           <v-col cols="4">
@@ -37,7 +40,10 @@
       </template>
     </v-expansion-panel>
 
-    <v-expansion-panel title="Variations" value="variant">
+    <v-expansion-panel value="variant">
+      <template #title>
+        <h2>Variations</h2>
+      </template>
       <template #text>
         <v-row>
           <v-col cols="2">
@@ -75,7 +81,10 @@
       </template>
     </v-expansion-panel>
 
-    <v-expansion-panel title="Size" value="size">
+    <v-expansion-panel value="size">
+      <template #title>
+        <h2>Size</h2>
+      </template>
       <template #text>
         <v-row>
           <v-col cols="3">
@@ -90,7 +99,10 @@
       </template>
     </v-expansion-panel>
 
-    <v-expansion-panel title="States" value="state">
+    <v-expansion-panel value="state">
+      <template #title>
+        <h2>States</h2>
+      </template>
       <template #text>
         <v-row>
           <v-col cols="4" />
@@ -141,7 +153,10 @@
       </template>
     </v-expansion-panel>
 
-    <v-expansion-panel title="Icon position (type)" value="position">
+    <v-expansion-panel value="position">
+      <template #title>
+        <h2>Icon position (type)</h2>
+      </template>
       <template #text>
         <v-row>
           <v-col cols="3">
@@ -194,7 +209,10 @@
       </template>
     </v-expansion-panel>
 
-    <v-expansion-panel title="Menu button" value="menu">
+    <v-expansion-panel value="menu">
+      <template #title>
+        <h2>Menu button</h2>
+      </template>
       <template #text>
         <p class="not-supported">Menu button is not supported</p>
         <div class="description">
