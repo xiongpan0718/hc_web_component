@@ -1,5 +1,19 @@
 .v-theme--michelin{
   .v-radio-group{
+    .v-selection-control--density-default{
+      .v-selection-control__wrapper{
+        height: 36px;
+        width: 36px;
+        margin-right: 2px;
+        .v-selection-control__input{
+          height: 36px;
+          width: 36px;
+        }
+      }
+    }
+    .v-selection-control-group--inline{
+      column-gap: 26px;
+    }
     .v-selection-control{
       &.v-selection-control--disabled{
         opacity: 1;

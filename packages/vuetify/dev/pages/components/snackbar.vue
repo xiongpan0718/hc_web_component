@@ -7,6 +7,7 @@
     </v-btn>
     <v-snackbar
       icon="$hollowInfo"
+      :timeout="10000000"
       v-model="snackbar"
     >
       {{ text }}

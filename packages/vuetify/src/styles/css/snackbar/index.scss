@@ -5,12 +5,15 @@
       align-items: flex-start;
     }
     .v-snackbar__actions{
+      margin-inline-end:4px;
+      color: #fff;
       .v-btn__content{
         font-weight: 600;
       }
     }
     .v-snackbar__content{
-      padding: 12px;
+      padding: 12px 8px 12px 12px;
+      color: #fff;
       .v-icon{
         margin-right: 8px;
       }
