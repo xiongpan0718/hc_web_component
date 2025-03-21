@@ -1,10 +1,10 @@
 .v-theme--michelin {
   .v-btn {
-    // --v-theme-surface: 39, 80, 155;
-    // --v-theme-on-surface: 255, 255, 255;
+    --v-theme-surface: 39, 80, 155;
+    --v-theme-on-surface: 255, 255, 255;
     --v-btn-height: 44px;
-    // --v-border-color: #27509b;
-    // --v-theme-primary-color: #27509b;
+    --v-border-color: #27509b;
+    --v-theme-primary-color: #27509b;
 
     font-weight: 600;
 
@@ -15,67 +15,109 @@
 
     &--size-small {
       --v-btn-height: 32px;
-      // padding: 0 8px;
+      padding: 0 8px;
     }
 
-    // &--disabled {
-    //   opacity: unset;
-    //   background: #e5e5e5 !important;
-    //   color: #999999 !important;
+    &--disabled {
+      opacity: unset;
+      background: #e5e5e5 !important;
+      color: #999999 !important;
 
-    //   &.v-btn--variant-elevated {
-    //     .v-btn__overlay {
-    //       background: unset;
-    //     }
-    //   }
+      &.v-btn--variant-elevated {
+        .v-btn__overlay {
+          background: unset;
+        }
+      }
 
-    //   &.v-btn--variant-outlined {
-    //     border-color: #999;
-    //   }
-    // }
+      &.v-btn--variant-outlined {
+        border-color: #999;
+        background-color: #f2f2f2 !important;
+      }
+    }
 
-    // &--elevated {
-    //   &:hover {
-    //     background: #19386f;
-    //   }
+    &--elevated {
+      &:hover {
+        background: #19386f;
+      }
 
-    //   &:active {
-    //     background: #072660;
-    //   }
-    // }
+      &:active {
+        background: #072660;
+      }
 
-    // &--size-default {
-    //   padding: 0 12px;
-    // }
+      @at-root {
+        .bg-red {
+          background: #b71c1c !important;
 
-    // &--variant-outlined {
-    //   border-color: var(--v-border-color);
-    //   color: var(--v-theme-primary-color);
+          &:hover {
+            background: #890404 !important;
+          }
 
-    //   &:active {
-    //     background: #aec5e5 !important;
-    //   }
+          &:active {
+            background: #690202 !important;
+          }
 
-    //   &:hover {
-    //     background: #d4e7fa;
-    //   }
-    // }
+          &.v-btn--disabled {
+            background: #e5e5e5 !important;
+            color: #999999;
+          }
+        }
+      }
+    }
 
-    // &--variant-text {
-    //   color: var(--v-theme-primary-color);
+    &--size-default {
+      padding: 0 12px;
+    }
 
-    //   &:hover {
-    //     background: #d4e7fa;
-    //   }
+    &--variant-outlined {
+      border-color: var(--v-border-color);
+      color: var(--v-theme-primary-color);
 
-    //   &:active {
-    //     background: #aec5e5;
-    //   }
+      &:active {
+        background: #aec5e5;
+      }
 
-    //   &.v-btn--disabled {
-    //     background: unset !important;
-    //   }
-    // }
+      &:hover {
+        background: #d4e7fa;
+      }
+
+      @at-root {
+        .text-grey {
+          border-color: #cccccc !important;
+          color: #1A1A1A !important;
+
+          &:hover {
+            background: #f2f2f2 !important;
+          }
+
+          &:active {
+            background: #f2f2f2 !important;
+            color: #999 !important;
+          }
+
+          &.v-btn--disabled {
+            background: #f2f2f2 !important;
+            color: #999999 !important;
+            border: unset !important;
+          }
+        }
+      }
+    }
+
+    &--variant-text {
+      color: var(--v-theme-primary-color);
+
+      &:hover {
+        background: #d4e7fa;
+      }
+
+      &:active {
+        background: #aec5e5;
+      }
+
+      &.v-btn--disabled {
+        background: unset !important;
+      }
+    }
 
     // &--variant-empty {
     //   border: 1px solid #ccc;
