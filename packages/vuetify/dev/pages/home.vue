@@ -1,3 +1,11 @@
+<!--
+ * @Author       : yuqigong@outlook.com
+ * @Date         : 2025-03-19 10:56:30
+ * @LastEditors  : yuqigong@outlook.com
+ * @LastEditTime : 2025-03-21 15:36:11
+ * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
+ * @Description  :
+-->
 <template>
   <v-app>
     <v-navigation-drawer>
@@ -44,6 +52,7 @@
   import ExpansionPanels from './components/expansion-panels.vue'
   import Button from './components/button.vue'
   import Badge from './components/badge.vue'
+  import Divider from './components/divider.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -55,6 +64,7 @@
     { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'yellow' },
     { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
     { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: '#615ced' },
+    { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {
@@ -67,6 +77,7 @@
     AutoComplete,
     Button,
     Badge,
+    Divider,
   }
   const key = ref('AutoComplete')
 
