@@ -12,18 +12,10 @@
     >
       {{ text }}
       <template #actions>
-        <v-btn
-          variant="text"
-          @click="snackbar = false"
-        >
-          action
-        </v-btn>
-        <v-btn
-          variant="text"
-          @click="snackbar = false"
-        >
-          close
-        </v-btn>
+        <div style="display: flex;column-gap: 24px;font-weight: 600">
+          <div>ACTION</div>
+          <div>CLOSE</div>
+        </div>
       </template>
     </v-snackbar>
   </div>

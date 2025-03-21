@@ -44,13 +44,13 @@
   import ExpansionPanels from './components/expansion-panels.vue'
 
   const items = ref([
-    { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: '#615ced' },
-    { name: 'Alert (警告框)', id: 'Alert', icon: '$delimiter', color: '#615ced' },
-    { name: 'Snackbar (消息条)', id: 'Snackbar', icon: '$delimiter', color: '#615ced' },
-    { name: 'Radio (单选按钮)', id: 'Radio', icon: '$delimiter', color: '#615ced' },
+    { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
+    { name: 'Alert (警告框)', id: 'Alert', icon: '$delimiter', color: 'green' },
+    { name: 'Snackbar (消息条)', id: 'Snackbar', icon: '$delimiter', color: 'green' },
+    { name: 'Radio (单选按钮)', id: 'Radio', icon: '$delimiter', color: 'green' },
     { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#b80b0b' },
-    { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: '#615ced' },
-    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: '#615ced' },
+    { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: 'green' },
+    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'yellow' },
   ])
 
   const list = {

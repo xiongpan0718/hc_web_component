@@ -6,7 +6,7 @@
     }
     &:not(.v-empty-state--layout--horizontal){
       .v-empty-state__actions{
-        padding-top: 24px;
+        padding: 24px 16px;
       }
       .v-empty-state__title{
         font-size: 32px;
