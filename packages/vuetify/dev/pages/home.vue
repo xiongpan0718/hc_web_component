@@ -42,6 +42,8 @@
   import AutoComplete from './components/autocomplete.vue'
   import Chip from './components/chip.vue'
   import ExpansionPanels from './components/expansion-panels.vue'
+  import Button from './components/button.vue'
+  import Badge from './components/badge.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -51,6 +53,8 @@
     { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#b80b0b' },
     { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: 'green' },
     { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'yellow' },
+    { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
+    { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {
@@ -61,6 +65,8 @@
     Chip,
     ExpansionPanels,
     AutoComplete,
+    Button,
+    Badge,
   }
   const key = ref('AutoComplete')
 
