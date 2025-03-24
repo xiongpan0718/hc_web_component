@@ -118,7 +118,8 @@ export function installVuetify (app: App) {
         michelin: {
           colors: {
             'surface-variant-alt': '#dedede',
-            primary: '#1867c0',
+            primary: '#fff',
+            surface:'#fff',
             secondary: '#5CBBF6',
             tertiary: '#E57373',
             accent: '#005CAF',
