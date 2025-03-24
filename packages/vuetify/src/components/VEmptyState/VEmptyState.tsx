@@ -67,7 +67,7 @@ export const makeVEmptyStateProps = propsFactory({
   to: String,
   layout: {
     type: String as PropType<'horizontal' | 'vertical'>,
-    default: 'horizontal',
+    default: 'vertical',
   },
 
   ...makeComponentProps(),
