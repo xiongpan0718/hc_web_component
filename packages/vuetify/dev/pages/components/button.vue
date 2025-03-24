@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-21 17:36:22
+ * @LastEditTime : 2025-03-24 11:01:53
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/button.vue
  * @Description  :
 -->
@@ -39,6 +39,48 @@
         </v-row>
       </template>
     </v-expansion-panel> -->
+
+    <v-expansion-panel value="icon">
+      <template #title>
+        <h2>Icons</h2>
+      </template>
+      <template #text>
+        <v-row>
+          <v-col cols="2">
+            <v-btn icon="mdi-plus" variant="elevated" />
+          </v-col>
+          <v-col cols="2">
+            <v-btn icon="mdi-plus" variant="outlined" />
+          </v-col>
+          <v-col cols="2">
+            <v-btn icon="mdi-plus" variant="text" />
+          </v-col>
+          <v-col cols="2">
+            <v-btn color="grey" icon="mdi-plus" variant="outlined" />
+          </v-col>
+          <v-col cols="2">
+            <v-btn color="red" icon="mdi-plus" variant="elevated" />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="2">
+            <v-btn icon="mdi-plus" variant="elevated" disabled />
+          </v-col>
+          <v-col cols="2">
+            <v-btn icon="mdi-plus" variant="outlined" disabled />
+          </v-col>
+          <v-col cols="2">
+            <v-btn icon="mdi-plus" variant="text" disabled />
+          </v-col>
+          <v-col cols="2">
+            <v-btn color="grey" icon="mdi-plus" variant="outlined" disabled />
+          </v-col>
+          <v-col cols="2">
+            <v-btn color="red" icon="mdi-plus" variant="elevated" disabled />
+          </v-col>
+        </v-row>
+      </template>
+    </v-expansion-panel>
 
     <v-expansion-panel value="variant">
       <template #title>
@@ -292,7 +334,7 @@
 
 <script setup>
   import { ref } from 'vue'
-  const isShow = ref(['type', 'variant', 'size', 'state', 'position', 'menu'])
+  const isShow = ref(['type', 'icon', 'variant', 'size', 'state', 'position', 'menu'])
 </script>
 
 <style scoped lang="scss">
