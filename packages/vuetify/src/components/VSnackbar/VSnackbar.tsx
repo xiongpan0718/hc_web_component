@@ -257,7 +257,7 @@ export const VSnackbar = genericComponent<VSnackbarSlots>()({
               aria-live="polite"
             >
               { slots.icon?.() ?? (
-                <VIcon icon={ props.icon }></VIcon>
+                props.icon && <VIcon icon={ props.icon } />
               )}
               { slots.text?.() ?? props.text }
 
