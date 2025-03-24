@@ -113,7 +113,19 @@ export function installVuetify (app: App) {
       aliases,
     },
     theme: {
+      defaultTheme:'michelin',
       themes: {
+        michelin: {
+          colors: {
+            'surface-variant-alt': '#dedede',
+            primary: '#1867c0',
+            secondary: '#5CBBF6',
+            tertiary: '#E57373',
+            accent: '#005CAF',
+            quarternary: '#B0D1E8',
+            'surface-bright': '#fafafa',
+          },
+        },
         light: {
           colors: {
             'surface-variant-alt': '#dedede',

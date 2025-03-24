@@ -66,5 +66,10 @@
       icon: 'mdi-desktop-tower-monitor',
       value: 'system',
     },
+    {
+      text: t('michelin'),
+      icon: 'mdi-desktop-tower-monitor',
+      value: 'michelin',
+    },
   ]
 </script>

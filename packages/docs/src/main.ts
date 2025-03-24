@@ -18,6 +18,7 @@ import { useLocaleStore } from '@/stores/locale'
 import { installPwa } from '@/plugins/pwa'
 import { useUserStore } from '@vuetify/one'
 
+import './styles/index.scss'
 // App
 import App from './App.vue'
 
