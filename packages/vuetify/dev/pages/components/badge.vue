@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-21 16:30:01
+ * @LastEditTime : 2025-03-24 11:21:58
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/badge.vue
  * @Description  :
 -->
@@ -16,15 +16,15 @@
         <v-row>
           <v-col cols="4">
             <p>Icon</p>
-            <v-badge icon="mdi-plus" />
+            <v-badge color="grey" icon="mdi-plus" />
           </v-col>
           <v-col cols="4">
             <p>number</p>
-            <v-badge content="6" />
+            <v-badge color="grey" content="6" />
           </v-col>
           <v-col cols="4">
             <p>Dot</p>
-            <v-badge dot />
+            <v-badge color="grey" dot />
           </v-col>
         </v-row>
       </template>
@@ -112,21 +112,21 @@
         <v-row>
           <v-col cols="3">
             <p>0</p>
-            <v-badge content="0" />
+            <v-badge color="grey" content="0" />
           </v-col>
           <v-col cols="3">
             <p>99</p>
-            <v-badge content="99" />
+            <v-badge color="grey" content="99" />
           </v-col>
           <v-col cols="3">
             <p>>99</p>
-            <v-badge content="999" max="99" />
+            <v-badge color="grey" content="999" max="99" />
           </v-col>
         </v-row>
       </template>
     </v-expansion-panel>
 
-    <v-expansion-panel value="usage">
+    <!-- <v-expansion-panel value="usage">
       <template #title>
         <h2>Usage</h2>
       </template>
@@ -160,7 +160,7 @@
           </v-col>
         </v-row>
       </template>
-    </v-expansion-panel>
+    </v-expansion-panel> -->
   </v-expansion-panels>
 </template>
 
