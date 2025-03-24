@@ -15,7 +15,7 @@
         <v-list>
           <v-list-item>
             <v-list-item-title>
-              <h3>Veutify</h3>
+              <h3>Vuetify</h3>
             </v-list-item-title>
           </v-list-item>
         </v-list>
