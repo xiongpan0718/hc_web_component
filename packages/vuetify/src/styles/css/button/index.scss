@@ -30,7 +30,7 @@
       }
 
       &.v-btn--variant-outlined {
-        border-color: #999;
+        border-color: #ccc;
         background-color: #f2f2f2 !important;
       }
     }
@@ -45,6 +45,24 @@
       }
 
       @at-root {
+        .text-red {
+          background: #b71c1c !important;
+          color: #fff !important;
+
+          &:hover {
+            background: #890404  !important;
+          }
+
+          &:active {
+            background: #690202 !important;
+          }
+
+          &.v-btn--disabled {
+            background: #e5e5e5 !important;
+            color: #999999;
+          }
+        }
+
         .bg-red {
           background: #b71c1c !important;
 
@@ -119,42 +137,42 @@
       }
     }
 
-    // &--variant-empty {
-    //   border: 1px solid #ccc;
-    //   color: #1a1a1a;
+    &--variant-empty {
+      border: 1px solid #ccc;
+      color: #1a1a1a;
 
-    //   &:hover {
-    //     background: #f2f2f2;
-    //   }
+      &:hover {
+        background: #f2f2f2;
+      }
 
-    //   &:active {
-    //     background: #f2f2f2;
-    //     color: #999;
-    //   }
+      &:active {
+        background: #f2f2f2;
+        color: #999;
+      }
 
-    //   &.v-btn--disabled {
-    //     background: #f2f2f2 !important;
-    //     color: #999999;
-    //     border: unset;
-    //   }
-    // }
+      &.v-btn--disabled {
+        background: #f2f2f2 !important;
+        color: #999999;
+        border: unset;
+      }
+    }
 
-    // &--variant-error {
-    //   background: #b71c1c;
-    //   color: #fff;
+    &--variant-error {
+      background: #b71c1c;
+      color: #fff;
 
-    //   &:hover {
-    //     background: #890404;
-    //   }
+      &:hover {
+        background: #890404;
+      }
 
-    //   &:active {
-    //     background: #690202;
-    //   }
+      &:active {
+        background: #690202;
+      }
 
-    //   &.v-btn--disabled {
-    //     background: #e5e5e5 !important;
-    //     color: #999999;
-    //   }
-    // }
+      &.v-btn--disabled {
+        background: #e5e5e5 !important;
+        color: #999999;
+      }
+    }
   }
 }
