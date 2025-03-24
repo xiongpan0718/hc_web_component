@@ -107,7 +107,7 @@ export const VExpansionPanelTitle = genericComponent<VExpansionPanelTitleSlots>(
       >
         <span class="v-expansion-panel-title__overlay" />
 
-        { slots.default?.(slotProps.value) }
+        <span class="v-custom-pannel__title">{ slots.default?.(slotProps.value) }</span>
 
         { !props.hideActions && (
           <VDefaultsProvider
