@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-21 13:15:22
+ * @LastEditTime : 2025-03-21 16:30:01
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/badge.vue
  * @Description  :
 -->
@@ -55,6 +55,50 @@
           <v-col cols="2">
             <p>Grey</p>
             <v-badge color="grey" dot />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="2">
+            <p>Primary(blue)</p>
+            <v-badge color="blue" icon="mdi-plus" />
+          </v-col>
+          <v-col cols="2">
+            <p>Green</p>
+            <v-badge color="green" icon="mdi-plus" />
+          </v-col>
+          <v-col cols="2">
+            <p>Red</p>
+            <v-badge color="red" icon="mdi-plus" />
+          </v-col>
+          <v-col cols="2">
+            <p>Yellow</p>
+            <v-badge color="yellow" icon="mdi-plus" />
+          </v-col>
+          <v-col cols="2">
+            <p>Grey</p>
+            <v-badge color="grey" icon="mdi-plus" />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="2">
+            <p>Primary(blue)</p>
+            <v-badge color="blue" content="14" />
+          </v-col>
+          <v-col cols="2">
+            <p>Green</p>
+            <v-badge color="green" content="14" />
+          </v-col>
+          <v-col cols="2">
+            <p>Red</p>
+            <v-badge color="red" content="14" />
+          </v-col>
+          <v-col cols="2">
+            <p>Yellow</p>
+            <v-badge color="yellow" content="14" />
+          </v-col>
+          <v-col cols="2">
+            <p>Grey</p>
+            <v-badge color="grey" content="14" />
           </v-col>
         </v-row>
       </template>
