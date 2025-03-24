@@ -61,7 +61,7 @@
     { name: 'Radio (单选按钮)', id: 'Radio', icon: '$delimiter', color: 'green' },
     { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#b80b0b' },
     { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: 'green' },
-    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'yellow' },
+    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'green' },
     { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
     { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: '#615ced' },
     { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: '#615ced' },
