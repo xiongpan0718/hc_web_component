@@ -32,10 +32,6 @@
       </div>
     </div>
   </div>
-  <div style="margin-top: 50px;">
-    <h3>无法修改的样式</h3>
-    <p>1、无法修改hover上去的头部背景</p>
-  </div>
 </template>
 
 <script setup>
