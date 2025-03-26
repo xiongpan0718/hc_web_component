@@ -9,10 +9,6 @@
       small
     </div>
     <div class="icons">
-      <v-icon icon="$plus" size="dense" />
-      default
-    </div>
-    <div class="icons">
       <v-icon icon="$plus" size="default" />
       default
     </div>
