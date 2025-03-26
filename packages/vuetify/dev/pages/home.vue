@@ -53,6 +53,9 @@
   import Button from './components/button.vue'
   import Badge from './components/badge.vue'
   import Divider from './components/divider.vue'
+  import Tooltips from './components/tooltips.vue'
+  import Textareas from './components/textareas.vue'
+  import Tabs from './components/tabs.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -65,6 +68,9 @@
     { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
     { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: '#615ced' },
     { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: '#615ced' },
+    { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: '#615ced' },
+    { name: 'Textareas (多行文本框)', id: 'Textareas' },
+    { name: 'Tabs (选项卡)', id: 'Tabs' },
   ])
 
   const list = {
@@ -78,6 +84,9 @@
     Button,
     Badge,
     Divider,
+    Tooltips,
+    Textareas,
+    Tabs,
   }
   const key = ref('AutoComplete')
 
