@@ -18,6 +18,14 @@
       padding: 0 8px;
     }
 
+    &__append {
+      margin-inline: calc(var(--v-btn-height) / 7.333) 0;
+    }
+
+    &__prepend {
+      margin-inline: 0 calc(var(--v-btn-height) / 7.333);
+    }
+
     &--disabled {
       opacity: unset;
       background: #e5e5e5 !important;
@@ -36,6 +44,9 @@
     }
 
     &--elevated {
+
+      box-shadow: unset;
+
       &:hover {
         background: #19386f;
       }
