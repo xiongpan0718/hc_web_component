@@ -56,6 +56,7 @@
   import Tooltips from './components/tooltips.vue'
   import Textareas from './components/textareas.vue'
   import Tabs from './components/tabs.vue'
+  import Icons from './components/icons.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -63,6 +64,7 @@
     { name: 'Snackbar (消息条)', id: 'Snackbar', icon: '$delimiter', color: 'green' },
     { name: 'Radio (单选按钮)', id: 'Radio', icon: '$delimiter', color: 'green' },
     { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#b80b0b' },
+    { name: 'Icons (图标)', id: 'Icons', icon: '$delimiter', color: 'green' },
     { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: 'green' },
     { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'green' },
     { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
@@ -87,8 +89,9 @@
     Tooltips,
     Textareas,
     Tabs,
+    Icons,
   }
-  const key = ref('AutoComplete')
+  const key = ref('Icons')
 
   const select = ({ id }) => {
     key.value = id
