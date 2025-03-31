@@ -2,13 +2,13 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-24 11:01:53
+ * @LastEditTime : 2025-03-27 17:26:00
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/button.vue
  * @Description  :
 -->
 <template>
   <v-expansion-panels v-model="isShow">
-    <!-- <v-expansion-panel value="type">
+    <v-expansion-panel value="type">
       <template #title>
         <h2>Types</h2>
       </template>
@@ -38,7 +38,7 @@
           </v-col>
         </v-row>
       </template>
-    </v-expansion-panel> -->
+    </v-expansion-panel>
 
     <v-expansion-panel value="icon">
       <template #title>
