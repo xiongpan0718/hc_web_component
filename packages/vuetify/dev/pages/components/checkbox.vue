@@ -1,0 +1,119 @@
+<!--
+ * @Author       : yuqigong@outlook.com
+ * @Date         : 2025-03-19 14:05:55
+ * @LastEditors  : yuqigong@outlook.com
+ * @LastEditTime : 2025-04-01 21:55:20
+ * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/checkbox.vue
+ * @Description  :
+-->
+<template>
+  <v-expansion-panels v-model="isShow">
+    <v-expansion-panel value="orientation">
+      <template #title>
+        <h2>Orientation</h2>
+      </template>
+      <template #text>
+        <v-row>
+          <v-col cols="3">
+            Horizontal
+          </v-col>
+          <v-col cols="3">
+            <v-checkbox :model-value="false" />
+          </v-col>
+          <v-col cols="3">
+            <v-checkbox :model-value="false" />
+          </v-col>
+          <v-col cols="3">
+            <v-checkbox :model-value="false" />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="3">
+            Vertical
+          </v-col>
+          <v-col cols="9">
+            <v-row>
+              <v-col cols="3">
+                <v-checkbox :model-value="true" />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="3">
+                <v-checkbox :model-value="true" />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="3">
+                <v-checkbox :model-value="true" />
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </template>
+    </v-expansion-panel>
+    <v-expansion-panel value="state">
+      <template #title>
+        <h2>States</h2>
+      </template>
+      <template #text>
+        <v-row>
+          <v-col cols="4"> on </v-col>
+          <v-col cols="4"> off </v-col>
+          <v-col cols="4"> indeterminate </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="4">
+            <v-checkbox :model-value="true" />
+          </v-col>
+          <v-col cols="4">
+            <v-checkbox :model-value="false" />
+          </v-col>
+          <v-col cols="4">
+            <v-checkbox indeterminate />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="4"> on disabled </v-col>
+          <v-col cols="4"> off disabled </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="4">
+            <v-checkbox :model-value="true" disabled />
+          </v-col>
+          <v-col cols="4">
+            <v-checkbox :model-value="false" disabled />
+          </v-col>
+          <v-col cols="4">
+            <v-checkbox disabled indeterminate />
+          </v-col>
+        </v-row>
+      </template>
+    </v-expansion-panel>
+  </v-expansion-panels>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  const isShow = ref(['type', 'orientation', 'variant', 'size', 'state', 'position', 'menu'])
+</script>
+
+<style scoped lang="scss">
+.v-expansion-panels {
+  margin-bottom: 10px;
+}
+
+.btn-control {
+  border-color: #cccccc;
+  background-color: #f2f2f2 !important;
+}
+
+.description {
+  padding: 15px;
+  color: #ff0000;
+}
+
+.not-supported {
+  padding: 15px 0;
+  color: #ff0000;
+}
+</style>
