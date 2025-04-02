@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-01 21:55:20
+ * @LastEditTime : 2025-04-02 11:37:47
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/checkbox.vue
  * @Description  :
 -->
@@ -14,39 +14,23 @@
       </template>
       <template #text>
         <v-row>
+          <v-col cols="3"> Horizontal </v-col>
           <v-col cols="3">
-            Horizontal
+            <v-checkbox :model-value="true" label="Checkbox label" />
           </v-col>
           <v-col cols="3">
-            <v-checkbox :model-value="false" />
+            <v-checkbox :model-value="true" label="Checkbox label" />
           </v-col>
           <v-col cols="3">
-            <v-checkbox :model-value="false" />
-          </v-col>
-          <v-col cols="3">
-            <v-checkbox :model-value="false" />
+            <v-checkbox :model-value="true" label="Checkbox label" />
           </v-col>
         </v-row>
         <v-row>
-          <v-col cols="3">
-            Vertical
-          </v-col>
+          <v-col cols="3"> Vertical </v-col>
           <v-col cols="9">
-            <v-row>
-              <v-col cols="3">
-                <v-checkbox :model-value="true" />
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="3">
-                <v-checkbox :model-value="true" />
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="3">
-                <v-checkbox :model-value="true" />
-              </v-col>
-            </v-row>
+            <v-checkbox :model-value="true" label="Checkbox label" />
+            <v-checkbox :model-value="true" label="Checkbox label" />
+            <v-checkbox :model-value="true" label="Checkbox label" />
           </v-col>
         </v-row>
       </template>
@@ -57,34 +41,33 @@
       </template>
       <template #text>
         <v-row>
-          <v-col cols="4"> on </v-col>
-          <v-col cols="4"> off </v-col>
-          <v-col cols="4"> indeterminate </v-col>
+          <v-col cols="3" />
+          <v-col cols="3"> on </v-col>
+          <v-col cols="3"> off </v-col>
+          <v-col cols="3"> indeterminate </v-col>
         </v-row>
         <v-row>
-          <v-col cols="4">
-            <v-checkbox :model-value="true" />
+          <v-col cols="3"> default </v-col>
+          <v-col cols="3">
+            <v-checkbox :model-value="true" label="Checkbox label" />
           </v-col>
-          <v-col cols="4">
-            <v-checkbox :model-value="false" />
+          <v-col cols="3">
+            <v-checkbox :model-value="false" label="Checkbox label" />
           </v-col>
-          <v-col cols="4">
-            <v-checkbox indeterminate />
+          <v-col cols="3">
+            <v-checkbox label="Checkbox label" indeterminate />
           </v-col>
         </v-row>
         <v-row>
-          <v-col cols="4"> on disabled </v-col>
-          <v-col cols="4"> off disabled </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="4">
-            <v-checkbox :model-value="true" disabled />
+          <v-col cols="3"> disabled </v-col>
+          <v-col cols="3">
+            <v-checkbox :model-value="true" label="Checkbox label" disabled />
           </v-col>
-          <v-col cols="4">
-            <v-checkbox :model-value="false" disabled />
+          <v-col cols="3">
+            <v-checkbox :model-value="false" label="Checkbox label" disabled />
           </v-col>
-          <v-col cols="4">
-            <v-checkbox disabled indeterminate />
+          <v-col cols="3">
+            <v-checkbox label="Checkbox label" disabled indeterminate />
           </v-col>
         </v-row>
       </template>
@@ -94,7 +77,15 @@
 
 <script setup>
   import { ref } from 'vue'
-  const isShow = ref(['type', 'orientation', 'variant', 'size', 'state', 'position', 'menu'])
+  const isShow = ref([
+    'type',
+    'orientation',
+    'variant',
+    'size',
+    'state',
+    'position',
+    'menu',
+  ])
 </script>
 
 <style scoped lang="scss">
