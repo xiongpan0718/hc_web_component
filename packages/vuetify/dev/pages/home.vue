@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-21 15:36:11
+ * @LastEditTime : 2025-04-01 21:28:16
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -53,7 +53,11 @@
   import Button from './components/button.vue'
   import Badge from './components/badge.vue'
   import Divider from './components/divider.vue'
+  import Tooltips from './components/tooltips.vue'
+  import Textareas from './components/textareas.vue'
+  import Tabs from './components/tabs.vue'
   import Icons from './components/icons.vue'
+  import Checkbox from './components/checkbox.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -67,6 +71,10 @@
     { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
     { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: '#615ced' },
     { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: '#615ced' },
+    { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: 'green' },
+    { name: 'Textareas (多行文本框)', id: 'Textareas' },
+    { name: 'Tabs (选项卡)', id: 'Tabs' },
+    { name: 'Checkbox (复选框)', id: 'Checkbox' },
   ])
 
   const list = {
@@ -80,9 +88,13 @@
     Button,
     Badge,
     Divider,
+    Tooltips,
+    Textareas,
+    Tabs,
     Icons,
+    Checkbox,
   }
-  const key = ref('Icons')
+  const key = ref('Checkbox')
 
   const select = ({ id }) => {
     key.value = id
