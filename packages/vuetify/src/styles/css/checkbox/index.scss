@@ -1,0 +1,17 @@
+.v-theme--michelin {
+  .v-checkbox {
+    .v-selection-control__wrapper {
+      color: #27509B;
+    }
+
+    .v-selection-control--dirty {
+      .v-icon__svg {
+        fill: #27509B;
+      }
+    }
+
+    .v-icon__svg {
+      fill: #1A1A1A;
+    }
+  }
+}
