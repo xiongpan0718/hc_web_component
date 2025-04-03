@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-21 15:36:11
+ * @LastEditTime : 2025-04-02 13:53:27
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -57,6 +57,7 @@
   import Textareas from './components/textareas.vue'
   import Tabs from './components/tabs.vue'
   import Icons from './components/icons.vue'
+  import Checkbox from './components/checkbox.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -73,6 +74,7 @@
     { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: 'green' },
     { name: 'Textareas (多行文本框)', id: 'Textareas' },
     { name: 'Tabs (选项卡)', id: 'Tabs' },
+    { name: 'Checkbox (复选框)', id: 'Checkbox', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {
@@ -90,8 +92,9 @@
     Textareas,
     Tabs,
     Icons,
+    Checkbox,
   }
-  const key = ref('Icons')
+  const key = ref('Checkbox')
 
   const select = ({ id }) => {
     key.value = id

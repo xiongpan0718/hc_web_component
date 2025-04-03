@@ -56,23 +56,23 @@
       }
 
       @at-root {
-        .text-red {
-          background: #b71c1c !important;
-          color: #fff !important;
+        // .text-red {
+        //   background: #b71c1c !important;
+        //   color: #fff !important;
 
-          &:hover {
-            background: #890404  !important;
-          }
+        //   &:hover {
+        //     background: #890404  !important;
+        //   }
 
-          &:active {
-            background: #690202 !important;
-          }
+        //   &:active {
+        //     background: #690202 !important;
+        //   }
 
-          &.v-btn--disabled {
-            background: #e5e5e5 !important;
-            color: #999999;
-          }
-        }
+        //   &.v-btn--disabled {
+        //     background: #e5e5e5 !important;
+        //     color: #999999;
+        //   }
+        // }
 
         .bg-red {
           background: #b71c1c !important;

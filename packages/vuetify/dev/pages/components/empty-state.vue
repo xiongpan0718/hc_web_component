@@ -42,6 +42,9 @@
     </v-col>
   </v-row>
   <div style="margin-top: 50px;">
+    <h3>Style that cannot be modified</h3>
+    <p>1.At present, layout adjustment is not supported. The prototype needs to support up and down and left and right layouts, while the component only supports up and down layouts and does not support left and right layouts</p>
+    <p>2.Cannot support built-in status images, unable to embed custom status images related to prototypes</p>
     <h3>无法修改的样式</h3>
     <p>1.目前不支持布局调整，原型需要支持上下和左右布局，组件只支持上下布局，不支持左右布局</p>
     <p>2.不支持状态图片内置，无法内置原型涉及的自定义状态图片</p>
