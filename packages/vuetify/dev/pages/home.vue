@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-02 13:53:27
+ * @LastEditTime : 2025-04-02 15:22:14
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -58,6 +58,7 @@
   import Tabs from './components/tabs.vue'
   import Icons from './components/icons.vue'
   import Checkbox from './components/checkbox.vue'
+  import Select from './components/select.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -74,7 +75,8 @@
     { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: 'green' },
     { name: 'Textareas (多行文本框)', id: 'Textareas' },
     { name: 'Tabs (选项卡)', id: 'Tabs' },
-    { name: 'Checkbox (复选框)', id: 'Checkbox', icon: '$delimiter', color: '#615ced' },
+    { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: '$delimiter', color: '#615ced' },
+    { name: 'Selects (下拉选择框)', id: 'Select', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {
@@ -93,8 +95,9 @@
     Tabs,
     Icons,
     Checkbox,
+    Select,
   }
-  const key = ref('Checkbox')
+  const key = ref('Select')
 
   const select = ({ id }) => {
     key.value = id
