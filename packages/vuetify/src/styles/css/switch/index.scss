@@ -1,0 +1,19 @@
+.v-theme--michelin {
+  .v-switch {
+    &__track {
+      background-color: #27509B;
+      opacity: 1;
+    }
+
+    &__thumb {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--inset {
+      .v-switch__thumb {
+        transform: unset;
+      }
+    }
+  }
+}
