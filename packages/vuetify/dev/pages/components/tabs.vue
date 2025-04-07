@@ -4,7 +4,14 @@
     <v-tabs v-model="tab">
       <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" value="one" variant="text">
         <span>Item</span>
-        <span class="v-tabs__badge v-tabs__badge--blue">99</span>
+        <!-- <span class="v-tabs__badge v-tabs__badge--blue">99</span> -->
+        <template #append>
+          <v-badge
+            color="blue"
+            content="99"
+            inline
+          />
+        </template>
       </v-tab>
       <v-tab value="two">Card</v-tab>
       <v-tab value="three">Schedule</v-tab>
@@ -13,31 +20,61 @@
       <v-tabs v-model="tabItem">
         <v-tab class="text-none" value="one" variant="text">
           Item
-          <span class="v-tabs__badge v-tabs__badge--blue">99</span>
+          <template #append>
+            <v-badge
+              color="blue"
+              content="99"
+              inline
+            />
+          </template>
         </v-tab>
       </v-tabs>
       <v-tabs v-model="tabItem">
         <v-tab class="text-none" value="one" variant="text">
           Item
-          <span class="v-tabs__badge v-tabs__badge--grey">99</span>
+          <template #append>
+            <v-badge
+              color="grey"
+              content="99"
+              inline
+            />
+          </template>
         </v-tab>
       </v-tabs>
       <v-tabs v-model="tabItem">
         <v-tab class="text-none" value="one" variant="text">
           Item
-          <span class="v-tabs__badge v-tabs__badge--red">99</span>
+          <template #append>
+            <v-badge
+              color="red"
+              content="99"
+              inline
+            />
+          </template>
         </v-tab>
       </v-tabs>
       <v-tabs v-model="tabItem">
         <v-tab class="text-none" value="one" variant="text">
           Item
-          <span class="v-tabs__badge v-tabs__badge--yellow">99</span>
+          <template #append>
+            <v-badge
+              color="yellow"
+              content="99"
+              inline
+            />
+          </template>
         </v-tab>
       </v-tabs>
       <v-tabs v-model="tabItem">
         <v-tab class="text-none" value="one" variant="text">
           Item
-          <span class="v-tabs__badge v-tabs__badge--green">99</span>
+          <template #append>
+            <v-badge
+              color="green"
+              content="99"
+              inline
+            />
+          </template>
         </v-tab>
       </v-tabs>
     </div>
@@ -150,6 +187,14 @@
           list
         </v-tab>
       </v-tabs>
+    </div>
+    <div style="margin-top: 50px;">
+      <h3>Self added code implementation</h3>
+      <p>1、Maximum width omission and v-tooltip</p>
+      <p>2、badge</p>
+      <h3>自己加的代码实现</h3>
+      <p>1、最大宽度省略和v-tooltip</p>
+      <p>2、badge</p>
     </div>
   </div>
 </template>

@@ -79,9 +79,12 @@
     </div>
   </div>
   <div style="margin-top: 50px;">
+    <h3>Style that cannot be modified</h3>
+    <p>1、Cannot modify the position of the label</p>
+    <p>2、The position of icon in the lower right corner cannot be modified</p>
     <h3>无法修改的样式</h3>
     <p>1、无法修改label的位置</p>
-    <p>2、原生textarea内置的右下角图标无法修改位置</p>
+    <p>2、右下角的icon的位置，无法修改</p>
   </div>
 </template>
 
