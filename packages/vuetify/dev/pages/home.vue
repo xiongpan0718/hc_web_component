@@ -72,8 +72,8 @@
     { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: '#615ced' },
     { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: '#615ced' },
     { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: 'green' },
-    { name: 'Textareas (多行文本框)', id: 'Textareas' },
-    { name: 'Tabs (选项卡)', id: 'Tabs' },
+    { name: 'Textareas (多行文本框)', id: 'Textareas', icon: '$delimiter', color: '#615ced' },
+    { name: 'Tabs (选项卡)', id: 'Tabs', icon: '$delimiter', color: '#615ced' },
     { name: 'Checkbox (复选框)', id: 'Checkbox', icon: '$delimiter', color: '#615ced' },
   ])
 
