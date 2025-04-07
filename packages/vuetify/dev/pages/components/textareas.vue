@@ -1,6 +1,87 @@
 <template>
-  <div class="textareas">
-    <div class="text-subtitle-2 mb-2">Textareas(待开发)</div>
+  <div class="d-flex" style="width: 100%;gap: 20px">
+    <div style="flex: 1">
+      <h4>3 rows (default)</h4>
+      <v-textarea
+        :maxlength="300"
+        clear-icon="mdi-close"
+        label="label"
+        messages="This is a helper message"
+        placeholder="please enter"
+        variant="outlined"
+        clearable
+        counter
+      />
+    </div>
+    <div style="flex: 1">
+      <h4>4 rows (default)</h4>
+      <v-textarea
+        clear-icon="mdi-close"
+        label="label"
+        placeholder="please enter"
+        rows="4"
+        variant="outlined"
+      />
+    </div>
+  </div>
+  <div class="d-flex" style="width: 100%;gap: 20px">
+    <div style="flex: 1">
+      <h4>Disabled</h4>
+      <v-textarea
+        label="label"
+        placeholder="please enter"
+        variant="outlined"
+        disabled
+        persistent-placeholder
+      />
+    </div>
+    <div style="flex: 1">
+      <h4>hover</h4>
+      <v-textarea
+        clear-icon="mdi-close"
+        label="label"
+        placeholder="please enter"
+        variant="outlined"
+        clearable
+        persistent-placeholder
+      />
+    </div>
+  </div>
+  <div class="d-flex" style="width: 100%;gap: 20px">
+    <div style="flex: 1">
+      <h4>error状态</h4>
+      <v-textarea
+        append-inner-icon="mdi-alert-circle-outline"
+        clear-icon="mdi-close"
+        error-messages="There is an error message"
+        label="label"
+        placeholder="please enter"
+        variant="outlined"
+        clearable
+        error
+        persistent-placeholder
+      />
+    </div>
+    <div style="flex: 1">
+      <h4>error状态(4 rows)</h4>
+      <v-textarea
+        append-inner-icon="mdi-alert-circle-outline"
+        clear-icon="mdi-close"
+        error-messages="There is an error message"
+        label="label"
+        placeholder="please enter"
+        rows="4"
+        variant="outlined"
+        clearable
+        error
+        persistent-placeholder
+      />
+    </div>
+  </div>
+  <div style="margin-top: 50px;">
+    <h3>无法修改的样式</h3>
+    <p>1、无法修改label的位置</p>
+    <p>2、原生textarea内置的右下角图标无法修改位置</p>
   </div>
 </template>
 
@@ -8,8 +89,14 @@
 
 </script>
 
-<style scoped>
-  .textareas {
-    margin-top: 15px;
-  }
+<style scoped lang="scss">
+h4{
+  margin-bottom: 10px;
+}
+.label {
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
 </style>

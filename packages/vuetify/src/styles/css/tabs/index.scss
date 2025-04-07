@@ -1,3 +1,113 @@
 .v-theme--michelin {
+  .v-tabs {
 
+    &__badge {
+      margin-left: 8px;
+      padding: 4px 6px;
+      font-size: 12px;
+      color: #ffffff;
+      border-radius: 10px;
+      height: 20px;
+      min-width: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    &__badge--blue {
+      background-color: #27509B;
+    }
+    &__badge--grey {
+      background-color: #4D4D4D;
+    }
+    &__badge--red {
+      background-color: #B71C1C;
+    }
+    &__badge--yellow {
+      background-color: #F9A825;
+      color: #1A1A1A;
+    }
+    &__badge--green {
+      background-color: #2E7D32;
+    }
+
+    &--stacked {
+      .v-slide-group__container {
+        flex: none;
+      }
+      .v-btn__prepend {
+        margin-right: 0px !important;
+        margin-bottom: 0px;
+      }
+    }
+
+    &--density-default {
+      &.v-tabs--stacked {
+        --v-tabs-height: 56px;
+      }
+    }
+
+    .v-slide-group__prev--disabled {
+     color: #999999 !important;
+     opacity: 1 !important;
+    }
+
+    .v-slide-group__prev,.v-slide-group__next {
+      .v-icon {
+       color: #1A1A1A;
+      }
+    }
+
+    &--density-default {
+      --v-tabs-height: 56px;
+    }
+
+
+    .v-slide-group__container {
+      background-color: #ffffff;
+
+      .v-btn {
+        padding: 0 16px;
+        font-size: 14px;
+        font-weight: 600;
+        min-width: auto;
+
+        &__prepend {
+          margin-right: 8px;
+          .v-icon {
+            width: 24px;
+            font-size: 20px;
+          }
+        }
+      }
+
+      .v-btn--variant-text {
+        color: #1A1A1A;
+      }
+
+      .v-btn--variant-text:hover {
+          background-color: #F2F2F2;
+          color: #1A1A1A;
+      }
+
+
+      .v-btn--variant-text:active {
+          background-color: #E5E5E5;
+      }
+
+      .v-tab--selected {
+        color: #27509B;
+      }
+
+      .v-tab__slider {
+        background-color: #27509B;
+      }
+
+      .v-btn--disabled {
+        background-color: #ffffff !important;
+        color: #999999 !important;
+      }
+   }
+  }
 }
