@@ -63,7 +63,7 @@ export default [
     plugins: [
       vue(),
       url({
-        include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.webp'],
+        include: ['**/*.woff2','**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.webp'],
         limit: 0,
       }),
       nodeResolve({ extensions }),
@@ -204,7 +204,7 @@ export default [
     plugins: [
       vue(),
       url({
-        include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.webp'],
+        include: ['**/*.woff2','**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.webp'],
         limit: 0,
       }),
       nodeResolve({ extensions }),
