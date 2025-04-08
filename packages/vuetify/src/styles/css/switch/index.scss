@@ -1,8 +1,10 @@
 .v-theme--michelin {
   .v-switch {
-    &__track {
-      background-color: #27509B;
-      opacity: 1;
+    .v-selection-control--dirty {
+      .v-switch__track {
+        background-color: #27509B;
+        opacity: 1;
+      }
     }
 
     &__thumb {

@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-02 21:21:30
+ * @LastEditTime : 2025-04-07 14:06:08
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/button.vue
  * @Description  :
 -->
@@ -146,12 +146,6 @@
           </v-col>
         </v-row>
       </template>
-      <div class="description">
-        <ul>
-          <li>组件 icon 大小暂时不支持 css 样式控制 </li>
-          <li>button 不支持 small，只能单个手动覆盖样式 </li>
-        </ul>
-      </div>
     </v-expansion-panel>
 
     <!-- <v-expansion-panel value="variant">
@@ -194,7 +188,7 @@
       </template>
     </v-expansion-panel> -->
 
-    <!-- <v-expansion-panel value="size">
+    <v-expansion-panel value="size">
       <template #title>
         <h2>Size</h2>
       </template>
@@ -202,15 +196,15 @@
         <v-row>
           <v-col cols="3">
             <p>Desktop - default</p>
-            <v-btn color="primary">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="elevated">Button</v-btn>
           </v-col>
           <v-col cols="3">
             <p>Desktop - small</p>
-            <v-btn color="primary">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="mdi-plus" size="small" variant="elevated">Button</v-btn>
           </v-col>
         </v-row>
       </template>
-    </v-expansion-panel> -->
+    </v-expansion-panel>
 
     <!-- <v-expansion-panel value="state">
       <template #title>

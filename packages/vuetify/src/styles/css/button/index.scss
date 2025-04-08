@@ -9,6 +9,10 @@
 
     font-weight: 600;
 
+    .v-icon {
+      font-size: 20px;
+    }
+
     &--icon {
       height: var(--v-btn-height) !important;
       width: var(--v-btn-height) !important;

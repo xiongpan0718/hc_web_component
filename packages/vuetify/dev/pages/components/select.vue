@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-02 21:25:16
+ * @LastEditTime : 2025-04-08 09:25:01
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/select.vue
  * @Description  :
 -->
@@ -66,7 +66,8 @@
       </template>
       <div class="description">
         <ul>
-          <li>select 组件 css 样式差距较大，做不到仅 css 调整，与设计稿一致· </li>
+          <li>select 组件 css 样式差距较大，做不到仅 css 调整，与设计稿一致</li>
+          <li>select component css style gap is large, can not do only css adjustment, consistent with the design of the draft.</li>
         </ul>
       </div>
     </v-expansion-panel>
