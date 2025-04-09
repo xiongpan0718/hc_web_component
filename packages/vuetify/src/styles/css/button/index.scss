@@ -13,6 +13,10 @@
       font-size: 20px;
     }
 
+    &__content  {
+      font-size: 14px;
+    }
+
     &--icon {
       height: var(--v-btn-height) !important;
       width: var(--v-btn-height) !important;
@@ -21,14 +25,22 @@
     &--size-small {
       --v-btn-height: 32px;
       padding: 0 8px;
+
+      .v-btn__append {
+        margin-inline: calc(var(--v-btn-height) / 5.333) 0;
+      }
+
+      .v-btn__prepend {
+        margin-inline: 0 calc(var(--v-btn-height) / 5.333);
+      }
     }
 
     &__append {
-      margin-inline: calc(var(--v-btn-height) / 7.333) 0;
+      margin-inline: 6px 0;
     }
 
     &__prepend {
-      margin-inline: 0 calc(var(--v-btn-height) / 7.333);
+      margin-inline: 0 6px;
     }
 
     &--disabled {

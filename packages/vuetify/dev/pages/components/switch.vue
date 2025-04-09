@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-08 09:29:17
+ * @LastEditTime : 2025-04-08 13:29:56
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/switch.vue
  * @Description  :
 -->
@@ -18,11 +18,17 @@
           <v-col cols="3">
             <v-switch label="Switch" inset />
           </v-col>
+          <v-col cols="3">
+            <v-switch :model-value="true" label="Switch" inset />
+          </v-col>
         </v-row>
         <v-row>
           <v-col cols="3"> Disabled </v-col>
           <v-col cols="3">
             <v-switch label="Switch" disabled inset />
+          </v-col>
+          <v-col cols="3">
+            <v-switch :model-value="true" label="Switch" disabled inset />
           </v-col>
         </v-row>
       </template>

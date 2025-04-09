@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-06 21:18:34
+ * @LastEditTime : 2025-04-09 16:33:21
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -70,15 +70,15 @@
     { name: 'Icons (图标)', id: 'Icons', icon: '$delimiter', color: 'green' },
     { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: 'green' },
     { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'green' },
-    { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: '#615ced' },
-    { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: '#615ced' },
-    { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: '#615ced' },
+    { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: 'green' },
+    { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: 'green' },
+    { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: 'green' },
     { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: 'green' },
     { name: 'Textareas (多行文本框)', id: 'Textareas', icon: '$delimiter', color: '#b80b0b' },
     { name: 'Tabs (选项卡)', id: 'Tabs', icon: '$delimiter', color: '#615ced' },
-    { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: '$delimiter', color: '#615ced' },
-    { name: 'Selects (下拉选择框)', id: 'Select', icon: '$delimiter', color: '#615ced' },
-    { name: 'Switch (开关)', id: 'Switch', icon: '$delimiter', color: '#615ced' },
+    { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: '$delimiter', color: 'green' },
+    { name: 'Selects (下拉选择框)', id: 'Select', icon: '$delimiter', color: '#b80b0b' },
+    { name: 'Switch (开关)', id: 'Switch', icon: '$delimiter', color: 'green' },
   ])
 
   const list = {
@@ -100,7 +100,7 @@
     Select,
     Switch,
   }
-  const key = ref('Switch')
+  const key = ref('Button')
 
   const select = ({ id }) => {
     key.value = id

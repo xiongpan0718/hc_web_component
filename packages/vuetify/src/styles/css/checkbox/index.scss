@@ -1,17 +1,50 @@
 .v-theme--michelin {
   .v-checkbox {
-    .v-selection-control__wrapper {
-      color: #27509B;
-    }
+    .v-selection-control {
+      min-height: 24px;
+      opacity: 1;
 
-    .v-selection-control--dirty {
-      .v-icon__svg {
-        fill: #27509B;
+      &__wrapper {
+        margin-right: 4px;
       }
-    }
 
-    .v-icon__svg {
-      fill: #1A1A1A;
+      &__wrapper, &__input {
+        width: 24px;
+        height: 24px;
+      }
+
+      &--density-default {
+        .v-label {
+          color: #1a1a1a;
+        }
+
+        .v-icon__svg {
+          fill: #1a1a1a;
+          color: #1a1a1a;
+        }
+      }
+
+      &--dirty {
+        .v-label {
+          color: #1a1a1a;
+        }
+
+        .v-icon__svg {
+          fill: #27509B;
+          color: #27509B;
+        }
+      }
+
+      &--disabled {
+        .v-label {
+          color: #999999;
+        }
+
+        .v-icon__svg {
+          fill: #999999;
+          color: #999999;
+        }
+      }
     }
   }
 }
