@@ -47,12 +47,14 @@
         font-size: 14px;
         font-weight: 600;
         min-width: auto;
-
+        &__append {
+          margin-left: 8px;
+        }
         &__prepend {
           margin-right: 8px;
           .v-icon {
             width: 24px;
-            font-size: 20px;
+            font-size: 24px;
           }
         }
       }
