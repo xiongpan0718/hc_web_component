@@ -75,7 +75,7 @@
     { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: 'green' },
     { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: 'green' },
     { name: 'Textareas (多行文本框)', id: 'Textareas', icon: '$delimiter', color: '#b80b0b' },
-    { name: 'Tabs (选项卡)', id: 'Tabs', icon: '$delimiter', color: '#615ced' },
+    { name: 'Tabs (选项卡)', id: 'Tabs', icon: '$delimiter', color: 'green' },
     { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: '$delimiter', color: 'green' },
     { name: 'Selects (下拉选择框)', id: 'Select', icon: '$delimiter', color: '#b80b0b' },
     { name: 'Switch (开关)', id: 'Switch', icon: '$delimiter', color: 'green' },
