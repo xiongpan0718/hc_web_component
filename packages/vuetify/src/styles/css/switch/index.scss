@@ -1,8 +1,47 @@
 .v-theme--michelin {
   .v-switch {
-    &__track {
-      background-color: #27509B;
-      opacity: 1;
+    .v-selection-control__input {
+      height: 24px;
+      width: 24px;
+    }
+
+    .v-label {
+      padding-inline-start: 8px;
+    }
+
+    .v-selection-control {
+      &--density-default {
+        .v-switch__track {
+          background-color: #B2B2B2;
+          opacity: 1;
+        }
+
+        .v-label {
+          color: #1a1a1a;
+        }
+      }
+
+      &--dirty {
+        .v-switch__track {
+          background-color: #27509b;
+          opacity: 1;
+        }
+
+        .v-label {
+          color: #1a1a1a;
+        }
+      }
+
+      &--disabled {
+        .v-switch__track {
+          background-color: #b2b2b2;
+          opacity: 1;
+        }
+
+        .v-label {
+          color: #999;
+        }
+      }
     }
 
     &__thumb {
@@ -13,6 +52,11 @@
     &--inset {
       .v-switch__thumb {
         transform: unset;
+      }
+
+      .v-switch__track {
+        height: 32px;
+        min-width: 56px;
       }
     }
   }

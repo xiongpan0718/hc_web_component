@@ -1,6 +1,5 @@
 .v-theme--michelin {
   .v-tabs {
-
     .v-badge--inline {
       .v-badge__wrapper {
         margin: 0;
@@ -47,12 +46,16 @@
         font-size: 14px;
         font-weight: 600;
         min-width: auto;
+        letter-spacing: 0;
 
+        &__append {
+          margin-left: 8px;
+        }
         &__prepend {
           margin-right: 8px;
           .v-icon {
             width: 24px;
-            font-size: 20px;
+            font-size: 24px;
           }
         }
       }

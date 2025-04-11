@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-06 21:58:42
+ * @LastEditTime : 2025-04-08 13:29:56
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/switch.vue
  * @Description  :
 -->
@@ -18,19 +18,26 @@
           <v-col cols="3">
             <v-switch label="Switch" inset />
           </v-col>
+          <v-col cols="3">
+            <v-switch :model-value="true" label="Switch" inset />
+          </v-col>
         </v-row>
         <v-row>
           <v-col cols="3"> Disabled </v-col>
           <v-col cols="3">
             <v-switch label="Switch" disabled inset />
           </v-col>
+          <v-col cols="3">
+            <v-switch :model-value="true" label="Switch" disabled inset />
+          </v-col>
         </v-row>
       </template>
-      <!-- <div class="description">
+      <div class="description">
         <ul>
-          <li>select 组件 css 样式差距较大，做不到仅 css 调整，与设计稿一致· </li>
+          <li>switch 组件暂时不支持 icon</li>
+          <li>The switch component does not support icons at this time.</li>
         </ul>
-      </div> -->
+      </div>
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
