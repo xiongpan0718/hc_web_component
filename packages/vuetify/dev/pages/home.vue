@@ -27,7 +27,7 @@
           @click:select="select"
         >
           <template #prepend="{item}">
-            <v-icon :color="item.color" :icon="item.icon" />
+            <v-icon :color="item.color" :icon="item.icon" fill/>
           </template>
         </v-list>
       </v-card>
@@ -62,23 +62,23 @@
   import Switch from './components/switch.vue'
 
   const items = ref([
-    { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
-    { name: 'Alert (警告框)', id: 'Alert', icon: '$delimiter', color: 'green' },
-    { name: 'Snackbar (消息条)', id: 'Snackbar', icon: '$delimiter', color: 'green' },
-    { name: 'Radio (单选按钮)', id: 'Radio', icon: '$delimiter', color: 'green' },
-    { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: '$delimiter', color: '#b80b0b' },
-    { name: 'Icons (图标)', id: 'Icons', icon: '$delimiter', color: 'green' },
-    { name: 'Chip (纸片)', id: 'Chip', icon: '$delimiter', color: 'green' },
-    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: '$delimiter', color: 'green' },
-    { name: 'Button (按钮)', id: 'Button', icon: '$delimiter', color: 'green' },
-    { name: 'Badge (徽章)', id: 'Badge', icon: '$delimiter', color: 'green' },
-    { name: 'Divider (分隔线)', id: 'Divider', icon: '$delimiter', color: 'green' },
-    { name: 'Tooltips (提示)', id: 'Tooltips', icon: '$delimiter', color: 'green' },
-    { name: 'Textareas (多行文本框)', id: 'Textareas', icon: '$delimiter', color: '#b80b0b' },
-    { name: 'Tabs (选项卡)', id: 'Tabs', icon: '$delimiter', color: 'green' },
-    { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: '$delimiter', color: 'green' },
-    { name: 'Selects (下拉选择框)', id: 'Select', icon: '$delimiter', color: '#b80b0b' },
-    { name: 'Switch (开关)', id: 'Switch', icon: '$delimiter', color: 'green' },
+    { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
+    { name: 'Alert (警告框)', id: 'Alert', icon: 'circle', color: 'green' },
+    { name: 'Snackbar (消息条)', id: 'Snackbar', icon: 'circle', color: 'green' },
+    { name: 'Radio (单选按钮)', id: 'Radio', icon: 'circle', color: 'green' },
+    { name: 'AutoComplete (自动补全)', id: 'AutoComplete', icon: 'circle', color: '#b80b0b' },
+    { name: 'Icons (图标)', id: 'Icons', icon: 'circle', color: 'green' },
+    { name: 'Chip (纸片)', id: 'Chip', icon: 'circle', color: 'green' },
+    { name: 'ExpansionPanels (扩展面板)', id: 'ExpansionPanels', icon: 'circle', color: 'green' },
+    { name: 'Button (按钮)', id: 'Button', icon: 'circle', color: 'green' },
+    { name: 'Badge (徽章)', id: 'Badge', icon: 'circle', color: 'green' },
+    { name: 'Divider (分隔线)', id: 'Divider', icon: 'circle', color: 'green' },
+    { name: 'Tooltips (提示)', id: 'Tooltips', icon: 'circle', color: 'green' },
+    { name: 'Textareas (多行文本框)', id: 'Textareas', icon: 'circle', color: '#b80b0b' },
+    { name: 'Tabs (选项卡)', id: 'Tabs', icon: 'circle', color: 'green' },
+    { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: 'circle', color: 'green' },
+    { name: 'Selects (下拉选择框)', id: 'Select', icon: 'circle', color: '#b80b0b' },
+    { name: 'Switch (开关)', id: 'Switch', icon: 'circle', color: 'green' },
   ])
 
   const list = {
@@ -100,7 +100,7 @@
     Select,
     Switch,
   }
-  const key = ref('Button')
+  const key = ref('Icons')
 
   const select = ({ id }) => {
     key.value = id

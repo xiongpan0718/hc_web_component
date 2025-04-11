@@ -1,23 +1,23 @@
 <template>
   <div style="display: flex;flex-direction: column;width: 200px;margin: 50px;border-bottom: 1px solid #ccc">
     <div class="icons">
-      <v-icon icon="$plus" size="x-small" />
+      <v-icon icon="add" size="x-small" />
       x-small
     </div>
     <div class="icons">
-      <v-icon icon="$plus" size="small" />
+      <v-icon icon="add" size="small" />
       small
     </div>
     <div class="icons">
-      <v-icon icon="$plus" size="default" />
+      <v-icon icon="add" size="default" />
       default
     </div>
     <div class="icons">
-      <v-icon icon="$plus" size="large" />
+      <v-icon icon="add" size="large" />
       large
     </div>
     <div class="icons">
-      <v-icon icon="$plus" size="x-large" />
+      <v-icon icon="add" size="x-large" />
       x-large
     </div>
   </div>

@@ -97,6 +97,10 @@ export const makeIconProps = propsFactory({
     type: String,
     default: '0 0 24 24',
   },
+  fill: {
+    type: Boolean,
+    default: false,
+  },
 }, 'icon')
 
 export const VComponentIcon = genericComponent()({
@@ -115,7 +119,27 @@ export const VComponentIcon = genericComponent()({
     }
   },
 })
-export type VComponentIcon = InstanceType<typeof VComponentIcon>
+export type VComponentIcon = InstanceType<typeof VComponentIcon>;
+
+export const VGoogleIcon = genericComponent()({
+  name: 'VGoogleIcon',
+  props: makeIconProps(),
+
+  setup (props, { slots }) {
+    return () => {
+      const classList = ['material-symbols-outlined']
+      if (props.fill) {
+        classList.push('material-symbols-outlined-fill')
+      }
+      return (
+        <props.tag class={ classList } >
+          { props.icon || slots.default?.() }
+        </props.tag>
+      )
+    }
+  },
+})
+export type VGoogleIcon = InstanceType<typeof VGoogleIcon>
 
 export const VSvgIcon = defineComponent({
   name: 'VSvgIcon',
@@ -197,18 +221,20 @@ function genDefaults (): Record<string, IconSet> {
     class: {
       component: VClassIcon,
     },
+    google: {
+      component: VGoogleIcon,
+    },
   }
 }
 
 // Composables
 export function createIcons (options?: IconOptions) {
   const sets = genDefaults()
-  const defaultSet = options?.defaultSet ?? 'mdi'
+  const defaultSet = options?.defaultSet ?? 'google'
 
   if (defaultSet === 'mdi' && !sets.mdi) {
     sets.mdi = mdi
   }
-
   return mergeDeep({
     defaultSet,
     sets,
