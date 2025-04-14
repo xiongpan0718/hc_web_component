@@ -6,6 +6,7 @@ import { createGoTo, GoToSymbol } from '@/composables/goto'
 import { createIcons, IconSymbol } from '@/composables/icons'
 import { createLocale, LocaleSymbol } from '@/composables/locale'
 import { createTheme, ThemeSymbol } from '@/composables/theme'
+import '@/styles/css/font-family/index.scss'
 
 // Utilities
 import { nextTick, reactive } from 'vue'
