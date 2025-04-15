@@ -249,7 +249,6 @@ export function createIcons (options?: IconOptions) {
 
 export const useIcon = (props: Ref<IconValue | undefined>) => {
   const icons = inject(IconSymbol)
-
   if (!icons) throw new Error('Missing Vuetify Icons provide!')
 
   const iconData = computed<IconInstance>(() => {
@@ -261,9 +260,10 @@ export const useIcon = (props: Ref<IconValue | undefined>) => {
 
     if (typeof icon === 'string') {
       icon = icon.trim()
-
       if (icon.startsWith('$')) {
         icon = icons.aliases?.[icon.slice(1)]
+      } else if (icons.aliases[icon]) {
+        icon = icons.aliases?.[icon]
       }
     }
 
