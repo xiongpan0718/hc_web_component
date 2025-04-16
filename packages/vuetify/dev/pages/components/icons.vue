@@ -65,7 +65,7 @@
 
   const list = computed(() => {
     return iconList.filter(item => item.version >= 325 &&
-      (searchText.value.toLowerCase() ? item.tags.includes(searchText.value.toLowerCase()) : true)
+      (searchText.value ? item.tags.includes(searchText.value.toLowerCase()) : true)
     )
   })
 
