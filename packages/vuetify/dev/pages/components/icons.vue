@@ -53,7 +53,9 @@
   const selectIcon = ref(undefined)
 
   const list = computed(() => {
-    return iconList.filter(item => item.version === 325 && (searchText.value.toLowerCase() ? item.name.includes(searchText.value.toLowerCase()) : true))
+    return iconList.filter(item => item.version === 325 &&
+      (searchText.value.toLowerCase() ? item.tags.includes(searchText.value.toLowerCase()) : true)
+    )
   })
 
   const copyTextLegacy = text => {
