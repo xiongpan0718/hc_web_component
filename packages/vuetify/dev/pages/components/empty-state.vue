@@ -13,7 +13,7 @@
         title="Sorry,"
       >
         <template #actions>
-          <v-btn append-icon="$expand" prepend-icon="mdi-plus">Button</v-btn>
+          <v-btn append-icon="$expand" prepend-icon="add">Button</v-btn>
         </template>
       </v-empty-state>
     </v-col>

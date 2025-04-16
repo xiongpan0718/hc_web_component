@@ -50,9 +50,5 @@ const googleAliases: IconAliases = {
   upload: 'backup',
 }
 
-const google: IconSet = {
-  // Not using mergeProps here, functional components merge props by default (?)
-  component: (props: any) => h(VClassIcon, { ...props, class: 'google-icon' }),
-}
 
-export { googleAliases, google }
+export { googleAliases }

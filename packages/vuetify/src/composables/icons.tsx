@@ -1,6 +1,6 @@
 // Icons
 import { aliases, mdi } from '@/iconsets/mdi'
-import { google, googleAliases } from '@/iconsets/google'
+import { googleAliases } from '@/iconsets/google'
 import { defaultIcons } from '@/iconsets/default'
 
 // Utilities
