@@ -50,7 +50,7 @@
     icon="content_copy"
   >
     {{ copyText }}
-    <v-icon :icon="selectIcon" />
+    <v-icon :fill="fill" :icon="selectIcon" />
   </v-snackbar>
 </template>
 
@@ -64,7 +64,7 @@
   const selectIcon = ref(undefined)
 
   const list = computed(() => {
-    return iconList.filter(item => item.version === 325 &&
+    return iconList.filter(item => item.version >= 325 &&
       (searchText.value.toLowerCase() ? item.tags.includes(searchText.value.toLowerCase()) : true)
     )
   })
