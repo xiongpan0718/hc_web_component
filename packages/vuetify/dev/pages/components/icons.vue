@@ -1,6 +1,5 @@
 <template>
   <div style="display: flex;">
-    <v-icon icon="1x_mobiledata_badge" />
     <div style="display: flex;flex-direction: column;width: 200px;margin: 50px;border-bottom: 1px solid #ccc">
       <div class="icons">
         <v-icon icon="add" size="x-small" />
