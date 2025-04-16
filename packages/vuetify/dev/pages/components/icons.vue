@@ -1,5 +1,6 @@
 <template>
   <div style="display: flex;">
+    <v-icon icon="1x_mobiledata_badge" />
     <div style="display: flex;flex-direction: column;width: 200px;margin: 50px;border-bottom: 1px solid #ccc">
       <div class="icons">
         <v-icon icon="add" size="x-small" />
@@ -27,6 +28,17 @@
       <div>
         <v-text-field variant="outlined" clearable @update:model-value="search" />
       </div>
+      <p>
+        图标分为空心和实心图标，两种方式切换，在v-icon组件中增加fill属性，例如：
+        <span>{{'<v-icon fill icon="11mp" />'}}</span>，
+        ，或者在名字结尾追加   _fill 结尾，都是实心图标，反之都是空心图标
+      </p>
+      <br>
+      <p>
+        Icons are categorized into hollow and solid icons, which can be switched between. To create a solid icon, you can add the `fill` attribute to the `v-icon` component, for example:
+        `{{'<v-icon fill icon="11mp" />'}}`,
+        or append `_fill` at the end of the name. Conversely, if neither of these is present, the icon will be hollow
+      </p>
     </div>
   </div>
   <div class="icon-list">
