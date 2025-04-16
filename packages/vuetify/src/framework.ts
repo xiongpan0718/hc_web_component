@@ -6,6 +6,7 @@ import { createGoTo, GoToSymbol } from '@/composables/goto'
 import { createIcons, IconSymbol } from '@/composables/icons'
 import { createLocale, LocaleSymbol } from '@/composables/locale'
 import { createTheme, ThemeSymbol } from '@/composables/theme'
+import '@/styles/css/font-family/index.scss'
 
 // Utilities
 import { nextTick, reactive } from 'vue'
@@ -51,7 +52,7 @@ export function createVuetify (vuetify: VuetifyOptions = {}) {
 
   const defaults = createDefaults(options.defaults)
   const display = createDisplay(options.display, options.ssr)
-  const theme = createTheme({defaultTheme:'michelin'})
+  const theme = createTheme(options.theme)
   const icons = createIcons(options.icons)
   const locale = createLocale(options.locale)
   const date = createDate(options.date, locale)

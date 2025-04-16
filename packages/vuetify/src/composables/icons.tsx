@@ -1,6 +1,8 @@
 // Icons
 import { aliases, mdi } from '@/iconsets/mdi'
+import { google, googleAliases } from '@/iconsets/google'
 import { defaultIcons } from '@/iconsets/default'
+
 // Utilities
 import { computed, inject, unref } from 'vue'
 import { consoleWarn, defineComponent, genericComponent, mergeDeep, propsFactory } from '@/util'
@@ -97,6 +99,10 @@ export const makeIconProps = propsFactory({
     type: String,
     default: '0 0 24 24',
   },
+  fill: {
+    type: Boolean,
+    default: false,
+  },
 }, 'icon')
 
 export const VComponentIcon = genericComponent()({
@@ -115,7 +121,27 @@ export const VComponentIcon = genericComponent()({
     }
   },
 })
-export type VComponentIcon = InstanceType<typeof VComponentIcon>
+export type VComponentIcon = InstanceType<typeof VComponentIcon>;
+
+export const VGoogleIcon = genericComponent()({
+  name: 'VGoogleIcon',
+  props: makeIconProps(),
+
+  setup (props, { slots }) {
+    return () => {
+      const classList = ['material-symbols-outlined']
+      if (props.fill) {
+        classList.push('material-symbols-outlined-fill')
+      }
+      return (
+        <props.tag class={ classList } >
+          { props.icon || slots.default?.() }
+        </props.tag>
+      )
+    }
+  },
+})
+export type VGoogleIcon = InstanceType<typeof VGoogleIcon>
 
 export const VSvgIcon = defineComponent({
   name: 'VSvgIcon',
@@ -197,23 +223,28 @@ function genDefaults (): Record<string, IconSet> {
     class: {
       component: VClassIcon,
     },
+    google: {
+      component: VGoogleIcon,
+    },
   }
 }
 
 // Composables
 export function createIcons (options?: IconOptions) {
   const sets = genDefaults()
-  const defaultSet = options?.defaultSet ?? 'mdi'
-
+  const defaultSet = options?.defaultSet ?? 'google'
+  let aliaseData: IconAliases = {} as IconAliases
   if (defaultSet === 'mdi' && !sets.mdi) {
     sets.mdi = mdi
+    aliaseData = aliases
+  } else if (defaultSet === 'google') {
+    aliaseData = googleAliases
   }
-
   return mergeDeep({
     defaultSet,
     sets,
     aliases: {
-      ...aliases,
+      ...aliaseData,
       /* eslint-disable max-len */
       ...defaultIcons,
       /* eslint-enable max-len */
@@ -223,7 +254,6 @@ export function createIcons (options?: IconOptions) {
 
 export const useIcon = (props: Ref<IconValue | undefined>) => {
   const icons = inject(IconSymbol)
-
   if (!icons) throw new Error('Missing Vuetify Icons provide!')
 
   const iconData = computed<IconInstance>(() => {
@@ -235,9 +265,10 @@ export const useIcon = (props: Ref<IconValue | undefined>) => {
 
     if (typeof icon === 'string') {
       icon = icon.trim()
-
       if (icon.startsWith('$')) {
         icon = icons.aliases?.[icon.slice(1)]
+      } else if (icons.aliases[icon]) {
+        icon = icons.aliases?.[icon]
       }
     }
 

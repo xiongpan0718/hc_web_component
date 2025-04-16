@@ -108,14 +108,8 @@ export const VAlert = genericComponent<VAlertSlots>()({
     const icon = computed(() => {
       if (props.icon === false) return undefined
       if (!props.type) return props.icon
-      const typeMap = {
-        success: '$complete',
-        info: '$hollowInfo',
-        warning: '$dangerous',
-        error: '$close',
-      }
-      const type = typeMap[props.type] || `$${ props.type }`
-      return props.icon ?? `${type}`
+
+      return props.icon ?? `$${props.type}`
     })
     const variantProps = computed(() => ({
       color: props.color ?? props.type,
@@ -146,6 +140,7 @@ export const VAlert = genericComponent<VAlertSlots>()({
       const hasPrepend = !!(slots.prepend || icon.value)
       const hasTitle = !!(slots.title || props.title)
       const hasClose = !!(slots.close || props.closable)
+
 
       return isActive.value && (
         <props.tag

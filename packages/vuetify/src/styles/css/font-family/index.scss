@@ -8,8 +8,8 @@
   @font-face {
     font-family: 'Material Symbols Outlined';
     font-style: normal;
-    font-weight: 400;
-    src: url('@/assets/fonts/googleFontIcon.woff2') format('woff2');
+    font-weight: 100 700;
+    src: url('./fonts/googleFontIcon.woff2') format('woff2');
   }
 
   .material-symbols-outlined {
@@ -26,7 +26,17 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 300
+
   }
 
+
+  .material-symbols-outlined-fill {
+    font-variation-settings:
+      'FILL' 1,
+      'wght' 200
+  }
 
 }
