@@ -24,10 +24,11 @@
           :items="items"
           item-title="name"
           item-value="id"
+          style="overflow-y: auto;height: 100%;padding-bottom: 100px"
           @click:select="select"
         >
           <template #prepend="{item}">
-            <v-icon :color="item.color" :icon="item.icon" fill/>
+            <v-icon :color="item.color" :icon="item.icon" fill />
           </template>
         </v-list>
       </v-card>
@@ -61,9 +62,11 @@
   import Select from './components/select.vue'
   import Switch from './components/switch.vue'
   import TextFields from './components/text-fields.vue'
+  import TextFieldsShow from './components/text-fields-show.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
+    { name: 'TextFieldsDisplay (文本显示)', id: 'TextFieldsShow', icon: 'circle', color: '#615ced' },
     { name: 'Alert (警告框)', id: 'Alert', icon: 'circle', color: 'green' },
     { name: 'Snackbar (消息条)', id: 'Snackbar', icon: 'circle', color: 'green' },
     { name: 'Radio (单选按钮)', id: 'Radio', icon: 'circle', color: 'green' },
@@ -101,8 +104,9 @@
     Checkbox,
     Select,
     Switch,
+    TextFieldsShow,
   }
-  const key = ref('TextFields')
+  const key = ref('TextFieldsShow')
 
   const select = ({ id }) => {
     key.value = id
