@@ -1,6 +1,8 @@
 // Icons
 import { aliases, mdi } from '@/iconsets/mdi'
+import { google, googleAliases } from '@/iconsets/google'
 import { defaultIcons } from '@/iconsets/default'
+
 // Utilities
 import { computed, inject, unref } from 'vue'
 import { consoleWarn, defineComponent, genericComponent, mergeDeep, propsFactory } from '@/util'
@@ -231,15 +233,18 @@ function genDefaults (): Record<string, IconSet> {
 export function createIcons (options?: IconOptions) {
   const sets = genDefaults()
   const defaultSet = options?.defaultSet ?? 'google'
-
+  let aliaseData: IconAliases = {} as IconAliases
   if (defaultSet === 'mdi' && !sets.mdi) {
     sets.mdi = mdi
+    aliaseData = aliases
+  } else if (defaultSet === 'google') {
+    aliaseData = googleAliases
   }
   return mergeDeep({
     defaultSet,
     sets,
     aliases: {
-      ...aliases,
+      ...aliaseData,
       /* eslint-disable max-len */
       ...defaultIcons,
       /* eslint-enable max-len */
