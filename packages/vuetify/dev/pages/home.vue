@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-09 16:33:21
+ * @LastEditTime : 2025-04-14 17:08:51
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -60,6 +60,7 @@
   import Checkbox from './components/checkbox.vue'
   import Select from './components/select.vue'
   import Switch from './components/switch.vue'
+  import TextFields from './components/text-fields.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: '$delimiter', color: 'blue' },
@@ -79,6 +80,7 @@
     { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: '$delimiter', color: 'green' },
     { name: 'Selects (下拉选择框)', id: 'Select', icon: '$delimiter', color: '#b80b0b' },
     { name: 'Switch (开关)', id: 'Switch', icon: '$delimiter', color: 'green' },
+    { name: 'TextFields (单行文本框)', id: 'TextFields', icon: '$delimiter', color: '#615ced' },
   ])
 
   const list = {
@@ -99,8 +101,9 @@
     Checkbox,
     Select,
     Switch,
+    TextFields,
   }
-  const key = ref('Button')
+  const key = ref('TextFields')
 
   const select = ({ id }) => {
     key.value = id
