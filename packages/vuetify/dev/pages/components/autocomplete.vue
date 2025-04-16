@@ -40,7 +40,7 @@
       <v-autocomplete
         :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
         :menu-icon="null"
-        append-inner-icon="mdi-magnify"
+        append-inner-icon="search"
         label="autocomplete"
         placeholder="please enter"
         variant="outlined"

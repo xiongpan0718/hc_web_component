@@ -1,11 +1,5 @@
-// Composables
-import { VClassIcon } from '@/composables/icons'
-
-// Utilities
-import { h } from 'vue'
-
 // Types
-import type { IconAliases, IconSet } from '@/composables/icons'
+import type { IconAliases } from '@/composables/icons'
 
 const googleAliases: IconAliases = {
   collapse: 'keyboard_arrow_up',
@@ -20,7 +14,7 @@ const googleAliases: IconAliases = {
   error: 'close',
   prev: 'chevron_left',
   next: 'chevron_right',
-  checkboxOn: 'check_box',
+  checkboxOn: 'check_box_fill',
   checkboxOff: 'check_box_outline_blank',
   checkboxIndeterminate: 'chips',
   delimiter: 'circle', // for carousel
@@ -49,6 +43,5 @@ const googleAliases: IconAliases = {
   eyeDropper: 'colorize',
   upload: 'backup',
 }
-
 
 export { googleAliases }

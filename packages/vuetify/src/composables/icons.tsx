@@ -129,13 +129,18 @@ export const VGoogleIcon = genericComponent()({
 
   setup (props, { slots }) {
     return () => {
+      let iconName = props.icon || slots.default?.()
       const classList = ['material-symbols-outlined']
       if (props.fill) {
+        classList.push('material-symbols-outlined-fill')
+      } else if (String(iconName).endsWith('_fill')) {
+        const index = String(iconName).lastIndexOf('_fill')
+        iconName = String(iconName).slice(0, index)
         classList.push('material-symbols-outlined-fill')
       }
       return (
         <props.tag class={ classList } >
-          { props.icon || slots.default?.() }
+          { iconName }
         </props.tag>
       )
     }
