@@ -2,7 +2,7 @@
   <div class="tabs">
     <div class="text-subtitle-2 mb-2">Anatomy</div>
     <v-tabs v-model="tab">
-      <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" value="one" variant="text">
+      <v-tab class="text-none" prepend-icon="list" value="one" variant="text">
         <span>Item</span>
         <!-- <span class="v-tabs__badge v-tabs__badge--blue">99</span> -->
         <template #append>
@@ -102,7 +102,7 @@
       <div>
         <div class="text-subtitle-2 mb-2">Icon + Text</div>
         <v-tabs v-model="tabItem">
-          <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" value="one" variant="text">
+          <v-tab class="text-none" prepend-icon="list" value="one" variant="text">
             Item
             <template #badge>
               <v-badge content="99" />
@@ -113,13 +113,13 @@
       <div>
         <div class="text-subtitle-2 mb-2">Icon only</div>
         <v-tabs v-model="tabItem" stacked>
-          <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" value="one" variant="text" />
+          <v-tab class="text-none" prepend-icon="list" value="one" variant="text" />
         </v-tabs>
       </div>
       <div>
         <div class="text-subtitle-2 mb-2">disabled</div>
         <v-tabs v-model="tabItem">
-          <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text" disabled>
+          <v-tab class="text-none" prepend-icon="list" variant="text" disabled>
             list
           </v-tab>
         </v-tabs>
@@ -151,19 +151,19 @@
     <div>
       <div class="text-subtitle-2 mb-2">left alignment</div>
       <v-tabs align-tabs="start">
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text">
+        <v-tab class="text-none" prepend-icon="list" variant="text">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text">
+        <v-tab class="text-none" prepend-icon="list" variant="text">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text">
+        <v-tab class="text-none" prepend-icon="list" variant="text">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text">
+        <v-tab class="text-none" prepend-icon="list" variant="text">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text">
+        <v-tab class="text-none" prepend-icon="list" variant="text">
           list
         </v-tab>
       </v-tabs>
@@ -171,19 +171,19 @@
     <div>
       <div class="text-subtitle-2 mb-2">fill container</div>
       <v-tabs>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text" width="20%">
+        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text" width="20%">
+        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text" width="20%">
+        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text" width="20%">
+        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
           list
         </v-tab>
-        <v-tab class="text-none" prepend-icon="mdi-format-list-bulleted" variant="text" width="20%">
+        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
           list
         </v-tab>
       </v-tabs>

@@ -4,7 +4,7 @@
       <h4>3 rows (default)</h4>
       <v-textarea
         :maxlength="300"
-        clear-icon="mdi-close"
+        clear-icon="delete"
         label="label"
         messages="This is a helper message"
         placeholder="please enter"
@@ -16,7 +16,7 @@
     <div style="flex: 1">
       <h4>4 rows (default)</h4>
       <v-textarea
-        clear-icon="mdi-close"
+        clear-icon="delete"
         label="label"
         placeholder="please enter"
         rows="4"
@@ -38,7 +38,7 @@
     <div style="flex: 1">
       <h4>hover</h4>
       <v-textarea
-        clear-icon="mdi-close"
+        clear-icon="delete"
         label="label"
         placeholder="please enter"
         variant="outlined"
@@ -51,8 +51,8 @@
     <div style="flex: 1">
       <h4>error状态</h4>
       <v-textarea
-        append-inner-icon="mdi-alert-circle-outline"
-        clear-icon="mdi-close"
+        append-inner-icon="warning"
+        clear-icon="delete"
         error-messages="There is an error message"
         label="label"
         placeholder="please enter"
@@ -65,8 +65,8 @@
     <div style="flex: 1">
       <h4>error状态(4 rows)</h4>
       <v-textarea
-        append-inner-icon="mdi-alert-circle-outline"
-        clear-icon="mdi-close"
+        append-inner-icon="warning"
+        clear-icon="delete"
         error-messages="There is an error message"
         label="label"
         placeholder="please enter"
