@@ -107,12 +107,14 @@
       font-size: 16px;
       display: flex;
       align-items: center;
+      height: 24px;
     }
     .v-text-field-label-append-icon{
       margin-left: 4px;
       font-size: 16px;
       display: flex;
       align-items: center;
+      height: 24px;
     }
   }
   .v-text-field-text{
@@ -127,6 +129,9 @@
       display: flex;
       align-self: flex-start;
       font-size: 20px;
+      height: 24px;
+      align-items: center;
+      color: #27509B;
     }
     .v-text-field-text-name{
       display: -webkit-box;
@@ -141,6 +146,9 @@
       align-self: flex-start;
       display: flex;
       font-size: 20px;
+      height: 24px;
+      align-items: center;
+      color: #27509B;
     }
   }
 }
