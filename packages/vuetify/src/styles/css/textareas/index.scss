@@ -82,13 +82,13 @@
       }
 
       &.v-field--error:not(.v-field--disabled) {
-        .mdi-alert-circle-outline {
+        .v-field__append-inner > .v-icon {
           color: #B71C1C;
         }
       }
       .v-field__append-inner {
         padding-top: 8px;
-        .mdi-alert-circle-outline {
+        .v-icon {
           margin-left: 6px;
         }
       }
