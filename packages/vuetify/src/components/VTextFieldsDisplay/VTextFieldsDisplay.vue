@@ -125,7 +125,7 @@
     align-items: center;
     font-weight: 400;
     .v-text-field-text-prepend-icon{
-      margin-right: 4px;
+      margin-right: 8px;
       display: flex;
       align-self: flex-start;
       font-size: 20px;
@@ -142,7 +142,7 @@
       max-height: 50px;
     }
     .v-text-field-text-append-icon{
-      margin-left: 4px;
+      margin-left: 8px;
       align-self: flex-start;
       display: flex;
       font-size: 20px;
