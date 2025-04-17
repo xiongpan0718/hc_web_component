@@ -66,7 +66,7 @@
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
-    { name: 'TextFieldsDisplay (文本显示)', id: 'TextFieldsShow', icon: 'circle', color: '#615ced' },
+    { name: 'TextFieldsDisplay (文本显示)', id: 'TextFieldsShow', icon: 'circle', color: 'green' },
     { name: 'Alert (警告框)', id: 'Alert', icon: 'circle', color: 'green' },
     { name: 'Snackbar (消息条)', id: 'Snackbar', icon: 'circle', color: 'green' },
     { name: 'Radio (单选按钮)', id: 'Radio', icon: 'circle', color: 'green' },

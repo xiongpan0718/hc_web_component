@@ -47,10 +47,9 @@
 <script lang="ts">
 
   // Composables
-  import { provideTheme } from '@/composables/theme'
+  import { makeThemeProps, provideTheme } from '@/composables/theme'
 
   // Utilities
-  import { ref } from 'vue'
   import { genericComponent, propsFactory } from '@/util'
   export const makeVTextFieldsDisplayProps = propsFactory({
     label: String,
@@ -59,6 +58,7 @@
     appendLabelIcon: String,
     prependTextIcon: String,
     appendTextIcon: String,
+    ...makeThemeProps(),
   }, 'VTextFieldsDisplay')
 
   export type VTextFieldsDisplaySlots = {
@@ -68,6 +68,7 @@
     appendTextIcon: never
     label: never
     text: never
+    default: never
   }
 
   export const VTextFieldsDisplay = genericComponent<VTextFieldsDisplaySlots>()({
@@ -84,9 +85,6 @@
 
   export type VToolbar = InstanceType<typeof VTextFieldsDisplay>
   export default VTextFieldsDisplay
-</script>
-
-<script setup lang="ts">
 </script>
 
 <style scoped lang="scss">
