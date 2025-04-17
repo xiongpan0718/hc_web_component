@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-09 16:29:39
+ * @LastEditTime : 2025-04-17 18:02:05
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/button.vue
  * @Description  :
 -->
@@ -16,7 +16,7 @@
         <v-row>
           <v-col cols="4">
             <p>Button / Icon</p>
-            <v-btn density="compact" icon="mdi-plus" variant="elevated" />
+            <v-btn density="compact" icon="add" variant="elevated" />
           </v-col>
           <v-col cols="4">
             <p>Button / Text</p>
@@ -26,7 +26,7 @@
         <v-row>
           <v-col cols="4">
             <p>Button / Icon + Text</p>
-            <v-btn prepend-icon="mdi-plus" variant="elevated">Button</v-btn>
+            <v-btn prepend-icon="add" variant="elevated">Button</v-btn>
           </v-col>
           <v-col cols="4">
             <p>Button / Text + Icon</p>
@@ -34,7 +34,7 @@
           </v-col>
           <v-col cols="4">
             <p>Button / Icon + Text + Icon</p>
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="elevated">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="elevated">Button</v-btn>
           </v-col>
         </v-row>
       </template>
@@ -47,36 +47,36 @@
       <template #text>
         <v-row>
           <v-col cols="2">
-            <v-btn icon="mdi-plus" variant="elevated" />
+            <v-btn icon="add" variant="elevated" />
           </v-col>
           <v-col cols="2">
-            <v-btn icon="mdi-plus" variant="outlined" />
+            <v-btn icon="add" variant="outlined" />
           </v-col>
           <v-col cols="2">
-            <v-btn icon="mdi-plus" variant="text" />
+            <v-btn icon="add" variant="text" />
           </v-col>
           <v-col cols="2">
-            <v-btn color="grey" icon="mdi-plus" variant="outlined" />
+            <v-btn color="grey" icon="add" variant="outlined" />
           </v-col>
           <v-col cols="2">
-            <v-btn color="red" icon="mdi-plus" variant="elevated" />
+            <v-btn color="red" icon="add" variant="elevated" />
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="2">
-            <v-btn icon="mdi-plus" variant="elevated" disabled />
+            <v-btn icon="add" variant="elevated" disabled />
           </v-col>
           <v-col cols="2">
-            <v-btn icon="mdi-plus" variant="outlined" disabled />
+            <v-btn icon="add" variant="outlined" disabled />
           </v-col>
           <v-col cols="2">
-            <v-btn icon="mdi-plus" variant="text" disabled />
+            <v-btn icon="add" variant="text" disabled />
           </v-col>
           <v-col cols="2">
-            <v-btn color="grey" icon="mdi-plus" variant="outlined" disabled />
+            <v-btn color="grey" icon="add" variant="outlined" disabled />
           </v-col>
           <v-col cols="2">
-            <v-btn color="red" icon="mdi-plus" variant="elevated" disabled />
+            <v-btn color="red" icon="add" variant="elevated" disabled />
           </v-col>
         </v-row>
       </template>
@@ -110,19 +110,19 @@
             <h3>Default</h3>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="elevated">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="elevated">Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="outlined">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="outlined">Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="text">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="text">Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="grey" prepend-icon="mdi-plus" variant="outlined">Button</v-btn>
+            <v-btn append-icon="$expand" color="grey" prepend-icon="add" variant="outlined">Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="red" prepend-icon="mdi-delete-outline" variant="elevated">Button</v-btn>
+            <v-btn append-icon="$expand" color="red" prepend-icon="delete_forever" variant="elevated">Button</v-btn>
           </v-col>
         </v-row>
         <v-row>
@@ -130,19 +130,19 @@
             <h3>Disabled</h3>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="elevated" disabled>Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="elevated" disabled>Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="outlined" disabled>Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="outlined" disabled>Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="text" disabled>Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="text" disabled>Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="grey" prepend-icon="mdi-plus" variant="outlined" disabled>Button</v-btn>
+            <v-btn append-icon="$expand" color="grey" prepend-icon="add" variant="outlined" disabled>Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="red" prepend-icon="mdi-delete-outline" variant="elevated" disabled>Button</v-btn>
+            <v-btn append-icon="$expand" color="red" prepend-icon="delete_forever" variant="elevated" disabled>Button</v-btn>
           </v-col>
         </v-row>
       </template>
@@ -196,11 +196,11 @@
         <v-row>
           <v-col cols="3">
             <p>Desktop - default</p>
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" variant="elevated">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" variant="elevated">Button</v-btn>
           </v-col>
           <v-col cols="3">
             <p>Desktop - small</p>
-            <v-btn append-icon="$expand" prepend-icon="mdi-plus" size="small" variant="elevated">Button</v-btn>
+            <v-btn append-icon="$expand" prepend-icon="add" size="small" variant="elevated">Button</v-btn>
           </v-col>
         </v-row>
       </template>

@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-17 10:43:16
+ * @LastEditTime : 2025-04-17 18:05:16
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -64,6 +64,7 @@
   import TextFields from './components/text-fields.vue'
   import TextFieldsShow from './components/text-fields-show.vue'
   import Pagination from './components/pagination.vue'
+  import Menu from './components/menu.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
@@ -86,6 +87,7 @@
     { name: 'Switch (开关)', id: 'Switch', icon: 'circle', color: '#b80b0b' },
     { name: 'TextFields (单行文本框)', id: 'TextFields', icon: 'circle', color: '#b80b0b' },
     { name: 'Pagination (分页)', id: 'Pagination', icon: 'circle', color: '#615ced' },
+    { name: 'Menu (分页)', id: 'Menu', icon: 'circle', color: '#615ced' },
   ])
 
   const list = {
@@ -109,8 +111,9 @@
     TextFields,
     TextFieldsShow,
     Pagination,
+    Menu,
   }
-  const key = ref('Pagination')
+  const key = ref('Menu')
 
   const select = ({ id }) => {
     key.value = id
