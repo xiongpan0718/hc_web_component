@@ -9,8 +9,8 @@ const googleAliases: IconAliases = {
   delete: 'close_fill', // delete (e.g. v-chip close_fill)
   clear: 'close_fill',
   success: 'check_fill',
-  info: 'info_fill',
-  warning: 'warning_fill',
+  info: 'info',
+  warning: 'warning',
   error: 'close_fill',
   prev: 'chevron_left',
   next: 'chevron_right',
