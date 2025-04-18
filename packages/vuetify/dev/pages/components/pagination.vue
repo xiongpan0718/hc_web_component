@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-17 17:57:55
+ * @LastEditTime : 2025-04-18 10:25:41
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/pagination.vue
  * @Description  :
 -->
@@ -15,22 +15,22 @@
       <template #text>
         <v-row>
           <v-col cols="3"> Default </v-col>
-          <v-col cols="3">
-            <v-pagination :length="7" />
+          <v-col cols="12">
+            <v-pagination :length="3" />
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="3"> Disabled </v-col>
-          <v-col cols="3">
+          <v-col cols="12">
             <v-pagination :length="3" disabled />
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="3"> Length </v-col>
-          <v-col cols="3">
+          <v-col cols="8">
             <v-pagination
               v-model="page"
-              :length="5"
+              :length="20"
               rounded="0"
             />
           </v-col>

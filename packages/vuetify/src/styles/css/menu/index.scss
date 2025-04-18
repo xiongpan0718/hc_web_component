@@ -1,0 +1,23 @@
+.v-theme--michelin {
+  .v-list {
+    &-item {
+      &--density-default {
+        min-height: 40px !important;
+      }
+
+      &:hover {
+        background-color: #D4E7FA !important;
+
+        .v-label {
+          color: #27509B !important;
+        }
+      }
+
+      .v-checkbox {
+        .v-icon {
+          color: #27509B;
+        }
+      }
+    }
+  }
+}

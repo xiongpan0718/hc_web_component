@@ -1,0 +1,35 @@
+.v-theme--michelin {
+  .v-pagination {
+    &__item {
+      .v-btn__content {
+        color: #1A1A1A !important;
+      }
+
+      &--is-active {
+        .v-btn {
+          background-color: rgba(0, 0, 0, 0.10);
+        }
+      }
+
+      &:hover {
+        .v-btn {
+          background-color: rgba(0, 0, 0, 0.10);
+        }
+      }
+    }
+
+    &__next {
+      .v-btn--variant-text {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.10);
+        }
+      }
+
+      .v-btn__content {
+        .v-icon {
+          color: #1A1A1A !important;
+        }
+      }
+    }
+  }
+}
