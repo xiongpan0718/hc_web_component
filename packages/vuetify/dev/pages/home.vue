@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-18 09:47:36
+ * @LastEditTime : 2025-04-18 16:22:34
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -113,7 +113,7 @@
     Pagination,
     Menu,
   }
-  const key = ref('Menu')
+  const key = ref('Pagination')
 
   const select = ({ id }) => {
     key.value = id

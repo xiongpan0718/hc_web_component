@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-17 18:02:05
+ * @LastEditTime : 2025-04-18 17:24:31
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/button.vue
  * @Description  :
 -->
@@ -122,7 +122,7 @@
             <v-btn append-icon="$expand" color="grey" prepend-icon="add" variant="outlined">Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="red" prepend-icon="delete_forever" variant="elevated">Button</v-btn>
+            <v-btn append-icon="$expand" color="red" prepend-icon="delete" variant="elevated">Button</v-btn>
           </v-col>
         </v-row>
         <v-row>
@@ -142,7 +142,7 @@
             <v-btn append-icon="$expand" color="grey" prepend-icon="add" variant="outlined" disabled>Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="red" prepend-icon="delete_forever" variant="elevated" disabled>Button</v-btn>
+            <v-btn append-icon="$expand" color="red" prepend-icon="delete" variant="elevated" disabled>Button</v-btn>
           </v-col>
         </v-row>
       </template>
