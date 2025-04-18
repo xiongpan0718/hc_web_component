@@ -7,7 +7,7 @@
     </v-btn>
     <v-snackbar
       v-model="snackbar"
-      icon="hc-hollowInfo"
+      icon="$hc-hollowInfo"
     >
       {{ text }}
       <template #actions>
