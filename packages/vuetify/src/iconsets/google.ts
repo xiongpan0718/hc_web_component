@@ -4,20 +4,20 @@ import type { IconAliases } from '@/composables/icons'
 const googleAliases: IconAliases = {
   collapse: 'keyboard_arrow_up',
   complete: 'check',
-  cancel: 'close',
+  cancel: 'close_fill',
   close: 'close',
-  delete: 'close', // delete (e.g. v-chip close)
-  clear: 'close',
-  success: 'check',
-  info: 'info',
-  warning: 'warning',
-  error: 'close',
+  delete: 'close_fill', // delete (e.g. v-chip close_fill)
+  clear: 'close_fill',
+  success: 'check_fill',
+  info: 'info_fill',
+  warning: 'warning_fill',
+  error: 'close_fill',
   prev: 'chevron_left',
   next: 'chevron_right',
   checkboxOn: 'check_box_fill',
   checkboxOff: 'check_box_outline_blank',
-  checkboxIndeterminate: 'chips',
-  delimiter: 'circle', // for carousel
+  checkboxIndeterminate: 'chips_fill',
+  delimiter: 'circle_fill', // for carousel
   sortAsc: 'arrow_upward',
   sortDesc: 'arrow_downward',
   expand: 'stat_minus_1',
@@ -28,7 +28,7 @@ const googleAliases: IconAliases = {
   radioOff: 'radio_button_unchecked',
   edit: 'edit',
   ratingEmpty: 'star_rate',
-  ratingFull: 'star_rate',
+  ratingFull: 'star_rate_fill',
   ratingHalf: 'star_half',
   loading: 'cached',
   first: 'first_page',
@@ -41,7 +41,7 @@ const googleAliases: IconAliases = {
   treeviewCollapse: 'arrow_drop_down',
   treeviewExpand: 'arrow_right',
   eyeDropper: 'colorize',
-  upload: 'backup',
+  upload: 'backup_fill',
 }
 
 export { googleAliases }

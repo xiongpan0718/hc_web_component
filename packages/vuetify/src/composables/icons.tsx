@@ -128,11 +128,15 @@ export const VGoogleIcon = genericComponent()({
   props: makeIconProps(),
 
   setup (props, { slots }) {
+    const icons = inject(IconSymbol)
+    if (!icons) throw new Error('Missing Vuetify Icons provide!')
     return () => {
       let iconName = props.icon || slots.default?.()
       const classList = ['material-symbols-outlined']
       if (props.fill) {
         classList.push('material-symbols-outlined-fill')
+      } else if (String(iconName).startsWith('$')) {
+        iconName = icons.aliases?.[String(iconName).slice(1)]
       } else if (String(iconName).endsWith('_fill')) {
         const index = String(iconName).lastIndexOf('_fill')
         iconName = String(iconName).slice(0, index)
@@ -272,8 +276,6 @@ export const useIcon = (props: Ref<IconValue | undefined>) => {
       icon = icon.trim()
       if (icon.startsWith('$')) {
         icon = icons.aliases?.[icon.slice(1)]
-      } else if (icons.aliases[icon]) {
-        icon = icons.aliases?.[icon]
       }
     }
 
