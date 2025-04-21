@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-03-24 11:21:58
+ * @LastEditTime : 2025-04-17 18:02:56
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/badge.vue
  * @Description  :
 -->
@@ -16,7 +16,7 @@
         <v-row>
           <v-col cols="4">
             <p>Icon</p>
-            <v-badge color="grey" icon="mdi-plus" />
+            <v-badge color="grey" icon="add" />
           </v-col>
           <v-col cols="4">
             <p>number</p>
@@ -60,23 +60,23 @@
         <v-row>
           <v-col cols="2">
             <p>Primary(blue)</p>
-            <v-badge color="blue" icon="mdi-plus" />
+            <v-badge color="blue" icon="add" />
           </v-col>
           <v-col cols="2">
             <p>Green</p>
-            <v-badge color="green" icon="mdi-plus" />
+            <v-badge color="green" icon="add" />
           </v-col>
           <v-col cols="2">
             <p>Red</p>
-            <v-badge color="red" icon="mdi-plus" />
+            <v-badge color="red" icon="add" />
           </v-col>
           <v-col cols="2">
             <p>Yellow</p>
-            <v-badge color="yellow" icon="mdi-plus" />
+            <v-badge color="yellow" icon="add" />
           </v-col>
           <v-col cols="2">
             <p>Grey</p>
-            <v-badge color="grey" icon="mdi-plus" />
+            <v-badge color="grey" icon="add" />
           </v-col>
         </v-row>
         <v-row>

@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 14:05:55
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-14 17:17:43
+ * @LastEditTime : 2025-04-17 17:56:38
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/text-fields.vue
  * @Description  :
 -->
@@ -49,7 +49,7 @@
           <v-col cols="3"> Icon </v-col>
           <v-col cols="3">
             <v-text-field
-              append-inner-icon="mdi-map-marker"
+              append-inner-icon="explore_nearby"
               label="Append inner"
               variant="underlined"
             />

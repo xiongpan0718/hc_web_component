@@ -2,7 +2,7 @@
  * @Author       : yuqigong@outlook.com
  * @Date         : 2025-03-19 10:56:30
  * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-14 17:08:51
+ * @LastEditTime : 2025-04-18 16:22:34
  * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/home.vue
  * @Description  :
 -->
@@ -63,6 +63,8 @@
   import Switch from './components/switch.vue'
   import TextFields from './components/text-fields.vue'
   import TextFieldsShow from './components/text-fields-show.vue'
+  import Pagination from './components/pagination.vue'
+  import Menu from './components/menu.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
@@ -82,8 +84,10 @@
     { name: 'Tabs (选项卡)', id: 'Tabs', icon: 'circle', color: 'green' },
     { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: 'circle', color: 'green' },
     { name: 'Selects (下拉选择框)', id: 'Select', icon: 'circle', color: '#b80b0b' },
-    { name: 'Switch (开关)', id: 'Switch', icon: 'circle', color: 'green' },
-    { name: 'TextFields (单行文本框)', id: 'TextFields', icon: 'circle', color: '#615ced' },
+    { name: 'Switch (开关)', id: 'Switch', icon: 'circle', color: '#b80b0b' },
+    { name: 'TextFields (单行文本框)', id: 'TextFields', icon: 'circle', color: '#b80b0b' },
+    { name: 'Pagination (分页)', id: 'Pagination', icon: 'circle', color: '#615ced' },
+    { name: 'Menu (菜单)', id: 'Menu', icon: 'circle', color: '#615ced' },
   ])
 
   const list = {
@@ -104,9 +108,12 @@
     Checkbox,
     Select,
     Switch,
+    TextFields,
     TextFieldsShow,
+    Pagination,
+    Menu,
   }
-  const key = ref('TextFieldsShow')
+  const key = ref('Pagination')
 
   const select = ({ id }) => {
     key.value = id

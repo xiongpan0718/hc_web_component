@@ -4,6 +4,12 @@
       min-height: 24px;
       opacity: 1;
 
+      &__input {
+        > .v-icon {
+          opacity: 1;
+        }
+      }
+
       &__wrapper {
         margin-right: 4px;
       }
@@ -18,7 +24,7 @@
           color: #1a1a1a;
         }
 
-        .v-icon__svg {
+        .v-icon {
           fill: #1a1a1a;
           color: #1a1a1a;
         }
@@ -29,7 +35,7 @@
           color: #1a1a1a;
         }
 
-        .v-icon__svg {
+        .v-icon {
           fill: #27509B;
           color: #27509B;
         }
@@ -40,7 +46,7 @@
           color: #999999;
         }
 
-        .v-icon__svg {
+        .v-icon {
           fill: #999999;
           color: #999999;
         }

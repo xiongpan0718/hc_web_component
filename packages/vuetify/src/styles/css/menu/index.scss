@@ -1,0 +1,34 @@
+.v-theme--michelin {
+  .v-list {
+    &-item {
+      color: #1A1A1A;
+
+      &__title {
+        display: flex;
+        align-items: center;
+      }
+
+      &__cust {
+        flex: 1;
+        padding: 0 12px;
+        color: #1A1A1A;
+      }
+
+      &--density-default {
+        min-height: 40px !important;
+      }
+
+      &:hover {
+        background-color: #D4E7FA !important;
+
+        .v-labelm, .v-list-item__content, .v-icon {
+          color: #27509B !important;
+        }
+      }
+
+      .v-icon {
+        font-size: 24px;
+      }
+    }
+  }
+}
