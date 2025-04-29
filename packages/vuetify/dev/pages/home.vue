@@ -113,7 +113,7 @@
     Pagination,
     Menu,
   }
-  const key = ref('Pagination')
+  const key = ref('AutoComplete')
 
   const select = ({ id }) => {
     key.value = id

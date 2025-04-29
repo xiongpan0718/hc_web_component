@@ -81,7 +81,10 @@ export const makeVAutocompleteProps = propsFactory({
   },
   clearOnSelect: Boolean,
   search: String,
-
+  maxLength: {
+    type: Number,
+    default: 9999,
+  },
   ...makeFilterProps({ filterKeys: ['title'] }),
   ...makeSelectProps(),
   ...omit(makeVTextFieldProps({
@@ -587,7 +590,9 @@ export const VAutocomplete = genericComponent<new <
                   if (hasSlot && !slotContent) return undefined
 
                   return (
-                    <div
+                    index < props.maxLength
+                      ? (
+<div
                       key={ item.value }
                       class={[
                         'v-autocomplete__selection',
@@ -597,7 +602,7 @@ export const VAutocomplete = genericComponent<new <
                         ],
                       ]}
                       style={ index === selectionIndex.value ? textColorStyles.value : {} }
-                    >
+>
                       { hasChips.value ? (
                         !slots.chip ? (
                           <VChip
@@ -633,6 +638,16 @@ export const VAutocomplete = genericComponent<new <
                         )
                       )}
                     </div>
+                      ) : index === props.maxLength ? (
+                      <VChip
+                        key="chip"
+                        size="small"
+                        disabled={ item.props.disabled }
+                        variant={ hasChips.value ? 'tonal' : 'text' }
+                        text={ '+' + (model.value.length - index) }
+                        { ...slotProps }
+                      />
+                      ) : undefined
                   )
                 })}
               </>

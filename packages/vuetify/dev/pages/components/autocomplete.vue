@@ -11,13 +11,14 @@
       />
     </div>
     <div style="flex: 1">
-      <h4>多选状态,增加checkbox效果，内容样式默认显示</h4>
+      <h4>多选,增加checkbox效果，max-lenght控制数量</h4>
       <v-autocomplete
         :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
         label="autocomplete"
         placeholder="please enter"
         variant="outlined"
         clearable
+        :maxLength="2"
         focused
         multiple
       />
@@ -36,7 +37,7 @@
       />
     </div>
     <div style="flex: 1">
-      <h4>多选状态，搜索图标，内容纸片显示</h4>
+      <h4>多选,内容纸片显示,max-lenght控制数量</h4>
       <v-autocomplete
         :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
         :menu-icon="null"
@@ -45,6 +46,7 @@
         placeholder="please enter"
         variant="outlined"
         chips
+        :maxLength="2"
         clearable
         closable-chips
         multiple
