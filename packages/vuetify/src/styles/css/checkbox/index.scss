@@ -1,0 +1,56 @@
+.v-theme--michelin {
+  .v-checkbox {
+    .v-selection-control {
+      min-height: 24px;
+      opacity: 1;
+
+      &__input {
+        > .v-icon {
+          opacity: 1;
+        }
+      }
+
+      &__wrapper {
+        margin-right: 4px;
+      }
+
+      &__wrapper, &__input {
+        width: 24px;
+        height: 24px;
+      }
+
+      &--density-default {
+        .v-label {
+          color: #1a1a1a;
+        }
+
+        .v-icon {
+          fill: #1a1a1a;
+          color: #1a1a1a;
+        }
+      }
+
+      &--dirty {
+        .v-label {
+          color: #1a1a1a;
+        }
+
+        .v-icon {
+          fill: #27509B;
+          color: #27509B;
+        }
+      }
+
+      &--disabled {
+        .v-label {
+          color: #999999;
+        }
+
+        .v-icon {
+          fill: #999999;
+          color: #999999;
+        }
+      }
+    }
+  }
+}

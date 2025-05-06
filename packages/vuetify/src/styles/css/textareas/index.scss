@@ -1,0 +1,130 @@
+.v-theme--michelin {
+  .v-textarea.v-input--error {
+    .v-input__details {
+      .v-messages {
+        color: #B71C1C;
+      }
+    }
+  }
+  .v-textarea {
+
+    .v-input__details {
+      box-sizing: border-box;
+      padding-top: 0px;
+      padding-inline: 0;
+      min-height: 18px;
+      font-size: 12px;
+      color: #727373;
+
+      .v-counter {
+        color: #4D4D4D;
+      }
+
+      .v-messages {
+        opacity: 1;
+      }
+    }
+
+    .v-field--error:not(.v-field--disabled) {
+      .v-field__outline {
+        color: #B71C1C;
+      }
+    }
+
+    .v-field--variant-outlined {
+      color: #ccc;
+      &:hover{
+        color: #666;
+      }
+
+      .v-label.v-field-label {
+        top: 8px;
+      }
+
+      textarea {
+        position: relative;
+        color: #1A1A1A;
+      }
+
+      textarea[rows="4"] {
+        height: 108px !important;
+      }
+
+      textarea[rows="5"] {
+        height: 82px !important;
+      }
+
+      .v-field__input {
+        padding: 8px 12px;
+        mask-image: none;
+
+        &::placeholder {
+          color: #4D4D4D;
+        }
+      }
+
+      &.v-field--focused{
+        .v-field__outline{
+          color: #27509B !important;
+          .v-field__outline__notch{
+            .v-label.v-field-label--floating{
+              color: #27509B !important;
+            }
+          }
+        }
+      }
+
+      .v-field__field{
+        .v-label.v-field-label{
+          color: #cccccc;
+          opacity: 1;
+        }
+      }
+
+      &.v-field--error:not(.v-field--disabled) {
+        .v-field__append-inner > .v-icon {
+          color: #B71C1C;
+        }
+      }
+      .v-field__append-inner {
+        padding-top: 8px;
+        .v-icon {
+          margin-left: 6px;
+        }
+      }
+      .v-field__clearable{
+        padding-top: 8px;
+        margin-inline: 0;
+
+        & > .v-icon{
+          color: #1A1A1A;
+          opacity: 1;
+          min-width: 20px;
+          width: 20px;
+          height: 20px;
+        }
+
+        .mdi:before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .v-field__outline{
+        --v-field-border-opacity:1;
+      }
+
+      &.v-field--disabled{
+        background: #F2F2F2;
+        opacity: 1;
+        .v-field__prepend-inner,.v-field__append-inner,.v-field__clearable{
+          .v-icon{
+            color: #ccc;
+          }
+        }
+
+      }
+
+    }
+  }
+}

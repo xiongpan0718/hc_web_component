@@ -1,0 +1,64 @@
+.v-theme--michelin {
+  .v-switch {
+    .v-selection-control__input {
+      height: 24px;
+      width: 24px;
+    }
+
+    .v-label {
+      padding-inline-start: 8px;
+    }
+
+    .v-selection-control {
+      &--density-default {
+        .v-switch__track {
+          background-color: #B2B2B2;
+          opacity: 1;
+        }
+
+        .v-label {
+          color: #1a1a1a;
+        }
+      }
+
+      &--dirty {
+        .v-switch__track {
+          background-color: #27509b;
+          opacity: 1;
+        }
+
+        .v-label {
+          color: #1a1a1a;
+        }
+      }
+
+      &--disabled {
+        .v-switch__track {
+          background-color: #b2b2b2;
+          opacity: 1;
+        }
+
+        .v-label {
+          color: #999;
+        }
+      }
+    }
+
+    &__thumb {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--inset {
+      .v-switch__thumb {
+        transform: unset;
+      }
+
+      .v-switch__track {
+        padding: 0 4px;
+        height: 32px;
+        min-width: 56px;
+      }
+    }
+  }
+}
