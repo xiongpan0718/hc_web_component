@@ -1,4 +1,14 @@
 .v-theme--michelin {
+  .v-tabs--align-tabs-center {
+    .v-slide-group__content {
+      &>div{
+        flex: 1;
+      }
+    }
+    .v-btn {
+      width: 100%;
+    }
+  }
   .v-tabs {
     .v-badge--inline {
       .v-badge__wrapper {
