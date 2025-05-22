@@ -1,0 +1,52 @@
+/* fallback */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('../../assets/fonts/googleFontIcon.woff2') format('woff2');
+}
+
+:root {
+  --hc-icon-size: 24px;
+}
+
+// 基础样式
+.material-symbols-base {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+// Outlined 变体
+.material-symbols-outlined {
+  @extend .material-symbols-base;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300;
+}
+
+// Filled 变体
+.material-symbols-filled {
+  @extend .material-symbols-base;
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 200;
+}
+
+// 在默认情况下或明确使用default size时应用自定义尺寸
+.material-symbols-filled.v-icon:not([class*="text-"]):not([class*="v-icon--size"]),
+.material-symbols-filled.v-icon--size-default,
+.material-symbols-outlined.v-icon:not([class*="text-"]):not([class*="v-icon--size"]),
+.material-symbols-outlined.v-icon--size-default {
+  font-size: var(--hc-icon-size);
+}

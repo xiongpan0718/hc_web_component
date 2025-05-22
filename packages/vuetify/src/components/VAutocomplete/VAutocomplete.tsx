@@ -75,7 +75,7 @@ type Value <T, ReturnObject extends boolean, Multiple extends boolean> =
     ? readonly Val<T, ReturnObject>[]
     : Val<T, ReturnObject> | null
 
-export const makeVAutocompleteProps = propsFactory({
+export const makeHcAutocompleteProps = propsFactory({
   autoSelectFirst: {
     type: [Boolean, String] as PropType<boolean | 'exact'>,
   },
@@ -92,11 +92,11 @@ export const makeVAutocompleteProps = propsFactory({
     role: 'combobox',
   }), ['validationValue', 'dirty', 'appendInnerIcon']),
   ...makeTransitionProps({ transition: false }),
-}, 'VAutocomplete')
+}, 'HcAutocomplete')
 
 type ItemType<T> = T extends readonly (infer U)[] ? U : never
 
-export const VAutocomplete = genericComponent<new <
+export const HcAutocomplete = genericComponent<new <
   T extends readonly any[],
   Item = ItemType<T>,
   ReturnObject extends boolean = false,
@@ -122,9 +122,9 @@ export const VAutocomplete = genericComponent<new <
     'no-data': never
   }
 ) => GenericProps<typeof props, typeof slots>>()({
-  name: 'VAutocomplete',
+  name: 'HcAutocomplete',
 
-  props: makeVAutocompleteProps(),
+  props: makeHcAutocompleteProps(),
 
   emits: {
     'update:focused': (focused: boolean) => true,
@@ -684,4 +684,4 @@ export const VAutocomplete = genericComponent<new <
   },
 })
 
-export type VAutocomplete = InstanceType<typeof VAutocomplete>
+export type HcAutocomplete = InstanceType<typeof HcAutocomplete>

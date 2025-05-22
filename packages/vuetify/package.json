@@ -1,5 +1,5 @@
 {
-  "name": "vuetify",
+  "name": "vuetify-src",
   "description": "Vue Material Component Framework",
   "version": "3.7.16",
   "author": {
@@ -67,6 +67,7 @@
     "./blueprints/*": "./lib/blueprints/*.mjs",
     "./components": "./lib/components/index.mjs",
     "./components/*": "./lib/components/*/index.mjs",
+    "./hc-components/*": "./lib/components/*/index.mjs",
     "./directives": "./lib/directives/index.mjs",
     "./directives/*": "./lib/directives/*/index.mjs",
     "./locale": "./lib/locale/index.mjs",
