@@ -1,1 +1,1 @@
-export { HcAutocomplete } from './VAutocomplete'
+export { VAutocomplete } from './VAutocomplete'
