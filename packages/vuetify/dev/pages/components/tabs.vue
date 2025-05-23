@@ -1,200 +1,184 @@
 <template>
   <div class="tabs">
     <div class="text-subtitle-2 mb-2">Anatomy</div>
-    <v-tabs v-model="tab">
-      <v-tab class="text-none" prepend-icon="list" value="one" variant="text">
+    <v-hc-tabs v-model="tab">
+      <v-hc-tab
+        badge-color="blue"
+        badge-number="99"
+        class="text-none"
+        prepend-icon="list"
+        value="one"
+        variant="text"
+      >
         <span>Item</span>
-        <!-- <span class="v-tabs__badge v-tabs__badge--blue">99</span> -->
-        <template #append>
-          <v-badge
-            color="blue"
-            content="99"
-            inline
-          />
-        </template>
-      </v-tab>
-      <v-tab value="two">Card</v-tab>
-      <v-tab value="three">Schedule</v-tab>
-    </v-tabs>
+      </v-hc-tab>
+      <v-hc-tab value="two">Card</v-hc-tab>
+      <v-hc-tab value="three">Schedule</v-hc-tab>
+    </v-hc-tabs>
     <div class="tab_item">
-      <v-tabs v-model="tabItem">
-        <v-tab class="text-none" value="one" variant="text">
+      <v-hc-tabs v-model="tabItem">
+        <v-hc-tab
+          badge-color="blue"
+          badge-number="99"
+          class="text-none"
+          value="one"
+          variant="text"
+        >
           Item
-          <template #append>
-            <v-badge
-              color="blue"
-              content="99"
-              inline
-            />
-          </template>
-        </v-tab>
-      </v-tabs>
-      <v-tabs v-model="tabItem">
-        <v-tab class="text-none" value="one" variant="text">
+        </v-hc-tab>
+      </v-hc-tabs>
+      <v-hc-tabs v-model="tabItem">
+        <v-hc-tab
+          badge-color="grey"
+          badge-number="99"
+          class="text-none"
+          value="one"
+          variant="text"
+        >
           Item
-          <template #append>
-            <v-badge
-              color="grey"
-              content="99"
-              inline
-            />
-          </template>
-        </v-tab>
-      </v-tabs>
-      <v-tabs v-model="tabItem">
-        <v-tab class="text-none" value="one" variant="text">
+        </v-hc-tab>
+      </v-hc-tabs>
+      <v-hc-tabs v-model="tabItem">
+        <v-hc-tab
+          badge-color="red"
+          badge-number="99"
+          class="text-none"
+          value="one"
+          variant="text"
+        >
           Item
-          <template #append>
-            <v-badge
-              color="red"
-              content="99"
-              inline
-            />
-          </template>
-        </v-tab>
-      </v-tabs>
-      <v-tabs v-model="tabItem">
-        <v-tab class="text-none" value="one" variant="text">
+        </v-hc-tab>
+      </v-hc-tabs>
+      <v-hc-tabs v-model="tabItem">
+        <v-hc-tab
+          badge-color="yellow"
+          badge-number="99"
+          class="text-none"
+          value="one"
+          variant="text"
+        >
           Item
-          <template #append>
-            <v-badge
-              color="yellow"
-              content="99"
-              inline
-            />
-          </template>
-        </v-tab>
-      </v-tabs>
-      <v-tabs v-model="tabItem">
-        <v-tab class="text-none" value="one" variant="text">
+        </v-hc-tab>
+      </v-hc-tabs>
+      <v-hc-tabs v-model="tabItem">
+        <v-hc-tab
+          badge-color="green"
+          badge-number="99"
+          class="text-none"
+          value="one"
+          variant="text"
+        >
           Item
-          <template #append>
-            <v-badge
-              color="green"
-              content="99"
-              inline
-            />
-          </template>
-        </v-tab>
-      </v-tabs>
+        </v-hc-tab>
+      </v-hc-tabs>
     </div>
     <div class="tab_item">
       <div>
         <div class="text-subtitle-2 mb-2">MAX WIDTH</div>
-        <v-tabs v-model="tabItem">
-          <v-tab class="text-none" value="one" variant="text" width="200">
-            <v-tooltip
-              activator="parent"
-              location="top"
-            >Tab with truncated text samTab with truncated</v-tooltip>
+        <v-hc-tabs v-model="tabItem">
+          <v-hc-tab
+            class="text-none"
+            tooltip-text="Tab with truncated text samTab with truncated text samTab with truncated text sa"
+            value="one"
+            variant="text"
+          >
             <span class="text-overflow">Tab with truncated text samTab with truncated text samTab with truncated text sam</span>
-          </v-tab>
-        </v-tabs>
+          </v-hc-tab>
+        </v-hc-tabs>
       </div>
       <div>
         <div class="text-subtitle-2 mb-2">Text only</div>
-        <v-tabs v-model="tabItem">
-          <v-tab class="text-none" value="one" variant="text">
+        <v-hc-tabs v-model="tabItem">
+          <v-hc-tab class="text-none" value="one" variant="text">
             Item
-          </v-tab>
-        </v-tabs>
+          </v-hc-tab>
+        </v-hc-tabs>
       </div>
       <div>
         <div class="text-subtitle-2 mb-2">Icon + Text</div>
-        <v-tabs v-model="tabItem">
-          <v-tab class="text-none" prepend-icon="list" value="one" variant="text">
+        <v-hc-tabs v-model="tabItem">
+          <v-hc-tab class="text-none" prepend-icon="list" value="one" variant="text">
             Item
-            <template #badge>
-              <v-badge content="99" />
-            </template>
-          </v-tab>
-        </v-tabs>
+          </v-hc-tab>
+        </v-hc-tabs>
       </div>
       <div>
         <div class="text-subtitle-2 mb-2">Icon only</div>
-        <v-tabs v-model="tabItem" stacked>
-          <v-tab class="text-none" prepend-icon="list" value="one" variant="text" />
-        </v-tabs>
+        <v-hc-tabs v-model="tabItem" stacked>
+          <v-hc-tab class="text-none" prepend-icon="list" value="one" variant="text" />
+        </v-hc-tabs>
       </div>
       <div>
         <div class="text-subtitle-2 mb-2">disabled</div>
-        <v-tabs v-model="tabItem">
-          <v-tab class="text-none" prepend-icon="list" variant="text" disabled>
+        <v-hc-tabs v-model="tabItem">
+          <v-hc-tab class="text-none" prepend-icon="list" variant="text" disabled>
             list
-          </v-tab>
-        </v-tabs>
+          </v-hc-tab>
+        </v-hc-tabs>
       </div>
     </div>
     <div class="text-subtitle-2 mb-2">Pagination</div>
-    <v-tabs bg-color="white" center-active>
-      <v-tab>One</v-tab>
-      <v-tab>Two</v-tab>
-      <v-tab>Three</v-tab>
-      <v-tab>Four</v-tab>
-      <v-tab>Five</v-tab>
-      <v-tab>Six</v-tab>
-      <v-tab>Seven</v-tab>
-      <v-tab>Eight</v-tab>
-      <v-tab>Nine</v-tab>
-      <v-tab>Ten</v-tab>
-      <v-tab>Eleven</v-tab>
-      <v-tab>Twelve</v-tab>
-      <v-tab>Thirteen</v-tab>
-      <v-tab>Fourteen</v-tab>
-      <v-tab>Fifteen</v-tab>
-      <v-tab>Sixteen</v-tab>
-      <v-tab>Seventeen</v-tab>
-      <v-tab>Eighteen</v-tab>
-      <v-tab>Nineteen</v-tab>
-      <v-tab>Twenty</v-tab>
-    </v-tabs>
+    <v-hc-tabs bg-color="white" center-active>
+      <v-hc-tab>One</v-hc-tab>
+      <v-hc-tab>Two</v-hc-tab>
+      <v-hc-tab>Three</v-hc-tab>
+      <v-hc-tab>Four</v-hc-tab>
+      <v-hc-tab>Five</v-hc-tab>
+      <v-hc-tab>Six</v-hc-tab>
+      <v-hc-tab>Seven</v-hc-tab>
+      <v-hc-tab>Eight</v-hc-tab>
+      <v-hc-tab>Nine</v-hc-tab>
+      <v-hc-tab>Ten</v-hc-tab>
+      <v-hc-tab>Eleven</v-hc-tab>
+      <v-hc-tab>Twelve</v-hc-tab>
+      <v-hc-tab>Thirteen</v-hc-tab>
+      <v-hc-tab>Fourteen</v-hc-tab>
+      <v-hc-tab>Fifteen</v-hc-tab>
+      <v-hc-tab>Sixteen</v-hc-tab>
+      <v-hc-tab>Seventeen</v-hc-tab>
+      <v-hc-tab>Eighteen</v-hc-tab>
+      <v-hc-tab>Nineteen</v-hc-tab>
+      <v-hc-tab>Twenty</v-hc-tab>
+    </v-hc-tabs>
     <div>
       <div class="text-subtitle-2 mb-2">left alignment</div>
-      <v-tabs align-tabs="start">
-        <v-tab class="text-none" prepend-icon="list" variant="text">
+      <v-hc-tabs align-tabs="start">
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-      </v-tabs>
+        </v-hc-tab>
+      </v-hc-tabs>
     </div>
     <div>
       <div class="text-subtitle-2 mb-2">fill container</div>
-      <v-tabs>
-        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
+      <v-hc-tabs align-tabs="center">
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-        <v-tab class="text-none" prepend-icon="list" variant="text" width="20%">
+        </v-hc-tab>
+        <v-hc-tab class="text-none" prepend-icon="list" variant="text">
           list
-        </v-tab>
-      </v-tabs>
-    </div>
-    <div style="margin-top: 50px;">
-      <h3>Self added code implementation</h3>
-      <p>1、Maximum width omission and v-tooltip</p>
-      <p>2、badge</p>
-      <h3>自己加的代码实现</h3>
-      <p>1、最大宽度省略和v-tooltip</p>
-      <p>2、badge</p>
+        </v-hc-tab>
+      </v-hc-tabs>
     </div>
   </div>
 </template>
@@ -218,12 +202,5 @@
   &>div {
     margin-right: 30px
   }
-}
-
-.text-overflow {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 180px;
 }
 </style>
