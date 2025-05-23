@@ -1,4 +1,14 @@
 .v-theme--michelin {
+  .v-tabs--align-tabs-center {
+    .v-slide-group__content {
+      &>div{
+        flex: 1;
+      }
+    }
+    .v-btn {
+      width: 100%;
+    }
+  }
   .v-tabs {
     .v-badge--inline {
       .v-badge__wrapper {
@@ -24,7 +34,6 @@
 
     .v-slide-group__prev--disabled {
      color: #999999 !important;
-     opacity: 1 !important;
     }
 
     .v-slide-group__prev,.v-slide-group__next {
@@ -67,6 +76,18 @@
       .v-btn--variant-text:hover {
           background-color: #F2F2F2;
           color: #1A1A1A;
+      }
+
+      .v-tab--selected:hover {
+          color: #27509B;
+      }
+
+      .v-btn:hover > .v-btn__overlay {
+          opacity: 0;
+      }
+
+      .v-ripple__container {
+          opacity: 0.1;
       }
 
 
