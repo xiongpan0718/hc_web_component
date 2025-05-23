@@ -3,8 +3,8 @@ import App from './App.vue'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { createHcComponent, createThemeConfig, createIconConfig } from '@michelin/hc-component'
-import '@michelin/hc-component/dist/styles/index.css'
+import { createHcComponent, createThemeConfig, createIconConfig } from 'hc-component'
+import 'hc-component/dist/styles/index.css'
 import 'vuetify/styles'
 
 const app = createApp(App)

@@ -65,7 +65,7 @@ export default defineConfig({
     copy({
       targets: [
         { 
-          src: 'src/styles/fonts/*.woff2',
+          src: 'src/assets/fonts/*.woff2',
           dest: 'dist/assets/fonts',
           flatten: true,
           transform: (contents, filename) => contents
@@ -127,7 +127,7 @@ export default defineConfig({
         maxSize: 8,
         fallback: 'copy',
         basePath: 'src/styles',
-        destPath: 'styles'
+        destPath: 'assets'
       }
     }),
     visualizer({
