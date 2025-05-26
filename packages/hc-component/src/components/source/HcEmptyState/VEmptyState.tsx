@@ -4,14 +4,14 @@ import './VEmptyState.sass'
 // Components
 import { VBtn } from '@/components/VBtn'
 import { VDefaultsProvider } from '@/components/VDefaultsProvider'
-import status404 from '@/components/VEmptyState/icons/404.svg'
-import download from '@/components/VEmptyState/icons/download.svg'
-import noDataSearch from '@/components/VEmptyState/icons/no-data-search.svg'
-import noData from '@/components/VEmptyState/icons/no-data.svg'
-import noNetwork from '@/components/VEmptyState/icons/no-network.svg'
-import noPermission from '@/components/VEmptyState/icons/no-permission.svg'
-import systemSetting from '@/components/VEmptyState/icons/system-setting.svg'
-import system from '@/components/VEmptyState/icons/system.svg'
+import status404 from './icons/404.svg'
+import download from './icons/download.svg'
+import noDataSearch from './icons/no-data-search.svg'
+import noData from './icons/no-data.svg'
+import noNetwork from './icons/no-network.svg'
+import noPermission from './icons/no-permission.svg'
+import systemSetting from './icons/system-setting.svg'
+import system from './icons/system.svg'
 import { VIcon } from '@/components/VIcon'
 import { VImg } from '@/components/VImg'
 
@@ -77,7 +77,7 @@ export const makeVEmptyStateProps = propsFactory({
 }, 'VEmptyState')
 
 export const VEmptyState = genericComponent<VEmptyStateSlots>()({
-  name: 'VEmptyState',
+  name: 'HcEmptyState',
 
   props: makeVEmptyStateProps(),
 

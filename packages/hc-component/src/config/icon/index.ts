@@ -4,13 +4,13 @@ import { googleAliases } from './iconsets/google'
 import { defaultIcons } from './iconsets/default'
 import { h } from 'vue'
 
-// 创建 Google Material Icons 配置
+// Create Google Material Icons configuration
 const google: IconSet = {
   component: (props: HcIconProps) => {
     let iconName = props.icon
     let iconClass = 'material-symbols-outlined'
     
-    // 检查 fill 属性，支持布尔值、字符串 'true' 和空值
+    // Check fill property, support boolean, string 'true' and empty value
     if (props.fill === true || props.fill === 'true' || props.fill === '') {
       iconClass = 'material-symbols-filled'
     } else if (String(iconName).endsWith('_fill')) {
@@ -38,7 +38,7 @@ export const defaultIconConfig: IconOptions = {
 }
 
 export function createIconConfig(options?: HcIconOptions): IconOptions {
-  // 如果提供了 size，创建并插入样式
+  // If size is provided, create and insert style
   if (options?.size) {
     const style = document.createElement('style')
     console.log(options.size)
@@ -50,7 +50,7 @@ export function createIconConfig(options?: HcIconOptions): IconOptions {
     document.head.appendChild(style)
   }
 
-  // 从选项中移除 size，因为它不是 Vuetify IconOptions 的一部分
+  // Remove size from options as it's not part of Vuetify IconOptions
   const { size, ...vuetifyOptions } = options || {};
 
   return {

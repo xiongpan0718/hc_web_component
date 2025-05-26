@@ -1,6 +1,8 @@
-// 导出所有组件
+// Export all components
 export * from './components'
-// 导入全局样式
+
+// Import global styles
 import './styles/index.scss'
-// 导出 config 相关
+
+// Export config related
 export * from './config'

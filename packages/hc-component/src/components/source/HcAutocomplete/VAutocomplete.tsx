@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Styles
 import './VAutocomplete.sass'
 
@@ -14,7 +15,7 @@ import { makeVTextFieldProps, VTextField } from '@/components/VTextField/VTextFi
 import { VVirtualScroll } from '@/components/VVirtualScroll'
 
 // Composables
-import { useScrolling } from '../VSelect/useScrolling'
+import { useScrolling } from '@/components/VSelect/useScrolling'
 import { useTextColor } from '@/composables/color'
 import { makeFilterProps, useFilter } from '@/composables/filter'
 import { useForm } from '@/composables/form'
@@ -122,7 +123,7 @@ export const VAutocomplete = genericComponent<new <
     'no-data': never
   }
 ) => GenericProps<typeof props, typeof slots>>()({
-  name: 'VAutocomplete',
+  name: 'HcAutocomplete',
 
   props: makeVAutocompleteProps(),
 

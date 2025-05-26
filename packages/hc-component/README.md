@@ -28,7 +28,7 @@ const vuetify = createVuetify({
   directives,
   theme: createThemeConfig(),
   icons: createIconConfig({
-    size: 20 // 可选：自定义图标大小
+    size: 20 // Optional: Custom icon size
   })
 })
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ```typescript
 const theme = createThemeConfig({
-  // 自定义主题配置
+  // Custom theme configuration
 })
 ```
 
@@ -53,6 +53,6 @@ const theme = createThemeConfig({
 
 ```typescript
 const icons = createIconConfig({
-  size: 20 // 自定义图标大小
+  size: 20 // Custom icon size
 })
 ```

@@ -44,10 +44,10 @@ export const makeVTabProps = propsFactory({
     'position',
     'symbol',
   ]),
-}, 'VHcTab')
+}, 'VTab')
 
-export const VHcTab = genericComponent<VBtnSlots>()({
-  name: 'VTab',
+export const VTab = genericComponent<VBtnSlots>()({
+  name: 'HcTab',
 
   props: makeVTabProps(),
 
@@ -172,4 +172,4 @@ export const VHcTab = genericComponent<VBtnSlots>()({
   },
 })
 
-export type VHcTab = InstanceType<typeof VHcTab>
+export type VTab = InstanceType<typeof VTab>

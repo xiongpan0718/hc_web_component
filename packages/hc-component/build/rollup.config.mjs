@@ -18,11 +18,11 @@ import url from '@rollup/plugin-url'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
-// 获取各个包的路径
+// Get paths for each package
 const hcComponentDir = resolve(__dirname, '..')
 const hcComponentSrcDir = resolve(hcComponentDir, 'src')
 
-// 读取 hc-component 的 package.json
+// Read hc-component's package.json
 const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))
 
 const banner = `/*!

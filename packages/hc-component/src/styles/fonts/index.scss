@@ -2,7 +2,7 @@
   --hc-icon-size: 24px;
 }
 
-// 基础样式
+// Base styles
 .material-symbols-base {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
@@ -35,7 +35,7 @@
     'wght' 200;
 }
 
-// 在默认情况下或明确使用default size时应用自定义尺寸
+// Apply custom size when default or explicitly using default size
 .material-symbols-filled.v-icon:not([class*="text-"]):not([class*="v-icon--size"]),
 .material-symbols-filled.v-icon--size-default,
 .material-symbols-outlined.v-icon:not([class*="text-"]):not([class*="v-icon--size"]),

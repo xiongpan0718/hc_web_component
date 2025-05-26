@@ -2,13 +2,13 @@ import type { App } from 'vue'
 import * as sourceComponents from './source'
 import * as customComponents from './custom'
 
-// 导出所有组件
+// Export all components
 export * from './source'
 export * from './custom'
 
-// 注册所有组件
+// Register all components
 export function registerComponents(app: App) {
-  // 注册所有组件
+  // Register all components
   Object.entries({ ...sourceComponents, ...customComponents }).forEach(([name, component]) => {
     if (component) {
       app.component(name, component)

@@ -2,7 +2,7 @@
 import './VTabs.sass'
 
 // Components
-import { VHcTab } from './VTab'
+import { VTab } from './VTab'
 import { VTabsWindow } from './VTabsWindow'
 import { VTabsWindowItem } from './VTabsWindowItem'
 import { makeVSlideGroupProps, VSlideGroup } from '@/components/VSlideGroup/VSlideGroup'
@@ -77,15 +77,15 @@ export const makeVTabsProps = propsFactory({
   }),
   ...makeDensityProps(),
   ...makeTagProps(),
-}, 'VHcTabs')
+}, 'VTabs')
 
-export const VHcTabs = genericComponent<new <T = TabItem>(
+export const VTabs = genericComponent<new <T = TabItem>(
   props: {
     items?: T[]
   },
   slots: VTabsSlots<T>
 ) => GenericProps<typeof props, typeof slots>>()({
-  name: 'VTabs',
+  name: 'HcTabs',
 
   props: makeVTabsProps(),
 
@@ -145,7 +145,7 @@ export const VHcTabs = genericComponent<new <T = TabItem>(
           >
             { slots.default?.() ?? items.value.map(item => (
               slots.tab?.({ item }) ?? (
-                <VHcTab
+                <VTab
                   { ...item }
                   key={ item.text }
                   value={ item.value }
@@ -183,4 +183,4 @@ export const VHcTabs = genericComponent<new <T = TabItem>(
   },
 })
 
-export type VHcTabs = InstanceType<typeof VHcTabs>
+export type VTabs = InstanceType<typeof VTabs>

@@ -93,7 +93,7 @@ export const makeVSnackbarProps = propsFactory({
 }, 'VSnackbar')
 
 export const VSnackbar = genericComponent<VSnackbarSlots>()({
-  name: 'VSnackbar',
+  name: 'HcSnackbar',
 
   props: makeVSnackbarProps(),
 
