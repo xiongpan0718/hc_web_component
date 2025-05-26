@@ -1,1 +1,0 @@
-export { HcAutocomplete } from './HcAutocomplete'

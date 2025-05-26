@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
   import { ref } from 'vue';
   const selected = ref([]);
   const options = [
@@ -12,6 +12,18 @@
   <v-app>
     <v-container>
       <h1>Vuetify's Autocomplete</h1>
+      <hc-tabs>
+        <hc-tab
+          badge-color="green"
+          badge-number="99"
+          class="text-none"
+          value="one"
+          variant="text"
+          tooltipText="99999ss"
+        >
+          Item
+        </hc-tab>
+      </hc-tabs>
       <v-autocomplete
         :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
         label="autocomplete"

@@ -11,10 +11,11 @@
   ],
   "scripts": {
     "build": "rollup -c build/rollup.config.mjs",
-    "dev": "rollup -c build/rollup.config.mjs -w",
+    "dev": "cd dev && vite",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "vite": "5.0.0",
     "vuetify": "^3.7.16"
   },
   "peerDependencies": {

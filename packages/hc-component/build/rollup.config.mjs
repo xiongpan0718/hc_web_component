@@ -59,8 +59,9 @@ export default defineConfig({
     url({
       include: ['**/*.svg'],
       limit: 0,
-      fileName: 'assets/icons/[name][extname]',
-      publicPath: 'assets/icons/'
+      fileName: '[name][extname]',
+      publicPath: '/node_modules/@michelin/hc-component/dist/assets/icons/',
+      emitFiles: false
     }),
     copy({
       targets: [
@@ -76,7 +77,7 @@ export default defineConfig({
           flatten: false
         },
         {
-          src: 'src/assets/icons/*.svg',
+          src: ['src/assets/icons/*.svg', 'src/components/**/icons/*.svg'],
           dest: 'dist/assets/icons',
           flatten: false
         }

@@ -1,5 +1,5 @@
-@forward '../../../vuetify-src/components/VInput/variables';
-@use '../../../vuetify-src/styles/settings';
+@forward '../VInput/variables';
+@use '../../styles/settings';
 
 // Defaults
 $autocomplete-content-border-radius: 4px !default;
