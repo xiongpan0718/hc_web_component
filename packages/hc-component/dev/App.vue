@@ -29,8 +29,9 @@
         </hc-tab>
       </hc-tabs>
       <v-autocomplete
-        :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+        :items="[{name: 'California', code: 'CA'}, {name: 'Colorado', code: 'CO'}, {name: 'Florida', code: 'FL'}, {name: 'Georgia', code: 'GA'}, {name: 'Texas', code: 'TX'}, {name: 'Wyoming', code: 'WY'}]"
         label="autocomplete"
+         item-title="name" item-value="code"
         placeholder="please enter"
         variant="outlined"
         clearable
@@ -41,12 +42,13 @@
       />
       <h1>HC-component's Autocomplete</h1>
       <hc-autocomplete
-        :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+   :items="[{name: 'California', code: 'CA'}, {name: 'Colorado', code: 'CO'}, {name: 'Florida', code: 'FL'}, {name: 'Georgia', code: 'GA'}, {name: 'Texas', code: 'TX'}, {name: 'Wyoming', code: 'WY'}]"
         label="autocomplete"
+         item-title="name" item-value="code"
         placeholder="please enter"
         variant="outlined"
         clearable
-        :maxLength="2"
+        :maxLength="1"
         focused
         multiple
         chips

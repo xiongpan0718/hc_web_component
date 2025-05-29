@@ -1,0 +1,46 @@
+@use 'alert';
+@use 'autocomplete';
+@use 'badge';
+@use 'button';
+@use 'checkbox';
+@use 'chip';
+@use 'common';
+@use 'divider';
+@use 'empty-state';
+@use 'expansion-panels';
+@use 'icons';
+@use 'list';
+@use 'menu';
+@use 'pagination';
+@use 'radio';
+@use 'snackbar';
+@use 'switch';
+@use 'tabs';
+@use 'text-fields-display';
+@use 'textareas';
+@use 'tooltips';
+
+// Wrap all component styles with .v-theme--light
+.v-theme--light {
+  @include alert.styles;
+  @include autocomplete.styles;
+  @include badge.styles;
+  @include button.styles;
+  @include checkbox.styles;
+  @include chip.styles;
+  @include common.styles;
+  @include divider.styles;
+  @include empty-state.styles;
+  @include expansion-panels.styles;
+  @include icons.styles;
+  @include list.styles;
+  @include menu.styles;
+  @include pagination.styles;
+  @include radio.styles;
+  @include snackbar.styles;
+  @include switch.styles;
+  @include tabs.styles;
+  @include text-fields-display.styles;
+  @include textareas.styles;
+  @include tooltips.styles;
+}
