@@ -17,7 +17,7 @@
     "ts-morph": "^22.0.0",
     "tsx": "^4.7.2",
     "vue": "3.4.38",
-    "vuetify": "workspace:*"
+    "vuetify-src": "workspace:*"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
