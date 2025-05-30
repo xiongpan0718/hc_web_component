@@ -9,6 +9,13 @@
     //    }
     //  }
     //}
+    .v-field__input {
+      flex-wrap: nowrap !important;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        height: 0;
+      }
+    }
     .v-field--variant-outlined{
       // min-height: 44px;
       // color: #ccc;
