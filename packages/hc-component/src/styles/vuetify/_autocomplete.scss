@@ -12,16 +12,8 @@
     .v-field__input {
       flex-wrap: nowrap !important;
       overflow-x: scroll;
-      &::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 3px;
-      }
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      
-      &:not(:hover)::-webkit-scrollbar-thumb {
-        background: transparent;
+      &::-webkit-scrollbar {
+        height: 0;
       }
     }
     .v-field--variant-outlined{
