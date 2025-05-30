@@ -1,0 +1,57 @@
+{
+  "name": "@michelin/hc-component",
+  "version": "0.0.5",
+  "description": "Michelin's Custom components and styles for Vuetify",
+  "main": "dist/hc-component.cjs.js",
+  "module": "dist/hc-component.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c build/rollup.config.mjs",
+    "dev": "cd dev && vite",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "vite": "5.0.0",
+    "vuetify": "^3.7.16"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0",
+    "vuetify": "^3.7.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-url": "^8.0.2",
+    "@testing-library/dom": "npm:@vuetify/testing-library-dom@1.0.2",
+    "@types/node": "22.5.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@vue/runtime-core": "3.4.38",
+    "@vue/shared": "3.4.38",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "postcss-import": "^15.1.0",
+    "rollup": "^4.34.8",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sass": "^1.12.21",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-visualizer": "^5.14.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "sass": "^1.69.5",
+    "typescript": "^5.0.0",
+    "vue": "3.4.38",
+    "vue-i18n": "^11.1.1"
+  }
+}

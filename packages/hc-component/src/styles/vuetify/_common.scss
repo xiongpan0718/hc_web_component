@@ -1,0 +1,40 @@
+@mixin styles {
+  .v-field--variant-outlined{
+    min-height: 44px;
+    &:hover{
+      color: #4D4D4D;
+    }
+    .v-field__input {
+      font-size: 14px;
+      min-height: 44px;
+      padding: 8px 6px 8px 10px;
+      flex-wrap: nowrap !important;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        height: 6px;
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      
+      &:not(:hover)::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+    }
+    &.v-field--focused{
+      .v-field__outline{
+        color: #27509B !important;
+        .v-field__outline__notch{
+          .v-label.v-field-label--floating{
+            color: #27509B !important;
+          }
+        }
+      }
+    }
+  }
+}
