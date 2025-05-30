@@ -40,7 +40,7 @@
     "vue-gtag-next": "^1.14.0",
     "vue-i18n": "^11.1.1",
     "vue-instantsearch": "^4.16.1",
-    "vuetify-src": "workspace:*"
+    "vuetify": "workspace:*"
   },
   "devDependencies": {
     "@babel/generator": "^7.25.0",
