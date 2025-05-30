@@ -640,14 +640,16 @@ export const VAutocomplete = genericComponent<new <
                       )}
                     </div>
                       ) : index === props.maxLength ? (
-                      <VChip
-                        key="chip"
-                        size="small"
-                        disabled={ item.props.disabled }
-                        variant={ hasChips.value ? 'tonal' : 'text' }
-                        text={ '+' + (model.value.length - index) }
-                        { ...slotProps }
-                      />
+                        <div>
+                          <VChip
+                            key="chip"
+                            size="small"
+                            disabled={ item.props.disabled }
+                            variant={ hasChips.value ? 'tonal' : 'text' }
+                            text={ '+' + (model.value.length - index) }
+                            { ...slotProps }
+                          />
+                        </div>
                       ) : undefined
                   )
                 })}
