@@ -81,9 +81,9 @@
       //       color: #ccc;
       //     }
       //   }
-  
       // }
       .v-chip{
+        max-width: 100px;
         &.v-chip--variant-tonal{
           .v-chip__underlay{
             color: #F2F2F2;
@@ -94,6 +94,8 @@
           color: #1A1A1A;
           font-size: 14px;
           z-index: 1;
+          text-overflow: ellipsis;
+          display: inline-block;
         }
         .v-chip__close{
           .v-icon{
