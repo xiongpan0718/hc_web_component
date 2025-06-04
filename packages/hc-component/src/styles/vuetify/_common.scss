@@ -1,23 +1,35 @@
 @mixin styles {
-  .v-field--variant-outlined{
+  // Outlined field styles
+  .v-field--variant-outlined {
     min-height: 44px;
-    &:hover{
+
+    &:hover {
       color: #4D4D4D;
     }
+
     .v-field__input {
       font-size: 14px;
       min-height: 44px;
       padding: 8px 6px 8px 10px;
     }
-    &.v-field--focused{
-      .v-field__outline{
+
+    &.v-field--focused {
+      .v-field__outline {
         color: #27509B !important;
-        .v-field__outline__notch{
-          .v-label.v-field-label--floating{
+
+        .v-field__outline__notch {
+          .v-label.v-field-label--floating {
             color: #27509B !important;
           }
         }
       }
     }
+  }
+
+  // Autofill styles
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: inherit !important;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }

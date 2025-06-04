@@ -1,6 +1,6 @@
 {
   "name": "@michelin/hc-component",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Michelin's Custom components and styles for Vuetify",
   "main": "dist/hc-component.cjs.js",
   "module": "dist/hc-component.esm.js",
