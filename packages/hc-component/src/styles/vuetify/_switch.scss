@@ -1,5 +1,5 @@
 @mixin styles {
-  .v-switch {
+  &.v-switch {
     .v-selection-control__input {
       height: 24px;
       width: 24px;

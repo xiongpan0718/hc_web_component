@@ -1,5 +1,5 @@
 @mixin styles {
-  .v-icon{
+  &.v-icon{
     &.v-icon--size-x-small{
       font-size: 12px;
     }

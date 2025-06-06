@@ -1,5 +1,5 @@
 @mixin styles {
-  .v-snackbar{
+  &.v-snackbar{
     justify-content: flex-end;
     &:not(.v-snackbar--center):not(.v-snackbar--top){
       align-items: flex-start;

@@ -1,5 +1,5 @@
 @mixin styles {
-  .v-list{
+  &.v-list{
     .v-list-item--active{
       background: #D4E7FA;
       color: #27509B;
