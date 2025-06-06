@@ -1,5 +1,5 @@
 @mixin styles {
-  .v-text-field-display{
+  &.v-text-field-display{
     min-height: 41px;
     display: flex;
     flex-direction: column;

@@ -1,5 +1,5 @@
 @mixin styles {
-  .v-autocomplete{
+  &.v-autocomplete{
     --v-input-control-height:44;
   
     //&.v-input{
