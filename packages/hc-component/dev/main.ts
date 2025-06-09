@@ -13,7 +13,7 @@ const vuetify = createVuetify({
   directives,
   theme: createThemeConfig(),
   icons: createIconConfig({
-    size: 20
+    // size: 20
   })
  })
 const hcComponent = createHcComponent()

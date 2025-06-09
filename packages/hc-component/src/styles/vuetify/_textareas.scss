@@ -1,13 +1,12 @@
-@mixin styles {
-  .v-textarea.v-input--error {
-    .v-input__details {
-      .v-messages {
-        color: #B71C1C;
+@mixin light {
+  &.v-textarea {
+    &.v-input--error {
+      .v-input__details {
+        .v-messages {
+          color: #B71C1C;
+        }
       }
     }
-  }
-  .v-textarea {
-  
     .v-input__details {
       box-sizing: border-box;
       padding-top: 0px;

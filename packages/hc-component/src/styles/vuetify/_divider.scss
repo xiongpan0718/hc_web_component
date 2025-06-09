@@ -1,5 +1,5 @@
-@mixin styles {
-  .v-divider {
+@mixin light {
+  &.v-divider {
     border-color: #ccc;
   }
 }

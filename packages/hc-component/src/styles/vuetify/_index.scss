@@ -20,27 +20,31 @@
 @use 'textareas';
 @use 'tooltips';
 
+// Export common styles
+@include badge.common;
+@include tabs.common;
+
 // Wrap all component styles with .v-theme--light
 .v-theme--light {
-  @include alert.styles;
-  @include autocomplete.styles;
-  @include badge.styles;
-  @include button.styles;
-  @include checkbox.styles;
-  @include chip.styles;
-  @include common.styles;
-  @include divider.styles;
-  @include empty-state.styles;
-  @include expansion-panels.styles;
-  @include icons.styles;
-  @include list.styles;
-  @include menu.styles;
-  @include pagination.styles;
-  @include radio.styles;
-  @include snackbar.styles;
-  @include switch.styles;
-  @include tabs.styles;
-  @include text-fields-display.styles;
-  @include textareas.styles;
-  @include tooltips.styles;
+  @include alert.light;
+  @include autocomplete.light;
+  @include badge.light;
+  @include button.light;
+  @include checkbox.light;
+  @include chip.light;
+  @include common.light;
+  @include divider.light;
+  @include empty-state.light;
+  @include expansion-panels.light;
+  @include icons.light;
+  @include list.light;
+  @include menu.light;
+  @include pagination.light;
+  @include radio.light;
+  @include snackbar.light;
+  @include switch.light;
+  @include tabs.light;
+  @include text-fields-display.light;
+  @include textareas.light;
+  @include tooltips.light;
 }
