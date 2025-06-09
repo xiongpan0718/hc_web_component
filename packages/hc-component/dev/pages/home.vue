@@ -65,6 +65,7 @@
   import TextFieldsShow from './components/text-fields-show.vue'
   import Pagination from './components/pagination.vue'
   import Menu from './components/menu.vue'
+  import HcTable from './components/hc-table.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
@@ -88,6 +89,7 @@
     { name: 'TextFields (单行文本框)', id: 'TextFields', icon: 'circle', color: '#b80b0b' },
     { name: 'Pagination (分页)', id: 'Pagination', icon: 'circle', color: '#615ced' },
     { name: 'Menu (菜单)', id: 'Menu', icon: 'circle', color: '#615ced' },
+    { name: 'HcTable (统计)', id: 'HcTable', icon: 'circle', color: '#615ced' },
   ])
 
   const list = {
@@ -112,6 +114,7 @@
     TextFieldsShow,
     Pagination,
     Menu,
+    HcTable,
   }
   const key = ref('AutoComplete')
 
