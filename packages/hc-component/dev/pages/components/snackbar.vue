@@ -5,7 +5,7 @@
     >
       Open Snackbar
     </v-btn>
-    <hc-snackbar
+    <v-snackbar
       v-model="snackbar"
       icon="$hc-hollowInfo"
     >
@@ -16,7 +16,7 @@
           <div>CLOSE</div>
         </div>
       </template>
-    </hc-snackbar>
+    </v-snackbar>
   </div>
   <div style="margin-top: 50px;">
     <h3>Style that cannot be modified</h3>

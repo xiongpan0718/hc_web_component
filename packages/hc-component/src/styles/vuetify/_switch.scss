@@ -1,4 +1,4 @@
-@mixin styles {
+@mixin light {
   &.v-switch {
     .v-selection-control__input {
       height: 24px;
@@ -44,7 +44,7 @@
       }
     }
   
-    &__thumb {
+    .v-switch__thumb {
       width: 24px;
       height: 24px;
     }

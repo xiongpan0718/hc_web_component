@@ -1,5 +1,5 @@
-@mixin styles {
-  .v-empty-state{
+@mixin light {
+  &.v-empty-state{
     .v-btn--variant-elevated.bg-surface-variant{
       background: #27509B !important;
       color: #fff !important;

@@ -1,4 +1,4 @@
-@mixin styles {
+@mixin light {
   &.v-snackbar{
     justify-content: flex-end;
     &:not(.v-snackbar--center):not(.v-snackbar--top){

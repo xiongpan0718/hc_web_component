@@ -1,19 +1,8 @@
-@mixin styles {
-  .v-list {
+@mixin light {
+  &.v-list {
     &-item {
       color: #1A1A1A;
-  
-      &__title {
-        display: flex;
-        align-items: center;
-      }
-  
-      &__cust {
-        flex: 1;
-        padding: 0 12px;
-        color: #1A1A1A;
-      }
-  
+
       &--density-default {
         min-height: 40px !important;
       }

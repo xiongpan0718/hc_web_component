@@ -1,5 +1,5 @@
-@mixin styles {
-  .v-checkbox {
+@mixin light {
+  &.v-checkbox {
     .v-selection-control {
       min-height: 24px;
       opacity: 1;

@@ -1,11 +1,5 @@
-@mixin styles {
-  .v-tabs {
-    .v-badge--inline {
-      .v-badge__wrapper {
-        margin: 0;
-      }
-    }
-  
+@mixin common {
+  .v-tabs, .hc-tabs {
     &--stacked {
       .v-slide-group__container {
         flex: none;
@@ -15,39 +9,39 @@
         margin-bottom: 0px;
       }
     }
-  
+
     &--density-default {
       &.v-tabs--stacked {
         --v-tabs-height: 56px;
       }
     }
-  
-    .v-slide-group__prev--disabled {
-     color: #999999 !important;
-     opacity: 1 !important;
-    }
-  
-    .v-slide-group__prev,.v-slide-group__next {
-      .v-icon {
-       color: #1A1A1A;
-      }
-    }
-  
+
     &--density-default {
       --v-tabs-height: 56px;
     }
-  
-  
+
+    .v-slide-group__prev--disabled {
+      color: #999999 !important;
+      opacity: 1 !important;
+    }
+
+    .v-slide-group__prev,
+    .v-slide-group__next {
+      .v-icon {
+        color: #1a1a1a;
+      }
+    }
+
     .v-slide-group__container {
       background-color: #ffffff;
-  
+
       .v-btn {
         padding: 0 16px;
         font-size: 14px;
         font-weight: 600;
         min-width: auto;
         letter-spacing: 0;
-  
+
         &__append {
           margin-left: 8px;
         }
@@ -59,33 +53,42 @@
           }
         }
       }
-  
+
       .v-btn--variant-text {
-        color: #1A1A1A;
+        color: #1a1a1a;
       }
-  
+
       .v-btn--variant-text:hover {
-          background-color: #F2F2F2;
-          color: #1A1A1A;
+        background-color: #f2f2f2;
+        color: #1a1a1a;
       }
-  
-  
+
       .v-btn--variant-text:active {
-          background-color: #E5E5E5;
+        background-color: #e5e5e5;
       }
-  
+
       .v-tab--selected {
-        color: #27509B;
+        color: #27509b;
       }
-  
+
       .v-tab__slider {
-        background-color: #27509B;
+        background-color: #27509b;
       }
-  
+
       .v-btn--disabled {
         background-color: #ffffff !important;
         color: #999999 !important;
       }
-   }
+    }
+  }
+}
+
+@mixin light {
+  &.v-tab {
+    .v-badge--inline {
+      .v-badge__wrapper {
+        margin: 0;
+      }
+    }
   }
 }
