@@ -1,16 +1,36 @@
 <template>
   <div>
-    <HcTable :columns="columns" :dataPagesizeOptions="dataPagesizeOptions" :items="dataList" :total="pagination.total" :count="pagination.count" @pageChange="pageChange" @pagesizeChange="pagesizeChange"/>
+    <HcTableToolBar :headers="columns" @update:headers="updateHeaders" class="mb-4" />
+    <HcTable
+      :headers="columns"
+      :items="dataList"
+      :items-length="total"
+      :items-per-page-options="[10, 20, 50, 100]"
+      :show-toolbar="true"
+      :show-pagination="true"
+      @update:items-per-page="pagesizeChange"
+      @update:page="pageChange"
+      @update:options="handleSortChange"
+    >
+      <!-- 自定义工具栏内容 -->
+      <template #toolbar-left>
+        <div>自定义工具栏内容</div>
+      </template>
+      <template #item.CAI="{ item }">
+        <div>CAI: {{ item.CAI }}</div>
+      </template>
+    </HcTable>
   </div>
 </template>
 
 <script setup>
   import { ref } from 'vue'
-  import HcTable from '../../../src/components/custom/HcTable/index.vue'
-  const pagination = ref({
-    total: 30,
-    count: 12,
-  })
+
+  const updateHeaders = (value) => {
+    console.log(value, 'value------------')
+  }
+  const total = ref(30)
+  const count = ref(12)
   const columns = ref([
     {
       title: '111',
@@ -23,6 +43,7 @@
       title: '222',
       dataIndex: 'MSPN',
       key: 'MSPN',
+      locked: true,
     },
     {
       title: '333',
@@ -61,6 +82,7 @@
       title: '999',
       dataIndex: 'source',
       key: 'source',
+      sortable: false,
     },
   ])
   const dataList = ref(Array(25).fill({}))
@@ -77,6 +99,10 @@
 
   const pagesizeChange = (pagesize) => {
     console.log(pagesize, 'pagesize------------')
+  }
+
+  const handleSortChange = (options) => {
+    console.log(options, 'options------------')
   }
 </script>
 

@@ -8,7 +8,7 @@
 -->
 <template>
   <v-app>
-    <v-navigation-drawer>
+    <v-navigation-drawer permanent>
       <v-card
         style="height: 100%"
       >

@@ -1,4 +1,2 @@
-import HcTable from './index.vue'
-
-export { HcTable }
-export default HcTable
+export { HcTable } from './HcTable';
+export { HcTableToolBar } from './HcTableToolBar';
