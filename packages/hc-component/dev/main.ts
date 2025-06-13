@@ -4,7 +4,7 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { createHcComponent, createThemeConfig, createIconConfig } from '../src'
-import '../dist/styles/index.css'
+import '../src/styles/index.scss'
 import 'vuetify/styles'
 
 const app = createApp(App)

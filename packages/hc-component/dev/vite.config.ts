@@ -15,5 +15,14 @@ export default defineConfig({
   },
   server: {
     port: 3000
+  },
+  optimizeDeps: {
+    include: ['vue', 'vuetify'],
+    force: true
+  },
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/]
+    }
   }
 }) 
