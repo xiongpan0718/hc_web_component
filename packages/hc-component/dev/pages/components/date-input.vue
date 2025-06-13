@@ -57,6 +57,7 @@
 <script setup lang="ts">
 import { shallowRef } from "vue";
 import { useDate } from 'vuetify'
+import { VDateInput } from 'vuetify/labs/VDateInput'
 
 const basicDate = shallowRef(null);
 const multipleDate = shallowRef(null);
