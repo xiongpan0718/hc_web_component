@@ -1,12 +1,5 @@
 @mixin light {
   &.v-btn {
-    --v-theme-surface: 39, 80, 155;
-    --v-theme-on-surface: 255, 255, 255;
-    --v-btn-height: 44px;
-    --v-border-color: #27509b;
-    --v-theme-primary-color: #27509b;
-    color: #fff;
-
     font-weight: 600;
 
     .v-icon {
@@ -62,7 +55,14 @@
       }
     }
 
-    &--elevated {
+    &--variant-elevated, &--variant-outlined {
+      --v-theme-surface: 39, 80, 155;
+      --v-theme-on-surface: 255, 255, 255;
+      --v-btn-height: 44px;
+      --v-border-color: #27509b;
+      --v-theme-primary-color: #27509b;
+      color: #fff;
+
       box-shadow: unset;
 
       &:hover {
