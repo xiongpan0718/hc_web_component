@@ -18,7 +18,6 @@
   
   <script setup>
     import { ref } from 'vue'
-    import HcFilter from '../../../src/components/custom/HcFilter/hcfilter.vue'
     const a = ref('111')
   </script>
   
