@@ -67,6 +67,7 @@
   import Menu from './components/menu.vue'
   import DateInput from './components/date-input.vue'
   import HcTable from './components/hc-table.vue'
+  import HcFilter from './components/hc-filter.vue'
 
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
@@ -92,6 +93,7 @@
     { name: 'Menu (菜单)', id: 'Menu', icon: 'circle', color: '#615ced' },
     { name: 'DateInput (日期选择)', id: 'DateInput', icon: 'circle', color: 'green' },
     { name: 'HcTable (统计)', id: 'HcTable', icon: 'circle', color: '#615ced' },
+    { name: 'HcFilter (筛选)', id: 'HcFilter', icon: 'circle', color: '#615ced' },
   ])
 
   const list = {
@@ -118,6 +120,7 @@
     Menu,
     DateInput,
     HcTable,
+    HcFilter,
   }
   const key = ref('AutoComplete')
 
