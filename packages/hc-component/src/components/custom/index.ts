@@ -1,1 +1,2 @@
-export { HcCheckboxGroup } from './HcCheckboxGroup'
+export * from './HcTable'
+export * from './HcCheckboxGroup'

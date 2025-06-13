@@ -1,0 +1,25 @@
+.pagination-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 16px;
+}
+
+.pagination-content-left {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-content-left-label {
+  margin-right: 8px;
+}
+
+.pagination-content-right {
+  margin-top: 12px;
+  flex: 1;
+  max-width: 50%;
+}
+
+.pagination-content-right-pagination {
+  margin-right: 16px;
+} 
