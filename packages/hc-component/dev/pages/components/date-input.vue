@@ -51,6 +51,13 @@
         prefix="ISO Date:"
       ></v-date-input>
     </div>
+
+    <div class="description">
+      <ul>
+        <li>Vuetify 3.7.16 does not support 'display-format': the format of the date that is displayed in the input</li>
+        <li>date-input has error when clearing the value of the date input </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -104,5 +111,10 @@ h3 {
   padding: 8px;
   background-color: #f5f5f5;
   border-radius: 4px;
+}
+
+.description {
+  padding: 15px;
+  color: #ff0000;
 }
 </style>

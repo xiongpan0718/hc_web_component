@@ -1,7 +1,7 @@
 @use 'sass:map';
 
-// Base styles
-@use './base/variables' as *;
+// variables
+@use './variables' as *;
 
 // Utils
 @use './utils/mixins' as *;
@@ -18,8 +18,4 @@
   font-weight: 100 700;
   font-display: block;
   src: url('../assets/fonts/googleFontIcon.woff2') format('woff2');
-}
-
-body {
-  font-family: $hc-font-family;
 }
