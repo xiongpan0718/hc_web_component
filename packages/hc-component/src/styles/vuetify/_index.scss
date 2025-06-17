@@ -4,6 +4,7 @@
 @use 'button';
 @use 'checkbox';
 @use 'chip';
+@use 'dateinput';
 @use 'common';
 @use 'divider';
 @use 'empty-state';
@@ -33,6 +34,7 @@
   @include checkbox.light;
   @include chip.light;
   @include common.light;
+  @include dateinput.light;
   @include divider.light;
   @include empty-state.light;
   @include expansion-panels.light;
