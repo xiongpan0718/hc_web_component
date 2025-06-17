@@ -1,6 +1,4 @@
 import { ref, defineComponent, watch, toRef } from 'vue'
-import { useI18n } from '@/hooks/useI18n'
-import useUserStore from '@/store/modules/user'
 import './HcTableBar.scss'
 
 interface ColumnItem {
@@ -35,8 +33,6 @@ export const HcTableBar = defineComponent({
   },
   emits: ['update:value'],
   setup (props, { emit }) {
-    const userStore = useUserStore()
-    const { t } = useI18n()
     const checkAll = ref(true)
     const indeterminate = ref(false)
     const showColumnList = ref<string[]>([])
@@ -90,7 +86,7 @@ export const HcTableBar = defineComponent({
               <span class="table-total">{ props.filterCount }</span>
               Items
             </div>
-          ) }
+          )}
           Total
           <span class="table-total">{ props.total }</span>
           Items
@@ -101,7 +97,7 @@ export const HcTableBar = defineComponent({
             location="bottom end"
             closeOnContentClick={ false }
             v-slots={{
-              activator: ({ props: menuProps }) => (
+              activator: ({ props: menuProps }: { props: any }) => (
                 <v-btn
                   { ...menuProps }
                   variant="text"
@@ -142,7 +138,7 @@ export const HcTableBar = defineComponent({
                         }}
                       />
                     </div>
-                  )) }
+                  ))}
                 </div>
               </v-card-text>
             </v-card>
@@ -151,4 +147,4 @@ export const HcTableBar = defineComponent({
       </div>
     )
   },
-}) 
+})
