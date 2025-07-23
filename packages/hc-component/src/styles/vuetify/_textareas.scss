@@ -31,11 +31,6 @@
     }
   
     .v-field--variant-outlined {
-      color: #ccc;
-      &:hover{
-        color: #666;
-      }
-  
       .v-label.v-field-label {
         top: 8px;
       }
@@ -73,13 +68,6 @@
         }
       }
   
-      .v-field__field{
-        .v-label.v-field-label{
-          color: #cccccc;
-          opacity: 1;
-        }
-      }
-  
       &.v-field--error:not(.v-field--disabled) {
         .v-field__append-inner > .v-icon {
           color: #B71C1C;
@@ -107,10 +95,6 @@
           width: 20px;
           height: 20px;
         }
-      }
-  
-      .v-field__outline{
-        --v-field-border-opacity:1;
       }
   
       &.v-field--disabled{

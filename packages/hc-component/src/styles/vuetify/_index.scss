@@ -20,6 +20,7 @@
 @use 'text-fields-display';
 @use 'textareas';
 @use 'tooltips';
+@use 'stepper';
 
 // Export common styles
 @include badge.common;
@@ -49,4 +50,5 @@
   @include text-fields-display.light;
   @include textareas.light;
   @include tooltips.light;
+  @include stepper.light;
 }
