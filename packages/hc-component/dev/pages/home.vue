@@ -69,7 +69,8 @@
   import HcTable from './components/hc-table.vue'
   import HcFilter from './components/hc-filter.vue'
   import HcTableBar from './components/hc-table-bar.vue'
-
+  import Stepper from './components/stepper.vue'
+  
   const items = ref([
     { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
     // { name: 'TextFieldsDisplay (文本显示)', id: 'TextFieldsShow', icon: 'circle', color: 'green' },
@@ -96,6 +97,7 @@
     { name: 'HcTable (统计)', id: 'HcTable', icon: 'circle', color: '#615ced' },
     { name: 'HcFilter (筛选)', id: 'HcFilter', icon: 'circle', color: '#615ced' },
     { name: 'HcTableBar (表格工具栏)', id: 'HcTableBar', icon: 'circle', color: '#615ced' },
+    { name: 'Stepper (步骤条)', id: 'Stepper', icon: 'circle', color: '#615ced' },
   ])
 
   const list = {
@@ -124,6 +126,7 @@
     HcTable,
     HcFilter,
     HcTableBar,
+    Stepper,
   }
   const key = ref('AutoComplete')
 

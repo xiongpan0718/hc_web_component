@@ -41,7 +41,6 @@ export function createIconConfig(options?: HcIconOptions): IconOptions {
   // If size is provided, create and insert style
   if (options?.size) {
     const style = document.createElement('style')
-    console.log(options.size)
     style.textContent = `
       :root {
         --hc-icon-size: ${typeof options.size === 'number' ? `${options.size}px` : options.size};

@@ -34,7 +34,7 @@ export const HcFilter = defineComponent({
                 icon="search"
                 onClick={handleSearch}
               />
-              <v-btn variant="text" color="primary" onClick={() => expand.value = !expand.value} ripple="false">
+              <v-btn variant="text" color="primary" onClick={() => expand.value = !expand.value} ripple={false}>
                 <v-icon icon={expand.value ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
                 {expand.value ? 'Retract' : 'Expand'}
               </v-btn>
