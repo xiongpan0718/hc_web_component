@@ -64,10 +64,32 @@
             <v-checkbox :model-value="true" label="Checkbox label" disabled />
           </v-col>
           <v-col cols="3">
-            <v-checkbox :model-value="false" label="Checkbox label" disabled />
+            <v-checkbox :model-value="false" label="Checkbox label"  disabled />
           </v-col>
           <v-col cols="3">
             <v-checkbox label="Checkbox label" disabled indeterminate />
+          </v-col>
+        </v-row>
+      </template>
+    </v-expansion-panel>
+    <v-expansion-panel value="form">
+      <template #title>
+        <h2>Form</h2>
+      </template>
+      <template #text>
+        <hc-checkbox-group :options="checkBoxs" v-model="selectedCheckBoxs" all-label="all" :inline="false">
+        </hc-checkbox-group>
+      </template>
+    </v-expansion-panel>
+    <v-expansion-panel value="message">
+      <template #title>
+        <h2>Error message</h2>
+      </template>
+      <template #text>
+        <v-row>
+          <v-col cols="12">
+            <v-checkbox :model-value="true" label="I agree Terms and Conditions"
+              error-messages="You have to agree the conditions" />
           </v-col>
         </v-row>
       </template>
@@ -76,16 +98,26 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  const isShow = ref([
-    'type',
-    'orientation',
-    'variant',
-    'size',
-    'state',
-    'position',
-    'menu',
-  ])
+import { ref } from 'vue'
+const isShow = ref([
+  'type',
+  'orientation',
+  'variant',
+  'size',
+  'state',
+  'position',
+  'menu',
+  'message',
+  'form'
+])
+
+const checkBoxs = ref([
+  { label: 'Checkbox label', value: 'CheckboxLabel1' },
+  { label: 'Checkbox label', value: 'CheckboxLabel2' },
+  { label: 'Checkbox label', value: 'CheckboxLabel3' },
+]);
+
+const selectedCheckBoxs = ref(['CheckboxLabel1']);
 </script>
 
 <style scoped lang="scss">

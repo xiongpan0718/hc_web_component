@@ -45,8 +45,9 @@ export const HcTable = defineComponent({
     return () => (
       <div>
         {props.showToolbar && (
-          <HcTableToolBar 
+          <HcTableToolBar
             headers={localHeaders.value}
+            hide-default-footer={props.showPagination}
             onUpdate:headers={(val) => {
               localHeaders.value = val
               emit('update:headers', val)
@@ -70,34 +71,6 @@ export const HcTable = defineComponent({
                 (slotData: any) => slot?.(slotData)
               ])
             ),
-            bottom: props.showPagination ? () => (
-              <div class="pagination-content">
-                <div class="pagination-content-left">
-                  <label class="pagination-content-left-label" for="items-per-page">
-                    Items per page
-                  </label>
-                  <v-select
-                    id="items-per-page"
-                    v-model={itemsPerPage.value}
-                    items={itemsPerPageOptions.value}
-                    density="compact"
-                    maxWidth={100}
-                    hideDetails
-                    onUpdate:modelValue={handleItemsPerPageChange}
-                    menuIcon="keyboard_arrow_down"
-                    variant="outlined"
-                  />
-                </div>
-                <div class="pagination-content-right">
-                  <v-pagination
-                    v-model={page.value}
-                    class="pagination-content-right-pagination"
-                    length={pageCount.value}
-                    onUpdate:modelValue={handlePageChange}
-                  />
-                </div>
-              </div>
-            ) : undefined
           }}
         </v-data-table-server>
       </div>

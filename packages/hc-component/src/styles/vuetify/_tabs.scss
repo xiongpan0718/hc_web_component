@@ -1,9 +1,11 @@
 @mixin common {
-  .v-tabs, .hc-tabs {
+  .v-tabs,
+  .hc-tabs {
     &--stacked {
       .v-slide-group__container {
         flex: none;
       }
+
       .v-btn__prepend {
         margin-right: 0px !important;
         margin-bottom: 0px;
@@ -22,7 +24,7 @@
 
     .v-slide-group__prev--disabled {
       color: #999999 !important;
-      opacity: 1 !important;
+      // opacity: 1 !important;
     }
 
     .v-slide-group__prev,
@@ -35,6 +37,14 @@
     .v-slide-group__container {
       background-color: #ffffff;
 
+      .v-btn--size-default {
+        padding: 0;
+      }
+      
+      .v-btn__prepend {
+        margin-inline: 0 !important;
+      }
+
       .v-btn {
         padding: 0 16px;
         font-size: 14px;
@@ -42,11 +52,9 @@
         min-width: auto;
         letter-spacing: 0;
 
-        &__append {
-          margin-left: 8px;
-        }
         &__prepend {
-          margin-right: 8px;
+          margin-right: 8px !important;
+
           .v-icon {
             width: 24px;
             font-size: 24px;
@@ -56,6 +64,17 @@
 
       .v-btn--variant-text {
         color: #1a1a1a;
+
+        .v-btn__overlay {
+          background-color: transparent !important;
+        }
+
+        .v-ripple__container {
+          z-index: -1;
+          .v-ripple__animation {
+            background-color: #e5e5e5;
+          }
+        }
       }
 
       .v-btn--variant-text:hover {
@@ -80,6 +99,36 @@
         color: #999999 !important;
       }
     }
+  }
+}
+
+.v-slide-group__next {
+  position: relative;
+  flex: 0 1 128px;
+  &::before {
+    content: "10";
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    height: 20px;
+    min-width: 20px;
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    min-width: 20px;
+    padding: 4px 6px;
+    background-color: #27509b;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+  .v-icon {
+    position: relative;
+    right: -16px;
   }
 }
 

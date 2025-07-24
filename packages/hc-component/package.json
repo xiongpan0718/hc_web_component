@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "rollup -c build/rollup.config.mjs",
-    "dev": "cd dev && vite",
+    "dev": "pnpm --dir ./dev run dev --host",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

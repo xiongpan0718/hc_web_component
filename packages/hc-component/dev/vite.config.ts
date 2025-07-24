@@ -25,4 +25,4 @@ export default defineConfig({
       include: [/node_modules/]
     }
   }
-}) 
+})

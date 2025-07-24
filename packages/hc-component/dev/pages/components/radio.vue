@@ -23,7 +23,7 @@
           <v-btn @click="disabled = true">Disabled</v-btn>
         </v-col>
         <v-col>
-          <v-btn @click="disabled = false">UnDisablid</v-btn>
+          <v-btn @click="disabled = false">Abled</v-btn>
         </v-col>
       </v-row>
     </v-col>
@@ -31,12 +31,10 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  const orientation = ref(true)
-  const disabled = ref(false)
+import { ref } from 'vue'
+const orientation = ref(true)
+const disabled = ref(false)
 
 </script>
 
-<style scoped lang="less">
-
-</style>
+<style scoped lang="less"></style>

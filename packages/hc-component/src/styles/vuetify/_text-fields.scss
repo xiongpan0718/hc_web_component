@@ -1,115 +1,51 @@
 @mixin light {
-  &.v-textarea.v-textarea-2 {
-    &.v-input--error {
-      .v-input__details {
-        .v-messages {
-          color: #b71c1c;
-        }
+  &.v-text-field.v-text-field-2 {
+    .v-field__input {
+      padding: 8px 12px !important;
+    }
+    .v-text-field__suffix {
+      display: block;
+      height: 44px;
+      opacity: 1 !important;
+      padding-inline-end: 12px !important;
+      .v-text-field__suffix__text {
+        opacity: 1 !important;
+        font-size: 12px;
+        color: var(--Text-grey-1) !important;
       }
     }
     .v-input__details {
-      box-sizing: border-box;
-      padding-top: 0px;
-      padding-inline: 0;
-      font-size: 12px;
-      color: #727373;
-
-      .v-counter {
-        color: #4d4d4d;
-      }
-
-      .v-messages {
-        opacity: 1;
-      }
-    }
-
-    .v-field--variant-outlined {
-      .v-label.v-field-label {
-        top: 8px;
-      }
-
-      textarea {
-        position: relative;
-        color: #1a1a1a;
-      }
-
-      textarea[rows="4"] {
-        height: 108px !important;
-      }
-
-      textarea[rows="5"] {
-        height: 82px !important;
-      }
-
-      .v-field__input {
-        padding-top: 12px !important;
-        padding-bottom: 12px !important;
-        mask-image: none;
-
-        &::placeholder {
-          color: #4d4d4d;
-        }
-      }
-
-      .v-field__field {
-        .v-label.v-field-label {
-          color: #cccccc;
-          opacity: 1;
-        }
-      }
-
-      .v-field__append-inner {
-        padding-top: 12px;
-      }
-      .v-field__clearable {
-        padding-top: 12px !important;
-        padding-right: 12px !important;
-        margin-inline: 0;
-
-        & > .v-icon {
-          color: #1a1a1a;
-          opacity: 1;
-          min-width: 20px;
-          width: 20px;
-          height: 20px;
-        }
-
-        .mdi:before {
-          width: 20px;
-          height: 20px;
-        }
-      }
-
-      &.v-field--error:not(.v-field--disabled) {
-        .v-field__append-inner {
-          padding-right: 12px !important;
-          .v-icon {
-            color: #b71c1c;
-          }
-        }
-        .v-field__clearable {
-          padding-right: 0 !important;
-        }
-      }
-
-      .v-field__outline {
-        --v-field-border-opacity: 1;
-      }
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 
-  .v-input__control {
-    margin-bottom: 0 !important;
-    .v-field.v-field--appended {
-      padding-inline-end: 0px !important;
+  // 默认的内置前缀样式
+  .v-field__prepend-inner {
+    color: var(--Text-grey-1) !important;
+    width: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .v-icon {
+      opacity: 1 !important;
+      min-width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
+  // 有suffix时，input的padding-inline-end为8px
+  .v-text-field--suffixed {
+    .v-field__input {
+      padding-right: 8px !important;
     }
   }
 
   // 输入框文本样式
   .v-field__input {
     opacity: 1 !important;
-    textarea {
-      opacity: 1 !important;
+    input {
+      // opacity: 1 !important;
       font-weight: 400 !important;
       caret-color: var(--Border-secondary);
     }
@@ -119,7 +55,7 @@
   .v-field--disabled {
     .v-field__input {
       opacity: 1 !important;
-      textarea {
+      input {
         color: var(--Text-disabled) !important;
         font-weight: 400 !important;
         caret-color: var(--Text-disabled);
@@ -137,6 +73,9 @@
   // 默认时label的样式
   .v-label.v-field-label {
     color: var(--Text-grey-1) !important;
+    width: 100%;
+    margin-inline-start: 12px;
+    margin-inline-end: 12px;
   }
   .v-label {
     opacity: 1 !important;
@@ -168,21 +107,29 @@
   }
 
   // 错误时的边框样式
-  .v-textarea--has-input.v-input--error {
+  .v-text-field--has-input.v-input--error:not(.v-text-tip-message) {
     .v-field__clearable {
       opacity: 1 !important;
-      margin-right: 6px !important;
+      margin-right: 8px !important;
+    }
+    .v-field__input {
+      padding-right: 8px !important;
+    }
+    .v-text-field__suffix {
+      padding-inline-end: 8px !important;
     }
     .v-field__outline {
       color: var(--Border-error) !important;
     }
   }
 
+  // 设置 label float的时候的边距
+  .v-field.v-field--active .v-label.v-field-label--floating {
+    margin-inline: 4px !important
+  }
+
   // 输入框有值时的label
-  .v-textarea--has-input.v-text-field {
-    .v-field__input {
-      padding-right: 6px !important;
-    }
+  .v-text-field--has-input {
     .v-field__outline__notch {
       .v-label.v-field-label--floating {
         color: var(--Text-default) !important;
@@ -222,20 +169,34 @@
   }
 
   // 输入框有值时，显示错误图标
-  .v-textarea--has-input {
+  .v-text-field--has-input {
     .v-field__append-inner {
       width: auto !important;
       opacity: 1 !important;
+      padding-right: 12px !important;
     }
   }
 
   // 默认隐藏错误信息
   .v-input__details {
     height: 0 !important;
+    .v-messages__message {
+      line-height: 14px !important;
+    }
+  }
+
+  // 当提示是非错误信息时，不隐藏
+  .v-text-tip-message {
+    .v-input__details {
+      height: auto !important;
+      .v-messages__message {
+        color: #727373 !important;
+      }
+    }
   }
 
   // input有值，error状态时 错误图标、错误提示词、label样式
-  .v-textarea--has-input.v-input--error {
+  .v-text-field--has-input.v-input--error:not(.v-text-tip-message) {
     .v-label.v-field-label--floating {
       color: var(--Text-red-status) !important;
     }
