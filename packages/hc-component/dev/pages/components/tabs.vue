@@ -154,8 +154,12 @@
 		</div>
 	</div>
 	<div style="margin-top: 50px">
+		<h3>Style that cannot be modified</h3>
+		<p>1、The remaining numbers when sliding are implemented without slots. Now it is reminded that they can be implemented through the :before pseudo-element. For the time being, dynamic calculation of numbers is not possible</p>
+	</div>
+	<div style="margin-top: 50px">
 		<h3>无法修改的样式</h3>
-		<p>2、滑动时的剩余数字无插槽实现，现提醒通过:before伪元素实现，暂时无法去动态计算数字</p>
+		<p>1、滑动时的剩余数字无插槽实现，现提醒通过:before伪元素实现，暂时无法去动态计算数字</p>
   </div>
 </template>
 

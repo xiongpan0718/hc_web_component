@@ -22,15 +22,6 @@
         'Wyoming',
       ]" :menu-icon="null" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
         closable-chips multiple />
-      <!-- <h4>多选,增加checkbox效果，max-lenght控制数量</h4>
-      <hc-autocomplete :items="[
-        'California',
-        'Colorado',
-        'Florida',
-        'Georgia',
-        'Texas',
-        'Wyoming',
-      ]" label="Label" variant="outlined" clearable multiple :maxLength="2" /> -->
     </div>
   </div>
   <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
@@ -102,8 +93,12 @@
     </div>
   </div>
   <div style="margin-top: 50px">
+    <h3>Style that cannot be modified</h3>
+    <p>1、When the input box of Chips is wide enough, it needs to display all the information and should not be abbreviated as "..." Only when the input box is fully covered but still cannot be displayed completely will "... "be shown. The maximum width of the chip is 100px, which cannot handle dynamic lengths.</p>
+  </div>
+  <div style="margin-top: 50px">
     <h3>无法修改的样式</h3>
-    <p>1、Chips在输⼊框够宽的情况下，需要展示全部的信息，不要缩略成“…”，只有平铺满输⼊框还不能全部展示时，才显示“……”，无法处理动态长度 现chip的最大宽度调整到200px;</p>
+    <p>1、Chips在输⼊框够宽的情况下，需要展示全部的信息，不要缩略成“…”，只有平铺满输⼊框还不能全部展示时，才显示“……”，无法处理动态长度 现chip的最大宽度为100px;</p>
   </div>
 </template>
 

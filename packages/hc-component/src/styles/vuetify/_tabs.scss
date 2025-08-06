@@ -1,4 +1,5 @@
 @mixin common {
+
   .v-tabs,
   .hc-tabs {
     &--stacked {
@@ -40,7 +41,7 @@
       .v-btn--size-default {
         padding: 0;
       }
-      
+
       .v-btn__prepend {
         margin-inline: 0 !important;
       }
@@ -71,6 +72,7 @@
 
         .v-ripple__container {
           z-index: -1;
+
           .v-ripple__animation {
             background-color: #e5e5e5;
           }
@@ -105,6 +107,7 @@
 .v-slide-group__next {
   position: relative;
   flex: 0 1 128px;
+
   &::before {
     content: "10";
     position: absolute;
@@ -126,6 +129,7 @@
     border-radius: 10px;
     color: #ffffff;
   }
+
   .v-icon {
     position: relative;
     right: -16px;

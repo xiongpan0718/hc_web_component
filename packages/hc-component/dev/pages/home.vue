@@ -91,7 +91,7 @@ const items = ref([
   { name: 'HcTable (统计)', id: 'HcTable', icon: 'circle', color: '#615ced' },
   { name: 'HcFilter (筛选)', id: 'HcFilter', icon: 'circle', color: '#615ced' },
   { name: 'HcTableBar (表格工具栏)', id: 'HcTableBar', icon: 'circle', color: '#615ced' },
-  { name: 'Translation (翻译)', id: 'Translation', icon: 'circle', color: '#615ced' },
+  // { name: 'Translation (翻译)', id: 'Translation', icon: 'circle', color: '#615ced' },
   { name: 'Stepper (步骤条)', id: 'Stepper', icon: 'circle', color: '#615ced' },
 ])
 
@@ -121,7 +121,7 @@ const list = {
   HcTable,
   HcFilter,
   HcTableBar,
-  Translation,
+  // Translation,
   Stepper,
 }
 const savedId = localStorage.getItem('selectedId')

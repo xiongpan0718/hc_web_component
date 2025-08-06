@@ -213,7 +213,6 @@ export const VTextarea = genericComponent<VTextareaSlots>()({
           v-model={ model.value }
           class={[
             'v-textarea v-text-field',
-            'v-textarea-2',
             {
               'v-textarea--prefixed': props.prefix,
               'v-textarea--suffixed': props.suffix,

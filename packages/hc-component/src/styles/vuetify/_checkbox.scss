@@ -1,11 +1,13 @@
 @mixin light {
   &.v-checkbox {
+    margin-bottom: 8px;
+
     .v-selection-control {
       min-height: 24px;
       opacity: 1;
 
       &__input {
-        > .v-icon {
+        >.v-icon {
           opacity: 1;
         }
       }
@@ -53,18 +55,20 @@
         }
 
         .v-selection-control__wrapper {
-          .material-symbols-outlined  {
+          .material-symbols-outlined {
             position: relative;
+
             &::after {
               content: '';
               width: 24px;
               height: 24px;
-              background-color: #fff; 
+              background-color: #fff;
               position: absolute;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
             }
+
             &::before {
               content: '';
               width: 18px;
@@ -75,41 +79,58 @@
               left: 50%;
               transform: translate(-50%, -50%);
               z-index: 999;
-              background-color: rgba(0,0,0,0.1);
+              background-color: rgba(0, 0, 0, 0.1);
               border-radius: 2px;
             }
           }
         }
       }
-    }    
+    }
+
+    .v-checkbox-btn {
+      margin-bottom: 0px;
+    }
+
+    .v-input__details,
+    .__web-inspector-hide-shortcut__ {
+      height: 0;
+      min-height: 0;
+    }
+
+    .v-input--error {
+      .v-input__control {
+        margin-bottom: 2px;
+      }
+
+      .v-input__details,
+      .__web-inspector-hide-shortcut__ {
+        height: auto;
+        min-height: auto;
+      }
+    }
+
+    // 隐藏文本框下的提示信息
+    .v-input__details {
+      padding-top: 0;
+      min-height: auto;
+    }
+
+    // 默认隐藏错误信息
+    .v-input__details {
+      height: 0 !important;
+    }
+
+    // error时的label样式，放开errormessage信息
+    &.v-input--error {
+      .v-field__outline__notch {
+        .v-label.v-field-label--floating {
+          color: var(--Text-red-status) !important;
+        }
+      }
+
+      .v-input__details {
+        height: auto !important;
+      }
+    }
   }
-}
-
-.v-input__control {
-  margin-bottom: 8px;
-}
-
-.v-checkbox-btn {
-  margin-bottom: 0px;
-}
-
-.v-input__details,
-.__web-inspector-hide-shortcut__ {
-  height: 0;
-  min-height: 0;
-}
-
-.v-input--error {
-  .v-input__control {
-    margin-bottom: 2px;
-  }
-  .v-input__details,
-  .__web-inspector-hide-shortcut__ {
-    height: auto;
-    min-height: auto;
-  }
-}
-
-.v-messages__message {
-  color: var(--Text-red-status);
 }

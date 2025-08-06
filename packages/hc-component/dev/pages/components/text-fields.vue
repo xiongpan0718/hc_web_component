@@ -119,7 +119,11 @@
 		</v-expansion-panel>
 	</v-expansion-panels>
 	<div style="margin-top: 50px">
-		<h3>问题</h3>
+		<h3>Style that cannot be modified</h3>
+		<p>1、When inputting "Number Input", the element cannot be located, and it is difficult to customize. Use the default style of vuetify.</p>
+	</div>
+	<div style="margin-top: 50px">
+		<h3>无法修改的样式</h3>
 		<p>1、Number Input输入时，无法定位到元素，自定义难度较大，使用vuetify默认样式</p>
 	</div>
 </template>

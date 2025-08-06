@@ -31,6 +31,10 @@
 				label="label" clearable error v-model="Error" />
 		</div>
 	</div>
+	<div style="margin-top: 50px">
+		<h3>Style that cannot be modified</h3>
+		<p>1、The icon at the lower right corner cannot be modified. It has been deleted</p>
+	</div>
 	<div style="margin-top: 50px;">
 		<h3>无法修改的样式</h3>
 		<p>1、无法修改右下角图标，已做删除</p>

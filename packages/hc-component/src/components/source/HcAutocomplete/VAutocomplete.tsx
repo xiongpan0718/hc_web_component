@@ -462,7 +462,6 @@ export const VAutocomplete = genericComponent<new <
           onChange={ onChange }
           class={[
             'v-autocomplete',
-            'v-autocomplete-2',
             `v-autocomplete--${props.multiple ? 'multiple' : 'single'}`,
             `v-autocomplete--input-${props.inputAble ? 'able' : 'disable'}`,
             {

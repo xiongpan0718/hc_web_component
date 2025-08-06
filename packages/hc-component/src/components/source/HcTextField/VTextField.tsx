@@ -170,7 +170,6 @@ export const VTextField = genericComponent<VTextFieldSlots>()({
           v-model={ model.value }
           class={[
             'v-text-field',
-            'v-text-field-2',
             {
               'v-text-field--prefixed': props.prefix,
               'v-text-field--suffixed': props.suffix,
