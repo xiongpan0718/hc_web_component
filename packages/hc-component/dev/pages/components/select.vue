@@ -1,109 +1,125 @@
-<!--
- * @Author       : yuqigong@outlook.com
- * @Date         : 2025-03-19 14:05:55
- * @LastEditors  : yuqigong@outlook.com
- * @LastEditTime : 2025-04-08 09:25:01
- * @FilePath     : /hc_web_component/packages/vuetify/dev/pages/components/select.vue
- * @Description  :
--->
 <template>
-  <v-expansion-panels v-model="isShow">
-    <v-expansion-panel value="state">
-      <template #title>
-        <h2>States</h2>
-      </template>
-      <template #text>
-        <v-row>
-          <v-col cols="3"> Default </v-col>
-          <v-col cols="3">
-            <v-select
-              :items="[
-                'California',
-                'Colorado',
-                'Florida',
-                'Georgia',
-                'Texas',
-                'Wyoming',
-              ]"
-              label="Select"
-            />
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="3"> Disabled </v-col>
-          <v-col cols="3">
-            <v-select
-              :items="[
-                'California',
-                'Colorado',
-                'Florida',
-                'Georgia',
-                'Texas',
-                'Wyoming',
-              ]"
-              label="Disabled"
-              disabled
-            />
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="3"> Error </v-col>
-          <v-col cols="3">
-            <v-select
-              :items="[
-                'California',
-                'Colorado',
-                'Florida',
-                'Georgia',
-                'Texas',
-                'Wyoming',
-              ]"
-              error-messages="There is an error message"
-              label="Error"
-            />
-          </v-col>
-        </v-row>
-      </template>
-      <div class="description">
-        <ul>
-          <li>select 组件 css 样式差距较大，做不到仅 css 调整，与设计稿一致</li>
-          <li>select component css style gap is large, can not do only css adjustment, consistent with the design of the draft.</li>
-        </ul>
-      </div>
-    </v-expansion-panel>
-  </v-expansion-panels>
+  <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
+    <div style="flex: 1">
+      <h4>单选</h4>
+      <hc-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" label="Label" variant="outlined" clearable :inputAble="false" tabindex="-1" />
+    </div>
+    <div style="flex: 1">
+      <h4>多选,内容纸片显示,max-lenght控制数量</h4>
+      <hc-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" :menu-icon="null" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
+        closable-chips multiple :inputAble="false" />
+      <!-- <h4>多选,增加checkbox效果，max-lenght控制数量</h4>
+      <hc-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" label="Label" variant="outlined" clearable multiple :maxLength="2" /> -->
+    </div>
+  </div>
+  <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
+    <div style="flex: 1">
+      <h4>Disabled1</h4>
+      <v-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" label="Label" variant="outlined" disabled :inputAble="false" />
+    </div>
+    <div style="flex: 1">
+      <h4>Disabled2</h4>
+      <v-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" label="Label" variant="outlined" disabled v-model="Disabled" :inputAble="false" />
+    </div>
+  </div>
+  <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
+    <div style="flex: 1">
+      <h4>Disabled3</h4>
+      <hc-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" :menu-icon="null" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
+        multiple disabled v-model="Disableds" :inputAble="false" />
+    </div>
+    <div style="flex: 1">
+      <h4>多选 Error</h4>
+      <hc-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" :menu-icon="null" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
+        multiple error clear-icon="error_outline" error-messages="There is an error message" :inputAble="false" />
+    </div>
+  </div>
+  <div class="d-flex" style="width: 100%; gap: 20px;">
+    <div style=" flex: 1">
+      <h4>Error</h4>
+      <hc-autocomplete :items="[
+        'California',
+        'Colorado',
+        'Florida',
+        'Georgia',
+        'Texas',
+        'Wyoming',
+      ]" error-messages="There is an error message" label="Label" variant="outlined" clearable error
+        clear-icon="error_outline" :inputAble="false" />
+    </div>
+    <div style="flex: 1">
+      <h4>No Data</h4>
+      <hc-autocomplete label="Label" :items="[]" no-data-text="No result" variant="outlined" clearable
+        :inputAble="false" />
+    </div>
+  </div>
+  <div style="margin-top: 50px">
+    <h3>Style that cannot be modified</h3>
+    <p>1、When the input box of Chips is wide enough, it needs to display all the information and should not be abbreviated as "..." Only when the input box is fully covered but still cannot be displayed completely will "... "be shown. The maximum width of the chip is 100px, which cannot handle dynamic lengths.</p>
+  </div>
+  <div style="margin-top: 50px">
+    <h3>无法修改的样式</h3>
+    <p>1、Chips在输⼊框够宽的情况下，需要展示全部的信息，不要缩略成“…”，只有平铺满输⼊框还不能全部展示时，才显示“……”，无法处理动态长度 现chip的最大宽度为100px;</p>
+  </div>
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  const isShow = ref([
-    'type',
-    'orientation',
-    'variant',
-    'size',
-    'state',
-    'position',
-    'menu',
-  ])
+import { ref } from "vue";
+const Disabled = ref("Disabled");
+const Disableds = ref(["Disabled1", "Disabled2", "Disabled3", "Disabled4"]);
 </script>
 
 <style scoped lang="scss">
-.v-expansion-panels {
+h4 {
   margin-bottom: 10px;
-}
-
-.btn-control {
-  border-color: #cccccc;
-  background-color: #f2f2f2 !important;
-}
-
-.description {
-  padding: 15px;
-  color: #ff0000;
-}
-
-.not-supported {
-  padding: 15px 0;
-  color: #ff0000;
 }
 </style>

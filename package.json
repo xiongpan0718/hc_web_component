@@ -84,7 +84,7 @@
     "vue-tsc": "^2.0.29",
     "yargs": "^17.7.2"
   },
-  "packageManager": "pnpm@9.10.0",
+  "packageManager": "pnpm@10.13.1",
   "pnpm": {
     "patchedDependencies": {
       "@mdi/js@7.4.47": "patches/@mdi__js@7.4.47.patch",
@@ -104,5 +104,8 @@
         "vite-plugin-vue-layouts>vite": "6"
       }
     }
+  },
+  "dependencies": {
+    "vue-i18n": "12.0.0-alpha.3"
   }
 }

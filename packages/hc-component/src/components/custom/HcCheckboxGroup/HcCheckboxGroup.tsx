@@ -33,7 +33,7 @@ export const HcCheckboxGroup = defineComponent({
     },
     allLabel: {
       type: String,
-      default: 'All', // Default label for the "All" checkbox
+      default: "All" // Default label for the "All" checkbox
     },
     showAll: {
       type: Boolean,
