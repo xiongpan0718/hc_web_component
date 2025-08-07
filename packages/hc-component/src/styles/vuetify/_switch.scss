@@ -1,8 +1,4 @@
 @mixin light {
-  .v-selection-control--disabled {
-    opacity: 1 !important;
-  }
-
   &.v-switch {
     .v-selection-control__input {
       height: 24px;
@@ -30,6 +26,8 @@
     }
 
     .v-selection-control--disabled {
+      opacity: 1 !important;
+
       .v-selection-control__input input:checked + .v-switch__thumb::after {
         content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuODYzMzkgMTAuNTgzNEwzLjA4MzM5IDcuODAzMzZMMi4xMzY3MiA4Ljc0MzM2TDUuODYzMzkgMTIuNDdMMTMuODYzNCA0LjQ3MDAzTDEyLjkyMzQgMy41MzAwM0w1Ljg2MzM5IDEwLjU4MzRaIiBmaWxsPSIjOTk5OTk5Ii8+Cjwvc3ZnPgo=");
       }
