@@ -8,7 +8,6 @@ import { VCheckboxBtn } from '@/components/VCheckbox'
 import { VChip } from '@/components/VChip'
 import { VDefaultsProvider } from '@/components/VDefaultsProvider'
 import { VIcon } from '@/components/VIcon'
-import { HcEmptyState } from '../HcEmptyState/VEmptyState'
 import { VList, VListItem } from '@/components/VList'
 import { VMenu } from '@/components/VMenu'
 import { makeSelectProps } from '@/components/VSelect/VSelect'
@@ -49,7 +48,6 @@ import type { VInputSlots } from '@/components/VInput/VInput'
 import type { FilterMatch } from '@/composables/filter'
 import type { ListItem } from '@/composables/list-items'
 import type { GenericProps, SelectItemKey } from '@/util'
-import { log } from 'console'
 
 function highlightResult (text: string, matches: FilterMatch | undefined, length: number) {
   if (matches == null) return text
@@ -87,10 +85,6 @@ export const makeVAutocompleteProps = propsFactory({
   maxLength: {
     type: Number,
     default: 9999,
-  },
-  inputAble: {
-    type: Boolean,
-    default: true,
   },
   ...makeFilterProps({ filterKeys: ['title'] }),
   ...makeSelectProps(),
@@ -215,8 +209,7 @@ export const VAutocomplete = genericComponent<new <
 
       search.value = ''
     }
-    function onMousedownControl (e) {
-
+    function onMousedownControl () {
       if (menuDisabled.value) return
 
       menu.value = true
@@ -236,12 +229,6 @@ export const VAutocomplete = genericComponent<new <
       }
     }
     function onKeydown (e: KeyboardEvent) {
-      
-      if (!props.inputAble) {
-        e.preventDefault();
-        return
-      }
-
       if (form.isReadonly.value) return
 
       const selectionStart = vTextFieldRef.value.selectionStart
@@ -324,10 +311,6 @@ export const VAutocomplete = genericComponent<new <
     }
 
     function onChange (e: Event) {
-      if (!props.inputAble) {
-        e.preventDefault();
-        return
-      }
       if (matchesSelector(vTextFieldRef.value, ':autofill') || matchesSelector(vTextFieldRef.value, ':-webkit-autofill')) {
         const item = items.value.find(item => item.title === (e.target as HTMLInputElement).value)
         if (item) {
@@ -463,13 +446,11 @@ export const VAutocomplete = genericComponent<new <
           class={[
             'v-autocomplete',
             `v-autocomplete--${props.multiple ? 'multiple' : 'single'}`,
-            `v-autocomplete--input-${props.inputAble ? 'able' : 'disable'}`,
             {
               'v-autocomplete--active-menu': menu.value,
               'v-autocomplete--chips': !!props.chips,
               'v-autocomplete--selection-slot': !!hasSelectionSlot.value,
               'v-autocomplete--selecting-index': selectionIndex.value > -1,
-              'v-autocomplete--has-input': isDirty || search.value,
             },
             props.class,
           ]}
@@ -492,7 +473,6 @@ export const VAutocomplete = genericComponent<new <
                   disabled={ menuDisabled.value }
                   eager={ props.eager }
                   maxHeight={ 310 }
-                  offset={4}
                   openOnClick={ false }
                   closeOnContentClick={ false }
                   transition={ props.transition }
@@ -518,16 +498,7 @@ export const VAutocomplete = genericComponent<new <
                       { slots['prepend-item']?.() }
 
                       { !displayItems.value.length && !props.hideNoData && (slots['no-data']?.() ?? (
-                        // <VListItem key="no-data" title={ t(props.noDataText) } />
-                        // change empty-state UI
-                        <hc-empty-state
-                          image="no-data"
-                          layout="vertical"
-                          size="106"
-                          style="min-height: 0"
-                          text="No data"
-                          title=""
-                        />
+                        <VListItem key="no-data" title={ t(props.noDataText) } />
                       ))}
 
                       <VVirtualScroll ref={ vVirtualScrollRef } renderless items={ displayItems.value }>
@@ -544,7 +515,7 @@ export const VAutocomplete = genericComponent<new <
                             index,
                             props: itemProps,
                           }) ?? (
-                            <VListItem { ...itemProps } role="option" class={ props.multiple ? 'v-list-item_multiple' : 'v-list-item_single' }> 
+                            <VListItem { ...itemProps } role="option">
                             {{
                               prepend: ({ isSelected }) => (
                                 <>
@@ -564,16 +535,6 @@ export const VAutocomplete = genericComponent<new <
                                   { item.props.prependIcon && (
                                     <VIcon icon={ item.props.prependIcon } />
                                   )}
-                                </>
-                              ),
-                              // add selected icon
-                              append: ({ isSelected }) => (
-                                <>
-                                  {
-                                    !props.multiple && isSelected && (
-                                      <VIcon icon="check" />
-                                    )
-                                  }
                                 </>
                               ),
                               title: () => {
