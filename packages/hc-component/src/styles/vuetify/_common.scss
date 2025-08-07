@@ -1,4 +1,5 @@
 @mixin light {
+
   // Outlined field styles
   .v-field--variant-outlined {
     min-height: 44px;
@@ -41,11 +42,30 @@
       }
     }
   }
-  
+
   // Autofill styles
   input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
     -webkit-text-fill-color: inherit !important;
     transition: background-color 5000s ease-in-out 0s;
+  }
+
+  // autocomplete
+  // 单选时每一项的padding
+  .v-list-item_single {
+    padding: 13px 16px !important;
+  }
+
+  // 多选时每一项的padding
+  .v-list-item_multiple {
+    padding: 8px 16px !important;
+  }
+
+  .v-input__control {
+    margin-bottom: 0 !important;
+
+    .v-field.v-field--appended {
+      padding-inline-end: 0px !important;
+    }
   }
 }
