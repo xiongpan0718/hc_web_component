@@ -61,6 +61,7 @@ import HcTable from './components/hc-table.vue'
 import HcFilter from './components/hc-filter.vue'
 import HcTableBar from './components/hc-table-bar.vue'
 import Stepper from './components/stepper.vue'
+import OverallInputs from './components/overall-inputs.vue'
 
 const items = ref([
   { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
@@ -87,6 +88,7 @@ const items = ref([
   { name: 'HcFilter (筛选)', id: 'HcFilter', icon: 'circle', color: '#615ced' },
   { name: 'HcTableBar (表格工具栏)', id: 'HcTableBar', icon: 'circle', color: '#615ced' },
   { name: 'Stepper (步骤条)', id: 'Stepper', icon: 'circle', color: '#615ced' },
+  { name: 'OverallInputs (整体输入框)', id: 'OverallInputs', icon: 'circle', color: '#615ced' },
 ])
 
 const list = {
@@ -114,6 +116,7 @@ const list = {
   HcFilter,
   HcTableBar,
   Stepper,
+  OverallInputs,
 }
 const savedId = localStorage.getItem('selectedId')
 const key = ref(savedId || 'AutoComplete')

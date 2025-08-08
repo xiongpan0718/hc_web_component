@@ -50,6 +50,10 @@ const vuetify = createVuetify({
       variant: "outlined",
       noResize: true,
     },
+    VSelect: {
+      menuIcon: "expand_more",
+      variant: "outlined",
+    },
     VTextField: {
       variant: "outlined",
       density: "compact",
