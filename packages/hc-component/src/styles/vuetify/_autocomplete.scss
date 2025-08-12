@@ -7,10 +7,6 @@
       overflow-x: scroll;
       padding-right: 8px !important;
 
-      input {
-        opacity: 1 !important;
-      }
-
       &::-webkit-scrollbar {
         height: 0;
       }
@@ -43,7 +39,6 @@
       }
     }
 
-    .v-autocomplete__selection,
     .v-field__clearable,
     .v-field__append-inner,
     .v-field__prepend-inner,
