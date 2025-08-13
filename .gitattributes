@@ -1,1 +1,5 @@
 * text=auto eol=lf
+
+# .npmrc files should use current branch version during merges
+**/.npmrc merge=ours
+**/.npmrc -diff
