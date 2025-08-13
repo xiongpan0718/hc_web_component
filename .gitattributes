@@ -1,4 +1,1 @@
 * text=auto eol=lf
-
-# .npmrc file should be merged with the current branch version
-.npmrc merge=ours
