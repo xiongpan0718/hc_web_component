@@ -101,38 +101,6 @@
         color: #999999 !important;
       }
     }
-
-    .v-slide-group__next {
-      position: relative;
-      flex: 0 1 128px;
-
-      &::before {
-        content: "10";
-        position: absolute;
-        top: 50%;
-        left: 16px;
-        transform: translateY(-50%);
-        font-size: 12px;
-        height: 20px;
-        min-width: 20px;
-        padding: 4px 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 20px;
-        min-width: 20px;
-        padding: 4px 6px;
-        background-color: #27509b;
-        box-sizing: border-box;
-        border-radius: 10px;
-        color: #ffffff;
-      }
-
-      .v-icon {
-        position: relative;
-        right: -16px;
-      }
-    }
   }
 }
 

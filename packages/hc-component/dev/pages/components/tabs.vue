@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		<div class="text-subtitle-2 mb-2">Pagination</div>
-		<hc-tabs bg-color="white" center-active>
+		<hc-tabs bg-color="white" center-active show-arrows>
 			<hc-tab>One</hc-tab>
 			<hc-tab>Two</hc-tab>
 			<hc-tab>Three</hc-tab>
