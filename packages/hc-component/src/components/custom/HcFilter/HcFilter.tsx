@@ -3,10 +3,22 @@ import './HcFilter.scss'
 
 export const HcFilter = defineComponent({
   name: 'HcFilter',
+  props: {
+    isExpand: {
+      type: Boolean,
+      default: false,
+    },
+    columnCount: {
+      type: Number,
+      default: 4,
+    },
+  },
   emits: ['reset', 'search'],
   setup(props, { emit, slots }) {
     const expand = ref(false)
-
+    if (props.isExpand) {
+      expand.value = props.isExpand
+    }
     const handleReset = () => {
       emit('reset')
     }
@@ -26,25 +38,25 @@ export const HcFilter = defineComponent({
                 color="primary"
                 icon="replay"
                 variant="outlined"
-                onClick={handleReset}
+                onClick={ () => handleReset() }
               />
               <v-btn
                 class="filter-btn-box filter-btn-box-search"
                 color="primary"
                 icon="search"
-                onClick={handleSearch}
+                onClick={ () => handleSearch() }
               />
-              <v-btn variant="text" color="primary" onClick={() => expand.value = !expand.value} ripple={false}>
-                <v-icon icon={expand.value ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
-                {expand.value ? 'Retract' : 'Expand'}
+              <v-btn variant="text" color="primary" onClick={ () => { expand.value = !expand.value } } ripple={ false }>
+                <v-icon icon={ expand.value ? 'keyboard_arrow_up' : 'keyboard_arrow_down' } />
+                { expand.value ? 'Retract' : 'Expand' }
               </v-btn>
             </div>
           </div>
 
           <Transition name="expand">
-            {expand.value && (
-              <div class="modal-filter-input-box">
-                {slots['filter-input']?.()}
+            { expand.value && (
+              <div class="modal-filter-input-box" style={{ gridTemplateColumns: `repeat(${props.columnCount}, 1fr)` }}>
+                { slots['filter-input']?.() }
               </div>
             )}
           </Transition>
@@ -52,4 +64,4 @@ export const HcFilter = defineComponent({
       </div>
     )
   },
-}) 
+})

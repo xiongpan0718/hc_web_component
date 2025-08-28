@@ -31,9 +31,8 @@ export const HcTableBar = defineComponent({
 			default: 'table-bar',
 		},
 	},
-	emits: ['update:value'],
+	emits: ['update:value', 'setColumnCache'],
 	setup(props, { emit }) {
-		
 		const checkAll = ref(true)
 		const indeterminate = ref(false)
 		const showColumnList = ref<string[]>([])
@@ -47,10 +46,11 @@ export const HcTableBar = defineComponent({
 			} else {
 				showColumnList.value = props.columnList.filter(item => item.disabled).map(item => item.key)
 			}
+			emit('setColumnCache', showColumnList.value)
 		}
 
 		const showColumnChange = () => {
-			// 移除缓存相关代码
+			emit('setColumnCache', showColumnList.value)
 		}
 
 		const initCheckAll = () => {
@@ -81,16 +81,20 @@ export const HcTableBar = defineComponent({
 		return () => (
 			<div class="table-total-column-config flex justify-between items-center">
 				<div class="flex-1 text-left flex items-center">
-					{props.filterCount !== props.total && (
+					{props.filterCount > 0 && (
 						<div class="filter-result" key="filter-result">
 							Filter results
 							<span class="table-total">{props.filterCount}</span>
 							Items
 						</div>
 					)}
-					Total
-					<span class="table-total">{props.total}</span>
-					Items
+					{props.total > 0 && (
+						<div>
+							Total
+							<span class="table-total">{props.total}</span>
+							Items
+						</div>
+					)}
 				</div>
 				<div class="flex-1 text-right">
 					<v-menu
@@ -112,7 +116,7 @@ export const HcTableBar = defineComponent({
 					>
 						<v-card minWidth={200}>
 							<v-card-text class="pa-3">
-								<div class="flex flex-col">
+								<div class="show-columns-box">
 									<div style={{ height: '36px' }} class="flex items-center">
 										<v-checkbox
 											v-model={checkAll.value}
