@@ -71,7 +71,7 @@
   .modal-filter-input-box {
     margin-top: 16px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 293px);
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
   }
 }

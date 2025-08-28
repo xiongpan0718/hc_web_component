@@ -6,12 +6,18 @@
   padding: 0 12px;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.88);
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   .table-total {
     color: #1677FF;
     margin: 0 5px;
   }
-
+  .show-columns-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .filter-result {
     position: relative;
 
