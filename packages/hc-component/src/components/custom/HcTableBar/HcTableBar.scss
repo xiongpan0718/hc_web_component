@@ -1,7 +1,7 @@
 .table-total-column-config {
   height: 30px;
   line-height: 30px;
-  background: rgba(39, 80, 155, 0.08);
+  background: #F2F2F2;
   border-radius: 3px;
   padding: 0 12px;
   font-size: 12px;
@@ -20,8 +20,9 @@
   }
   .filter-result {
     position: relative;
-
-    &:after {
+  }
+  .boder-left{
+    &:before {
       content: "";
       display: inline-block;
       width: 1px;
