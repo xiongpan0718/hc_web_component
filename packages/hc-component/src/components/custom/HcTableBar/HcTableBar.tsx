@@ -89,7 +89,7 @@ export const HcTableBar = defineComponent({
 						</div>
 					)}
 					{props.total > 0 && (
-						<div>
+						<div class="boder-left">
 							Total
 							<span class="table-total">{props.total}</span>
 							Items

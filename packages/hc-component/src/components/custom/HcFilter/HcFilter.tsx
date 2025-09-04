@@ -12,6 +12,10 @@ export const HcFilter = defineComponent({
       type: Number,
       default: 4,
     },
+    backgroundColor: {
+      type: String,
+      default: '#F2F2F2',
+    },
   },
   emits: ['reset', 'search'],
   setup(props, { emit, slots }) {
@@ -29,7 +33,7 @@ export const HcFilter = defineComponent({
 
     return () => (
       <div>
-        <div class="modal-filter-content">
+        <div class="modal-filter-content" style={{ backgroundColor: props.backgroundColor }}>
           <div class="modal-filter-box">
             <div class="modal-filter-text">Filters</div>
             <div class="modal-filter-box-right">
