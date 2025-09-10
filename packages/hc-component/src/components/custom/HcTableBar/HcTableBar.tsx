@@ -74,9 +74,12 @@ export const HcTableBar = defineComponent({
 			emit('update:value', newValue)
 			initCheckAll()
 		})
-
 		// 初始化时直接使用所有列
-		showColumnList.value = props.columnList.map(item => item.key)
+    if(stateValue.value && stateValue.value.length > 0) {
+      showColumnList.value = [...stateValue.value]
+    }else{
+      showColumnList.value = props.columnList.map(item => item.key)
+    }
 
 		return () => (
 			<div class="table-total-column-config flex justify-between items-center">
