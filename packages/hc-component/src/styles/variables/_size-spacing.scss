@@ -20,10 +20,33 @@
   --Checkbox-size: #{$size-24};
   --Switch-height: #{$size-24};
   --Switch-width: #{$size-48};
-  --Switch-ellipse: 18px;
+  --Switch-ellipse: #{$size-18};
   --Chip-height-small: #{$size-24};
   --Chip-height-medium: #{$size-32};
   --Chip-height-large: #{$size-40};
   --List-item-height: #{$size-40};
+
+  // vehicle schema
+  --Vehicle-schema-Tire-width-L: 48px;
+  --Vehicle-schema-Tire-width-M: 14px;
+  --Vehicle-schema-Tire-width-S: 12px;
+  --Vehicle-schema-Tire-height-L: 80px;
+  --Vehicle-schema-Tire-height-M: 24px;
+  --Vehicle-schema-Tire-height-S: 18px;
+  --Vehicle-schema-Tire-corner-radius-L: 6px;
+  --Vehicle-schema-Tire-corner-radius-M: 2px;
+  --Vehicle-schema-Tire-corner-radius-S: 2px;
+  --Vehicle-schema-Schema-width-L: 340px;
+  --Vehicle-schema-Schema-width-M: 88px;
+  --Vehicle-schema-Schema-width-S: 80px;
+  --Vehicle-schema-Dual_tires-width-L: 108px;
+  --Vehicle-schema-Dual_tires-width-M: 30px;
+  --Vehicle-schema-Dual_tires-width-S: 26px;
+  --Vehicle-schema-Gap-L: 12px;
+  --Vehicle-schema-Gap-M: 2px;
+  --Vehicle-schema-Gap-S: 2px;
+  --Vehicle-schema-Measures-font-size: 16px;
+  --Vehicle-schema-Position-font-size: 14px;
+  --Vehicle-schema-Preconisation-font-size: 14px;
 }
 

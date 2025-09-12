@@ -1,0 +1,9 @@
+@mixin light {
+  &.v-select{
+    .v-field--disabled {
+      .v-select__selection {
+        color: var(--Text-disabled) !important;
+      }
+    }
+  }
+}

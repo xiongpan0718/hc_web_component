@@ -36,13 +36,15 @@ $black-opacity10: rgba(0, 0, 0, 0.1) !default;
 
 // Status - Green
 $status-color-green: #2E7D32 !default;
-$status-color-green-darken: #92C18F !default;
+$status-color-green-darken: #B2EBA5 !default;
+$status-color-green-lighten-2: #DBF6D4 !default;
 $status-color-green-lighten: #E8F5E5 !default;
 
 // Status - Orange
 $status-color-orange: #F9A825 !default;
-$status-color-orange-darken: #FCD286 !default;
 $status-color-orange-lighten: #FFF1CE !default;
+$status-color-orange-lighten-2: #FFE8AC !default;
+$status-color-orange-darken: #FCD286 !default;
 $status-color-orange-dark: #9E6100 !default;
 
 // Status - Red
@@ -50,7 +52,8 @@ $status-color-red: #B71C1C !default;
 $status-color-red40: rgba(183, 28, 28, 0.4) !default;
 $status-color-red-2: #890404 !default;
 $status-color-red-3: #690202 !default;
-$status-color-red-darken: #DD8880 !default;
+$status-color-red-darken-2: #F7988D !default;
+$status-color-red-darken-1: #FCB5AD !default;
 $status-color-red-lighten: #F4CEC2 !default;
 
 // Status - Info

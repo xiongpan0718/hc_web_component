@@ -41,7 +41,7 @@
                 'Texas',
                 'Wyoming',
               ]"
-              label="Disabled"
+              v-model="disabled"
               disabled
             />
           </v-col>
@@ -76,6 +76,7 @@
 
 <script setup>
   import { ref } from 'vue'
+  const disabled = ref(['California'])
   const isShow = ref([
     'type',
     'orientation',
