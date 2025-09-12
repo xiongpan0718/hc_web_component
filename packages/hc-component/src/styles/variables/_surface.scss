@@ -11,6 +11,17 @@
   --Surface-warning: #{$status-color-orange};
   --Surface-info-bg: #{$status-color-info-lighten};
   --Surface-warning-bg: #{$status-color-orange-lighten};
+  --Surface-warning-bg-hover: #{$status-color-orange-lighten-2};
+  --Surface-warning-bg-pressed: #{$status-color-orange-darken};
   --Surface-success-bg: #{$status-color-green-lighten};
+  --Surface-success-bg-hover: #{$status-color-green-lighten};
+  --Surface-success-bg-pressed: #{$status-color-green-darken};
   --Surface-error-bg: #{$status-color-red-lighten};
+  --Surface-error-bg-hover: #{$status-color-red-darken-1};
+  --Surface-error-bg-pressed: #{$status-color-red-darken-2};
+  --Surface-grey-for-tires: #{$mds-prim-color-grey100};
+  --Surface-grey-hover: #{$mds-prim-color-grey300};
+  --Surface-grey-pressed: #{$mds-prim-color-grey500};
+  --Surface-Selection: #{$prim-color-blue-darken-03};
+  --Surface-Selection-disabled: #{$prim-color-blue-lighten-03};
 } 
