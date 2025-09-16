@@ -1,4 +1,5 @@
 import { ref, defineComponent, watch, toRef } from 'vue'
+import { useI18n } from 'vue-i18n'
 import './HcTableBar.scss'
 
 interface ColumnItem {
@@ -33,6 +34,7 @@ export const HcTableBar = defineComponent({
 	},
 	emits: ['update:value', 'setColumnCache'],
 	setup(props, { emit }) {
+		const { t } = useI18n()
 		const checkAll = ref(true)
 		const indeterminate = ref(false)
 		const showColumnList = ref<string[]>([])
@@ -82,20 +84,21 @@ export const HcTableBar = defineComponent({
     }
 
 		return () => (
-			<div class="table-total-column-config flex justify-between items-center">
-				<div class="flex-1 text-left flex items-center">
+			<div class="table-total-column-config">
+				<div class="table-results">
 					{props.filterCount > 0 && (
-						<div class="filter-result" key="filter-result">
-							Filter results
-							<span class="table-total">{props.filterCount}</span>
-							Items
+						<div>
+							{t("common.filterResults")}
+							<span class="number">{props.filterCount}</span>
+							{t("common.items")}
 						</div>
 					)}
+					{props.filterCount > 0 && props.total > 0 && <v-divider class="divider" thickness="2" vertical></v-divider>}
 					{props.total > 0 && (
-						<div class="boder-left">
-							Total
-							<span class="table-total">{props.total}</span>
-							Items
+						<div>
+							{t("common.total")}
+							<span class="number">{props.total}</span>
+							{t("common.items")}
 						</div>
 					)}
 				</div>
@@ -112,42 +115,40 @@ export const HcTableBar = defineComponent({
 									size="small"
 									class="show-columns-btn"
 								>
-									<v-icon icon="brightness_5" />
+									<v-icon icon="settings" />
 								</v-btn>
 							),
 						}}
 					>
 						<v-card minWidth={200}>
 							<v-card-text class="pa-3">
-								<div class="show-columns-box">
-									<div style={{ height: '36px' }} class="flex items-center">
+								<div style={{ height: '36px' }} class="flex items-center">
+									<v-checkbox
+										v-model={checkAll.value}
+										indeterminate={indeterminate.value}
+										onUpdate:modelValue={onCheckAllChange}
+										density="compact"
+										hideDetails
+										v-slots={{
+											label: () => <span>{t("public.all")}</span>,
+										}}
+									/>
+								</div>
+								{props.columnList.map(item => (
+									<div key={item.key} class="flex items-center" style={{ height: '36px' }}>
 										<v-checkbox
-											v-model={checkAll.value}
-											indeterminate={indeterminate.value}
-											onUpdate:modelValue={onCheckAllChange}
+											v-model={showColumnList.value}
+											value={item.key}
+											disabled={item.disabled}
+											onUpdate:modelValue={showColumnChange}
 											density="compact"
 											hideDetails
 											v-slots={{
-												label: () => <span>All</span>,
+												label: () => <span>{item.title}</span>,
 											}}
 										/>
 									</div>
-									{props.columnList.map(item => (
-										<div key={item.key} class="flex items-center" style={{ height: '36px' }}>
-											<v-checkbox
-												v-model={showColumnList.value}
-												value={item.key}
-												disabled={item.disabled}
-												onUpdate:modelValue={showColumnChange}
-												density="compact"
-												hideDetails
-												v-slots={{
-													label: () => <span>{item.title}</span>,
-												}}
-											/>
-										</div>
-									))}
-								</div>
+								))}
 							</v-card-text>
 						</v-card>
 					</v-menu>

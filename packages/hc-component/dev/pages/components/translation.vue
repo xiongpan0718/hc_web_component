@@ -4,7 +4,7 @@
         <v-spacer></v-spacer>
         <div>$t('$vuetify.dataFooter.itemsPerPageText')：{{ $t('$vuetify.dataFooter.itemsPerPageText') }}</div>
         <v-spacer></v-spacer>
-        <v-select v-model="$i18n.locale" :items="locales" item-title="text" item-value="value" density="compact"
+        <v-select v-model="locale" :items="locales" item-title="text" item-value="value" density="compact"
             style="max-width: 160px"></v-select>
     </v-app-bar>
 

@@ -3,26 +3,26 @@ import App from "./App.vue";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
-import { createHcComponent, createThemeConfig, createIconConfig } from "../src";
+import { createHcComponent, createThemeConfig, createIconConfig, createHcI18nConfig } from "../src";
 import "../src/styles/index.scss";
 import "vuetify/styles";
 // add i18n
 import { createVueI18nAdapter } from "vuetify/locale/adapters/vue-i18n";
 import { createI18n, useI18n } from "vue-i18n";
-import { en as vuetifyEn, zhHans as vuetifyZhHans } from "vuetify/locale";
-import { mergeTranslations } from "./pages/locales/mergeTranslations";
-import zhHansJson from "./pages/locales/zhHans.json";
-import enJson from "./pages/locales/en.json";
+// import { en as vuetifyEn, zhHans as vuetifyZhHans, pl as vuetifyPl, pt as vuetifyPt } from "vuetify/locale";
+// import { mergeTranslations } from "./pages/locales/mergeTranslations";
+// import zhHansJson from "./pages/locales/zhHans.json";
+// import enJson from "./pages/locales/en.json";
 
-const messages = {
-  en: mergeTranslations(enJson, vuetifyEn),
-  zhHans: mergeTranslations(zhHansJson, vuetifyZhHans),
-};
+// const messages = {
+//   en: mergeTranslations(enJson, vuetifyEn),
+//   zhHans: mergeTranslations(zhHansJson, vuetifyZhHans),
+// };
 const i18n = createI18n({
 	legacy: false,
 	locale: 'en',
 	fallbackLocale: 'en',
-	messages,
+	messages: createHcI18nConfig(),
 });
 
 const app = createApp(App);

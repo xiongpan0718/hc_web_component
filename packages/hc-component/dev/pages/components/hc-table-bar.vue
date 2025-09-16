@@ -1,9 +1,33 @@
 <template>
-  <div>
+  <div class="filters-container">
+    <v-select 
+      v-model="locale" 
+      :items="locales" 
+      item-title="text" 
+      item-value="value" 
+      density="compact"
+      style="max-width: 160px"
+    ></v-select>
+
     <HcTableBar
       v-model:value="tableBarData.showColumnList"
       :column-list="tableBarData.columnList"
-      :filter-count="tableBarData.total"
+      :filter-count="tableBarData.filterCount"
+      :total="tableBarData.total"
+      @setColumnCache="setColumnCache"
+    />
+
+    <HcTableBar
+      v-model:value="tableBarData.showColumnList"
+      :column-list="tableBarData.columnList"
+      :total="tableBarData.total"
+      @setColumnCache="setColumnCache"
+    />
+
+    <HcTableBar
+      v-model:value="tableBarData.showColumnList"
+      :column-list="tableBarData.columnList"
+      :filter-count="tableBarData.filterCount"
       @setColumnCache="setColumnCache"
     />
   </div>
@@ -11,8 +35,18 @@
 
 <script setup>
   import { onMounted, ref } from 'vue'
+  import { useI18n } from 'vue-i18n';
+
+  const { locale } = useI18n();
+  const locales = ref([
+        { text: 'English', value: 'en' },
+        { text: '简体中文', value: 'zhHans' },
+        { text: 'Polski', value: 'pl' },
+        { text: 'Português', value: 'pt' },
+    ]);
   const tableBarData = ref({
-    total: 0,
+    total: 20,
+    filterCount: 10,
     showColumnList: [],
     columnList: [
       { title: '111', align: 'start', key: 'vehicle_reg_no', sortable: true, disabled: true },
@@ -43,3 +77,9 @@
   })
 
 </script>
+
+<style scoped lang="scss">
+.filters-container {
+  padding: 24px;
+}
+</style>
