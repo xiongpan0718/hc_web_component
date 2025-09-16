@@ -1,4 +1,5 @@
-import { ref, defineComponent, Transition } from 'vue'
+import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 import './HcFilter.scss'
 
 export const HcFilter = defineComponent({
@@ -19,10 +20,8 @@ export const HcFilter = defineComponent({
   },
   emits: ['reset', 'search'],
   setup(props, { emit, slots }) {
-    const expand = ref(false)
-    if (props.isExpand) {
-      expand.value = props.isExpand
-    }
+    const { t } = useI18n()
+
     const handleReset = () => {
       emit('reset')
     }
@@ -32,40 +31,33 @@ export const HcFilter = defineComponent({
     }
 
     return () => (
-      <div>
-        <div class="modal-filter-content" style={{ backgroundColor: props.backgroundColor }}>
-          <div class="modal-filter-box">
-            <div class="modal-filter-text">Filters</div>
-            <div class="modal-filter-box-right">
-              <v-btn
-                class="filter-btn-box filter-btn-box-reset"
-                color="primary"
-                icon="replay"
-                variant="outlined"
-                onClick={ () => handleReset() }
-              />
-              <v-btn
-                class="filter-btn-box filter-btn-box-search"
-                color="primary"
-                icon="search"
-                onClick={ () => handleSearch() }
-              />
-              <v-btn variant="text" color="primary" onClick={ () => { expand.value = !expand.value } } ripple={ false }>
-                <v-icon icon={ expand.value ? 'keyboard_arrow_up' : 'keyboard_arrow_down' } />
-                { expand.value ? 'Retract' : 'Expand' }
+      <v-expansion-panels eager model-value={props.isExpand ? 0 : undefined} class="hc-filter">
+        <v-expansion-panel title={t('common.filter')} style={{ backgroundColor: props.backgroundColor }}>
+          <v-expansion-panel-text>
+            <div 
+              class="filter-container" 
+              style={{ gridTemplateColumns: `repeat(${props.columnCount}, 1fr)` }}
+            >
+              {slots['filter-input']?.()}
+            </div>
+            <div class="filter-btns">
+              <v-btn 
+                prepend-icon="replay" 
+                variant="outlined" 
+                onClick={handleReset}
+              >
+                {t('public.resetting')}
+              </v-btn>
+              <v-btn 
+                prepend-icon="search" 
+                onClick={handleSearch}
+              >
+                {t('common.filterResults')}
               </v-btn>
             </div>
-          </div>
-
-          <Transition name="expand">
-            { expand.value && (
-              <div class="modal-filter-input-box" style={{ gridTemplateColumns: `repeat(${props.columnCount}, 1fr)` }}>
-                { slots['filter-input']?.() }
-              </div>
-            )}
-          </Transition>
-        </div>
-      </div>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+      </v-expansion-panels>
     )
   },
 })
