@@ -33,7 +33,7 @@ export const HcTableBar = defineComponent({
 		},
 	},
 	emits: ['update:value', 'setColumnCache'],
-	setup(props, { emit }) {
+	setup(props, { emit, slots }) {
 		const { t } = useI18n()
 		const checkAll = ref(true)
 		const indeterminate = ref(false)
@@ -102,7 +102,10 @@ export const HcTableBar = defineComponent({
 						</div>
 					)}
 				</div>
-				<div class="flex-1 text-right">
+				<div class="flex-1 text-right column-box">
+					<div class="slot-columns-box">
+						{slots.chooseColumns?.() || slots['choose-columns']?.() || <span>{t("tire.chooseColumns")}</span>}
+					</div>
 					<v-menu
 						class="show-columns"
 						location="bottom end"

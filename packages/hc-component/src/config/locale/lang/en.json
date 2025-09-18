@@ -4,5 +4,6 @@
   "common.filterResults": "Filter results",
   "common.total": "Total",
   "public.all": "All",
-  "common.items": "items"
+  "common.items": "items",
+  "tire.chooseColumns": "Choose columns"
 }
