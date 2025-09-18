@@ -11,6 +11,7 @@
   .table-results {
     display: flex;
     align-items: center;
+    flex: 1;
     .number {
       color: var(--Text-brand);
       font-weight: 600;
@@ -45,6 +46,8 @@
 .column-box{
   display: flex;
   flex-direction: row;
+  justify-content: right;
+  flex: 1;
 }
 
 .slot-columns-box {
