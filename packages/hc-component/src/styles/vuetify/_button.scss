@@ -103,7 +103,9 @@
       --v-btn-height: 44px !important;
       padding: 0 12px;
     }
-
+    &--variant-text {
+      color: #27509B !important;
+    }
     &--variant-outlined {
       border-color: var(--v-border-color);
       color: var(--v-theme-primary-color);
