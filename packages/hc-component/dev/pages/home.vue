@@ -48,11 +48,13 @@ import Button from './components/button.vue'
 import Badge from './components/badge.vue'
 import Divider from './components/divider.vue'
 import Tooltips from './components/tooltips.vue'
+import Textareas from './components/textareas.vue'
 import Tabs from './components/tabs.vue'
 import Icons from './components/icons.vue'
 import Checkbox from './components/checkbox.vue'
 import Select from './components/select.vue'
 import Switch from './components/switch.vue'
+import TextFields from './components/text-fields.vue'
 import TextFieldsShow from './components/text-fields-show.vue'
 import Pagination from './components/pagination.vue'
 import Menu from './components/menu.vue'
@@ -77,10 +79,12 @@ const items = ref([
   { name: 'Badge (徽章)', id: 'Badge', icon: 'circle', color: 'green' },
   { name: 'Divider (分隔线)', id: 'Divider', icon: 'circle', color: 'green' },
   { name: 'Tooltips (提示)', id: 'Tooltips', icon: 'circle', color: 'green' },
+  { name: 'Textareas (多行文本框)', id: 'Textareas', icon: 'circle', color: '#b80b0b' },
   { name: 'Tabs (选项卡)', id: 'Tabs', icon: 'circle', color: '#b80b0b' },
   { name: 'Checkboxs (复选框)', id: 'Checkbox', icon: 'circle', color: 'green' },
   { name: 'Selects (下拉选择框)', id: 'Select', icon: 'circle', color: '#b80b0b' },
   { name: 'Switch (开关)', id: 'Switch', icon: 'circle', color: 'green' },
+  { name: 'TextFields (单行文本框)', id: 'TextFields', icon: 'circle', color: '#b80b0b' },
   { name: 'Pagination (分页)', id: 'Pagination', icon: 'circle', color: '#615ced' },
   { name: 'Menu (菜单)', id: 'Menu', icon: 'circle', color: '#615ced' },
   { name: 'DateInput (日期选择)', id: 'DateInput', icon: 'circle', color: 'green' },
@@ -103,11 +107,13 @@ const list = {
   Badge,
   Divider,
   Tooltips,
+  Textareas,
   Tabs,
   Icons,
   Checkbox,
   Select,
   Switch,
+  TextFields,
   TextFieldsShow,
   Pagination,
   Menu,

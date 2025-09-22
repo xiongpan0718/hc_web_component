@@ -1,0 +1,9 @@
+@mixin light {
+  &.v-text-field{
+    padding-top: 8px;
+    .v-input__details{
+      min-height: 14px !important;
+      padding-top: 0 !important;
+    }
+  }
+}

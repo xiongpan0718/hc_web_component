@@ -18,6 +18,8 @@
 @use "switch";
 @use "tabs";
 @use "text-fields-display";
+@use "textareas";
+@use "text-fields";
 @use "tooltips";
 @use 'stepper';
 @use 'select';
@@ -47,7 +49,9 @@
   @include snackbar.light;
   @include switch.light;
   @include tabs.light;
+  @include text-fields.light;
   @include text-fields-display.light;
+  @include textareas.light;
   @include tooltips.light;
   @include stepper.light;
   @include select.light;

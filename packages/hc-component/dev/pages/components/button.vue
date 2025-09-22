@@ -202,6 +202,10 @@
             <p>Desktop - small</p>
             <v-btn append-icon="$expand" prepend-icon="add" size="small" variant="elevated">Button</v-btn>
           </v-col>
+          <v-col cols="3">
+            <p>Button / Icon</p>
+            <v-btn density="compact" size="small" icon="add" variant="elevated" />
+          </v-col>
         </v-row>
       </template>
       <div class="description">
