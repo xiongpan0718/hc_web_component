@@ -19,10 +19,28 @@
         <div>
           <v-text-field label="111" v-model="a"></v-text-field>
         </div>
+        <div>
+          <v-text-field label="111" v-model="a"></v-text-field>
+        </div>
+        <div>
+          <v-text-field label="111" v-model="a"></v-text-field>
+        </div>
+        <div>
+          <v-text-field label="111" v-model="a"></v-text-field>
+        </div>
+        <div>
+          <v-text-field label="111" v-model="a"></v-text-field>
+        </div>
       </template>
     </HcFilter>
     <HcFilter background-color="#fff" column-count="2" is-expand>
       <template #filter-input>
+        <div>
+          <v-text-field label="111" v-model="a" :rules="[required]"></v-text-field>
+        </div>
+        <div>
+          <v-text-field label="111" v-model="a" :rules="[required]"></v-text-field>
+        </div>
         <div>
           <v-text-field label="111" v-model="a" :rules="[required]"></v-text-field>
         </div>

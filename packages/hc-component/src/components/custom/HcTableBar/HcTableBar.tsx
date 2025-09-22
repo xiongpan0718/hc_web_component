@@ -118,7 +118,7 @@ export const HcTableBar = defineComponent({
 									size="small"
 									class="show-columns-btn"
 								>
-									<v-icon icon="settings" />
+									<v-icon color="#1A1A1A" icon="settings" />
 								</v-btn>
 							),
 						}}

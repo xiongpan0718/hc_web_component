@@ -1,9 +1,15 @@
 @mixin light {
+  // .v-btn--size-small {
+  //   height: 32px;
+  // }
+  // .v-btn--size-default {
+  //   height: 44px;
+  // }
   &.v-btn {
     font-weight: 600;
 
     .v-icon {
-      font-size: 20px;
+      font-size: 24px;
     }
 
     .v-btn__content  {
@@ -12,13 +18,13 @@
       letter-spacing: 0.175px;
     }
 
-    // &--icon {
-    //   height: var(--v-btn-height) !important;
-    //   width: var(--v-btn-height) !important;
-    // }
+    &--icon {
+      height: var(--v-btn-height) !important;
+      width: var(--v-btn-height) !important;
+    }
 
     &--size-small {
-      --v-btn-height: 32px;
+      --v-btn-height: 32px !important;
       padding: 0 8px;
 
       .v-btn__append {
@@ -50,7 +56,7 @@
       }
 
       &.v-btn--variant-outlined {
-        border-color: #ccc;
+        border-color: #ccc !important;
         background-color: #f2f2f2 !important;
       }
     }
@@ -75,7 +81,7 @@
 
       @at-root {
         .bg-red {
-          background: #b71c1c !important;
+          background-color: #B71C1C !important;
 
           &:hover {
             background: #890404 !important;
@@ -94,6 +100,7 @@
     }
 
     &--size-default {
+      --v-btn-height: 44px !important;
       padding: 0 12px;
     }
 
