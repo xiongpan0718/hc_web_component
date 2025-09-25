@@ -86,14 +86,14 @@ export const HcTableBar = defineComponent({
 		return () => (
 			<div class="table-total-column-config">
 				<div class="table-results">
-					{props.filterCount > 0 && (
+					{(
 						<div>
 							{t("common.filterResults")}
 							<span class="number">{props.filterCount}</span>
 							{t("common.items")}
 						</div>
 					)}
-					{props.filterCount > 0 && props.total > 0 && <v-divider class="divider" thickness="2" vertical></v-divider>}
+					{ props.total > 0 && <v-divider class="divider" thickness="2" vertical></v-divider>}
 					{props.total > 0 && (
 						<div>
 							{t("common.total")}
