@@ -57,11 +57,11 @@ export default defineConfig({
   plugins: [
     json(),
     url({
-      include: ['**/*.svg'],
+      include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.webp'],
       limit: 0,
-      fileName: '[name][extname]',
-      publicPath: '/node_modules/@michelin/hc-component/dist/assets/icons/',
-      emitFiles: false
+      fileName: 'assets/icons/[name][extname]',
+      publicPath: '/node_modules/@michelin/hc-component/dist/',
+      emitFiles: true
     }),
     copy({
       targets: [
@@ -74,11 +74,6 @@ export default defineConfig({
         {
           src: 'src/styles/**/*.{svg,png,jpg,gif,webp}',
           dest: 'dist/assets/images',
-          flatten: false
-        },
-        {
-          src: ['src/assets/icons/*.svg', 'src/components/**/icons/*.svg'],
-          dest: 'dist/assets/icons',
           flatten: false
         }
       ],
