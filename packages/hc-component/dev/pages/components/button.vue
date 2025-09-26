@@ -203,6 +203,10 @@
             <v-btn append-icon="$expand" prepend-icon="add" size="small" variant="elevated">Button</v-btn>
           </v-col>
           <v-col cols="3">
+            <p>Button / Icon - default</p>
+            <v-btn density="compact" icon="add" variant="elevated" />
+          </v-col>
+          <v-col cols="3">
             <p>Button / Icon - small</p>
             <v-btn density="compact" size="small" icon="add" variant="elevated" />
           </v-col>
