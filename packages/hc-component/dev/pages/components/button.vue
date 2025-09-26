@@ -59,7 +59,7 @@
             <v-btn color="grey" icon="add" variant="outlined" />
           </v-col>
           <v-col cols="2">
-            <v-btn color="#B71C1C" icon="add" variant="elevated" />
+            <v-btn color="red" icon="add" variant="elevated" />
           </v-col>
         </v-row>
         <v-row>
@@ -76,7 +76,7 @@
             <v-btn color="grey" icon="add" variant="outlined" disabled />
           </v-col>
           <v-col cols="2">
-            <v-btn color="#B71C1C" icon="add" variant="elevated" disabled />
+            <v-btn color="red" icon="add" variant="elevated" disabled />
           </v-col>
         </v-row>
       </template>
@@ -119,10 +119,10 @@
             <v-btn append-icon="$expand" prepend-icon="add" variant="text">Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="#1A1A1A" prepend-icon="add" variant="outlined">Button</v-btn>
+            <v-btn append-icon="$expand" color="grey" prepend-icon="add" variant="outlined">Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="#B71C1C" prepend-icon="delete" variant="elevated">Button</v-btn>
+            <v-btn append-icon="$expand" color="red" prepend-icon="delete" variant="elevated">Button</v-btn>
           </v-col>
         </v-row>
         <v-row>
@@ -142,7 +142,7 @@
             <v-btn append-icon="$expand" color="grey" prepend-icon="add" variant="outlined" disabled>Button</v-btn>
           </v-col>
           <v-col cols="2">
-            <v-btn append-icon="$expand" color="#B71C1C" prepend-icon="delete" variant="elevated" disabled>Button</v-btn>
+            <v-btn append-icon="$expand" color="red" prepend-icon="delete" variant="elevated" disabled>Button</v-btn>
           </v-col>
         </v-row>
       </template>
@@ -203,7 +203,11 @@
             <v-btn append-icon="$expand" prepend-icon="add" size="small" variant="elevated">Button</v-btn>
           </v-col>
           <v-col cols="3">
-            <p>Button / Icon</p>
+            <p>Button / Icon - default</p>
+            <v-btn density="compact" icon="add" variant="elevated" />
+          </v-col>
+          <v-col cols="3">
+            <p>Button / Icon - small</p>
             <v-btn density="compact" size="small" icon="add" variant="elevated" />
           </v-col>
         </v-row>
