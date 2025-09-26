@@ -1,7 +1,14 @@
 .hc-filter {
+  // 启用容器查询上下文
+  // Enable container query context
+  container-type: inline-size;
+  
   .v-expansion-panel-title {
     font-size: 20px !important;
     font-weight: 600;
+    .v-icon{
+      font-size: 32px;
+    }
   }
 
   .filter-container {
@@ -9,15 +16,18 @@
     gap: 12px 24px;
     
     // 默认情况下（≥1000px）显示4列
+    // Default case (≥1000px) shows 4 columns
     grid-template-columns: repeat(4, 1fr);
     
-    // 中等屏幕（500px < x < 1000px）显示3列
-    @media (max-width: 999px) and (min-width: 501px) {
+    // 中等容器宽度（500px < x < 1000px）显示3列
+    // Medium container width (500px < x < 1000px) shows 3 columns
+    @container (max-width: 999px) and (min-width: 501px) {
       grid-template-columns: repeat(3, 1fr);
     }
     
-    // 小屏幕（≤500px）显示2列
-    @media (max-width: 500px) {
+    // 小容器宽度（≤500px）显示2列
+    // Small container width (≤500px) shows 2 columns
+    @container (max-width: 500px) {
       grid-template-columns: repeat(2, 1fr);
     }
     

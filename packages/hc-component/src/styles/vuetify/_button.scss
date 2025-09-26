@@ -5,6 +5,41 @@
   // .v-btn--size-default {
   //   height: 44px;
   // }
+  .bg-red {
+    background-color: #B71C1C !important;
+
+    &:hover {
+      background: #890404 !important;
+    }
+
+    &:active {
+      background: #690202 !important;
+    }
+
+    &.v-btn--disabled {
+      background: #e5e5e5 !important;
+      color: #999999;
+    }
+  }
+  .text-grey {
+    border-color: #cccccc !important;
+    color: #1A1A1A !important;
+
+    &:hover {
+      background: #f2f2f2 !important;
+    }
+
+    &:active {
+      background: #f2f2f2 !important;
+      color: #999 !important;
+    }
+
+    &.v-btn--disabled {
+      background: #f2f2f2 !important;
+      color: #999999 !important;
+      border: unset !important;
+    }
+  }
   &.v-btn {
     font-weight: 600;
 
