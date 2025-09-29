@@ -74,6 +74,11 @@ export const HcTire = defineComponent({
           </div>
           <div class="wheel-tire-value">
             <div class="model-value" style={{ 'line-height': !tireData.value.rtd ? 'unset' : '' }}>
+              {
+                tireData.value.is_regroove ? (
+                  <span class="is-regroove">R</span>
+                ) : null
+              }
               { tireData.value.rtd || '--' }
             </div>
             <div class="model-unit">{ rtdUnit.value || tireData.value.rtd_unit }</div>
