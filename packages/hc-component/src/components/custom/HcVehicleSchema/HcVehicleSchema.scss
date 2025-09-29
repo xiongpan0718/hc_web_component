@@ -1,0 +1,62 @@
+.hc-vehicle-schema{
+  width: 344px;
+  margin: 0 auto;
+  .wheel-table{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  .split-line{
+    margin: 16px 0;
+  }
+  .spare-list{
+    display: flex;
+    column-gap: 12px;
+    justify-content: center;
+  }
+  .wheel-row{
+    width: 100%;
+    display: flex;
+    column-gap: 9px;
+    .tire-section{
+      width: 109px;
+      display: flex;
+      column-gap: 13px;
+      &:last-child{
+        justify-content: flex-end;
+      }
+
+    }
+    .wheel-axle{
+      flex: 1;
+    }
+  }
+  .wheel-axle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .recommend-text{
+      color: #4D4D4D;
+      font-size: 14px;
+      text-align: center;
+      line-height: 16px;
+      padding: 2px 3px 0 3px;
+      .pressure-recommend{
+
+      }
+      .cai-recommend{
+
+      }
+    }
+    .recommend-icon{
+      height: 16px;
+      width: 16px;
+      display: flex;
+    }
+    .wheel-axle-img{
+      height: 45px;
+      width: 100%;
+    }
+  }
+}
