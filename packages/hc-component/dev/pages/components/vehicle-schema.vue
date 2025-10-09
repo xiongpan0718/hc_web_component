@@ -1,15 +1,20 @@
 <template>
-  <HcVehicleSchema
-    v-model:select-list="selectList"
-    :axle-observation-level="axleObservationLevel"
-    :spare-list="spareList"
-    :tire-data="tireData"
-    :axle-data="axleData"
-    :unit="unit"
-    :vehicle-data="vehicleData"
-    :wheel-type="wheelType"
-    style="margin: 50px auto;height: 600px"
-  />
+  <div style="display: flex;justify-content: space-between">
+    <HcVehicleSchema
+      v-model:select-list="selectList"
+      :axle-data="axleData"
+      :axle-observation-level="axleObservationLevel"
+      :spare-list="spareList"
+      :tire-data="tireData"
+      :unit="unit"
+      :vehicle-data="vehicleData"
+      :wheel-type="wheelType"
+      style="margin: 50px auto;"
+    />
+    <Hc-Wheel-Schema wheelType="2-4-4"></Hc-Wheel-Schema>
+  </div>
+  <Hc-Wheel-Schema wheelType="2-4-4" size="medium" style="margin-top: 50px"></Hc-Wheel-Schema>
+
 
 </template>
 

@@ -1,4 +1,4 @@
-.hc-vehicle-schema{
+.hc-wheel-schema{
   width: 340px;
   margin: 0 auto;
   .wheel-table{
@@ -25,7 +25,12 @@
       &:last-child{
         justify-content: flex-end;
       }
-
+      .tire-wheel{
+        width: 48px;
+        height: 80px;
+        border-radius: 6px;
+        background: #4D4D4D;
+      }
     }
     .wheel-axle{
       flex: 1;
@@ -51,6 +56,31 @@
     .wheel-axle-img{
       height: 45px;
       width: 100%;
+    }
+  }
+  &.size-medium{
+    width: 88px;
+    .wheel-table{
+      row-gap: 4px;
+    }
+    .wheel-row{
+      column-gap: 2px;
+    }
+    .tire-section{
+      width: 30px;
+      column-gap: 2px;
+    }
+
+    .wheel-axle{
+      .wheel-axle-img{
+        height: 16px;
+        width: 20px !important;
+      }
+    }
+    .tire-wheel{
+      width: 14px !important;
+      height: 24px !important;
+      border-radius: 2px !important;
     }
   }
 }
