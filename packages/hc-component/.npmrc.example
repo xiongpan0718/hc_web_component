@@ -1,0 +1,6 @@
+email=your.email@example.com
+always-auth=true
+@michelin:registry=https://artifactory.michelin.com/artifactory/api/npm/x7hc-npm-snapshot/
+//artifactory.michelin.com/artifactory/api/npm/x7hc-npm-snapshot/:_authToken=YOUR_AUTH_TOKEN_HERE
+strict-ssl=false
+

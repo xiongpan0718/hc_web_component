@@ -26,3 +26,8 @@ __screenshots__/
 
 .vercel
 .now
+
+# NPM config with sensitive tokens
+.npmrc
+*/.npmrc
+!.npmrc.example
