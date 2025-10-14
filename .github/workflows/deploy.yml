@@ -25,12 +25,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8
+          version: 10
+
+      - name: Remove problematic patches for deployment
+        run: |
+          # Backup original package.json
+          cp package.json package.json.bak
+          # Remove patches that are not needed for hc-component
+          node -e "const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json'));delete pkg.pnpm.patchedDependencies['@testing-library/vue'];delete pkg.pnpm.patchedDependencies['vue-gtag-next'];fs.writeFileSync('package.json',JSON.stringify(pkg,null,2));"
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
