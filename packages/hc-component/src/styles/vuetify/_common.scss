@@ -21,11 +21,22 @@
       font-size: 16px !important;
       padding: 8px 12px !important;
       color: var(--Text-default) !important;
+
+      input {
+        font-size: var(--Size-Body-M) !important;
+        color: var(--Text-default);
+
+        &::placeholder {
+          color: var(--Text-grey-1);
+          font-size: var(--Size-Body-M) !important;
+        }
+      }
     }
 
     // 默认时label的样式
     .v-label.v-field-label {
       color: var(--Text-grey-1) !important;
+      margin-inline-end: 8px !important;
     }
 
     .v-label {
@@ -39,7 +50,11 @@
       
       .v-field__input {
         opacity: 1 !important;
-        color: var(--Text-disabled) !important;
+
+        input {
+          color: var(--Text-disabled) !important;
+          font-weight: 400 !important;
+        }
       }
 
       // 禁用时label的样式
@@ -52,11 +67,12 @@
     // 输入框、选择框 边框颜色、宽度; label滑到顶上的颜色、字号
     &.v-field--focused {
       .v-field__outline {
-        color: var(--Border-secondary) !important;
+        color: #27509b !important;
         --v-field-border-width: 2px !important;
 
         .v-field__outline__notch {
           .v-label.v-field-label--floating {
+            color: var(--Text-default) !important;
             font-size: var(--Size-Annotation) !important;
           }
         }
@@ -66,11 +82,20 @@
     // 清除图标的样式
     // append图标样式
     .v-field__clearable .v-icon--clickable,
-    .v-field__prepend-inner .v-icon,
-    .v-field__append-inner .v-icon {
+    .v-field__append-inner .v-icon--size-default {
       font-size: var(--hc-icon-size-20);
-      color: var(--Icon-default);
+      color: #1a1a1a;
       opacity: 1;
+    }
+
+    .v-field__append-inner {
+      width: auto !important;
+      opacity: 1 !important;
+      padding-right: 12px !important;
+
+      .v-icon {
+        margin-left: 0 !important;
+      }
     }
   }
 
@@ -83,8 +108,13 @@
 
   .v-input__control {
     margin-bottom: 0 !important;
+
+    .v-field.v-field--appended {
+      padding-inline-end: 0px !important;
+    }
   }
 
+  // error时的label样式，放开errormessage信息
   &.v-input--error {
     .v-field__outline__notch {
       .v-label.v-field-label--floating {
@@ -92,15 +122,14 @@
       }
     }
 
-  }
-
-  &.v-text-field {
-    .v-input__details {
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 0;
-      min-height: 14px;
-      height: auto !important;
+    &.v-text-field {
+      .v-input__details {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 2px;
+        min-height: 0 !important;
+        height: auto !important;
+      }
     }
   }
 }

@@ -39,7 +39,6 @@
       }
     }
 
-    .v-autocomplete__selection,
     .v-field__clearable,
     .v-field__append-inner,
     .v-field__prepend-inner,
@@ -84,6 +83,68 @@
 
         .v-list-item {
           background: #fff;
+        }
+      }
+    }
+
+    // select的时候，input取消光标
+    &.v-autocomplete--input-disable {
+      input {
+        caret-color: transparent !important;
+      }
+    }
+
+    // 错误时的边框样式
+    &.v-autocomplete--has-input.v-input--error {
+      .v-field__clearable {
+        opacity: 1 !important;
+        margin-right: 8px !important;
+
+        .v-icon--clickable {
+          color: var(--Text-red-status) !important;
+        }
+      }
+
+      .v-field__outline {
+        color: var(--Border-error) !important;
+      }
+    }
+
+    // 输入状态时、上下箭头样式
+    &.v-autocomplete--has-input,
+    .v-field--focused {
+      .v-autocomplete__menu-icon {
+        color: #1a1a1a !important;
+      }
+    }
+
+    // 输入框有值时
+    &.v-autocomplete--has-input {
+      .v-field__clearable {
+        margin-left: 0 !important;
+        margin-right: 8px !important;
+      }
+
+      .v-field__outline__notch {
+        .v-label.v-field-label--floating {
+          color: var(--Text-default) !important;
+          font-size: var(--Size-Annotation) !important;
+        }
+      }
+
+      // 禁用时样式
+      .v-field--disabled {
+        .v-label.v-field-label--floating {
+          color: var(--Text-disabled) !important;
+        }
+
+        // chip，多选
+        .v-chip__underlay {
+          color: var(--Surface-mask-2) !important;
+        }
+
+        .v-chip__content {
+          color: var(--Text-disabled) !important;
         }
       }
     }

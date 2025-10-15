@@ -63,9 +63,12 @@ import HcTable from './components/hc-table.vue'
 import HcFilter from './components/hc-filter.vue'
 import HcTableBar from './components/hc-table-bar.vue'
 import Stepper from './components/stepper.vue'
+import OverallInputs from './components/overall-inputs.vue'
+import VehicleSchema from './components/vehicle-schema.vue'
 
 const items = ref([
   { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
+  { name: 'VehicleSchema (轮位图)', id: 'VehicleSchema', icon: 'circle', color: 'blue' },
   // { name: 'TextFieldsDisplay (文本显示)', id: 'TextFieldsShow', icon: 'circle', color: 'green' },
   { name: 'Alert (警告框)', id: 'Alert', icon: 'circle', color: 'green' },
   { name: 'Snackbar (消息条)', id: 'Snackbar', icon: 'circle', color: 'green' },
@@ -91,6 +94,7 @@ const items = ref([
   { name: 'HcFilter (筛选)', id: 'HcFilter', icon: 'circle', color: '#615ced' },
   { name: 'HcTableBar (表格工具栏)', id: 'HcTableBar', icon: 'circle', color: '#615ced' },
   { name: 'Stepper (步骤条)', id: 'Stepper', icon: 'circle', color: '#615ced' },
+  { name: 'OverallInputs (整体输入框)', id: 'OverallInputs', icon: 'circle', color: '#615ced' },
 ])
 
 const list = {
@@ -120,9 +124,11 @@ const list = {
   HcFilter,
   HcTableBar,
   Stepper,
+  OverallInputs,
+  VehicleSchema
 }
 const savedId = localStorage.getItem('selectedId')
-const key = ref(savedId || 'AutoComplete')
+const key = ref('VehicleSchema')
 
 const select = ({ id }) => {
   key.value = id
