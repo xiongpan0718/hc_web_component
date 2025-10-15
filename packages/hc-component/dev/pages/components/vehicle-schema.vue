@@ -6,12 +6,11 @@
       :spare-list="spareList"
       :tire-data="tireData"
       :unit="unit"
-      :vehicle-data="vehicleData"
       :wheel-type="wheelType"
     />
-    <Hc-Wheel-Schema :axleTypeList="axleTypeList" :spare-list="spareList" size="medium" style="margin-top: 50px" wheel-type="2-4-4" />
+    <Hc-Wheel-Schema :axle-type-list="axleTypeList" :spare-list="spareList" size="medium" style="margin-top: 50px" wheel-type="2-4-4" />
 
-    <Hc-Wheel-Schema :axleTypeList="axleTypeList" :spare-list="spareList" size="small" style="margin-top: 50px" wheel-type="2-4-4" />
+    <Hc-Wheel-Schema :axle-type-list="axleTypeList" :spare-list="spareList" size="small" style="margin-top: 50px" wheel-type="2-4-4" />
 
   </div>
 <!--  <Hc-Wheel-Schema :spare-list="spareList" size="medium" style="margin-top: 50px" wheel-type="2-4-4" />-->
@@ -535,73 +534,7 @@
       season: null,
     },
   }
-  const vehicleData = {
-    id: 209573,
-    customer_1: 200529,
-    customer_2: 200530,
-    customer_3: 200245,
-    vehicle_no: 'A175877160062',
-    car_number: '',
-    vin: 'SGM1J45678',
-    vehicletype_counter__type: 'Flat Bed Carrier',
-    start_date: '2025-09-25T03:40:01.105577',
-    operator: '200071',
-    vehicle_status_id: 1,
-    mileage: 300.0,
-    remark: '2025-09-25 11:40:00',
-    vehicleconfig_code__config_code: '464',
-    vehicletype_counter__counter: '302',
-    rfid_code: '',
-    usage_time: null,
-    make_id: null,
-    model_id: null,
-    last_inspection_id: 209715,
-    activate_date: null,
-    odometer_type: 'Hour',
-    usage_type: null,
-    fuel_type_code: null,
-    total_mileage: 300.0,
-    total_usage_time: null,
-    edit_lock: false,
-    contract_tire_ownership: null,
-    vehicle_state: null,
-    update_time: '2025-09-25T03:40:10.673700',
-    fuel_type_name: '',
-    usage_type_name: '',
-    last_inspection_time: '2025-09-25 03:40:08',
-    energy_type: 'Diesel',
-    vehicle__vehicleconfig_code__configuration: 'S2.D4',
-    inspection_type__name: '',
-    vehicle__id: 209573,
-    vehicle__vehicle_type: 'Flat Bed Carrier',
-    vehicle_icon: 'https://ttmpeurope.fleetsguru.com/files/public/Flat-Bed-Carrier2.png?st=2025-09-25T05%3A07%3A38Z&se=2025-09-25T09%3A07%3A38Z&sp=r&sv=2021-06-08&ss=b&srt=o&sig=3IJKas2AqgRsynuVkKeWzHAT3aM/7qaaENJIfwZolFA%3D',
-    wheel_type: '2-4',
-    vehicle_wheel_config: 'S2.D4',
-    vehicle_id: 209573,
-    vehicle_status: 'Active',
-    make_name: null,
-    model_name: null,
-    customer_1_name: 'Société Transport Express (STE)',
-    customer_2_name: 'STE Puy de Dôme',
-    customer_3_name: 'STE Aubière',
-    pressure_unit: 'Bar',
-    usage_time_unit: 'Day',
-    mile_unit: 'km',
-    rtd_unit: 'mm',
-    followed: false,
-    inspection_type_id: '',
-    is_submmit: '',
-    observation: '',
-    observation_id_list: '',
-    operation_types: '',
-    no_today_mileage: null,
-    no_today_mileage_date: null,
-    no_today_usage_time: null,
-    no_today_usage_time_date: null,
-    vehicle_type_default_name: 'Flat Bed Carrier',
-    name: 'Flat Bed Carrier',
-    last_vehicle_log_time: '2025-09-25 03:40:10.672191',
-  }
+
   const spareList = ref([
     { rtd: '1', pressure: '2', wheel_place: 'SP1' },
     { rtd: '', pressure: '', wheel_place: 'SP2' },
@@ -611,7 +544,7 @@
     pressure_unit: 'bar',
     rtd_unit: 'mm',
   })
-  const axleTypeList = ref(['D2', 'S4','D2','S4'])
+  const axleTypeList = ref(['D2', 'S4', 'D2', 'S4'])
   const axleData = ref({
     0: {
       observationLevel: 0,
