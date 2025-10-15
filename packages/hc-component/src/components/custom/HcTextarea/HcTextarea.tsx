@@ -27,7 +27,7 @@ export const HcTextarea = defineComponent({
       default: true, // Auto display error icon by default
     },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const textareaRef = ref<InstanceType<typeof VTextarea>>();
     const internalModelValue = ref(props.modelValue);
 
@@ -49,19 +49,21 @@ export const HcTextarea = defineComponent({
       return undefined;
     });
 
-    // Filter out custom props to avoid passing them to VTextarea
+    // Filter out custom props AND modelValue to avoid passing them to VTextarea
     const filteredProps = computed(() => {
-      const { errorIcon, autoErrorIcon, rows, density, variant, ...rest } = props;
+      const { errorIcon, autoErrorIcon, rows, density, variant, modelValue, ...rest } = props;
       return rest;
     });
 
-    // Handle modelValue update
+    // Handle modelValue update - forward to parent and update internal state
     const handleUpdateModelValue = (value: any) => {
       internalModelValue.value = value;
+      emit('update:modelValue', value);
     };
 
     return {
       textareaRef,
+      internalModelValue,
       computedAppendInnerIcon,
       filteredProps,
       handleUpdateModelValue,
@@ -73,6 +75,7 @@ export const HcTextarea = defineComponent({
         ref="textareaRef"
         {...this.filteredProps}
         {...this.$attrs}
+        modelValue={this.internalModelValue}
         rows={this.rows}
         density={this.density}
         variant={this.variant}

@@ -23,7 +23,7 @@ export const HcTextField = defineComponent({
       default: true, // Auto display error icon by default
     },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const textFieldRef = ref<InstanceType<typeof VTextField>>();
     const internalModelValue = ref(props.modelValue);
 
@@ -45,19 +45,21 @@ export const HcTextField = defineComponent({
       return undefined;
     });
 
-    // Filter out custom props to avoid passing them to VTextField
+    // Filter out custom props AND modelValue to avoid passing them to VTextField
     const filteredProps = computed(() => {
-      const { errorIcon, autoErrorIcon, density, variant, ...rest } = props;
+      const { errorIcon, autoErrorIcon, density, variant, modelValue, ...rest } = props;
       return rest;
     });
 
-    // Handle modelValue update
+    // Handle modelValue update - forward to parent and update internal state
     const handleUpdateModelValue = (value: any) => {
       internalModelValue.value = value;
+      emit('update:modelValue', value);
     };
 
     return {
       textFieldRef,
+      internalModelValue,
       computedAppendInnerIcon,
       filteredProps,
       handleUpdateModelValue,
@@ -69,6 +71,7 @@ export const HcTextField = defineComponent({
         ref="textFieldRef"
         {...this.filteredProps}
         {...this.$attrs}
+        modelValue={this.internalModelValue}
         variant={this.variant}
         density={this.density}
         appendInnerIcon={this.computedAppendInnerIcon}
