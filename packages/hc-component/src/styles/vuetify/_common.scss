@@ -72,6 +72,13 @@
       color: var(--Icon-default);
       opacity: 1;
     }
+
+    .v-field__append-inner {
+      gap: 4px;
+      .v-icon {
+        margin-left: 4px;
+      }
+    }
   }
 
   // Autofill styles

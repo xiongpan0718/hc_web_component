@@ -27,7 +27,7 @@ export const HcAutocomplete = defineComponent({
       default: 'expand_more', // Default menu icon
     },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const autocompleteRef = ref<InstanceType<typeof VAutocomplete>>();
     const internalModelValue = ref(props.modelValue);
 
@@ -49,19 +49,21 @@ export const HcAutocomplete = defineComponent({
       return undefined;
     });
 
-    // Filter out custom props to avoid passing them to VAutocomplete
+    // Filter out custom props AND modelValue to avoid passing them to VAutocomplete
     const filteredProps = computed(() => {
-      const { errorIcon, autoErrorIcon, density, variant, menuIcon, ...rest } = props;
+      const { errorIcon, autoErrorIcon, density, variant, menuIcon, modelValue, ...rest } = props;
       return rest;
     });
 
-    // Handle modelValue update
+    // Handle modelValue update - forward to parent and update internal state
     const handleUpdateModelValue = (value: any) => {
       internalModelValue.value = value;
+      emit('update:modelValue', value);
     };
 
     return {
       autocompleteRef,
+      internalModelValue,
       computedAppendInnerIcon,
       filteredProps,
       handleUpdateModelValue,
@@ -73,6 +75,7 @@ export const HcAutocomplete = defineComponent({
         ref="autocompleteRef"
         {...this.filteredProps}
         {...this.$attrs}
+        modelValue={this.internalModelValue}
         variant={this.variant}
         density={this.density}
         menuIcon={this.menuIcon}
