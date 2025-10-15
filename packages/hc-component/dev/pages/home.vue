@@ -94,7 +94,6 @@ const items = ref([
   { name: 'HcFilter (筛选)', id: 'HcFilter', icon: 'circle', color: '#615ced' },
   { name: 'HcTableBar (表格工具栏)', id: 'HcTableBar', icon: 'circle', color: '#615ced' },
   { name: 'Stepper (步骤条)', id: 'Stepper', icon: 'circle', color: '#615ced' },
-  { name: 'OverallInputs (整体输入框)', id: 'OverallInputs', icon: 'circle', color: '#615ced' },
 ])
 
 const list = {

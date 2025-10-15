@@ -1,9 +1,74 @@
 @mixin light {
-  &.v-text-field{
-    padding-top: 8px;
-    .v-input__details{
-      min-height: 14px !important;
-      padding-top: 0 !important;
+  &.v-text-field {
+    .v-text-field__suffix {
+      display: block;
+      height: 44px;
+      opacity: 1 !important;
+      padding-inline-end: 12px !important;
+
+      .v-text-field__suffix__text {
+        opacity: 1 !important;
+        font-size: 12px;
+        color: var(--Text-grey-1) !important;
+      }
+    }
+
+    .v-field--appended {
+      .v-text-field__suffix {
+        padding-inline-end: 8px !important;
+      }
+    }
+
+    // 禁用时后缀样式
+    .v-field--disabled {
+      .v-text-field__suffix {
+        opacity: 1 !important;
+
+        .v-text-field__suffix__text {
+          opacity: 1 !important;
+          color: var(--Text-disabled) !important;
+        }
+      }
+    }
+
+    // 输入框文本样式
+    .v-field__field {
+      opacity: 1 !important;
+
+      input {
+        font-weight: 400 !important;
+        caret-color: var(--Border-secondary);
+      }
+    }
+
+    // 有suffix时，input的padding-inline-end为8px
+    &.v-text-field--suffixed {
+      .v-field__input {
+        padding-right: 8px !important;
+      }
+    }
+
+    // 默认时label的样式
+    .v-label.v-field-label:not(.v-field-label--floating) {
+      width: 100%;
+      margin-inline-start: 12px;
+      margin-inline-end: 12px;
+    }
+
+    // 有prepend时 label的margin-inline-start为6px
+    .v-field--prepended .v-label.v-field-label:not(.v-field-label--floating) {
+      margin-inline-start: 6px;
+    }
+    
+
+    &.v-input--error:not(.v-field--disabled) {
+      .v-field__append-inner .v-icon {
+        color: var(--Text-red-status);
+      }
+
+      .v-field__outline {
+        color: var(--Border-error) !important;
+      }
     }
   }
 }

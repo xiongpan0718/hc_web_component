@@ -1,0 +1,2 @@
+export { HcAutocomplete } from './HcAutocomplete';
+
