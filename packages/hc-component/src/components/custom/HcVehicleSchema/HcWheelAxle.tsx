@@ -42,7 +42,7 @@ export const HcWheelAxle = defineComponent({
       : images[imgType as keyof typeof images]
     return () => (
       <>
-        <img src={ src } style="width:100%;height:100%;" alt="" />
+        <img src={ src } style="width:100%;" alt="" />
       </>
     )
   },

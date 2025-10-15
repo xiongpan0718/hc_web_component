@@ -17,11 +17,11 @@
   .wheel-row{
     width: 100%;
     display: flex;
-    column-gap: 9px;
+    column-gap: 8px;
     .tire-section{
       width: 109px;
       display: flex;
-      column-gap: 13px;
+      column-gap: 12px;
       &:last-child{
         justify-content: flex-end;
       }
@@ -49,8 +49,9 @@
       display: flex;
     }
     .wheel-axle-img{
-      height: 45px;
-      width: 100%;
+      width: 108px;
+      display: flex;
+      align-items: flex-end;
     }
   }
 }

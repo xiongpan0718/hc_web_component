@@ -3,18 +3,18 @@
     <HcVehicleSchema
       v-model:select-list="selectList"
       :axle-data="axleData"
-      :axle-observation-level="axleObservationLevel"
       :spare-list="spareList"
       :tire-data="tireData"
       :unit="unit"
       :vehicle-data="vehicleData"
       :wheel-type="wheelType"
-      style="margin: 50px auto;"
     />
-    <Hc-Wheel-Schema wheelType="2-4-4"></Hc-Wheel-Schema>
-  </div>
-  <Hc-Wheel-Schema wheelType="2-4-4" size="medium" style="margin-top: 50px"></Hc-Wheel-Schema>
+    <Hc-Wheel-Schema :axleTypeList="axleTypeList" :spare-list="spareList" size="medium" style="margin-top: 50px" wheel-type="2-4-4" />
 
+    <Hc-Wheel-Schema :axleTypeList="axleTypeList" :spare-list="spareList" size="small" style="margin-top: 50px" wheel-type="2-4-4" />
+
+  </div>
+<!--  <Hc-Wheel-Schema :spare-list="spareList" size="medium" style="margin-top: 50px" wheel-type="2-4-4" />-->
 
 </template>
 
@@ -23,7 +23,6 @@
 
   const wheelType = ref('2-4')
   const selectList = ref([])
-  const axleObservationLevel = ref({ 1: 1 })
   const tireData = {
     '2LO': {
       tire_no: '',
@@ -612,6 +611,7 @@
     pressure_unit: 'bar',
     rtd_unit: 'mm',
   })
+  const axleTypeList = ref(['D2', 'S4','D2','S4'])
   const axleData = ref({
     0: {
       observationLevel: 0,

@@ -13,6 +13,10 @@ export const HcWheelSchema = defineComponent({
       type: Array,
       default: () => [],
     },
+    axleTypeList: {
+      type: Array,
+      default: () => [],
+    },
     size: {
       type: String,
       default: '', // small large
@@ -21,6 +25,7 @@ export const HcWheelSchema = defineComponent({
   setup (props) {
     const wheelType = toRef(props, 'wheelType')
     const spareList = toRef(props, 'spareList')
+    const axleTypeList = toRef(props, 'axleTypeList')
     const wheelTypeList = (wheelType.value || '').split('-')
 
     const initTireTag = (wheelType: string, index: number, position: number) => {
@@ -51,10 +56,33 @@ export const HcWheelSchema = defineComponent({
         )
       })
     }
-    const src = images[`S-3` as keyof typeof images]
+    const getImgUrl = (index: number) => {
+      let imgType = ''
+      const type = (axleTypeList.value[index] || '') as string
+      if (type.startsWith('DL')) {
+        imgType = 'DL'
+      } else if (type.startsWith('SD')) {
+        imgType = 'SD'
+      } else if (type.startsWith('Steer & Lift')) {
+        imgType = 'Steer & Lift'
+      } else if (type?.startsWith('Self Steer & Liftable') || type?.startsWith('CSSL')) {
+        imgType = 'CSSL'
+      } else if (type?.startsWith('Self Steer') || type?.startsWith('CSS')) {
+        imgType = 'CSS'
+      } else if (type?.startsWith('S') || type?.startsWith('CS')) {
+        imgType = 'S'
+      } else if (type?.startsWith('Liftable') || type?.startsWith('CL')) {
+        imgType = 'CL'
+      } else if (type?.startsWith('D') || type?.startsWith('CD')) {
+        imgType = 'D'
+      } else if (type?.startsWith('C')) {
+        imgType = 'C'
+      }
+      return images[imgType as keyof typeof images]
+    }
     const className = {
       'hc-wheel-schema': true,
-      'size-medium': props.size === 'medium',
+      [`size-${props.size}`]: !!props.size,
     }
     return () => (
       <div class={ className }>
@@ -68,7 +96,7 @@ export const HcWheelSchema = defineComponent({
                 </div>
                 <div class="wheel-axle">
                   <div class="wheel-axle-img">
-                    <img src={ src } style="width:100%;height:100%;" alt="" />
+                    <img src={ getImgUrl(index) } style="width:100%;" alt="" />
                   </div>
                 </div>
                 <div class="tire-section">
