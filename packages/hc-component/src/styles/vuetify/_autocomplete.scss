@@ -13,14 +13,12 @@
     }
 
     .v-field--variant-outlined {
-      .v-chip {
+      .v-chip.v-chip--variant-tonal {
         max-width: 150px;
 
-        &.v-chip--variant-tonal {
-          .v-chip__underlay {
-            color: #f2f2f2;
-            opacity: 1;
-          }
+        .v-chip__underlay {
+          color: #f2f2f2;
+          opacity: 1;
         }
 
         .v-chip__content {
@@ -39,7 +37,19 @@
       }
     }
 
-    .v-autocomplete__selection,
+    // 禁用时输入框的样式
+    .v-field--disabled {
+      .v-chip.v-chip--variant-tonal {
+        .v-chip__underlay {
+          color: var(--Surface-mask-2) !important;
+        }
+
+        .v-chip__content {
+          color: var(--Text-disabled) !important;
+        }
+      }
+    }
+
     .v-field__clearable,
     .v-field__append-inner,
     .v-field__prepend-inner,
@@ -55,13 +65,6 @@
       input {
         font-weight: 400 !important;
         caret-color: var(--Border-secondary);
-      }
-    }
-
-    // 禁用时输入框的样式
-    .v-field--disabled {
-      .v-autocomplete__selection {
-        color: var(--Text-disabled) !important;
       }
     }
 
