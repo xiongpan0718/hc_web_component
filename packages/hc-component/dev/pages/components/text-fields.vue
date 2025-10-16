@@ -106,7 +106,6 @@
 							type="number"
 							suffix="bars"
 							validate-on="eager"
-							clearable
 						/>
 					</v-col>
 				</v-row>

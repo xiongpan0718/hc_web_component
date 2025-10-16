@@ -99,17 +99,5 @@
     .v-autocomplete__menu-icon {
       color: #666 !important;
     }
-
-    // select的时候，input取消光标
-    &.v-autocomplete--input-disable {
-      input {
-        caret-color: transparent !important;
-      }
-    }
-
-    // 默认时上下箭头样式
-    .v-autocomplete__menu-icon {
-      color: #666 !important;
-    }
   }
 }
