@@ -15,7 +15,7 @@
 
     .v-field--appended {
       .v-text-field__suffix {
-        padding-inline-end: 4px !important;
+        padding-inline-end: 8px !important;
       }
     }
 
@@ -41,11 +41,14 @@
       }
     }
 
-    // 有suffix时，input的padding-inline-end为8px
     &.v-text-field--suffixed {
       .v-field__input {
         padding-right: 8px !important;
       }
+    }
+
+    .v-field--prepended .v-field__input {
+      padding-left: 6px !important;
     }
 
     // 默认时label的样式

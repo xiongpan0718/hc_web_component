@@ -2,11 +2,11 @@
 	<div class="d-flex" style="width: 100%;gap: 20px; margin-top: 20px;">
 		<div style="flex: 1">
 			<h4>3 rows (default)</h4>
-			<hc-textarea :maxlength="300" clear-icon="close" label="label" clearable counter no-resize />
+			<hc-textarea :maxlength="300" label="label" counter no-resize />
 		</div>
 		<div style="flex: 1">
 			<h4>4 rows</h4>
-			<hc-textarea clear-icon="close" label="label" rows="4" clearable no-resize />
+			<hc-textarea label="label" rows="4" no-resize />
 		</div>
 	</div>
 	<div class="d-flex" style="width: 100%;gap: 20px; margin-top: 20px;">
@@ -22,8 +22,8 @@
 	<div class="d-flex" style="width: 100%;gap: 20px; margin-top: 20px;">
 		<div style="flex: 1">
 			<h4>Error1</h4>
-			<hc-textarea append-inner-icon="error_outline" clear-icon="close"
-				label="label" v-model="Error" clearable error no-resize/>
+			<hc-textarea append-inner-icon="error_outline"
+				label="label" v-model="Error" error no-resize/>
 		</div>
 		<div style="flex: 1">
 			<h4>Error2</h4>
@@ -32,8 +32,7 @@
 				label="label"
 				v-model="Error"
 				validate-on="eager"
-				clear-icon="close"
-				clearable counter persistent-counter no-resize/>
+				counter persistent-counter no-resize/>
 		</div>
 	</div>
 	<div style="margin-top: 50px">

@@ -93,7 +93,7 @@
         'Georgia',
         'Texas',
         'Wyoming',
-      ]" error-messages="There is an error message" label="Label" variant="outlined" clearable error
+      ]" error-messages="There is an error message" label="Label" variant="outlined" error
         clear-icon="close" />
     </div>
     <div style="flex: 1">

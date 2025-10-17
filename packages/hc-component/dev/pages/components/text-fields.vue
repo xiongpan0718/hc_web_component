@@ -81,6 +81,12 @@
 					</v-col>
 				</v-row>
 				<v-row>
+					<v-col cols="3">Enabled, empty, prepend-inner-icon, append-inner-icon</v-col>
+					<v-col cols="6">
+						<v-text-field label="Pressure" prepend-inner-icon="person_4" append-inner-icon="visibility" suffix="bars" />
+					</v-col>
+				</v-row>
+				<v-row>
 					<v-col cols="3">Disabled, empty</v-col>
 					<v-col cols="6">
 						<v-text-field label="Pressure" disabled suffix="bars" />

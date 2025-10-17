@@ -33,12 +33,13 @@
 
     .v-input__details {
       .v-counter {
-        line-height: 12px;
+        line-height: 14px;
         color: var(--Text-grey-1);
       }
 
       .v-messages {
         opacity: 1;
+        padding-right: 12px;
       }
     }
   }
