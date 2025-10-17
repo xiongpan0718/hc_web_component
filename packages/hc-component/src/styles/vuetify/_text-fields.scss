@@ -90,7 +90,14 @@
     &:not(.v-input--error) {
       .v-input__details {
         .v-messages {
-          color: #727373 !important;
+          color: #4D4D4D !important;
+        }
+      }
+    }
+    &:not(.v-input--dirty) {
+      &:not(.v-field--focused):not(.v-field--disabled) {
+        .v-field__append-inner .v-icon {
+          color: #666 !important;
         }
       }
     }
