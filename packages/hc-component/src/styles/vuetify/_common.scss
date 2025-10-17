@@ -19,15 +19,35 @@
     .v-field__input {
       min-height: 44px !important;
       font-size: 16px !important;
-      padding: 8px 8px 8px 12px!important;
+      padding: 8px 12px!important;
       color: var(--Text-default) !important;
       column-gap: 6px !important;
       opacity: 1;
     }
 
+    &:has(.v-text-field__suffix) {
+      .v-field__input {
+        padding-right: 8px !important;
+      }
+    }
+
+    &:not(:has(.v-text-field__suffix)){
+      &:has(.v-field__append-inner), &:has(.v-field__clearable) {
+        .v-field__input {
+          padding-right: 0 !important;
+        }
+      }
+    }
+
     // 默认时label的样式
     .v-label.v-field-label {
       color: var(--Text-grey-1) !important;
+    }
+
+    &.v-field--focused, &.v-field--dirty {
+      .v-label.v-field-label {
+        color: var(--Text-default) !important;
+      }
     }
 
     .v-label {
@@ -86,11 +106,10 @@
 
     .v-field__clearable {
       margin: 0 !important;
+      margin-left: 8px !important;
     }
     .v-field__append-inner {
       gap: 8px;
-    }
-    .v-field__clearable + .v-field__append-inner {
       .v-icon:first-child {
         margin-left: 8px !important;
       }

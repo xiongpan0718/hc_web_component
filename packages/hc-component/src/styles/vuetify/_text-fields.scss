@@ -15,7 +15,7 @@
 
     .v-field--appended {
       .v-text-field__suffix {
-        padding-inline-end: 8px !important;
+        padding-inline-end: 0 !important;
       }
     }
 
@@ -38,12 +38,6 @@
       input {
         font-weight: 400 !important;
         caret-color: var(--Border-secondary);
-      }
-    }
-
-    &.v-text-field--suffixed {
-      .v-field__input {
-        padding-right: 8px !important;
       }
     }
 
@@ -97,7 +91,7 @@
     &:not(.v-input--dirty) {
       &:not(.v-field--focused):not(.v-field--disabled) {
         .v-field__append-inner .v-icon {
-          color: #666 !important;
+          color: #666;
         }
       }
     }
