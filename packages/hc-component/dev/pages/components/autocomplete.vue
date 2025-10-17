@@ -20,7 +20,7 @@
         'Georgia',
         'Texas',
         'Wyoming',
-      ]" :menu-icon="null" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
+      ]" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
         closable-chips multiple />
     </div>
   </div>
@@ -58,7 +58,7 @@
         'Georgia',
         'Texas',
         'Wyoming',
-      ]" :menu-icon="null" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
+      ]" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
         multiple disabled v-model="Disableds" />
     </div>
     <div style="flex: 1">
@@ -74,6 +74,7 @@
         ]"
         label="Label"
         chips
+        closable-chips
         :maxLength="2"
         clearable
         multiple

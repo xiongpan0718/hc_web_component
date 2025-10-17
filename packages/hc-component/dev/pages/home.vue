@@ -127,7 +127,7 @@ const list = {
   VehicleSchema
 }
 const savedId = localStorage.getItem('selectedId')
-const key = ref('VehicleSchema')
+const key = ref('AutoComplete')
 
 const select = ({ id }) => {
   key.value = id

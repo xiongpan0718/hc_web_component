@@ -14,9 +14,9 @@
 			</template>
 			<template #text>
 				<v-row>
-					<v-col cols="3">Enabled, empty</v-col>
+					<v-col cols="3">Enabled, empty, hint</v-col>
 					<v-col cols="6">
-						<v-text-field label="Pressure" />
+						<v-text-field label="Pressure" hint="The pressure must be between 0 and 20 bars.The pressure must be between 0 and 20 bars." persistent-hint/>
 					</v-col>
 				</v-row>
 				<v-row>

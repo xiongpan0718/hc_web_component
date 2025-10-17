@@ -50,14 +50,6 @@
       }
     }
 
-    .v-field__clearable,
-    .v-field__append-inner,
-    .v-field__prepend-inner,
-    .v-input__prepend,
-    .v-input__append {
-      color: #666 !important;
-    }
-
     // 输入框文本样式
     .v-field__field {
       opacity: 1 !important;
@@ -98,9 +90,9 @@
       }
     }
 
-    // 默认时上下箭头样式
-    .v-autocomplete__menu-icon {
-      color: #666 !important;
-    }
+    // // 默认时上下箭头样式
+    // .v-autocomplete__menu-icon {
+    //   color: #666 !important;
+    // }
   }
 }
