@@ -22,6 +22,10 @@
       opacity: 1;
     }
   }
+  .split-line-hr{
+    display: flex;
+    align-items: center;
+  }
 }
 .show-columns-btn {
   padding: 2px !important;
@@ -54,4 +58,5 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-} 
+  font-weight: 600;
+}

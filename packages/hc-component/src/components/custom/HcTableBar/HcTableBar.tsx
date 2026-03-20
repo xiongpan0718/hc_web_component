@@ -13,11 +13,9 @@ export const HcTableBar = defineComponent({
 	props: {
 		filterCount: {
 			type: Number,
-			default: 0,
 		},
 		total: {
 			type: Number,
-			default: 0,
 		},
 		columnList: {
 			type: Array as () => ColumnItem[],
@@ -84,25 +82,41 @@ export const HcTableBar = defineComponent({
     }
 
 		return () => (
-			<div class="table-total-column-config">
-				<div class="table-results">
-					{(
-						<div>
+			<div class="table-total-column-config"
+				data-testid="hc-table-bar-container-main"
+			>
+				<div class="table-results"
+					data-testid="hc-table-bar-section-results"
+				>
+					{ typeof props.filterCount === 'number' &&
+						<div
+							data-testid="hc-table-bar-text-filter-count"
+						>
 							{t("common.filterResults")}
 							<span class="number">{props.filterCount}</span>
 							{t("common.items")}
 						</div>
-					)}
-					{ props.total > 0 && <v-divider class="divider" thickness="2" vertical></v-divider>}
-					{props.total > 0 && (
-						<div>
+					}
+          { typeof props.total === 'number' && typeof props.filterCount === 'number' &&
+            <div class="split-line-hr">
+               <v-divider class="divider" thickness="1" vertical style="height:16px"
+                data-testid="hc-table-bar-divider-separator"
+               ></v-divider>
+            </div>
+          }
+					{ typeof props.total === 'number' && (
+						<div
+							data-testid="hc-table-bar-text-total-count"
+						>
 							{t("common.total")}
 							<span class="number">{props.total}</span>
 							{t("common.items")}
 						</div>
 					)}
 				</div>
-				<div class="flex-1 text-right column-box">
+				<div class="flex-1 text-right column-box"
+					data-testid="hc-table-bar-section-column-config"
+				>
 					<div class="slot-columns-box">
 						{slots.chooseColumns?.() || slots['choose-columns']?.() || <span>{t("tire.chooseColumns")}</span>}
 					</div>
@@ -110,6 +124,8 @@ export const HcTableBar = defineComponent({
 						class="show-columns"
 						location="bottom end"
 						closeOnContentClick={false}
+						data-testid="hc-table-bar-menu-column-selector"
+						zIndex={2500}
 						v-slots={{
 							activator: ({ props: menuProps }: { props: any }) => (
 								<v-btn
@@ -117,13 +133,18 @@ export const HcTableBar = defineComponent({
 									variant="text"
 									size="small"
 									class="show-columns-btn"
+									data-testid="hc-table-bar-button-settings"
 								>
-									<v-icon color="#1A1A1A" icon="settings" />
+									<v-icon color="#1A1A1A" icon="settings" size="20"
+										data-testid="hc-table-bar-icon-settings"
+									/>
 								</v-btn>
 							),
 						}}
 					>
-						<v-card minWidth={200}>
+						<v-card minWidth={200}
+							data-testid="hc-table-bar-card-column-menu"
+						>
 							<v-card-text class="pa-3">
 								<div style={{ height: '36px' }} class="flex items-center">
 									<v-checkbox
@@ -132,6 +153,7 @@ export const HcTableBar = defineComponent({
 										onUpdate:modelValue={onCheckAllChange}
 										density="compact"
 										hideDetails
+										data-testid="hc-table-bar-checkbox-select-all"
 										v-slots={{
 											label: () => <span>{t("public.all")}</span>,
 										}}
@@ -146,6 +168,7 @@ export const HcTableBar = defineComponent({
 											onUpdate:modelValue={showColumnChange}
 											density="compact"
 											hideDetails
+											data-testid={`hc-table-bar-checkbox-column-${item.key}`}
 											v-slots={{
 												label: () => <span>{item.title}</span>,
 											}}

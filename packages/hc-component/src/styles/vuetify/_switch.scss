@@ -1,8 +1,8 @@
 @mixin light {
   &.v-switch {
     .v-selection-control__input {
-      height: 24px;
-      width: 24px;
+      height: 18px;
+      width: 18px;
     }
 
     /* 基础样式：隐藏所有after元素 */
@@ -35,15 +35,21 @@
 
     /* 调整开关拇指尺寸以适配图标 */
     .v-switch__thumb {
-      width: 24px !important;
-      height: 24px !important;
+      width: 18px !important;
+      height: 18px !important;
     }
 
     .v-label {
       padding-inline-start: 8px;
     }
 
+    .v-selection-control__wrapper {
+      height: 24px;
+      width: 48px;
+    }
+
     .v-selection-control {
+      min-height: 24px;
       &--density-default {
         .v-switch__track {
           background-color: #666666;
@@ -89,9 +95,8 @@
       }
 
       .v-switch__track {
-        // padding: 0 4px;
-        height: 32px;
-        // min-width: 56px;
+        height: 24px;
+        min-width: 46px;
       }
     }
   }

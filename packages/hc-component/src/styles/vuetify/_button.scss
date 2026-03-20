@@ -44,13 +44,34 @@
     font-weight: 600;
 
     .v-icon {
-      font-size: 24px;
+      font-size: 20px;
+    }
+
+    .v-ripple__container{
+      display: none;
+    }
+    &--variant-invert-bg{
+      color: #fff;
+
+      &:hover{
+        background: var(--Button-invertbg-hover, #3A61A6);
+      }
+      &:active{
+        background: #6182BB;
+      }
+      &.v-btn--disabled{
+        background: none !important;
+        color: #999999 !important;
+      }
     }
 
     .v-btn__content  {
       font-size: 14px;
       text-transform: none;
       letter-spacing: 0.175px;
+      .v-icon {
+        font-size: 24px;
+      }
     }
 
     &--icon {

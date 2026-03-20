@@ -37,11 +37,19 @@ const vuetify = createVuetify({
   defaults: {
     HcAutocomplete: {
       menuIcon: "expand_more",
-      clearIcon: "close",
+      variant: "outlined",
+      density: "compact",
+      maxLength: 2,
+    },
+    HcTextarea: {
+      variant: "outlined",
+    },
+    HcTextField: {
+      variant: "outlined",
+      density: "compact",
     },
     VAutocomplete: {
       menuIcon: "expand_more",
-      clearIcon: "close",
     },
     VChip: {
       closeIcon: "cancel",

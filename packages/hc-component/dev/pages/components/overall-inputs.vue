@@ -28,6 +28,9 @@
               ]"
               label="Select"
               :rules="[(v) => !v || 'You entered a wrong value']"
+              append-inner-icon="warning"
+              suffix="32nds"
+              clearable
             />
           </v-col>
           <v-col cols="6">
@@ -43,6 +46,8 @@
               ]"
               label="Disabled"
               disabled
+              suffix="32nds"
+              density="compact"
             />
           </v-col>
         </v-row>
@@ -50,7 +55,7 @@
         <v-row>
           <v-col cols="6">
             <h4>Default</h4>
-            <v-autocomplete 
+            <hc-autocomplete 
               :items="[
                 'California',
                 'Colorado',
@@ -64,6 +69,8 @@
               :rules="[(v) => !v || 'You entered a wrong value']"
               clearable
               chips
+              suffix="32nds"
+              density="compact"
             />
           </v-col>
           <v-col cols="6">
@@ -79,7 +86,9 @@
               ]"
               variant="outlined"
               label="Label"
+              append-inner-icon="edit"
               disabled
+              suffix="32nds"
             />
           </v-col>
         </v-row>
@@ -87,28 +96,30 @@
         <v-row>
           <v-col cols="6">
             <h4>Default</h4>
-            <v-text-field 
+            <hc-text-field 
+              clearable
               variant="outlined" 
               label="Label" 
               :rules="[(v) => !v || 'You entered a wrong value']"
+              suffix="32nds"
             />
           </v-col>
           <v-col cols="6">
             <h4>Disabled</h4>
-            <v-text-field variant="outlined" label="Label" disabled />
+            <v-text-field variant="outlined" label="Label" disabled suffix="32nds" />
           </v-col>
         </v-row>
         <h3>Date Input</h3>
         <v-row>
           <v-col cols="6">
             <h4>Default</h4>
-            <v-date-input
+            <hc-date-input
               label="Date Input"
               prepend-icon=""
               prepend-inner-icon="$calendar"
               variant="outlined"
               multiple="range"
-              :rules="[(v) => !v || 'You entered a wrong value']"
+              :rules="[(v) => v.length || 'You entered a wrong value']"
             />
           </v-col>
           <v-col cols="6">
@@ -121,6 +132,17 @@
               multiple="range"
               disabled
             />
+          </v-col>
+        </v-row>
+        <h3>Number Input</h3>
+        <v-row>
+          <v-col cols="6">
+            <h4>Default</h4>
+            <v-number-input label="Number Input" variant="outlined" clearable density="compact" suffix="32nds" />
+          </v-col>
+          <v-col cols="6">
+            <h4>Disabled</h4>
+            <v-number-input label="Number Input" variant="outlined" disabled suffix="mm" />
           </v-col>
         </v-row>
       </template>

@@ -113,6 +113,7 @@ export const HcCheckboxGroup = defineComponent({
             modelValue={this.selectedValues.includes(option.value)}
             onUpdate:modelValue={() => this.toggleCheckbox(option.value)}
             label={option.label}
+            data-testid={`hc-checkbox-group-option-${option.value}`}
             {...this.filteredProps}
             {...this.$attrs}
           />

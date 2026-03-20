@@ -1,6 +1,6 @@
 @mixin light {
   // Outlined field styles
-  .v-field--variant-outlined {
+  &.v-field--variant-outlined {
     min-height: 44px;
   
     // 默认时的边框样式
@@ -19,7 +19,8 @@
     .v-field__input {
       min-height: 44px !important;
       font-size: 16px !important;
-      padding: 8px 12px!important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
       color: var(--Text-default) !important;
       column-gap: 6px !important;
       opacity: 1;
@@ -101,18 +102,10 @@
       font-size: var(--hc-icon-size-20);
       color: var(--Icon-default);
       opacity: 1;
-      margin: 0 !important;
     }
 
-    .v-field__clearable {
-      margin: 0 !important;
-      margin-left: 8px !important;
-    }
-    .v-field__append-inner {
-      gap: 8px;
-      .v-icon:first-child {
-        margin-left: 8px !important;
-      }
+    .v-field__append-inner .v-icon {
+      margin: 0 4px !important;
     }
   }
 
@@ -123,8 +116,34 @@
     transition: background-color 5000s ease-in-out 0s;
   }
 
-  .v-input__control {
-    margin-bottom: 0 !important;
+  &.v-input {
+    .v-input__details {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      min-height: 14px;
+      .v-messages {
+        opacity: 1;
+        padding-right: 12px;
+        .v-messages__message {
+          line-height: 14px;
+        }
+      }
+      .v-counter {
+        line-height: 14px;
+        color: var(--Text-grey-1);
+      }
+    }
+    &:not(.v-input--error) {
+      .v-input__details {
+        .v-messages {
+          color: var(--Text-grey-1);
+        }
+      }
+    }
+    .v-input__control {
+      margin-bottom: 0 !important;
+    }
   }
 
   &.v-input--error {

@@ -2,38 +2,52 @@
   // 启用容器查询上下文
   // Enable container query context
   container-type: inline-size;
-  
+
   .v-expansion-panel-title {
     font-size: 20px !important;
     font-weight: 600;
     .v-icon{
       font-size: 32px;
     }
+    &:hover {
+      background-color: unset !important;
+    }
+  }
+
+  .v-expansion-panel .v-expansion-panel-text__wrapper {
+    padding-top: 0 !important;
   }
 
   .filter-container {
     display: grid;
-    gap: 12px 24px;
-    
+    gap: 0 24px;
+
+    > * {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
     // 默认情况下（≥1000px）显示4列
     // Default case (≥1000px) shows 4 columns
     grid-template-columns: repeat(4, 1fr);
-    
+
     // 中等容器宽度（500px < x < 1000px）显示3列
     // Medium container width (500px < x < 1000px) shows 3 columns
     @container (max-width: 999px) and (min-width: 501px) {
       grid-template-columns: repeat(3, 1fr);
     }
-    
+
     // 小容器宽度（≤500px）显示2列
     // Small container width (≤500px) shows 2 columns
     @container (max-width: 500px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .v-input__control {
       background-color: #fff;
+      border-radius: 4px;
     }
+
     .v-input--error.v-text-field .v-input__details {
       min-height: 14px !important;
       align-items: flex-start;
@@ -45,9 +59,21 @@
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    margin-top: 12px;
+
     .v-btn--variant-outlined {
       background-color: #fff;
     }
+    .expand-collapse-btn {
+      opacity: 1;
+      padding: 0 6px 0 0;
+    }
   }
-} 
+
+  // When slot collapsed: filter-input shows N rows (--hc-filter-collapse-rows, default 1).
+  .filter-container.hc-filter--slot-collapsed {
+    grid-template-rows: repeat(var(--hc-filter-collapse-rows, 1), 1fr);
+    grid-auto-rows: 0;
+    row-gap: 0;
+    overflow: hidden;
+  }
+}

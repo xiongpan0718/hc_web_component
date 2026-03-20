@@ -1,0 +1,10 @@
+@mixin light {
+  &.v-number-input {
+    .v-number-input__control {
+      .v-btn--size-small {
+        height: unset !important;
+        --v-btn-height: 44px !important;
+      }
+    }
+  }
+}

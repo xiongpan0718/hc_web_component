@@ -6,5 +6,10 @@
   "public.all": "Wszystkie",
   "common.items": "Przedmioty",
   "tire.chooseColumns": "Wybierz kolumny",
-  "public.dismounted": "Zdemontowany"
+  "public.dismounted": "Zdemontowany",
+  "public.continueTypingTips": "Więcej pasujących danych, kontynuuj wpisywanie, aby zawęzić",
+  "public.advanceSearch": "Wyszukiwanie zaawansowane",
+  "public.noResults": "Brak wyników",
+  "public.collapseExtraFields": "Zwiń dodatkowe pola",
+  "public.expandExtraFields": "Rozwiń dodatkowe pola"
 }

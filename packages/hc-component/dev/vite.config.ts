@@ -4,7 +4,12 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/hc_web_component/' : '/',
+  css: {
+    preprocessorOptions: {
+      scss: { silenceDeprecations: ['legacy-js-api'] },
+      sass: { silenceDeprecations: ['legacy-js-api'] },
+    },
+  },
   plugins: [
     vue(),
     vueJsx()

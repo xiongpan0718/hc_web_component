@@ -53,5 +53,9 @@ const selectedCheckBoxs = ref(['CheckboxLabel1']);
 const locales = ref([
     { text: 'English', value: 'en' },
     { text: '简体中文', value: 'zhHans' },
+    { text: 'Polish', value: 'pl' },
+    { text: 'Portuguese', value: 'pt' },
+    { text: 'Spanish', value: 'es' },
+    { text: 'French', value: 'fr' },
 ]);
 </script>

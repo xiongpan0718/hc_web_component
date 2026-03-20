@@ -58,9 +58,9 @@ export default defineConfig({
     json(),
     url({
       include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.webp'],
-      limit: 0,
+      limit: 10000000,
       fileName: 'assets/icons/[name][extname]',
-      publicPath: '/node_modules/@michelin/hc-component/dist/',
+      publicPath: './',
       emitFiles: true
     }),
     copy({

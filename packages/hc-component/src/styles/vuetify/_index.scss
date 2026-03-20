@@ -11,7 +11,6 @@
 @use "expansion-panels";
 @use "icons";
 @use "list";
-@use "menu";
 @use "pagination";
 @use "radio";
 @use "snackbar";
@@ -23,11 +22,12 @@
 @use "tooltips";
 @use 'stepper';
 @use 'select';
-
+@use "table";
+@use "button-toggle";
+@use "number-input";
 // Export common styles
 @include badge.common;
 @include tabs.common;
-
 // Wrap all component styles with .v-theme--light
 .v-theme--light {
   @include alert.light;
@@ -43,7 +43,6 @@
   @include expansion-panels.light;
   @include icons.light;
   @include list.light;
-  @include menu.light;
   @include pagination.light;
   @include radio.light;
   @include snackbar.light;
@@ -55,4 +54,7 @@
   @include tooltips.light;
   @include stepper.light;
   @include select.light;
+  @include table.light;
+  @include button-toggle.light;
+  @include number-input.light;
 }

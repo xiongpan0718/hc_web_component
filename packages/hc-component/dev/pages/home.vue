@@ -65,6 +65,10 @@ import HcTableBar from './components/hc-table-bar.vue'
 import Stepper from './components/stepper.vue'
 import OverallInputs from './components/overall-inputs.vue'
 import VehicleSchema from './components/vehicle-schema.vue'
+import ButtonToggle from './components/button-toggle.vue'
+import HcExpansionPanels from './components/hc-expansion-panels.vue'
+import HcDialog from './components/hc-dialog.vue'
+import HcProgressLinear from './components/hc-progress-linear.vue'
 
 const items = ref([
   { name: 'EmptyState (空状态)', id: 'EmptyState', icon: 'circle', color: 'blue' },
@@ -94,9 +98,18 @@ const items = ref([
   { name: 'HcFilter (筛选)', id: 'HcFilter', icon: 'circle', color: '#615ced' },
   { name: 'HcTableBar (表格工具栏)', id: 'HcTableBar', icon: 'circle', color: '#615ced' },
   { name: 'Stepper (步骤条)', id: 'Stepper', icon: 'circle', color: '#615ced' },
+  { name: 'ButtonToggle (按钮组)', id: 'ButtonToggle', icon: 'circle', color: '#615ced' },
+  { name: 'HcExpansionPanels (带激活按钮的扩展面板)', id: 'HcExpansionPanels', icon: 'circle', color: '#615ced' },
+  { name: 'HcDialog (对话框)', id: 'HcDialog', icon: 'circle', color: '#615ced' },
+  { name: 'HcProgressLinear (进度条)', id: 'HcProgressLinear', icon: 'circle', color: '#615ced' },
+  { name: 'OverallInputs (整体输入)', id: 'OverallInputs', icon: 'circle', color: '#615ced' },
 ])
 
 const list = {
+  HcExpansionPanels,
+  HcDialog,
+  HcProgressLinear,
+  ButtonToggle,
   EmptyState,
   Alert,
   Snackbar,
@@ -127,7 +140,7 @@ const list = {
   VehicleSchema
 }
 const savedId = localStorage.getItem('selectedId')
-const key = ref('AutoComplete')
+const key = ref('HcFilter')
 
 const select = ({ id }) => {
   key.value = id

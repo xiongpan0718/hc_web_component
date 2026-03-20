@@ -1,0 +1,49 @@
+// no-data text styling / 无数据时的文案样式
+.v-autocomplete__no-data {
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.175px;
+  padding: 8px 16px;
+}
+
+.v-autocomplete__limit-message {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1A1A1A;
+  opacity: 1;
+  border-bottom: 1px solid #ccc;
+  pointer-events: none;
+  padding: 8px 16px;
+  min-width: 0;
+}
+
+// Remove v-list padding-bottom when advance-search-row exists to avoid extra 8px scroll
+// 存在 advance-search-row 时移除 v-list 的 padding-bottom，避免底部多出 8px 可滚动区域
+.v-autocomplete__content .v-list:has(.v-autocomplete__advance-search-row) {
+  padding-bottom: 0;
+}
+
+// advance-search-row for append-item; when has data, sticky at bottom outside scroll area
+// advance-search-row 用于 append-item，有数据时 sticky 固定在底部不随列表滚动
+.v-autocomplete__advance-search-row {
+  padding: 8px 16px 16px 16px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  position: sticky;
+  bottom: 0;
+  background: rgb(var(--v-theme-surface));
+  z-index: 1;
+}
+
+.v-autocomplete__advance-search-switch {
+  flex-shrink: 0;
+}
+
+.v-autocomplete__advance-search-label {
+  padding-inline-start: 8px;
+  cursor: pointer;
+  flex: 1;
+  color: #1A1A1A;
+}

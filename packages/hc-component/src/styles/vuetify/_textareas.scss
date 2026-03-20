@@ -19,7 +19,6 @@
         .v-field__input {
           padding-top: 12px !important;
           padding-bottom: 12px !important;
-          mask-image: none;
           font-weight: 400 !important;
           color: var(--Text-default);
           caret-color: var(--Border-secondary);
@@ -28,18 +27,6 @@
             color: var(--Text-grey-1);
           }
         }
-      }
-    }
-
-    .v-input__details {
-      .v-counter {
-        line-height: 14px;
-        color: var(--Text-grey-1);
-      }
-
-      .v-messages {
-        opacity: 1;
-        padding-right: 12px;
       }
     }
   }

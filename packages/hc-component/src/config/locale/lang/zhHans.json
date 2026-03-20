@@ -6,5 +6,10 @@
   "public.all": "全部",
   "common.items": "项目",
   "tire.chooseColumns": "选择列",
-  "public.dismounted": "已拆卸"
+  "public.dismounted": "已拆卸",
+  "public.continueTypingTips": "更多匹配数据，请继续输入以缩小范围",
+  "public.advanceSearch": "高级搜索",
+  "public.noResults": "无结果",
+  "public.collapseExtraFields": "收起更多字段",
+  "public.expandExtraFields": "展开更多字段"
 }

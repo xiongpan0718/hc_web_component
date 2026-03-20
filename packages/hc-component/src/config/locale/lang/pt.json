@@ -6,5 +6,10 @@
   "public.all": "Não necessário",
   "common.items": "Série de pneus",
   "tire.chooseColumns": "Escolher colunas",
-  "public.dismounted": "Desmontado"
+  "public.dismounted": "Desmontado",
+  "public.continueTypingTips": "Mais dados correspondentes, continue digitando para refinar",
+  "public.advanceSearch": "Pesquisa avançada",
+  "public.noResults": "Sem resultados",
+  "public.collapseExtraFields": "Recolher campos extras",
+  "public.expandExtraFields": "Expandir campos extras"
 }

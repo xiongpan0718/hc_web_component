@@ -1,43 +1,43 @@
-import { defineComponent, computed, ref } from 'vue';
+import { defineComponent, computed, ref, watch } from 'vue';
+import { useDefaults } from 'vuetify';
 import { VTextField } from 'vuetify/components';
+
+interface HcTextFieldProps {
+  errorIcon?: string;
+  autoErrorIcon?: boolean;
+  [key: string]: any;
+}
 
 export const HcTextField = defineComponent({
   name: 'HcTextField',
   inheritAttrs: false,
   props: {
     ...VTextField.props,
-    density: {
-      type: String,
-      default: 'compact',
-    },
-    variant: {
-      type: String,
-      default: 'outlined',
-    },
     errorIcon: {
       type: String,
-      default: 'error_outline', // Default error icon
+      default: 'error_outline',
     },
     autoErrorIcon: {
       type: Boolean,
-      default: true, // Auto display error icon by default
+      default: true,
     },
   },
-  setup(props, { emit }) {
+  setup(_props: HcTextFieldProps, { emit, expose }) {
+    const props = useDefaults(_props, 'HcTextField');
     const textFieldRef = ref<InstanceType<typeof VTextField>>();
     const internalModelValue = ref(props.modelValue);
 
-    // Watch modelValue changes to trigger computed recalculation
+    watch(() => props.modelValue, (newValue) => {
+      internalModelValue.value = newValue;
+    });
+
     const computedAppendInnerIcon = computed(() => {
-      // Access modelValue to ensure reactive tracking
       const _ = internalModelValue.value;
       
-      // If user manually set appendInnerIcon, use user's setting
       if (props.appendInnerIcon !== undefined) {
         return props.appendInnerIcon;
       }
 
-      // If auto error icon is enabled and validation fails, show error icon
       if (props.autoErrorIcon && (textFieldRef.value as any)?.isValid === false) {
         return props.errorIcon;
       }
@@ -45,19 +45,27 @@ export const HcTextField = defineComponent({
       return undefined;
     });
 
-    // Filter out custom props AND modelValue to avoid passing them to VTextField
     const filteredProps = computed(() => {
-      const { errorIcon, autoErrorIcon, density, variant, modelValue, ...rest } = props;
+      const { errorIcon, autoErrorIcon, modelValue, ...rest } = props;
       return rest;
     });
 
-    // Handle modelValue update - forward to parent and update internal state
     const handleUpdateModelValue = (value: any) => {
       internalModelValue.value = value;
       emit('update:modelValue', value);
     };
 
+    expose({
+      validate: () => textFieldRef.value?.validate(),
+      reset: () => textFieldRef.value?.reset(),
+      resetValidation: () => textFieldRef.value?.resetValidation(),
+      focus: () => textFieldRef.value?.focus(),
+      blur: () => textFieldRef.value?.blur(),
+      $el: textFieldRef,
+    });
+
     return {
+      props,
       textFieldRef,
       internalModelValue,
       computedAppendInnerIcon,
@@ -72,12 +80,9 @@ export const HcTextField = defineComponent({
         {...this.filteredProps}
         {...this.$attrs}
         modelValue={this.internalModelValue}
-        variant={this.variant}
-        density={this.density}
         appendInnerIcon={this.computedAppendInnerIcon}
         onUpdate:modelValue={this.handleUpdateModelValue}
       >
-        {/* Pass through all slots */}
         {{
           ...this.$slots,
         }}

@@ -1,8 +1,28 @@
 @mixin light {
-  &.v-list{
-    .v-list-item--active{
-      background: #D4E7FA;
-      color: #27509B;
+  &.v-list {
+    &-item {
+      color: #1A1A1A;
+
+      &--active{
+        background: #D4E7FA;
+        color: #27509B;
+      }
+
+      &--density-default {
+        min-height: 40px;
+      }
+  
+      &:hover {
+        background-color: #D4E7FA;
+  
+        .v-labelm, .v-list-item__content, .v-icon {
+          color: #27509B;
+        }
+      }
+  
+      .v-icon {
+        font-size: 24px;
+      }
     }
   }
 }

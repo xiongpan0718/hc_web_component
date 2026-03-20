@@ -1,0 +1,15 @@
+{
+  "common.filter": "Filtres",
+  "public.resetting": "Réinitialiser",
+  "common.filterResults": "Filtrer les résultats",
+  "common.total": "Total",
+  "public.all": "Tous",
+  "common.items": "éléments",
+  "tire.chooseColumns": "Choisir les colonnes",
+  "public.dismounted": "Démonté",
+  "public.continueTypingTips": "Plus de données correspondantes, veuillez continuer à taper pour affiner",
+  "public.advanceSearch": "Recherche avancée",
+  "public.noResults": "Aucun résultat",
+  "public.collapseExtraFields": "Réduire les champs supplémentaires",
+  "public.expandExtraFields": "Développer les champs supplémentaires"
+}

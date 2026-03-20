@@ -45,15 +45,18 @@ export const HcTire = defineComponent({
     const isSpare = toRef(props, 'isSpare')
     const showComments = toRef(props, 'showComments')
     const spareDismount = toRef(props, 'spareDismount')
-    let observationLevel = (tireData.value.pressure || tireData.value.rtd) && !spareDismount.value ? tireData.value.observation_level : 3
-    if (!(tireData.value.rtd || tireData.value.pressure)) {
-      observationLevel = 3
-    }
+    // if spareDismount or pressure/rtd is not set, set observationLevel to 4
+    const observationLevel = computed(() => {
+      if (spareDismount.value || (tireData.value.observation_level == '0' && !(tireData.value.pressure || tireData.value.rtd ))) {
+        return 4
+      }
+      return tireData.value.observation_level
+    })
     const className = computed(() => {
       return {
-        ['observation-level-' + observationLevel]: true,
+        ['observation-level-' + observationLevel.value]: true,
         'hc-tire-item': true,
-        'is-select': toRef(isSelect).value,
+        'is-select': isSelect.value,
         'is-spare': isSpare.value,
         'show-comments': showComments.value,
         'spare-dismount': isSpare.value && spareDismount.value,
@@ -62,8 +65,8 @@ export const HcTire = defineComponent({
     return () => (
       <div class={ className.value }>
         <div class="wheel-place">
-          <HcTireIcon level={ observationLevel }></HcTireIcon>
-          { tireData.value.wheel_place }
+          <HcTireIcon level={ observationLevel.value }></HcTireIcon>
+          { tireData.value.translated_wheel_place || tireData.value.wheel_place }
         </div>
         <div class="wheel-tire">
           <div class="wheel-tire-value">

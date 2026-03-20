@@ -139,6 +139,7 @@
         font-size: 16px;
         height: 16px;
         line-height: 16px;
+        white-space: nowrap;
       }
       .model-unit{
         font-size: 12px;
@@ -151,7 +152,7 @@
     }
   }
 
-  &.observation-level-1,&.observation-level-4{
+  &.observation-level-1,&.observation-level-2{
     .wheel-tire{
       border-color: $danger-color;
       background-color: #F4CEC2;
@@ -170,7 +171,7 @@
     }
   }
 
-  &.observation-level-2{
+  &.observation-level-3{
     .wheel-tire{
       border-color: $warning-color;
       background-color: #FFF1CE;
@@ -189,7 +190,7 @@
     }
   }
 
-  &.observation-level-3{
+  &.observation-level-4{
     .wheel-tire{
       border-color: $default-color;
       background-color: #E5E5E5;

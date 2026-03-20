@@ -61,6 +61,11 @@
           <v-col cols="2">
             <v-btn color="red" icon="add" variant="elevated" />
           </v-col>
+          <v-col cols="2">
+            <div style="width: 50px;height: 50px;background-color: #27509b;display: flex;justify-content: center;align-items: center;border-radius: 4px">
+              <v-btn icon="add" variant="invert-bg" />
+            </div>
+          </v-col>
         </v-row>
         <v-row>
           <v-col cols="2">
@@ -77,6 +82,11 @@
           </v-col>
           <v-col cols="2">
             <v-btn color="red" icon="add" variant="elevated" disabled />
+          </v-col>
+          <v-col cols="2">
+            <div style="width: 50px;height: 50px;background-color: #27509b;display: flex;justify-content: center;align-items: center;border-radius: 4px">
+              <v-btn icon="add" variant="invert-bg" disabled/>
+            </div>
           </v-col>
         </v-row>
       </template>

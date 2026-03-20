@@ -1,15 +1,15 @@
 # HcTextarea
 
-基于 Vuetify `v-textarea` 的二次封装组件，自动在验证失败时显示错误图标。
+A wrapper around Vuetify `v-textarea` that automatically shows an error icon when validation fails.
 
-## 特性
+## Features
 
-- ✅ 完全继承 `VTextarea` 的所有 API
-- ✅ 自动在验证失败时显示错误图标
-- ✅ 可自定义错误图标
-- ✅ 手动设置的 `append-inner-icon` 优先级更高
+- ✅ Fully inherits all `VTextarea` APIs
+- ✅ Automatically displays error icon when validation fails
+- ✅ Customizable error icon
+- ✅ Manually set `append-inner-icon` has higher priority
 
-## 基础用法
+## Basic Usage
 
 ```vue
 <template>
@@ -28,20 +28,20 @@ const value = ref('');
 </script>
 ```
 
-## 新增 Props
+## Additional Props
 
-| 属性名 | 类型 | 默认值 | 说明 |
-|--------|------|--------|------|
-| `autoErrorIcon` | `boolean` | `true` | 是否在验证失败时自动显示错误图标 |
-| `errorIcon` | `string` | `'error_outline'` | 自定义错误图标名称 |
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `autoErrorIcon` | `boolean` | `true` | Whether to auto-display error icon when validation fails |
+| `errorIcon` | `string` | `'error_outline'` | Custom error icon name |
 
 ## API
 
-支持所有 VTextarea 的 props、events 和 slots。详见 [Vuetify VTextarea 文档](https://vuetifyjs.com/en/components/textareas/)。
+Supports all VTextarea props, events and slots. See [Vuetify VTextarea Docs](https://vuetifyjs.com/en/components/textareas/).
 
-## 使用示例
+## Usage Examples
 
-### 自定义错误图标
+### Custom Error Icon
 
 ```vue
 <HcTextarea 
@@ -52,7 +52,7 @@ const value = ref('');
 />
 ```
 
-### 禁用自动错误图标
+### Disable Auto Error Icon
 
 ```vue
 <HcTextarea 
@@ -63,7 +63,7 @@ const value = ref('');
 />
 ```
 
-### 手动设置 append-inner-icon
+### Manual append-inner-icon
 
 ```vue
 <HcTextarea 
@@ -72,10 +72,10 @@ const value = ref('');
   label="Notes"
   append-inner-icon="edit"
 />
-<!-- 手动设置的图标优先级更高，不会被错误图标覆盖 -->
+<!-- Manually set icon has higher priority and won't be overridden by error icon -->
 ```
 
-### 多行文本
+### Multi-line text
 
 ```vue
 <HcTextarea 
@@ -87,7 +87,7 @@ const value = ref('');
 />
 ```
 
-### 带字符计数
+### With character counter
 
 ```vue
 <HcTextarea 
@@ -102,7 +102,7 @@ const value = ref('');
 />
 ```
 
-### 复杂验证
+### Complex validation
 
 ```vue
 <HcTextarea 
@@ -118,25 +118,24 @@ const value = ref('');
 />
 ```
 
-## 与 VTextarea 的区别
+## Difference from VTextarea
 
-HcTextarea 会在验证失败时自动显示错误图标，无需手动绑定。
+HcTextarea automatically shows an error icon when validation fails, with no manual binding required.
 
 ```vue
-<!-- VTextarea - 需要手动处理 -->
+<!-- VTextarea - manual handling required -->
 <v-textarea
   ref="textareaRef"
   :rules="rules"
   :append-inner-icon="textareaRef?.isValid === false ? 'error_outline' : undefined"
 />
 
-<!-- HcTextarea - 自动处理 -->
+<!-- HcTextarea - handled automatically -->
 <HcTextarea :rules="rules" />
 ```
 
-## 注意事项
+## Notes
 
-- 只有当 `isValid === false` 时才显示错误图标
-- 手动设置的 `append-inner-icon` 会覆盖自动错误图标
-- 设置 `:auto-error-icon="false"` 可禁用此功能
-
+- Error icon is shown only when `isValid === false`
+- Manually set `append-inner-icon` overrides the auto error icon
+- Set `:auto-error-icon="false"` to disable this behavior

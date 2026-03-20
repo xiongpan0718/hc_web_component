@@ -11,8 +11,16 @@
   }
   .spare-list{
     display: flex;
-    column-gap: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
+    align-items: center;
+    > * {
+      flex: 0 0 auto;
+      width: auto;
+      display: flex;
+      justify-content: center;
+    }
   }
   .wheel-row{
     width: 100%;

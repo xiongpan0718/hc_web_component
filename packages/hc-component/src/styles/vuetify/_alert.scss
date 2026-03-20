@@ -17,38 +17,60 @@
     .v-alert__close{
       height: 22px;
       line-height: 22px;
+
+      .v-icon {
+        font-size: 16px !important;
+      }
+
       .v-btn{
+        color: black !important;
         &.v-btn--icon{
           --v-btn-height:20;
           color: #000;
         }
       }
     }
+    .v-alert__underlay{
+      background-color: transparent !important;
+    }
     .v-alert__prepend{
       align-self: center;
       line-height: 22px;
       margin-inline-end:8px;
+      margin-top: -4px;
       .v-icon{
-        font-size: 22px !important;
-        height: 22px !important;
-        width: 22px !important;
+        font-size: 20px !important;
+        height: 20px !important;
+        width: 20px !important;
       }
     }
     &--variant-tonal{
       &.text-success{
+        .v-alert__prepend{
+          color: #2E7D32 !important;
+        }
         background: #E8F5E5;
         border: 1px solid #2E7D32;
       }
       &.text-warning{
+        .v-alert__prepend{
+          color: #9E6100 !important;
+        }
         background: #FFF1CE;
         border: 1px solid #9E6100;
       }
       &.text-info{
+        .v-alert__prepend{
+          color: #4271D6 !important;
+        }
         background: #D9E3F7;
         border: 1px solid #4271D6;
       }
       &.text-error{
-        background: #F4CEC2;
+        .v-alert__prepend{
+          color: #B71C1C !important;
+        }
+        background-color: #F4CEC2 !important;
         border: 1px solid #B71C1C;
       }
     }

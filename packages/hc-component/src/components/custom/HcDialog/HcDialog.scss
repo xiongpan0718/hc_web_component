@@ -1,0 +1,67 @@
+.hc-dialog {
+
+  &__card {
+    border-radius: 8px;
+  }
+
+  &__title {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px 8px !important;
+    min-height: auto;
+  }
+
+  &__title-icon {
+    flex-shrink: 0;
+  }
+
+  &__title-text {
+    flex: 1;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.06px;
+    color: #1A1A1A;
+    line-height: 33px;
+  }
+
+  &__title-close {
+    flex-shrink: 0;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  &__content {
+    padding: 16px 24px !important;
+    font-size: 16px;
+    color: #1A1A1A;
+    line-height: normal;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px !important;
+    min-height: auto;
+    border-top: 0.5px solid #CCCCCC;
+  }
+
+  &__actions-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+
+  &__action-btn {
+    padding: 12px;
+    min-width: auto;
+
+    &--left {
+      margin-right: auto;
+    }
+  }
+}
+

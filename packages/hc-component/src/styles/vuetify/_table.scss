@@ -1,0 +1,7 @@
+@mixin light {
+  &.v-table{
+    .v-table__wrapper > table > thead > tr > th{
+      font-weight: 600;
+    }
+  }
+}

@@ -2,26 +2,30 @@
   <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
     <div style="flex: 1">
       <h4>单选</h4>
-      <hc-autocomplete :items="[
-        'California',
-        'Colorado',
-        'Florida',
-        'Georgia',
-        'Texas',
-        'Wyoming',
-      ]" label="Label" variant="outlined" clearable />
+      <hc-autocomplete
+        :max-display-items="5"
+        :items="stateItems"
+        item-title="title"
+        item-value="value"
+        label="Label"
+        variant="outlined"
+        clearable
+      />
     </div>
     <div style="flex: 1">
       <h4>多选,内容纸片显示,max-lenght控制数量</h4>
-      <hc-autocomplete :items="[
-        'California',
-        'Colorado',
-        'Florida',
-        'Georgia',
-        'Texas',
-        'Wyoming',
-      ]" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
-        closable-chips multiple />
+      <hc-autocomplete
+        :items="stateItems"
+        item-title="title"
+        item-value="value"
+        append-inner-icon="search"
+        label="Label"
+        variant="outlined"
+        chips
+        clearable
+        closable-chips
+        multiple
+      />
     </div>
   </div>
   <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
@@ -58,8 +62,8 @@
         'Georgia',
         'Texas',
         'Wyoming',
-      ]" append-inner-icon="search" label="Label" variant="outlined" chips :maxLength="2" clearable
-        multiple disabled v-model="Disableds" />
+      ]" append-inner-icon="search" label="Label" variant="outlined" chips clearable
+        multiple disabled :closable-chips="false" v-model="Disableds" />
     </div>
     <div style="flex: 1">
       <h4>多选 Error</h4>
@@ -75,7 +79,6 @@
         label="Label"
         chips
         closable-chips
-        :maxLength="2"
         clearable
         multiple
         :rules="[(v) => v.length > 0 || 'Field is required']"
@@ -84,7 +87,7 @@
       />
     </div>
   </div>
-  <div class="d-flex" style="width: 100%; gap: 20px;">
+  <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
     <div style=" flex: 1">
       <h4>Error</h4>
       <hc-autocomplete :items="[
@@ -100,6 +103,33 @@
     <div style="flex: 1">
       <h4>No Data</h4>
       <hc-autocomplete label="Label" :items="[]" no-data-text="No result" variant="outlined" clearable />
+    </div>
+  </div>
+  <div class="d-flex" style="width: 100%; gap: 20px; margin-bottom: 20px">
+    <div style="flex: 1">
+      <h4>Single Advance Search ({{ advanceSearch ? 'on' : 'off' }})</h4>
+      <hc-autocomplete
+        v-model:advance-search="advanceSearch"
+        show-advance-search
+        :items="stateItems"
+        item-title="title"
+        item-value="value"
+        :max-display-items="10"
+        clearable
+      />
+    </div>
+    <div style="flex: 1">
+      <h4>Multiple Advance Search ({{ advanceSearch ? 'on' : 'off' }})</h4>
+      <hc-autocomplete
+        v-model:advance-search="advanceSearch"
+        show-advance-search
+        :items="stateItems"
+        item-title="title"
+        item-value="value"
+        :max-display-items="10"
+        chips
+        clearable
+        multiple />
     </div>
   </div>
   <div style="margin-top: 50px">
@@ -118,9 +148,43 @@
 
 <script setup>
 import { ref, computed } from "vue";
+
+const stateItems = [
+  { title: "California", value: "California" },
+  { title: "Colorado", value: "Colorado" },
+  { title: "Florida", value: "Florida" },
+  { title: "Georgia", value: "Georgia" },
+  { title: "Texas", value: "Texas" },
+  { title: "Wyoming", value: "Wyoming" },
+  { title: "New York", value: "New York" },
+  { title: "New Jersey", value: "New Jersey" },
+  { title: "New Mexico", value: "New Mexico" },
+  { title: "New Hampshire", value: "New Hampshire" },
+  { title: "Nevada", value: "Nevada" },
+  { title: "Nepal", value: "Nepal" },
+  { title: "Nicaragua", value: "Nicaragua" },
+  { title: "Niger", value: "Niger" },
+  { title: "Nigeria", value: "Nigeria" },
+  { title: "Norway", value: "Norway" },
+  { title: "Oman", value: "Oman" },
+  { title: "Pakistan", value: "Pakistan" },
+  { title: "Palau", value: "Palau" },
+  { title: "Palestine", value: "Palestine" },
+  { title: "Panama", value: "Panama" },
+  { title: "Papua New Guinea", value: "Papua New Guinea" },
+  { title: "Paraguay", value: "Paraguay" },
+  { title: "Peru", value: "Peru" },
+  { title: "Philippines", value: "Philippines" },
+  { title: "Poland", value: "Poland" },
+  { title: "Portugal", value: "Portugal" },
+  { title: "Qatar", value: "Qatar" },
+  { title: "Romania", value: "Romania" },
+];
+
 const Disabled = ref("Disabled");
 const Disableds = ref(["Disabled1", "Disabled2", "Disabled3", "Disabled4"]);
 const Error = ref([]);
+const advanceSearch = ref(false);
 </script>
 
 <style scoped lang="scss">

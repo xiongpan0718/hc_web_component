@@ -1,6 +1,6 @@
-import { IconAliases } from "vuetify";
+import type { IconAliases } from "vuetify";
 
-export const googleAliases: IconAliases = {
+export const googleAliases: Partial<IconAliases> = {
   collapse: 'keyboard_arrow_up',
   complete: 'check',
   cancel: 'close_fill',
