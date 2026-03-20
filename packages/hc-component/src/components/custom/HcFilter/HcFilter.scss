@@ -22,11 +22,6 @@
     display: grid;
     gap: 0 24px;
 
-    > * {
-      margin-top: 8px;
-      margin-bottom: 8px;
-    }
-
     // 默认情况下（≥1000px）显示4列
     // Default case (≥1000px) shows 4 columns
     grid-template-columns: repeat(4, 1fr);
@@ -41,6 +36,11 @@
     // Small container width (≤500px) shows 2 columns
     @container (max-width: 500px) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    > * {
+      margin-top: 8px;
+      margin-bottom: 8px;
     }
 
     .v-input__control {
