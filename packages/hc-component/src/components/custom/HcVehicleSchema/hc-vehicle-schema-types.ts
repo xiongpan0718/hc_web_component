@@ -63,3 +63,33 @@ export type HcVehicleSchemaTireData = Record<string, HcTireData>
 export type HcSpareTireData = Omit<Partial<HcTireData>, 'wheel_place'> & {
   wheel_place: string
 }
+
+/**
+ * Global units for tire pressure & RTD labels in vehicle schema (`bindData`).
+ * 轮位图全局胎压 / RTD 单位，传给每个 HcTire。
+ */
+export interface HcVehicleSchemaUnit {
+  pressure_unit?: string | null
+  rtd_unit?: string | null
+}
+
+/**
+ * One axle row in the center column (icon, observe level, recommendations).
+ * 中间车轴列单轴数据：示意图类型、观察等级、建议胎压与规格。
+ */
+export interface HcVehicleSchemaAxleRow {
+  /** Label for {@link HcWheelAxle} illustration / 传给 HcWheelAxle 的轴类型文案 */
+  type?: string | null
+  /** Drives axle-level icon + wheel graphic level / 轴观察等级（与轮胎等级 UI 一致） */
+  observationLevel?: HcTireObservationLevel | null
+  /** Recommended pressure line e.g. `8.8 bar` / 建议胎压展示 */
+  recommendPressure?: number | null
+  /** Recommended tire / CAI size line / 建议轮胎规格 */
+  recommendSize?: string | null
+}
+
+/**
+ * Axle map keyed by axle index (0-based), aligned with `wheelType` segments.
+ * 车轴对象：键为轴索引（从 0 起），与 wheelType 分段一一对应。
+ */
+export type HcVehicleSchemaAxleData = Partial<Record<number, HcVehicleSchemaAxleRow>>

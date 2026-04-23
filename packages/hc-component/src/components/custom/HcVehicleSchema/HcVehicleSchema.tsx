@@ -8,40 +8,49 @@ import type {
   HcSpareTireData,
   HcTireData,
   HcTireMode,
+  HcVehicleSchemaAxleData,
   HcVehicleSchemaTireData,
+  HcVehicleSchemaUnit,
 } from './hc-vehicle-schema-types'
 
 export const HcVehicleSchema = defineComponent({
   name: 'HcVehicleSchema',
   props: {
+    /** Selected tires (`v-model:select-list`); when bound, tires become selectable / 选中轮位列表（v-model），传入后可点击选择 */
     selectList: {
-      // 选中的轮胎列表,传了这个参数就表示可选中
       type: Array as PropType<HcTireData[]>,
       default: () => [],
     },
+    /** Main axles keyed by wheel_place / 主轴轮位数据，键为轮位字符串 */
     tireData: {
       type: Object as PropType<HcVehicleSchemaTireData>,
       default: () => ({}),
     },
-    wheelType: { // 2-4-4
+    /** Wheel layout pattern, counts per axle separated by `-`, e.g. `2-4-4` / 轮距排布，各轴位数用 `-` 连接如 2-4-4 */
+    wheelType: {
       type: String,
       default: '',
     },
-    unit: { // rtd_unit 和 pressure_unit
-      type: Object,
+    /** Shared `pressure_unit` & `rtd_unit` for tires / 全局胎压与 RTD 单位 */
+    unit: {
+      type: Object as PropType<HcVehicleSchemaUnit>,
       default: () => ({}),
     },
-    axleData: { // 车轴数据   对象的key是车轴索引（0开始），value是{observationLevel观察等级（1是error，2是warning，3是info),recommendPressure建议胎压,recommendSize建议CAI,type：轴类型}
-      type: Object,
+    /** Axle strip data by index (center column) / 中间车轴列数据，键为轴序号 */
+    axleData: {
+      type: Object as PropType<HcVehicleSchemaAxleData>,
       default: () => ({}),
     },
+    /** Spare tire rows below the axle table / 主轴下方的备胎列表 */
     spareList: {
-      // 备胎列表
       type: Array as PropType<HcSpareTireData[]>,
       default: () => [],
     },
-    /** 传给每个 HcTire：`simple` 为胎压/rtd 隐藏、图标与轮位居轮胎框内（见 HcTire mode） */
-    tireMode: {
+    /**
+     * Forwarded as each {@link HcTire} `type`. `simple` hides pressure/rtd and uses compact tire layout.
+     * 传给每个 HcTire 的 `type`：`simple` 隐藏胎压与 RTD，使用简化胎块布局。
+     */
+    schemaType: {
       type: String as () => HcTireMode,
       default: 'default',
       validator: (v: string) => v === 'default' || v === 'simple',
@@ -54,7 +63,7 @@ export const HcVehicleSchema = defineComponent({
     const axleData = toRef(props, 'axleData')
     const unit = toRef(props, 'unit')
     const spareList = toRef(props, 'spareList')
-    const tireMode = toRef(props, 'tireMode')
+    const schemaType = toRef(props, 'schemaType')
     const wheelTypeList = (wheelType.value || '').split('-')
 
     const selectList = toRef(props, 'selectList')
@@ -75,9 +84,12 @@ export const HcVehicleSchema = defineComponent({
     }
 
     const bindData = {
-      rtdUnit: unit.value.rtd_unit,
-      pressureUnit: unit.value.pressure_unit,
+      rtdUnit: unit.value.rtd_unit ?? '',
+      pressureUnit: unit.value.pressure_unit ?? '',
     }
+
+    const isRecommendPressurePresent = (v: unknown) =>
+      v !== null && v !== undefined && v !== ''
 
     const isSelect = (wheelPlace: string) => {
       return selectList.value?.findIndex((item: any) => item.wheel_place === wheelPlace) !== -1
@@ -99,7 +111,7 @@ export const HcVehicleSchema = defineComponent({
         const tire = tireData.value[wheelPlace] as any
         const tag = (
           <HcTire
-            mode={ tireMode.value }
+            type={ schemaType.value }
             tireData={ tire }
             { ...bindData }
             isSelect={ isSelect(wheelPlace as string) }
@@ -113,7 +125,7 @@ export const HcVehicleSchema = defineComponent({
         const tire = tireData.value[wheelPlaceLeft] as any
         tagList.push(
           <HcTire
-            mode={ tireMode.value }
+            type={ schemaType.value }
             tireData={ tire }
             { ...bindData }
             isSelect={ isSelect(wheelPlaceLeft as string) }
@@ -125,7 +137,7 @@ export const HcVehicleSchema = defineComponent({
         const tireRightData = tireData.value[wheelPlaceRight] as any
         tagList.push(
           <HcTire
-            mode={ tireMode.value }
+            type={ schemaType.value }
             tireData={ tireRightData }
             { ...bindData }
             isSelect={ isSelect(wheelPlaceRight as string) }
@@ -141,7 +153,7 @@ export const HcVehicleSchema = defineComponent({
       return spareList.value.map((tire: any) => {
         return (
           <HcTire
-            mode={ tireMode.value }
+            type={ schemaType.value }
             isSpare
             tireData={ tire }
             { ...bindData }
@@ -165,13 +177,7 @@ export const HcVehicleSchema = defineComponent({
                 </div>
                 <div class="wheel-axle" onClick={ () => handleAxleClick(index) }>
                   <div class="wheel-axle-img">
-                    {
-                      axleData.value[index] ? (
-                        <HcWheelAxle type={ axleData.value[index]?.type } level={ axleData.value[index]?.observationLevel }></HcWheelAxle>
-                      ) : (
-                        <HcWheelAxle type={ axleData.value[index]?.type } ></HcWheelAxle>
-                      )
-                    }
+                    <HcWheelAxle axleData={ axleData.value[index] } />
                   </div>
                   {
                     axleData.value[index]?.observationLevel ? (
@@ -182,7 +188,9 @@ export const HcVehicleSchema = defineComponent({
                   }
                   <div class="recommend-text">
                     <div class="pressure-recommend">
-                      { axleData.value[index]?.recommendPressure } { bindData.pressureUnit }
+                      { isRecommendPressurePresent(axleData.value[index]?.recommendPressure)
+                        ? `${axleData.value[index]?.recommendPressure}${bindData.pressureUnit ? ` ${bindData.pressureUnit}` : ''}`
+                        : null }
                     </div>
                     <div class="cai-recommend">
                       { axleData.value[index]?.recommendSize }

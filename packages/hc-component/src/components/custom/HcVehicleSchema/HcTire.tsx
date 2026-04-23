@@ -8,32 +8,41 @@ import { useI18n } from 'vue-i18n'
 export const HcTire = defineComponent({
   name: 'HcTire',
   props: {
+    /** Partial tire row for this slot / 该轮位轮胎数据 */
     tireData: {
       type: Object as PropType<Partial<HcTireData>>,
       default: () => ({}),
     },
-    rtdUnit: { // rtd 单位
+    /** Global RTD unit label (suffix) / 全局 RTD 单位展示 */
+    rtdUnit: {
       type: String,
       default: '',
     },
-    pressureUnit: { // 压力单位
+    /** Global pressure unit label (suffix) / 全局胎压单位展示 */
+    pressureUnit: {
       type: String,
       default: '',
     },
-    isSelect: { // 是否选中
+    /** Whether this tire is in the current selection / 是否处于当前选中 */
+    isSelect: {
       type: Boolean,
       default: false,
     },
-    isSpare: { // 是否是备胎
+    /** Spare-tire row layout (wider block) / 是否备胎行（宽向块） */
+    isSpare: {
       type: Boolean,
       default: false,
     },
-    showComments: { // 是否显示评论图标
+    /** Show top-right comment corner marker on the tire box / 是否在胎块右上显示评论角标 */
+    showComments: {
       type: Boolean,
       default: false,
     },
-    /** default：轮位在上、胎压/rtd 在轮胎框内；simple：图标与轮位居中置于轮胎框内 */
-    mode: {
+    /**
+     * `default`: label on top, pressure & RTD inside the box. `simple`: icon + label centered in the box.
+     * 与 HcVehicleSchema `schemaType` 一致；`default` 轮位在上、胎压与 RTD 在框内；`simple` 图标与轮位居中于框内。
+     */
+    type: {
       type: String as () => HcTireMode,
       default: 'default',
       validator: (v: string) => v === 'default' || v === 'simple',
@@ -48,7 +57,7 @@ export const HcTire = defineComponent({
     const isSelect = toRef(props, 'isSelect')
     const isSpare = toRef(props, 'isSpare')
     const showComments = toRef(props, 'showComments')
-    const isSimple = computed(() => props.mode === 'simple')
+    const isSimple = computed(() => props.type === 'simple')
     const isSpareDismount = computed(() => isSpare.value && !!tireData.value.dismount)
     const isTireDisabled = computed(() => !!tireData.value.disabled)
     const showDeleteIcon = computed(() => !!tireData.value.deletable)

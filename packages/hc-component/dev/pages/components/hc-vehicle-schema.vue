@@ -19,7 +19,7 @@
       </h3>
       <HcVehicleSchema
         v-model:select-list="selectListSimple"
-        tire-mode="simple"
+        schema-type="simple"
         :axle-data="axleData"
         :spare-list="simpleSpareList"
         :tire-data="simpleTireData"
@@ -40,7 +40,7 @@
     HcVehicleSchemaTireData,
   } from '../../../src/components/custom/HcVehicleSchema/hc-vehicle-schema-types'
 
-  const wheelType = ref('2-4-4')
+  const wheelType = ref('2-2-2-4-4')
   const selectList = ref([])
   const selectListSimple = ref([{ wheel_place: '1L' }, { wheel_place: 'SP3' }])
   const simpleTireData = {
@@ -49,70 +49,101 @@
       observation_level: 0,
       pressure: null,
       rtd: null,
-      CAI: 242552,
+      CAI: null,
       disabled: true,
     },
     '1R': {
       wheel_place: '1R',
       observation_level: 0,
       pressure: null,
+      rtd: 1,
+      CAI: null,
+      is_regroove: 1,
+      disabled: true,
+    },
+    '2L': {
+      wheel_place: '2L',
+      observation_level: 0,
+      pressure: null,
+      rtd: null,
+      CAI: 242552,
+      disabled: true,
+    },
+    '2R': {
+      wheel_place: '2R',
+      observation_level: 0,
+      pressure: null,
       rtd: null,
       CAI: null,
       disabled: true,
     },
-    '2LO': {
-      wheel_place: '2LO',
+    '3L': {
+      wheel_place: '3L',
+      observation_level: 0,
+      pressure: 6,
+      rtd: 4,
+      CAI: 242252,
+    },
+    '3R': {
+      wheel_place: '3R',
+      observation_level: 0,
+      pressure: 6,
+      rtd: 4,
+      CAI: 242252,
+    },
+    '4LO': {
+      wheel_place: '4LO',
       observation_level: 1,
       pressure: 2,
       rtd: 1,
       CAI: 242252,
       is_regroove: 1,
     },
-    '2LI': {
-      wheel_place: '2LI',
+    '4LI': {
+      wheel_place: '4LI',
       observation_level: 0,
       pressure: null,
       rtd: null,
       CAI: null,
     },
-    '2RI': {
-      wheel_place: '2RI',
+    '4RI': {
+      wheel_place: '4RI',
       observation_level: 0,
       pressure: null,
       rtd: null,
       CAI: null,
     },
-    '2RO': {
-      wheel_place: '2RO',
+    '4RO': {
+      wheel_place: '4RO',
       observation_level: 0,
       pressure: null,
       rtd: 5,
       CAI: 242252,
       disabled: true,
     },
-    '3LO': {
-      wheel_place: '3LO',
+    '5LO': {
+      wheel_place: '5LO',
       observation_level: 0,
       pressure: 4,
       rtd: 3,
       CAI: 242252,
     },
-    '3LI': {
-      wheel_place: '3LI',
+    '5LI': {
+      wheel_place: '5LI',
       observation_level: 1,
       pressure: null,
       rtd: 5,
       CAI: 242252,
     },
-    '3RI': {
-      wheel_place: '3RI',
+    '5RI': {
+      wheel_place: '5RI',
       observation_level: 2,
       pressure: 2,
       rtd: 3,
       CAI: 242252,
     },
-    '3RO': {
-      wheel_place: '3RO',
+    '5RO': {
+      wheel_place: '5RO',
       observation_level: 3,
       pressure: null,
       rtd: 5,
@@ -152,21 +183,34 @@
     rtd_unit: 'mm',
   })
   const axleData = ref({
+    /** New leading axle / 最前新增轴：等级 0 */
     0: {
       observationLevel: 0,
-      recommendPressure: '8.8 bar',
-      recommendSize: '315/80R22.5',
+      recommendPressure: null,
+      recommendSize: null,
       type: 'D2',
     },
     1: {
+      observationLevel: 0,
+      recommendPressure: 1,
+      recommendSize: null,
+      type: 'D2',
+    },
+    2: {
+      observationLevel: 1,
+      recommendPressure: 0,
+      recommendSize: '315/80R22.5',
+      type: 'S2',
+    },
+    3: {
       observationLevel: 2,
-      recommendPressure: '8.8 bar',
+      recommendPressure: 8.8,
       recommendSize: '315/80R22.5',
       type: 'S4',
     },
-    2: {
+    4: {
       observationLevel: 3,
-      recommendPressure: '8.8 bar',
+      recommendPressure: 8.8,
       recommendSize: '315/80R22.5',
       type: 'S4',
     },

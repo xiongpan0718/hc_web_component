@@ -78,7 +78,7 @@ export const HcWheelSchema = defineComponent({
       } else if (type?.startsWith('C')) {
         imgType = 'C'
       }
-      return images[imgType as keyof typeof images]
+      return images[`${imgType}-3` as keyof typeof images]
     }
     const className = {
       'hc-wheel-schema': true,

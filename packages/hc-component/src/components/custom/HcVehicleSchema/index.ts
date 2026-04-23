@@ -7,5 +7,8 @@ export type {
   HcTireData,
   HcTireMode,
   HcTireObservationLevel,
+  HcVehicleSchemaAxleData,
+  HcVehicleSchemaAxleRow,
   HcVehicleSchemaTireData,
+  HcVehicleSchemaUnit,
 } from './hc-vehicle-schema-types'
