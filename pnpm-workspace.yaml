@@ -1,2 +1,5 @@
 packages:
   - 'packages/*'
+  # Nested dev app for hc-component — must be listed so pnpm installs devDependencies (e.g. less for Vite).
+  # 嵌套的 hc-component 演示应用 — 必须列出，pnpm 才会安装其 devDependencies（如 Vite 用的 less）。
+  - 'packages/hc-component/dev'
