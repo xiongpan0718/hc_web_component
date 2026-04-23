@@ -1,0 +1,16 @@
+{
+  "common.filter": "篩選",
+  "public.resetting": "重設",
+  "common.filterResults": "篩選結果",
+  "common.total": "總計",
+  "public.all": "全部",
+  "common.items": "項目",
+  "tire.chooseColumns": "選擇欄位",
+  "tire.findResults": "查詢結果",
+  "public.dismounted": "已拆卸",
+  "public.continueTypingTips": "更多相符資料，請繼續輸入以縮小範圍",
+  "public.advanceSearch": "進階搜尋",
+  "public.noResults": "無結果",
+  "public.collapseExtraFields": "收合其他欄位",
+  "public.expandExtraFields": "展開其他欄位"
+}

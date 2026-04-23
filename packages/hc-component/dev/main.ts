@@ -4,25 +4,25 @@ import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 import { createHcComponent, createThemeConfig, createIconConfig, createHcI18nConfig } from "../src";
+import { devI18n } from "./pages/locales/devI18n";
 import "../src/styles/index.scss";
 import "vuetify/styles";
-// add i18n
 import { createVueI18nAdapter } from "vuetify/locale/adapters/vue-i18n";
 import { createI18n, useI18n } from "vue-i18n";
-// import { en as vuetifyEn, zhHans as vuetifyZhHans, pl as vuetifyPl, pt as vuetifyPt } from "vuetify/locale";
-// import { mergeTranslations } from "./pages/locales/mergeTranslations";
-// import zhHansJson from "./pages/locales/zhHans.json";
-// import enJson from "./pages/locales/en.json";
 
-// const messages = {
-//   en: mergeTranslations(enJson, vuetifyEn),
-//   zhHans: mergeTranslations(zhHansJson, vuetifyZhHans),
-// };
+const hcMessages = createHcI18nConfig();
+const messages = Object.fromEntries(
+	Object.keys(hcMessages).map((locale) => {
+		const dev = devI18n[locale] ?? devI18n.en;
+		return [locale, { ...hcMessages[locale], ...dev }];
+	}),
+);
+
 const i18n = createI18n({
 	legacy: false,
 	locale: 'en',
 	fallbackLocale: 'en',
-	messages: createHcI18nConfig(),
+	messages,
 });
 
 const app = createApp(App);
@@ -69,7 +69,10 @@ const vuetify = createVuetify({
   },
   // add language support
   locale: {
-		adapter: createVueI18nAdapter({ i18n, useI18n }),
+		adapter: createVueI18nAdapter({
+			i18n,
+			useI18n: useI18n as any,
+		}),
 	},
 });
 const hcComponent = createHcComponent();

@@ -1,19 +1,37 @@
+.hc-tire-item {
+  $success-color: #2E7D32;
+  $warning-color: #9E6100;
+  $danger-color: #B71C1C;
+  $default-color: #666666;
 
-
-.hc-tire-item{
   height: 100%;
   width: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   row-gap: 4px;
+  cursor: pointer;
 
-  $success-color: #2E7D32;
-  $warning-color: #9E6100;
-  $danger-color: #B71C1C;
-  $default-color: #666666;
+  /** Simple mode layout + label typography on same wrapper / simple：flex 容器与轮位文案样式合一 */
+  .wheel-place-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    gap: 2px;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.36;
+    color: $success-color;
+    text-align: center;
+    white-space: nowrap;
+  }
 
-  .wheel-place{
+  .wheel-place {
     flex: 1;
     font-size: 14px;
     color: $success-color;
@@ -25,75 +43,7 @@
     align-items: center;
   }
 
-  &.is-select{
-    .wheel-tire{
-      background: #3A61A6 !important;
-      border: unset !important;
-      .wheel-tire-value{
-        display: none;
-      }
-      &:after {
-        background: unset !important;
-      }
-    }
-  }
-  &.is-spare{
-    width: 80px;
-    .wheel-tire{
-      width: 100%;
-      height: 48px;
-      .wheel-tire-value{
-        flex-direction: row;
-        column-gap: 4px;
-        align-items: center;
-      }
-    }
-  }
-  .spare-dismount-tire{
-    display: none;
-  }
-  &.spare-dismount{
-
-    .spare-dismount-tire{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 12px;
-      color: #1A1A1A;
-    }
-    .wheel-place{
-      color: #666;
-    }
-    .wheel-tire{
-      border: unset !important;
-      background: #E5E5E5;
-      .wheel-tire-value{
-        display: none;
-      }
-      &:hover{
-        background-color: #B2B2B2;
-      }
-      &:active{
-        background-color: #7F7F7F;
-      }
-    }
-    &.is-select{
-      .wheel-tire{
-        background: #3A61A6 !important;
-      }
-      .spare-dismount-tire{
-        color: #3A61A6;
-      }
-    }
-  }
-  .show-comments{
-    .wheel-tire{
-      &:after {
-        display: inline-block !important;
-      }
-    }
-  }
-  .wheel-tire{
+  .wheel-tire {
     width: 100%;
     height: 80px;
     border: 2px solid $success-color;
@@ -103,18 +53,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     position: relative;
     row-gap: 2px;
 
-    &:hover{
+    &:hover {
       background-color: #DBF6D4;
     }
-    &:active{
+
+    &:active {
       background-color: #B2EBA5;
     }
 
-    &.wheel-tire:after {
+    &:after {
       content: '';
       width: 8px;
       height: 8px;
@@ -126,7 +76,17 @@
       right: 0;
     }
 
-    .wheel-tire-value{
+    /** Deletable spare corner control / deletable 时右上角删除按钮容器 */
+    .hc-tire-delete {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      z-index: 2;
+      line-height: 0;
+      cursor: pointer;
+    }
+
+    .wheel-tire-value {
       flex: 1;
       text-align: center;
       color: #1A1A1A;
@@ -134,17 +94,20 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      .model-value{
+
+      .model-value {
         font-weight: 600;
         font-size: 16px;
         height: 16px;
         line-height: 16px;
         white-space: nowrap;
       }
-      .model-unit{
+
+      .model-unit {
         font-size: 12px;
       }
-      .is-regroove{
+
+      .is-regroove {
         display: inline-block;
         margin-right: 2px;
         font-style: italic;
@@ -152,60 +115,222 @@
     }
   }
 
-  &.observation-level-1,&.observation-level-2{
-    .wheel-tire{
+  &.is-select {
+    .wheel-tire {
+      background: #3A61A6 !important;
+      border-color: #3A61A6 !important;
+
+      /** Keep border same as fill on hover/active so layout + simple obs4 dark hover do not override / 选中态 hover/active 仍与底色一致 */
+      &:hover,
+      &:active {
+        background: #3A61A6 !important;
+        border-color: #3A61A6 !important;
+      }
+
+      .wheel-tire-value {
+        display: none;
+      }
+
+      .wheel-place-simple {
+        color: #FFF;
+
+        svg path {
+          fill: currentColor;
+        }
+      }
+
+      &:after {
+        background: unset !important;
+      }
+    }
+  }
+
+  &.is-spare {
+    width: 80px;
+
+    .wheel-tire {
+      width: 100%;
+      height: 48px;
+
+      .wheel-tire-value {
+        flex-direction: row;
+        column-gap: 4px;
+        align-items: center;
+      }
+    }
+  }
+
+  /** Comment badge only when not simple row or spare dismounted / 仅非 simple、非备胎卸下时显示评论角标 */
+  &.show-comments:not(.is-simple):not(.is-spare-dismount) {
+    .wheel-tire {
+      &:after {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &.observation-level-1,
+  &.observation-level-2 {
+    .wheel-tire {
       border-color: $danger-color;
       background-color: #F4CEC2;
-      &:hover{
-        background-color:  #FCB5AD;
+
+      &:hover {
+        background-color: #FCB5AD;
       }
-      &:active{
+
+      &:active {
         background-color: #F7988D;
       }
+
       &:after {
         background: $danger-color;
       }
     }
-    .wheel-place{
+
+    .wheel-place,
+    .wheel-place-simple {
       color: $danger-color;
     }
   }
 
-  &.observation-level-3{
-    .wheel-tire{
+  &.observation-level-3 {
+    .wheel-tire {
       border-color: $warning-color;
       background-color: #FFF1CE;
-      &:hover{
+
+      &:hover {
         background-color: #FFE8AC;
       }
-      &:active{
+
+      &:active {
         background-color: #FCD286;
       }
+
       &:after {
         background: $warning-color;
       }
     }
-    .wheel-place{
+
+    .wheel-place,
+    .wheel-place-simple {
       color: $warning-color;
     }
   }
 
-  &.observation-level-4{
-    .wheel-tire{
+  &.observation-level-4 {
+    .wheel-tire {
       border-color: $default-color;
       background-color: #E5E5E5;
-      &:hover{
+
+      &:hover {
         background-color: #B2B2B2;
       }
-      &:active{
+
+      &:active {
         background-color: #7F7F7F;
       }
+
       &:after {
         background: $default-color;
       }
     }
-    .wheel-place{
+
+    .wheel-place,
+    .wheel-place-simple {
       color: $default-color;
+    }
+  }
+
+  /**
+   * Spare dismounted UI after observation-level-* so border/bg are not overwritten / 备胎卸下写在 observation-level 之后，避免等级色边框覆盖同色描边
+   */
+  &.is-spare-dismount {
+    .spare-dismount-tire {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      color: #1A1A1A;
+    }
+
+    &.is-select .spare-dismount-tire {
+      color: #3A61A6;
+    }
+
+    .wheel-place {
+      color: #666;
+    }
+
+    .wheel-tire {
+      background-color: #E5E5E5;
+      border-color: #E5E5E5;
+
+      &:hover {
+        background-color: #B2B2B2;
+        border-color: #B2B2B2;
+      }
+
+      &:active {
+        background-color: #7F7F7F;
+        border-color: #7F7F7F;
+      }
+    }
+  }
+
+  /** Simple mode styles / simple 模式样式 */
+  &.is-simple {
+    &.observation-level-4:not(.is-spare-dismount):not(.is-select) {
+      .wheel-tire {
+        border-color: #4d4d4d;
+        background-color: #4d4d4d;
+
+        &:hover {
+          background-color: #1F1F1F;
+          border-color: #1F1F1F;
+        }
+
+        &:active {
+          background-color: #0C0C0C;
+          border-color: #0C0C0C;
+        }
+      }
+
+      .wheel-place-simple {
+        color: #ffffff;
+      }
+    }
+  
+    &.is-tire-disabled {
+      cursor: not-allowed;
+  
+      .wheel-tire {
+        border-color: #b2b2b2 !important;
+        background-color: #b2b2b2 !important;
+      }
+  
+      .wheel-place-simple {
+        color: #999 !important;
+  
+        svg path {
+          fill: #999 !important;
+        }
+      }
+  
+      &.is-select {
+        .wheel-tire {
+          background-color: #aec5e5 !important;
+          border-color: #aec5e5 !important;
+        }
+
+        .wheel-place-simple {
+          color: #fff !important;
+  
+          svg path {
+            fill: #fff !important;
+          }
+        }
+      }
     }
   }
 }

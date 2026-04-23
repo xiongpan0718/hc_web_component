@@ -21,7 +21,6 @@
   .filter-container {
     display: grid;
     gap: 0 24px;
-
     // 默认情况下（≥1000px）显示4列
     // Default case (≥1000px) shows 4 columns
     grid-template-columns: repeat(4, 1fr);

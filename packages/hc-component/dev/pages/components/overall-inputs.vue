@@ -119,7 +119,7 @@
               prepend-inner-icon="$calendar"
               variant="outlined"
               multiple="range"
-              :rules="[(v) => v.length || 'You entered a wrong value']"
+              :rules="[(v) => !!v?.length || 'You entered a wrong value']"
             />
           </v-col>
           <v-col cols="6">

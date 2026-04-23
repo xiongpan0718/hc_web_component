@@ -1,0 +1,16 @@
+{
+  "common.filter": "Filtre",
+  "public.resetting": "Resetare",
+  "common.filterResults": "Filtrare rezultate",
+  "common.total": "Total",
+  "public.all": "Toate",
+  "common.items": "elemente",
+  "tire.chooseColumns": "Alege coloane",
+  "tire.findResults": "Găsește rezultate",
+  "public.dismounted": "Demontat",
+  "public.continueTypingTips": "Mai multe rezultate potrivite, continuați să tastați pentru a restrânge",
+  "public.advanceSearch": "Căutare avansată",
+  "public.noResults": "Fără rezultate.",
+  "public.collapseExtraFields": "Restrânge câmpuri suplimentare",
+  "public.expandExtraFields": "Extinde câmpuri suplimentare"
+}

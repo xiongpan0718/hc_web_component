@@ -10,14 +10,27 @@
 // 导入组件库翻译字典
 import en from './lang/en.json'
 import zhHans from './lang/zhHans.json'
+import zhHant from './lang/zhHant.json'
 import pl from './lang/pl.json'
 import pt from './lang/pt.json'
 import es from './lang/es.json'
 import fr from './lang/fr.json'
+import de from './lang/de.json'
+import ro from './lang/ro.json'
 
 // Import Vuetify locale packages
 // 导入 Vuetify 语言包
-import { en as vuetifyEn, zhHans as vuetifyZhHans, pt as vuetifyPt, pl as vuetifyPl, es as vuetifyEs, fr as vuetifyFr } from 'vuetify/locale'
+import {
+  en as vuetifyEn,
+  zhHans as vuetifyZhHans,
+  zhHant as vuetifyZhHant,
+  pt as vuetifyPt,
+  pl as vuetifyPl,
+  es as vuetifyEs,
+  fr as vuetifyFr,
+  de as vuetifyDe,
+  ro as vuetifyRo,
+} from 'vuetify/locale'
 
 /**
  * HC component translation dictionaries
@@ -26,10 +39,13 @@ import { en as vuetifyEn, zhHans as vuetifyZhHans, pt as vuetifyPt, pl as vuetif
 const hcTranslations = {
   en,
   zhHans,
+  zhHant,
   pl,
   pt,
   es,
-  fr
+  fr,
+  de,
+  ro,
 }
 
 /**
@@ -39,10 +55,13 @@ const hcTranslations = {
 const vuetifyLocales = {
   en: vuetifyEn,
   zhHans: vuetifyZhHans,
+  zhHant: vuetifyZhHant,
   pt: vuetifyPt,
   pl: vuetifyPl,
   es: vuetifyEs,
-  fr: vuetifyFr
+  fr: vuetifyFr,
+  de: vuetifyDe,
+  ro: vuetifyRo,
 }
 
 /**

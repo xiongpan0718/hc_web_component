@@ -66,9 +66,13 @@ export const HcFilter = defineComponent({
         class="hc-filter"
         data-testid="hc-filter-panels-container"
       >
-        <v-expansion-panel title={ t('common.filter') } style={{ backgroundColor: props.backgroundColor }}
+        <v-expansion-panel
+          style={{ backgroundColor: props.backgroundColor }}
           data-testid="hc-filter-panel-main"
         >
+          <v-expansion-panel-title>
+            { slots.title?.() ?? t('common.filter') }
+          </v-expansion-panel-title>
           <v-expansion-panel-text
             data-testid="hc-filter-section-content"
           >
@@ -107,7 +111,7 @@ export const HcFilter = defineComponent({
                 onClick={ handleSearch }
                 data-testid="hc-filter-button-search"
               >
-                { t('common.filterResults') }
+                { t('tire.findResults') }
               </v-btn>
             </div>
           </v-expansion-panel-text>

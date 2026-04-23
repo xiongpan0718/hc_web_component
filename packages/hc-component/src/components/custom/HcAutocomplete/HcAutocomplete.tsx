@@ -7,12 +7,14 @@ import { useItems } from '@/composables/list-items';
 import { VAutocomplete } from '../../source/HcAutocomplete/VAutocomplete';
 import './HcAutocomplete.scss';
 
+const DEFAULT_NO_DATA_TEXT = '$vuetify.noDataText'
+
 interface HcAutocompleteProps {
   errorIcon?: string;
   autoErrorIcon?: boolean;
-  /** When dropdown options exceed this value, only show first N items and display limitMessage at top / 超出此值时仅显示前 N 项并在顶部展示 limitMessage */
+  /** When dropdown options exceed this value, only show first N items and display limitMessage at bottom / 超出此值时仅显示前 N 项并在列表底部展示 limitMessage */
   maxDisplayItems?: number;
-  /** Message shown at top of list when options are truncated / 选项被截断时在列表顶部显示的提示文案 */
+  /** Message shown at bottom of list when options are truncated / 选项被截断时在列表底部显示的提示文案 */
   limitMessage?: string;
   /** When true, show advance search switch at bottom in both no-data and with-results states. Switch value supports v-model:advanceSearch / 为 true 时在无数据和有结果时底部均显示高级搜索开关，支持 v-model:advanceSearch */
   showAdvanceSearch?: boolean;
@@ -188,52 +190,67 @@ export const HcAutocomplete = defineComponent({
   render() {
     const slots = { ...this.$slots };
 
-    // Custom no-data slot with "No results." and specified styles / 自定义 no-data 插槽，显示「无结果」及指定样式
+    // display "No results." when no-data slot is not set and noDataText is default value / 当 no-data 插槽未设置且 noDataText 为默认值时，显示 "No results."
     if (!this.$slots['no-data']) {
       slots['no-data'] = () => [
         <div key="no-data" class="v-autocomplete__no-data">
-          {this.t('public.noResults')}
+          { this.props.noDataText === DEFAULT_NO_DATA_TEXT ? this.t('public.noResults') : this.props.noDataText }
         </div>,
       ];
     }
 
-    // When limit is enabled, inject prepend-item to show hint message / 启用 limit 时注入 prepend-item 显示提示文案
-    if (this.maxDisplayItems != null && this.showLimitMessage) {
-      const userPrepend = this.$slots['prepend-item']?.();
-      slots['prepend-item'] = () => [
-        <div key="limit-message" class="v-autocomplete__limit-message">
-          {this.limitMessage ?? this.t('public.continueTypingTips')}
-        </div>,
-        ...(userPrepend
-          ? Array.isArray(userPrepend)
-            ? userPrepend
-            : [userPrepend]
-          : []),
-      ];
-    }
+    const userAppendRaw = this.$slots['append-item']?.();
+    const userAppendNodes = userAppendRaw
+      ? Array.isArray(userAppendRaw)
+        ? userAppendRaw
+        : [userAppendRaw]
+      : [];
 
-    // When showAdvanceSearch is true: append-item adds switch at bottom when there are results / showAdvanceSearch 为 true 时：有结果时 append-item 在底部追加开关
-    if (this.showAdvanceSearch) {
-      const userAppend = this.$slots['append-item']?.();
+    const limitMessageNodes =
+      this.maxDisplayItems != null && this.showLimitMessage
+        ? [
+            <div key="limit-message" class="v-autocomplete__limit-message">
+              {this.limitMessage ?? this.t('public.continueTypingTips')}
+            </div>,
+          ]
+        : [];
+
+    const advanceSearchNodes = this.showAdvanceSearch
+      ? [
+          <div
+            key="advance-search-row"
+            class="v-autocomplete__advance-search-row"
+            data-testid="hc-autocomplete-advance-search"
+          >
+            <VSwitch
+              modelValue={this.internalAdvanceSearch}
+              onUpdate:modelValue={this.handleUpdateAdvanceSearch}
+              hideDetails
+              inset
+              class="v-autocomplete__advance-search-switch"
+            />
+            <span
+              class="v-autocomplete__advance-search-label"
+              onClick={() =>
+                this.handleUpdateAdvanceSearch(!this.internalAdvanceSearch)
+              }
+            >
+              {this.t('public.advanceSearch')}
+            </span>
+          </div>,
+        ]
+      : [];
+
+    // append-item: user slots, then limit hint (under visible options), then advance search / 先用户 append，再截断提示，最后高级搜索
+    if (
+      userAppendNodes.length ||
+      limitMessageNodes.length ||
+      advanceSearchNodes.length
+    ) {
       slots['append-item'] = () => [
-        ...(userAppend ? (Array.isArray(userAppend) ? userAppend : [userAppend]) : []),
-        <div
-          key="advance-search-row"
-          class="v-autocomplete__advance-search-row"
-          data-testid="hc-autocomplete-advance-search"
-        >
-          <VSwitch
-            modelValue={this.internalAdvanceSearch}
-            onUpdate:modelValue={this.handleUpdateAdvanceSearch}
-            hideDetails
-            inset
-            class="v-autocomplete__advance-search-switch"
-          />
-          <span 
-            class="v-autocomplete__advance-search-label"
-            onClick={() => this.handleUpdateAdvanceSearch(!this.internalAdvanceSearch)}
-          >{this.t('public.advanceSearch')}</span>
-        </div>,
+        ...userAppendNodes,
+        ...limitMessageNodes,
+        ...advanceSearchNodes,
       ];
     }
 

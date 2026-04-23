@@ -19,7 +19,7 @@ export const HcWheelSchema = defineComponent({
     },
     size: {
       type: String,
-      default: '', // small large
+      default: '', /** `small` | `medium` | `large` — matches Figma vehicle schema tokens / 尺寸变体 */
     },
   },
   setup (props) {

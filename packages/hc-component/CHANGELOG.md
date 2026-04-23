@@ -4,9 +4,23 @@
 
 ## 版本信息
 
-当前版本：`0.2.6-SNAPSHOT.1`
+当前版本：`0.2.8-SNAPSHOT.1`
 
-### 最新更新 (v0.2.6-SNAPSHOT.1)
+### 最新更新 (v0.2.8-SNAPSHOT.1)
+- 🧪 **演示项目（dev）**：优化侧栏布局（按原生，自定义分组）；`v-app-bar`中增加国际化语言选择；
+- 🌐 **文案**：`HcFilter` 搜索按钮改用 `tire.findResults`（Find results），各语言包新增对应翻译；
+- 🎨 **样式**：修正多处组件 CSS 细节
+
+### 历史更新 (v0.2.7-SNAPSHOT.1)
+- 🌐 `createHcI18nConfig` 新增德语 (`de`)、罗马尼亚语 (`ro`)、繁体中文 (`zhHant`)，并与 Vuetify 对应语言包合并为完整 messages
+
+### 历史更新 (v0.2.6-SNAPSHOT.3)
+- ✨ 新增 `HcTreeView` 树形选择组件
+
+### 历史更新 (v0.2.6-SNAPSHOT.2)
+- ✨ `HcFilter` 组件支持 `title` 插槽，用于自定义展开面板标题；未提供时使用默认文案 `common.filter`
+
+### 历史更新 (v0.2.6-SNAPSHOT.1)
 - ✨ `HcAutocomplete` 组件新增 `showAdvanceSearch` 和 `advanceSearch`（`v-model:advanceSearch`）属性，支持在无数据和有结果时底部显示高级搜索开关
 - ✨ `HcFilter` 组件新增 `allowCollapse`、`collapseRows`（收起时显示行数，默认 1）、`defaultCollapsed`（初始收起状态，默认 true）属性，支持展开/收起筛选区域
 

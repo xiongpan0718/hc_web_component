@@ -1,14 +1,5 @@
 <template>
   <div class="filters-container">
-    <v-select 
-      v-model="locale" 
-      :items="locales" 
-      item-title="text" 
-      item-value="value" 
-      density="compact"
-      style="max-width: 160px"
-    ></v-select>
-
     <HcTableBar
       v-model:value="tableBarData.showColumnList"
       :column-list="tableBarData.columnList"
@@ -35,15 +26,7 @@
 
 <script setup>
   import { onMounted, ref } from 'vue'
-  import { useI18n } from 'vue-i18n';
 
-  const { locale } = useI18n();
-  const locales = ref([
-        { text: 'English', value: 'en' },
-        { text: '简体中文', value: 'zhHans' },
-        { text: 'Polski', value: 'pl' },
-        { text: 'Português', value: 'pt' },
-    ]);
   const tableBarData = ref({
     total: 20,
     filterCount: 10,

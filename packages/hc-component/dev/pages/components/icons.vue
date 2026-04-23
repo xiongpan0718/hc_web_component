@@ -23,7 +23,7 @@
       </div>
     </div>
     <div style="flex: 1;">
-      <v-switch v-model="fill" label="FILL" />
+      <v-switch v-model="fill" label="FILL" inset />
       <div>
         <v-text-field variant="outlined" clearable @update:model-value="search" />
       </div>

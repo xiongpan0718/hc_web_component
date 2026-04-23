@@ -1,10 +1,12 @@
+import type { PropType } from 'vue'
 import { defineComponent, toRef } from 'vue'
+import type { HcTireObservationLevel } from './hc-vehicle-schema-types'
 
 export const HcTireIcon = defineComponent({
   name: 'HcTireIcon',
   props: {
     level: {
-      type: [Number, String],
+      type: [Number, String] as PropType<HcTireObservationLevel | null | undefined>,
       default: 0,
     },
     size: {

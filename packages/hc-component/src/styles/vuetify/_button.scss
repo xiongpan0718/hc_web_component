@@ -80,7 +80,7 @@
     }
 
     &--size-small {
-      --v-btn-height: 32px !important;
+      --v-btn-height: 32px;
       padding: 0 8px;
 
       .v-btn__append {
@@ -120,7 +120,6 @@
     &--variant-elevated, &--variant-outlined {
       --v-theme-surface: 39, 80, 155;
       --v-theme-on-surface: 255, 255, 255;
-      --v-btn-height: 44px;
       --v-border-color: #27509b;
       --v-theme-primary-color: #27509b;
       color: #fff;
@@ -156,11 +155,8 @@
     }
 
     &--size-default {
-      --v-btn-height: 44px !important;
+      --v-btn-height: 44px;
       padding: 0 12px;
-    }
-    &--variant-text {
-      color: #27509B !important;
     }
     &--variant-outlined {
       border-color: var(--v-border-color);
@@ -198,6 +194,7 @@
     }
 
     &--variant-text {
+      --v-theme-primary-color: #27509b;
       color: var(--v-theme-primary-color);
 
       &:hover {

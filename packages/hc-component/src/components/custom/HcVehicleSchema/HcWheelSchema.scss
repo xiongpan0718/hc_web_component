@@ -71,6 +71,50 @@
       width: 100%;
     }
   }
+
+  &.size-large {
+    width: 320px;
+
+    .wheel-table {
+      row-gap: 16px;
+    }
+
+    .wheel-row {
+      column-gap: 12px;
+      height: 74px;
+    }
+
+    .tire-section {
+      width: 96px;
+      column-gap: 12px;
+    }
+
+    .wheel-axle {
+      .wheel-axle-img {
+        height: 42px;
+        width: 100% !important;
+        display: flex;
+      }
+    }
+
+    .tire-wheel {
+      width: 42px !important;
+      height: 74px !important;
+      border-radius: 6px !important;
+
+      &.is-spare {
+        width: 74px !important;
+        height: 42px !important;
+      }
+    }
+
+    .spare-list {
+      margin-top: 16px;
+      column-gap: 12px;
+      gap: 12px;
+    }
+  }
+
   &.size-medium{
     width: 88px;
     .wheel-table{

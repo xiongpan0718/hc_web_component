@@ -1,0 +1,207 @@
+<template>
+  <div class="vehicle-schema-page">
+    <section class="vehicle-schema-demo">
+      <h3 class="vehicle-schema-demo__title">
+        Default 模式
+      </h3>
+      <HcVehicleSchema
+        v-model:select-list="selectList"
+        :axle-data="axleData"
+        :spare-list="spareListDefault"
+        :tire-data="defaultTireData"
+        :unit="unit"
+        :wheel-type="wheelType"
+      />
+    </section>
+    <section class="vehicle-schema-demo">
+      <h3 class="vehicle-schema-demo__title">
+        Simple 模式
+      </h3>
+      <HcVehicleSchema
+        v-model:select-list="selectListSimple"
+        tire-mode="simple"
+        :axle-data="axleData"
+        :spare-list="simpleSpareList"
+        :tire-data="simpleTireData"
+        :unit="unit"
+        :wheel-type="wheelType"
+        @delete="onTireDelete"
+      />
+    </section>
+  </div>
+
+</template>
+
+<script setup lang="ts">
+  import { ref } from 'vue'
+  import type {
+    HcTireData,
+    HcSpareTireData,
+    HcVehicleSchemaTireData,
+  } from '../../../src/components/custom/HcVehicleSchema/hc-vehicle-schema-types'
+
+  const wheelType = ref('2-4-4')
+  const selectList = ref([])
+  const selectListSimple = ref([{ wheel_place: '1L' }, { wheel_place: 'SP3' }])
+  const simpleTireData = {
+    '1L': {
+      wheel_place: '1L',
+      observation_level: 0,
+      pressure: null,
+      rtd: null,
+      CAI: 242552,
+      disabled: true,
+    },
+    '1R': {
+      wheel_place: '1R',
+      observation_level: 0,
+      pressure: null,
+      rtd: null,
+      CAI: null,
+      disabled: true,
+    },
+    '2LO': {
+      wheel_place: '2LO',
+      observation_level: 1,
+      pressure: 2,
+      rtd: 1,
+      CAI: 242252,
+      is_regroove: 1,
+    },
+    '2LI': {
+      wheel_place: '2LI',
+      observation_level: 0,
+      pressure: null,
+      rtd: null,
+      CAI: null,
+    },
+    '2RI': {
+      wheel_place: '2RI',
+      observation_level: 0,
+      pressure: null,
+      rtd: null,
+      CAI: null,
+    },
+    '2RO': {
+      wheel_place: '2RO',
+      observation_level: 0,
+      pressure: null,
+      rtd: 5,
+      CAI: 242252,
+      disabled: true,
+    },
+    '3LO': {
+      wheel_place: '3LO',
+      observation_level: 0,
+      pressure: 4,
+      rtd: 3,
+      CAI: 242252,
+    },
+    '3LI': {
+      wheel_place: '3LI',
+      observation_level: 1,
+      pressure: null,
+      rtd: 5,
+      CAI: 242252,
+    },
+    '3RI': {
+      wheel_place: '3RI',
+      observation_level: 2,
+      pressure: 2,
+      rtd: 3,
+      CAI: 242252,
+    },
+    '3RO': {
+      wheel_place: '3RO',
+      observation_level: 3,
+      pressure: null,
+      rtd: 5,
+      CAI: 242252,
+    },
+  } satisfies HcVehicleSchemaTireData
+
+  // remove all disabled fields for default mode
+  const defaultTireData = Object.values(simpleTireData).reduce((acc: HcVehicleSchemaTireData, item: HcTireData) => {
+    return {
+      ...acc,
+      [item.wheel_place]: {
+        ...item,
+        disabled: false,
+      },
+    }
+  }, {} as HcVehicleSchemaTireData)
+
+  const spareListDefault = ref<HcSpareTireData[]>([
+    { rtd: 1, pressure: 2, wheel_place: 'SP1' },
+    { rtd: null, pressure: null, wheel_place: 'SP2' },
+    { rtd: 1, pressure: 2, observation_level: 2, wheel_place: 'SP3', dismount: true },
+    { rtd: 1, pressure: 2, wheel_place: 'SP4', dismount: true },
+    { rtd: 1, pressure: 2, wheel_place: 'SP5' },
+  ])
+
+  const simpleSpareList = ref<HcSpareTireData[]>([
+    { rtd: null, pressure: null, observation_level: 0, wheel_place: 'SP1', deletable: true },
+    { rtd: null, pressure: null, observation_level: 0, wheel_place: 'SP2', deletable: true },
+    { rtd: 1, pressure: 2, observation_level: 0, CAI: 242252, wheel_place: 'SP3', deletable: true },
+    { rtd: 1, pressure: 2, observation_level: 0, temp_cai_id: 242252, wheel_place: 'SP4', deletable: true },
+    { rtd: 1, pressure: 2, observation_level: 0, wheel_place: 'SP5', deletable: true },
+  ])
+
+  const unit = ref({
+    pressure_unit: 'bar',
+    rtd_unit: 'mm',
+  })
+  const axleData = ref({
+    0: {
+      observationLevel: 0,
+      recommendPressure: '8.8 bar',
+      recommendSize: '315/80R22.5',
+      type: 'D2',
+    },
+    1: {
+      observationLevel: 2,
+      recommendPressure: '8.8 bar',
+      recommendSize: '315/80R22.5',
+      type: 'S4',
+    },
+    2: {
+      observationLevel: 3,
+      recommendPressure: '8.8 bar',
+      recommendSize: '315/80R22.5',
+      type: 'S4',
+    },
+  })
+
+  const onTireDelete = (wheelPlace: string) => {
+    simpleSpareList.value = simpleSpareList.value.filter((item) => item.wheel_place !== wheelPlace)
+  }
+
+</script>
+
+<style scoped lang="less">
+  /** Demo layout / 演示页双列布局 */
+  .vehicle-schema-page {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .vehicle-schema-demo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    &__title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

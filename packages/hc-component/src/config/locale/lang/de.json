@@ -1,0 +1,16 @@
+{
+  "common.filter": "Filter",
+  "public.resetting": "Zurücksetzen",
+  "common.filterResults": "Ergebnisse filtern",
+  "common.total": "Gesamt",
+  "public.all": "Alle",
+  "common.items": "Einträge",
+  "tire.chooseColumns": "Spalten auswählen",
+  "tire.findResults": "Ergebnisse finden",
+  "public.dismounted": "Demontiert",
+  "public.continueTypingTips": "Weitere Treffer – bitte weiter eingeben, um einzugrenzen",
+  "public.advanceSearch": "Erweiterte Suche",
+  "public.noResults": "Keine Ergebnisse.",
+  "public.collapseExtraFields": "Zusätzliche Felder ausblenden",
+  "public.expandExtraFields": "Zusätzliche Felder anzeigen"
+}

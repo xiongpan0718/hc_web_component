@@ -1,18 +1,26 @@
+import type { PropType } from 'vue'
 import { defineComponent, toRef } from 'vue'
 import './HcVehicleSchema.scss'
 import { HcTire } from './HcTire'
 import { HcWheelAxle } from './HcWheelAxle'
 import { HcTireIcon } from './hc-tire-icon'
+import type {
+  HcSpareTireData,
+  HcTireData,
+  HcTireMode,
+  HcVehicleSchemaTireData,
+} from './hc-vehicle-schema-types'
 
 export const HcVehicleSchema = defineComponent({
   name: 'HcVehicleSchema',
   props: {
-    selectList: { // 选中的轮胎列表,传了这个参数就表示可选中
-      type: Array,
+    selectList: {
+      // 选中的轮胎列表,传了这个参数就表示可选中
+      type: Array as PropType<HcTireData[]>,
       default: () => [],
     },
-    tireData: { // 轮胎数据
-      type: Object,
+    tireData: {
+      type: Object as PropType<HcVehicleSchemaTireData>,
       default: () => ({}),
     },
     wheelType: { // 2-4-4
@@ -27,39 +35,43 @@ export const HcVehicleSchema = defineComponent({
       type: Object,
       default: () => ({}),
     },
-    spareList: { // 备胎列表
-      type: Array,
+    spareList: {
+      // 备胎列表
+      type: Array as PropType<HcSpareTireData[]>,
       default: () => [],
     },
-    disabled: { // 是否禁用
-      type: Boolean,
-      default: false,
+    /** 传给每个 HcTire：`simple` 为胎压/rtd 隐藏、图标与轮位居轮胎框内（见 HcTire mode） */
+    tireMode: {
+      type: String as () => HcTireMode,
+      default: 'default',
+      validator: (v: string) => v === 'default' || v === 'simple',
     },
   },
-  emits: ['update:selectList'],
+  emits: ['update:selectList', 'delete', 'handleAxleClick'],
   setup (props, { emit, slots }) {
     const tireData = toRef(props, 'tireData')
     const wheelType = toRef(props, 'wheelType')
     const axleData = toRef(props, 'axleData')
     const unit = toRef(props, 'unit')
-    const disabled = toRef(props, 'disabled')
     const spareList = toRef(props, 'spareList')
+    const tireMode = toRef(props, 'tireMode')
     const wheelTypeList = (wheelType.value || '').split('-')
 
     const selectList = toRef(props, 'selectList')
 
-    const updateSelectList = (wheelData: any) => {
-      if (disabled.value) {
+    const updateSelectList = (wheelData: Partial<HcTireData> | HcSpareTireData) => {
+      if (wheelData.disabled) {
         return
       }
       const index = selectList.value.findIndex((item: any) => item.wheel_place === wheelData.wheel_place)
       let list = [...selectList.value]
+      const row = { ...wheelData } as HcTireData
       if (index === -1) {
-        list.push({ ...wheelData })
+        list.push(row)
       } else {
         list = list.filter((item: any) => item.wheel_place !== wheelData.wheel_place)
       }
-      emit('update:selectList', list, { ...wheelData })
+      emit('update:selectList', list, row)
     }
 
     const bindData = {
@@ -71,6 +83,15 @@ export const HcVehicleSchema = defineComponent({
       return selectList.value?.findIndex((item: any) => item.wheel_place === wheelPlace) !== -1
     }
 
+    const onTireDelete = (wheelPlace: string) => {
+      emit('delete', wheelPlace)
+    }
+
+    /** Emit current row axle payload / 点击车轴区域抛出该行 axleData */
+    const handleAxleClick = (index: number) => {
+      emit('handleAxleClick', axleData.value[index])
+    }
+
     const initTireTag = (wheelType: string, index: number, position: number) => {
       const tagList = []
       if (wheelType === '2') {
@@ -78,10 +99,12 @@ export const HcVehicleSchema = defineComponent({
         const tire = tireData.value[wheelPlace] as any
         const tag = (
           <HcTire
+            mode={ tireMode.value }
             tireData={ tire }
             { ...bindData }
             isSelect={ isSelect(wheelPlace as string) }
             onClick={ () => updateSelectList(tire) }
+            onDelete={ onTireDelete }
           ></HcTire>
         )
         tagList.push(tag)
@@ -90,20 +113,24 @@ export const HcVehicleSchema = defineComponent({
         const tire = tireData.value[wheelPlaceLeft] as any
         tagList.push(
           <HcTire
+            mode={ tireMode.value }
             tireData={ tire }
             { ...bindData }
             isSelect={ isSelect(wheelPlaceLeft as string) }
             onClick={ () => updateSelectList(tire) }
+            onDelete={ onTireDelete }
           ></HcTire>
         )
         const wheelPlaceRight = (index + 1) + (position === 0 ? 'LI' : 'RO') as keyof typeof tireData.value
         const tireRightData = tireData.value[wheelPlaceRight] as any
         tagList.push(
           <HcTire
+            mode={ tireMode.value }
             tireData={ tireRightData }
             { ...bindData }
             isSelect={ isSelect(wheelPlaceRight as string) }
             onClick={ () => updateSelectList(tireRightData) }
+            onDelete={ onTireDelete }
           ></HcTire>
         )
       }
@@ -114,12 +141,13 @@ export const HcVehicleSchema = defineComponent({
       return spareList.value.map((tire: any) => {
         return (
           <HcTire
+            mode={ tireMode.value }
             isSpare
-            spareDismount={ tire.dismount }
             tireData={ tire }
             { ...bindData }
             isSelect={ isSelect(tire.wheel_place) }
             onClick={ () => updateSelectList(tire) }
+            onDelete={ onTireDelete }
           ></HcTire>
         )
       })
@@ -135,7 +163,7 @@ export const HcVehicleSchema = defineComponent({
                 <div class="tire-section">
                   { initTireTag(wheelType, index, 0) }
                 </div>
-                <div class="wheel-axle">
+                <div class="wheel-axle" onClick={ () => handleAxleClick(index) }>
                   <div class="wheel-axle-img">
                     {
                       axleData.value[index] ? (

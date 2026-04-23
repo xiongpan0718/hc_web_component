@@ -9,6 +9,7 @@
         item-value="value"
         label="Label"
         variant="outlined"
+        :menu-props="{ maxWidth: 271 }"
         clearable
       />
     </div>
@@ -115,6 +116,7 @@
         item-title="title"
         item-value="value"
         :max-display-items="10"
+        :menu-props="{ maxWidth: 271 }"
         clearable
       />
     </div>
@@ -127,6 +129,7 @@
         item-title="title"
         item-value="value"
         :max-display-items="10"
+        :menu-props="{ maxWidth: 271 }"
         chips
         clearable
         multiple />
