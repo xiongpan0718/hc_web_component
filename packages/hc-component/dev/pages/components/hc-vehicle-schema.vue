@@ -67,6 +67,8 @@
       pressure: null,
       rtd: null,
       CAI: 242552,
+      brand: 'Michelin',
+      description: '13R22.5 XZH2 R TL 154/150G MS MI',
       disabled: true,
     },
     '2R': {
@@ -83,6 +85,8 @@
       pressure: 6,
       rtd: 4,
       CAI: 242252,
+      brand: 'LAURENT',
+      description: '265/70 R 19.5 PLDE2+ TL LA/MI',
     },
     '3R': {
       wheel_place: '3R',
@@ -90,6 +94,8 @@
       pressure: 6,
       rtd: 4,
       CAI: 242252,
+      brand: 'Laurent',
+      description: '265/70 R 19.5 PLDE2+ TL LA/MI',
     },
     '4LO': {
       wheel_place: '4LO',
@@ -98,6 +104,8 @@
       rtd: 1,
       CAI: 242252,
       is_regroove: 1,
+      brand: 'Michelin',
+      description: '13R22.5 XZH2 R TL',
     },
     '4LI': {
       wheel_place: '4LI',
@@ -119,6 +127,8 @@
       pressure: null,
       rtd: 5,
       CAI: 242252,
+      brand: 'Michelin',
+      description: '13R22.5 XZH2 R TL',
       disabled: true,
     },
     '5LO': {
@@ -127,6 +137,8 @@
       pressure: 4,
       rtd: 3,
       CAI: 242252,
+      brand: 'Michelin',
+      description: '13R22.5 XZH2 R TL 154/150G MS MI',
     },
     '5LI': {
       wheel_place: '5LI',
@@ -134,6 +146,8 @@
       pressure: null,
       rtd: 5,
       CAI: 242252,
+      brand: 'Michelin',
+      description: '13R22.5 XZH2 R TL 154/150G MS MI',
     },
     '5RI': {
       wheel_place: '5RI',
@@ -141,6 +155,8 @@
       pressure: 2,
       rtd: 3,
       CAI: 242252,
+      brand: 'Michelin',
+      description: '13R22.5 XZH2 R TL 154/150G MS MI',
     },
     '5RO': {
       wheel_place: '5RO',
@@ -148,6 +164,8 @@
       pressure: null,
       rtd: 5,
       CAI: 242252,
+      brand: 'Michelin',
+      description: '13R22.5 XZH2 R TL 154/150G MS MI',
     },
   } satisfies HcVehicleSchemaTireData
 
@@ -173,8 +191,8 @@
   const simpleSpareList = ref<HcSpareTireData[]>([
     { rtd: null, pressure: null, observation_level: 0, wheel_place: 'SP1', deletable: true },
     { rtd: null, pressure: null, observation_level: 0, wheel_place: 'SP2', deletable: true },
-    { rtd: 1, pressure: 2, observation_level: 0, CAI: 242252, wheel_place: 'SP3', deletable: true },
-    { rtd: 1, pressure: 2, observation_level: 0, temp_cai_id: 242252, wheel_place: 'SP4', deletable: true },
+    { rtd: 1, pressure: 2, observation_level: 0, CAI: 242252, brand: 'Michelin', description: '13R22.5 XZH2 R TL 154/150G MS MI', wheel_place: 'SP3', deletable: true },
+    { rtd: 1, pressure: 2, observation_level: 0, temp_cai_id: 242252, brand: 'Michelin', description: '13R22.5 XZH2 R TL 154/150G MS MI', wheel_place: 'SP4', deletable: true },
     { rtd: 1, pressure: 2, observation_level: 0, wheel_place: 'SP5', deletable: true },
   ])
 

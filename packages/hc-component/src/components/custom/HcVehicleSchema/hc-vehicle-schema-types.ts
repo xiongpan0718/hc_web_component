@@ -48,6 +48,10 @@ export interface HcTireData {
   /** used for simple mode status judgment / 用于simple模式下状态判断 */
   CAI?: number | string | null
   temp_cai_id?: number | string | null
+
+  /** Tire brand and description for tooltip when set / 轮胎品牌和描述，有值时显示 tooltip */
+  brand?: string | null
+  description?: string | null
 }
 
 /**

@@ -64,10 +64,10 @@ export const HcWheelAxle = defineComponent({
       const row = axleData.value
       const obs = row?.observationLevel
 
-      if (obs == '3' || obs === 3) {
+      if (obs == '3') {
         return '2'
       }
-      if (obs == '1' || obs == '2' || obs === 1 || obs === 2) {
+      if (obs == '1' || obs == '2') {
         return '1'
       }
 

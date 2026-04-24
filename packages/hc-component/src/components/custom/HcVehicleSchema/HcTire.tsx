@@ -4,6 +4,7 @@ import './HcTire.scss'
 import { HcTireIcon } from './hc-tire-icon'
 import type { HcTireData, HcTireMode } from './hc-vehicle-schema-types'
 import { useI18n } from 'vue-i18n'
+import { VTooltip } from '@/components/VTooltip/VTooltip'
 
 export const HcTire = defineComponent({
   name: 'HcTire',
@@ -115,8 +116,26 @@ export const HcTire = defineComponent({
       () => tireData.value.translated_wheel_place || tireData.value.wheel_place,
     )
 
+    /**
+     * Tooltip when `brand` and/or `description` is set; join non-empty parts with a space / 品牌与描述任一有值则展示，空格拼接。
+     */
+    const brandDescriptionTooltip = computed(() => {
+      const b = tireData.value.brand
+      const d = tireData.value.description
+      if (isUnsetValue(b) && isUnsetValue(d)) {
+        return ''
+      }
+      return [b, d].filter((p) => !isUnsetValue(p)).join(' ')
+    })
+
     return () => (
       <div class={ className.value }>
+        { brandDescriptionTooltip.value ? (
+          /** Tooltip content width cap / tooltip 内容最大宽度 */
+          <VTooltip activator="parent" location="top" maxWidth={ 300 } offset={ 4 }>
+            { brandDescriptionTooltip.value }
+          </VTooltip>
+        ) : null }
         { !isSimple.value && (
           <div class="wheel-place">
             { isSpareDismount.value ? null : <HcTireIcon level={ observationLevel.value }></HcTireIcon> }
