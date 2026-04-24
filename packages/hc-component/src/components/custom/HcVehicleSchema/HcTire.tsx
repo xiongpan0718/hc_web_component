@@ -117,23 +117,29 @@ export const HcTire = defineComponent({
     )
 
     /**
-     * Tooltip when `brand` and/or `description` is set; join non-empty parts with a space / 品牌与描述任一有值则展示，空格拼接。
+     * Whether to show brand/description tooltip / 品牌或描述任一有值则展示 tooltip
      */
-    const brandDescriptionTooltip = computed(() => {
+    const showBrandDescriptionTooltip = computed(() => {
       const b = tireData.value.brand
       const d = tireData.value.description
-      if (isUnsetValue(b) && isUnsetValue(d)) {
-        return ''
-      }
-      return [b, d].filter((p) => !isUnsetValue(p)).join(' ')
+      return !isUnsetValue(b) || !isUnsetValue(d)
     })
 
     return () => (
       <div class={ className.value }>
-        { brandDescriptionTooltip.value ? (
-          /** Tooltip content width cap / tooltip 内容最大宽度 */
+        { showBrandDescriptionTooltip.value ? (
           <VTooltip activator="parent" location="top" maxWidth={ 300 } offset={ 4 }>
-            { brandDescriptionTooltip.value }
+            <>
+              { !isUnsetValue(tireData.value.brand) ? (
+                <strong>{ String(tireData.value.brand) }</strong>
+              ) : null }
+              { !isUnsetValue(tireData.value.brand) && !isUnsetValue(tireData.value.description)
+                ? ' '
+                : null }
+              { !isUnsetValue(tireData.value.description)
+                ? String(tireData.value.description)
+                : null }
+            </>
           </VTooltip>
         ) : null }
         { !isSimple.value && (
